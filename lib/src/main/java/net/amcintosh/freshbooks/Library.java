@@ -3,7 +3,14 @@
  */
 package net.amcintosh.freshbooks;
 
+/**
+ * Some thing that might be interesting, or might not.
+ */
 public class Library {
+    /**
+     *
+     * @return stuff
+     */
     public boolean someLibraryMethod() {
         return true;
     }
