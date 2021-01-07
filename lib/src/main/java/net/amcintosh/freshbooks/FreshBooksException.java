@@ -17,4 +17,9 @@ public class FreshBooksException extends HttpResponseException {
         this.message = message;
         this.errorNo = errorNo;
     }
+
+    public FreshBooksException(String message, HttpResponse response) {
+        super(response);
+        this.message = message;
+    }
 }

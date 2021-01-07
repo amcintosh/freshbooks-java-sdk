@@ -11,7 +11,7 @@ public class Runner {
 
         FreshBooksClient freshBooksClient = new FreshBooksClient.FreshBooksClientBuilder(
                 "34b6b595adef067730d964b8f2cc9ef070f73908d74c297f66d0f8f2cfbb8ee1")
-                .withAccessToken("f6b58d64bc0bda37bd924bf7a793c647d0a78a93e71e6892fa0d8ab5ec8cc726")
+                .withAccessToken("ed371320b7eac0b5cd499a9316575e7f6ae1064dc0dfe8c7b254e0f21066c2be")
                 .withUserAgent("tester")
                 .build();
 

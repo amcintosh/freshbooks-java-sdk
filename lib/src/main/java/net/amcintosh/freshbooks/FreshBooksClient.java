@@ -7,9 +7,11 @@ import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.json.gson.GsonFactory;
 
+import com.google.common.base.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.annotation.Nullable;
 import java.io.IOException;
 import java.io.InputStream;
 import java.time.Instant;
@@ -124,14 +126,26 @@ public class FreshBooksClient {
     }
 
     /**
-     * Called internally by resources (eg. Clients) which then parse the http response.
      *
-     * @param resource_url Relative URL (eg. /accounting/account/<accountId>/users/clients
-     * @return HttpResponse object
+     * @param requestMethod GET, POST, PUT, DELETE
+     * @param resourceUrl Relative URL (eg. /accounting/account/<accountId>/users/clients
+     * @return HttpRequest object
      * @throws IOException
      */
-    public HttpResponse get(String resource_url) throws IOException {
-        GenericUrl requestUrl = new GenericUrl(this.baseUrl + resource_url);
+    public HttpRequest request(String requestMethod, String resourceUrl) throws IOException {
+        return this.request(requestMethod, resourceUrl, null);
+    }
+
+    /**
+     *
+     * @param requestMethod GET, POST, PUT, DELETE
+     * @param resourceUrl Relative URL (eg. /accounting/account/<accountId>/users/clients
+     * @param content
+     * @return HttpRequest object
+     * @throws IOException
+     */
+    public HttpRequest request(String requestMethod, String resourceUrl, @Nullable HttpContent content) throws IOException {
+        GenericUrl requestUrl = new GenericUrl(this.baseUrl + resourceUrl);
         HttpRequestFactory requestFactory = new NetHttpTransport().createRequestFactory(
                 new HttpRequestInitializer() {
                     @Override
@@ -144,9 +158,9 @@ public class FreshBooksClient {
                 new HttpHeaders().setAuthorization("Bearer " + this.accessToken).setUserAgent(this.userAgent); //
         // .setContentType
         // ("application/json");
-        request = requestFactory.buildGetRequest(requestUrl).setHeaders(headers).setThrowExceptionOnExecuteError(false);
-        HttpResponse response = request.execute();
-        return response;
+        request =
+                requestFactory.buildRequest(requestMethod, requestUrl, content).setHeaders(headers).setThrowExceptionOnExecuteError(false);
+        return request;
     }
 
     public static class FreshBooksClientBuilder {
