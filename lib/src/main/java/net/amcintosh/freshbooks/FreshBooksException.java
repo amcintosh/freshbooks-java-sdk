@@ -3,23 +3,47 @@ package net.amcintosh.freshbooks;
 import com.google.api.client.http.HttpResponse;
 import com.google.api.client.http.HttpResponseException;
 
-public class FreshBooksException extends HttpResponseException {
-
-    public String message;
+public class FreshBooksException extends Exception {
+    public String statusMessage;
+    public int statusCode;
     public int errorNo;
+    public String field;
+    public String object;
+    public String value;
 
-    public FreshBooksException(HttpResponse response) {
-        super(response);
+    public FreshBooksException(String message, String statusMessage, int statusCode, Throwable cause) {
+        super(message, cause);
+        this.statusCode = statusCode;
     }
 
-    public FreshBooksException(String message, int errorNo, HttpResponse response) {
-        super(response);
-        this.message = message;
+    public FreshBooksException(String message, String statusMessage, int statusCode) {
+        super(message);
+        this.statusMessage = statusMessage;
+        this.statusCode = statusCode;
+    }
+
+    public FreshBooksException(String message, String statusMessage, int statusCode, int errorNo) {
+        super(message);
+        this.statusMessage = statusMessage;
+        this.statusCode = statusCode;
         this.errorNo = errorNo;
     }
 
-    public FreshBooksException(String message, HttpResponse response) {
-        super(response);
-        this.message = message;
+    public FreshBooksException(String message, String statusMessage, int statusCode, int errorNo, String field,
+                               String object, String value) {
+        super(message);
+        this.statusMessage = statusMessage;
+        this.statusCode = statusCode;
+        this.errorNo = errorNo;
+        this.field = field;
+        this.object = object;
+        this.value = value;
+    }
+
+    public String getValidationError() {
+        if (this.field != null && this.value != null) {
+            return "ValidationError in " + object + ". " + field + "='" + value + "'.";
+        }
+        return null;
     }
 }

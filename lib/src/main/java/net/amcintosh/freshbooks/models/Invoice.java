@@ -2,9 +2,9 @@ package net.amcintosh.freshbooks.models;
 
 import com.google.api.client.util.Key;
 
-public class Client {
+public class Invoice {
 
     @Key public long id;
-    @Key public String organization;
-    @Key public String language;
+
 }
+

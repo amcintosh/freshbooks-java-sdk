@@ -3,11 +3,12 @@ package net.amcintosh.freshbooks;
 
 import com.google.api.client.http.*;
 import com.google.api.client.http.javanet.NetHttpTransport;
+import com.google.api.client.http.json.JsonHttpContent;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.json.gson.GsonFactory;
 
-import com.google.common.base.Optional;
+import net.amcintosh.freshbooks.resources.responses.AccountingRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -140,11 +141,11 @@ public class FreshBooksClient {
      *
      * @param requestMethod GET, POST, PUT, DELETE
      * @param resourceUrl Relative URL (eg. /accounting/account/<accountId>/users/clients
-     * @param content
+     * @param data
      * @return HttpRequest object
      * @throws IOException
      */
-    public HttpRequest request(String requestMethod, String resourceUrl, @Nullable HttpContent content) throws IOException {
+    public HttpRequest request(String requestMethod, String resourceUrl, @Nullable AccountingRequest data) throws IOException {
         GenericUrl requestUrl = new GenericUrl(this.baseUrl + resourceUrl);
         HttpRequestFactory requestFactory = new NetHttpTransport().createRequestFactory(
                 new HttpRequestInitializer() {
@@ -158,8 +159,13 @@ public class FreshBooksClient {
                 new HttpHeaders().setAuthorization("Bearer " + this.accessToken).setUserAgent(this.userAgent); //
         // .setContentType
         // ("application/json");
-        request =
-                requestFactory.buildRequest(requestMethod, requestUrl, content).setHeaders(headers).setThrowExceptionOnExecuteError(false);
+        HttpContent content = null;
+        if (data != null) {
+            content = new JsonHttpContent(JSON_FACTORY, data);
+        }
+        request = requestFactory.buildRequest(requestMethod, requestUrl, content)
+                .setHeaders(headers)
+                .setThrowExceptionOnExecuteError(false);
         return request;
     }
 
