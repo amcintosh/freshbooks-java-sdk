@@ -1,8 +1,5 @@
 package net.amcintosh.freshbooks;
 
-import com.google.api.client.http.HttpResponse;
-import com.google.api.client.http.HttpResponseException;
-
 public class FreshBooksException extends Exception {
     public String statusMessage;
     public int statusCode;

@@ -12,7 +12,9 @@ import net.amcintosh.freshbooks.resources.responses.AccountingResponse;
 
 import java.io.IOException;
 
-
+/**
+ * Handles resources under the `/accounting` endpoints.
+ */
 public abstract class AccountingResource extends Resource {
 
     public AccountingResource(FreshBooksClient freshBooksClient) {

@@ -7,12 +7,12 @@ import com.google.api.client.http.json.JsonHttpContent;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.json.gson.GsonFactory;
-
 import net.amcintosh.freshbooks.resources.responses.AccountingRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.annotation.Nullable;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.time.Instant;
@@ -129,7 +129,7 @@ public class FreshBooksClient {
     /**
      *
      * @param requestMethod GET, POST, PUT, DELETE
-     * @param resourceUrl Relative URL (eg. /accounting/account/<accountId>/users/clients
+     * @param resourceUrl Relative URL (eg. /accounting/account/{accountId}/users/clients
      * @return HttpRequest object
      * @throws IOException
      */
@@ -140,13 +140,17 @@ public class FreshBooksClient {
     /**
      *
      * @param requestMethod GET, POST, PUT, DELETE
-     * @param resourceUrl Relative URL (eg. /accounting/account/<accountId>/users/clients
+     * @param resourceUrl Relative URL (eg. /accounting/account/{accountId}/users/clients
      * @param data
      * @return HttpRequest object
      * @throws IOException
      */
     public HttpRequest request(String requestMethod, String resourceUrl, @Nullable AccountingRequest data) throws IOException {
         GenericUrl requestUrl = new GenericUrl(this.baseUrl + resourceUrl);
+        HttpHeaders requestHeaders = new HttpHeaders()
+                .setAuthorization("Bearer " + this.accessToken)
+                .setUserAgent(this.userAgent);
+
         HttpRequestFactory requestFactory = new NetHttpTransport().createRequestFactory(
                 new HttpRequestInitializer() {
                     @Override
@@ -154,17 +158,14 @@ public class FreshBooksClient {
                         request.setParser(new JsonObjectParser(JSON_FACTORY));
                     }
                 });
-        HttpRequest request = null;
-        HttpHeaders headers =
-                new HttpHeaders().setAuthorization("Bearer " + this.accessToken).setUserAgent(this.userAgent); //
-        // .setContentType
-        // ("application/json");
+
+        HttpRequest request;
         HttpContent content = null;
         if (data != null) {
             content = new JsonHttpContent(JSON_FACTORY, data);
         }
         request = requestFactory.buildRequest(requestMethod, requestUrl, content)
-                .setHeaders(headers)
+                .setHeaders(requestHeaders)
                 .setThrowExceptionOnExecuteError(false);
         return request;
     }
