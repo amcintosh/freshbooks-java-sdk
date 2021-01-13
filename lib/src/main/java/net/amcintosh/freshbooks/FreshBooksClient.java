@@ -47,9 +47,11 @@ public class FreshBooksClient {
     private Instant accessTokenExpiresAt; //ofEpochSecond(long)
 
     private final String userAgent;
-    private final int writeTimeout;
     private static String version;
-    //TODO: timeout, retries
+
+    private final int connectTimeout;
+    private final int readTimeout;
+    private final int writeTimeout;
 
     /**
      * Create a new API client instance from the FreshBooks client builder.
@@ -79,6 +81,8 @@ public class FreshBooksClient {
         } else {
             this.userAgent = String.format("FreshBooks java sdk/%s client_id %s", this.getVersion(), this.clientId);
         }
+        this.connectTimeout = builder.connectTimeout;
+        this.readTimeout = builder.readTimeout;
         this.writeTimeout = builder.writeTimeout;
     }
 
@@ -167,6 +171,8 @@ public class FreshBooksClient {
         }
         request = requestFactory.buildRequest(requestMethod, requestUrl, content)
                 .setHeaders(requestHeaders)
+                .setConnectTimeout(this.connectTimeout)
+                .setReadTimeout(this.readTimeout)
                 .setWriteTimeout(this.writeTimeout)
                 .setThrowExceptionOnExecuteError(false);
         return request;
@@ -176,6 +182,7 @@ public class FreshBooksClient {
         private static final String API_BASE_URL = "https://api.freshbooks.com";
         private static final String AUTH_BASE_URL = "https://auth.freshbooks.com";
         private static final int DEFAULT_TIMEOUT = 20000;
+        private static final int DEFAULT_WRITE_TIMEOUT = 60000;
 
         private String baseUrl;
         private String authorizationUrl;
@@ -189,6 +196,8 @@ public class FreshBooksClient {
         private String refreshToken;
 
         private String userAgent;
+        private int connectTimeout = -1;
+        private int readTimeout = -1;
         private int writeTimeout = -1;
 
         /**
@@ -249,9 +258,35 @@ public class FreshBooksClient {
         }
 
         /**
-         * Set the timeout in milliseconds to send POST/PUT data.
+         * Set the timeout in milliseconds to establish a connection (0 for infinite).
          *
          * Defaults to {@value #DEFAULT_TIMEOUT}.
+         *
+         * @param timeout Connect timeout in milliseconds
+         * @return The builder instance
+         */
+        public FreshBooksClientBuilder withConnectTimeout(int timeout) {
+            this.connectTimeout = timeout;
+            return this;
+        }
+
+        /**
+         * Set the timeout in milliseconds to read data from a connection (0 for infinite).
+         *
+         * Defaults to {@value #DEFAULT_TIMEOUT}.
+         *
+         * @param timeout Read timeout in milliseconds
+         * @return The builder instance
+         */
+        public FreshBooksClientBuilder withReadTimeout(int timeout) {
+            this.readTimeout = timeout;
+            return this;
+        }
+
+        /**
+         * Set the timeout in milliseconds to send POST/PUT data (0 for infinite).
+         *
+         * Defaults to {@value #DEFAULT_WRITE_TIMEOUT}.
          *
          * @param timeout Write timeout in milliseconds
          * @return The builder instance
@@ -273,8 +308,14 @@ public class FreshBooksClient {
             this.baseUrl = this.getEnvDefault("FRESHBOOKS_API_URL", API_BASE_URL);
             this.authorizationUrl = this.getEnvDefault("FRESHBOOKS_AUTH_URL", AUTH_BASE_URL);
             this.tokenUrl = this.getEnvDefault("FRESHBOOKS_AUTH_URL", AUTH_BASE_URL);
+            if (this.connectTimeout < 0) {
+                this.connectTimeout = this.DEFAULT_TIMEOUT;
+            }
+            if (this.readTimeout < 0) {
+                this.readTimeout = this.DEFAULT_TIMEOUT;
+            }
             if (this.writeTimeout < 0) {
-                this.writeTimeout = this.DEFAULT_TIMEOUT;
+                this.writeTimeout = this.DEFAULT_WRITE_TIMEOUT;
             }
             return new FreshBooksClient(this);
         }
