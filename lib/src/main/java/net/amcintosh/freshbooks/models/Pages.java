@@ -4,10 +4,10 @@ package net.amcintosh.freshbooks.models;
  * Paginated list resources will contain a pages object.
  */
 public class Pages {
-    private int page;
-    private int pages;
-    private int perPage;
-    private int total;
+    private final int page;
+    private final int pages;
+    private final int perPage;
+    private final int total;
 
     /**
      *
@@ -33,7 +33,7 @@ public class Pages {
 
     /**
      *
-     * @return The total number of pagess
+     * @return The total number of pages
      */
     public int getPages() {
         return pages;

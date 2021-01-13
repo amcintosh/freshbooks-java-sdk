@@ -6,9 +6,10 @@ import net.amcintosh.freshbooks.FreshBooksException;
 import net.amcintosh.freshbooks.models.Client;
 import net.amcintosh.freshbooks.models.ClientList;
 import net.amcintosh.freshbooks.models.VisState;
-import net.amcintosh.freshbooks.resources.responses.AccountingListResponse;
-import net.amcintosh.freshbooks.resources.responses.AccountingRequest;
-import net.amcintosh.freshbooks.resources.responses.AccountingResponse;
+import net.amcintosh.freshbooks.models.api.AccountingListResponse;
+import net.amcintosh.freshbooks.resources.api.AccountingResource;
+import net.amcintosh.freshbooks.models.api.AccountingResponse;
+import net.amcintosh.freshbooks.models.api.GenericRequest;
 
 /**
  * FreshBooks clients resource with calls to get, list, create, update, delete
@@ -28,8 +29,7 @@ public class Clients extends AccountingResource {
     public ClientList list(String accountId) throws FreshBooksException {
         String url = this.getUrl(accountId);
         AccountingListResponse result = this.handleListRequest(url);
-        ClientList results = new ClientList(result.response.result);
-        return results;
+        return new ClientList(result.response.result);
     }
 
     /**
@@ -49,7 +49,7 @@ public class Clients extends AccountingResource {
 
     public Client create(String accountId, Client data) throws FreshBooksException {
         String url = this.getUrl(accountId);
-        AccountingRequest content = new AccountingRequest();
+        GenericRequest content = new GenericRequest();
         content.client = data;
         AccountingResponse result = this.handleRequest(HttpMethods.POST, url, content);
         return result.response.result.client;
@@ -57,7 +57,7 @@ public class Clients extends AccountingResource {
 
     public Client update(String accountId, long clientId, Client data) throws FreshBooksException {
         String url = this.getUrl(accountId, clientId);
-        AccountingRequest content = new AccountingRequest();
+        GenericRequest content = new GenericRequest();
         content.client = data;
         AccountingResponse result = this.handleRequest(HttpMethods.PUT, url, content);
         return result.response.result.client;
@@ -66,7 +66,7 @@ public class Clients extends AccountingResource {
 
     public Client delete(String accountId, long clientId) throws FreshBooksException {
         String url = this.getUrl(accountId, clientId);
-        AccountingRequest content = new AccountingRequest();
+        GenericRequest content = new GenericRequest();
         Client deleteClient = new Client();
         deleteClient.setVisState(VisState.DELETED);
         content.client = deleteClient;

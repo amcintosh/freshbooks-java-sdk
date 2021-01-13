@@ -10,21 +10,21 @@ public enum VisState {
     @Value DELETED(1),
     @Value ARCHIVED(2);
 
-    private int value;
-    private static Map map = new HashMap<>();
+    private final int value;
+    private static final Map<Integer, VisState> map = new HashMap<>();
 
-    private VisState(int value) {
+    VisState(int value) {
         this.value = value;
     }
 
     static {
-        for (VisState pageType : VisState.values()) {
-            map.put(pageType.value, pageType);
+        for (VisState visState : VisState.values()) {
+            map.put(visState.value, visState);
         }
     }
 
-    public static VisState valueOf(int pageType) {
-        return (VisState) map.get(pageType);
+    public static VisState valueOf(int visState) {
+        return map.get(visState);
     }
 
     public int getValue() {

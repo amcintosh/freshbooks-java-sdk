@@ -1,4 +1,4 @@
-package net.amcintosh.freshbooks.resources.responses;
+package net.amcintosh.freshbooks.models.api;
 
 import com.google.api.client.util.Key;
 import net.amcintosh.freshbooks.models.Client;

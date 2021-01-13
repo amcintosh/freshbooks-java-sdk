@@ -1,14 +1,14 @@
-package net.amcintosh.freshbooks.resources;
+package net.amcintosh.freshbooks.resources.api;
 
 import com.google.api.client.http.HttpMethods;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpResponse;
 import net.amcintosh.freshbooks.FreshBooksClient;
 import net.amcintosh.freshbooks.FreshBooksException;
-import net.amcintosh.freshbooks.resources.responses.AccountingError;
-import net.amcintosh.freshbooks.resources.responses.AccountingListResponse;
-import net.amcintosh.freshbooks.resources.responses.AccountingRequest;
-import net.amcintosh.freshbooks.resources.responses.AccountingResponse;
+import net.amcintosh.freshbooks.models.api.AccountingError;
+import net.amcintosh.freshbooks.models.api.AccountingListResponse;
+import net.amcintosh.freshbooks.models.api.AccountingResponse;
+import net.amcintosh.freshbooks.models.api.GenericRequest;
 
 import java.io.IOException;
 
@@ -24,21 +24,19 @@ public abstract class AccountingResource extends Resource {
     protected abstract String getPath();
 
     protected String getUrl(String accountId) {
-        String url = String.format("/accounting/account/%s/%s", accountId, this.getPath());
-        return url;
+        return String.format("/accounting/account/%s/%s", accountId, this.getPath());
     }
 
     protected String getUrl(String accountId, long resourceId) {
-        String url = String.format("/accounting/account/%s/%s/%s", accountId, this.getPath(), resourceId);
-        return url;
+        return String.format("/accounting/account/%s/%s/%s", accountId, this.getPath(), resourceId);
     }
 
     protected AccountingResponse handleRequest(String method, String url) throws FreshBooksException {
         return this.handleRequest(method, url, null);
     }
 
-    protected AccountingResponse handleRequest(String method, String url, AccountingRequest content) throws FreshBooksException {
-        HttpResponse response = null;
+    protected AccountingResponse handleRequest(String method, String url, GenericRequest content) throws FreshBooksException {
+        HttpResponse response;
         AccountingResponse model = null;
         int statusCode = 0;
         String statusMessage = null;
@@ -70,7 +68,7 @@ public abstract class AccountingResource extends Resource {
     }
 
     protected AccountingListResponse handleListRequest(String url) throws FreshBooksException {
-        HttpResponse response = null;
+        HttpResponse response;
         AccountingListResponse model = null;
         int statusCode = 0;
         String statusMessage = null;
@@ -99,6 +97,5 @@ public abstract class AccountingResource extends Resource {
         }
 
         throw new FreshBooksException("Returned an unexpected response", statusMessage, statusCode);
-
     }
 }

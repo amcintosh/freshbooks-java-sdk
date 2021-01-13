@@ -7,12 +7,11 @@ import com.google.api.client.http.json.JsonHttpContent;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.json.gson.GsonFactory;
-import net.amcintosh.freshbooks.resources.responses.AccountingRequest;
+import net.amcintosh.freshbooks.models.api.GenericRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.annotation.Nullable;
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.time.Instant;
@@ -48,6 +47,7 @@ public class FreshBooksClient {
     private Instant accessTokenExpiresAt; //ofEpochSecond(long)
 
     private final String userAgent;
+    private final int writeTimeout;
     private static String version;
     //TODO: timeout, retries
 
@@ -79,6 +79,7 @@ public class FreshBooksClient {
         } else {
             this.userAgent = String.format("FreshBooks java sdk/%s client_id %s", this.getVersion(), this.clientId);
         }
+        this.writeTimeout = builder.writeTimeout;
     }
 
     /**
@@ -145,7 +146,7 @@ public class FreshBooksClient {
      * @return HttpRequest object
      * @throws IOException
      */
-    public HttpRequest request(String requestMethod, String resourceUrl, @Nullable AccountingRequest data) throws IOException {
+    public HttpRequest request(String requestMethod, String resourceUrl, @Nullable GenericRequest data) throws IOException {
         GenericUrl requestUrl = new GenericUrl(this.baseUrl + resourceUrl);
         HttpHeaders requestHeaders = new HttpHeaders()
                 .setAuthorization("Bearer " + this.accessToken)
@@ -166,6 +167,7 @@ public class FreshBooksClient {
         }
         request = requestFactory.buildRequest(requestMethod, requestUrl, content)
                 .setHeaders(requestHeaders)
+                .setWriteTimeout(this.writeTimeout)
                 .setThrowExceptionOnExecuteError(false);
         return request;
     }
@@ -173,7 +175,7 @@ public class FreshBooksClient {
     public static class FreshBooksClientBuilder {
         private static final String API_BASE_URL = "https://api.freshbooks.com";
         private static final String AUTH_BASE_URL = "https://auth.freshbooks.com";
-        private static final int DEFAULT_TIMEOUT = 30;
+        private static final int DEFAULT_TIMEOUT = 20000;
 
         private String baseUrl;
         private String authorizationUrl;
@@ -187,6 +189,7 @@ public class FreshBooksClient {
         private String refreshToken;
 
         private String userAgent;
+        private int writeTimeout = -1;
 
         /**
          * Builder for FreshBooksClient. Requires a `clientId`, which will then allow you to provide an `accessToken`
@@ -223,13 +226,38 @@ public class FreshBooksClient {
             return this;
         }
 
+        /**
+         * Initialize the client with a refresh token.
+         *
+         * @param refreshToken A existing valid OAuth2 refresh token
+         * @return The builder instance
+         */
         public FreshBooksClientBuilder withRefreshToken(String refreshToken) {
             this.refreshToken = refreshToken;
             return this;
         }
 
+        /**
+         * Override the default user-agent header.
+         *
+         * @param userAgent String to pass for the user-agent header in requests.
+         * @return The builder instance
+         */
         public FreshBooksClientBuilder withUserAgent(String userAgent) {
             this.userAgent = userAgent;
+            return this;
+        }
+
+        /**
+         * Set the timeout in milliseconds to send POST/PUT data.
+         *
+         * Defaults to {@value #DEFAULT_TIMEOUT}.
+         *
+         * @param timeout Write timeout in milliseconds
+         * @return The builder instance
+         */
+        public FreshBooksClientBuilder withWriteTimeout(int timeout) {
+            this.writeTimeout = timeout;
             return this;
         }
 
@@ -245,6 +273,9 @@ public class FreshBooksClient {
             this.baseUrl = this.getEnvDefault("FRESHBOOKS_API_URL", API_BASE_URL);
             this.authorizationUrl = this.getEnvDefault("FRESHBOOKS_AUTH_URL", AUTH_BASE_URL);
             this.tokenUrl = this.getEnvDefault("FRESHBOOKS_AUTH_URL", AUTH_BASE_URL);
+            if (this.writeTimeout < 0) {
+                this.writeTimeout = this.DEFAULT_TIMEOUT;
+            }
             return new FreshBooksClient(this);
         }
     }

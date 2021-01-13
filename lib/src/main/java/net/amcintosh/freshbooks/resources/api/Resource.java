@@ -1,4 +1,4 @@
-package net.amcintosh.freshbooks.resources;
+package net.amcintosh.freshbooks.resources.api;
 import net.amcintosh.freshbooks.FreshBooksClient;
 
 public class Resource {

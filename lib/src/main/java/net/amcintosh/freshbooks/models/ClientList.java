@@ -1,13 +1,13 @@
 package net.amcintosh.freshbooks.models;
 
 import com.google.api.client.util.Key;
-import net.amcintosh.freshbooks.resources.responses.AccountingListResponse;
+import net.amcintosh.freshbooks.models.api.AccountingListResponse;
 
 import java.util.ArrayList;
 
 public class ClientList extends ListResult {
 
-    @Key private ArrayList<Client> clients;
+    @Key private final ArrayList<Client> clients;
 
     public ClientList(AccountingListResponse.AccountingListInnerResponse.AccountingListResult result) {
         clients = result.clients;
