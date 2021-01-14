@@ -9,6 +9,7 @@
 plugins {
     // Apply the java-library plugin for API and implementation separation.
     id 'java-library'
+    id 'jacoco'
 }
 
 version = '0.1'
@@ -16,11 +17,19 @@ version = '0.1'
 repositories {
     // Use JCenter for resolving dependencies.
     jcenter()
+    // Until jacoco 0.8.7 releases, we need this
+    maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+}
+
+jacoco {
+    // Support for Java 15
+    toolVersion = '0.8.7-SNAPSHOT'
 }
 
 dependencies {
     // Use JUnit test framework.
     testImplementation 'junit:junit:4.13'
+    testImplementation 'org.mockito:mockito-core:3.7.0'
 
     // This dependency is exported to consumers, that is to say found on their compile classpath.
     api 'org.apache.commons:commons-math3:3.6.1'
@@ -50,4 +59,12 @@ task createProperties(dependsOn: processResources) {
 
 classes {
     dependsOn createProperties
+}
+
+test {
+    finalizedBy jacocoTestReport
+}
+
+jacocoTestReport {
+    dependsOn test
 }

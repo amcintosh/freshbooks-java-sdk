@@ -304,6 +304,11 @@ public class FreshBooksClient {
             return value;
         }
 
+        /**
+         * Build the FreshBooksClient.
+         *
+         * @return A FreshBooksClient instance
+         */
         public FreshBooksClient build() {
             this.baseUrl = this.getEnvDefault("FRESHBOOKS_API_URL", API_BASE_URL);
             this.authorizationUrl = this.getEnvDefault("FRESHBOOKS_AUTH_URL", AUTH_BASE_URL);
