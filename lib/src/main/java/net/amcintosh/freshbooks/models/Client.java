@@ -43,7 +43,7 @@ public class Client {
     @Key String updated;
     @Key Long userid;
     @Key("vat_name") String vatName;
-    @Key("vat_number") Integer vatNumber;
+    @Key("vat_number") String vatNumber;
     @Key("vis_state") int visState;
 
     /**
@@ -550,7 +550,7 @@ public class Client {
      *
      * @return VAT number
      */
-    public Integer getVatNumber() {
+    public String getVatNumber() {
         return vatNumber;
     }
 
@@ -559,7 +559,7 @@ public class Client {
      *
      * @param vatNumber VAT number
      */
-    public void setVatNumber(Integer vatNumber) {
+    public void setVatNumber(String vatNumber) {
         this.vatNumber = vatNumber;
     }
 
