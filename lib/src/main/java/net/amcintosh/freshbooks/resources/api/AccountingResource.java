@@ -8,9 +8,9 @@ import net.amcintosh.freshbooks.FreshBooksException;
 import net.amcintosh.freshbooks.models.api.AccountingError;
 import net.amcintosh.freshbooks.models.api.AccountingListResponse;
 import net.amcintosh.freshbooks.models.api.AccountingResponse;
-import net.amcintosh.freshbooks.models.api.GenericRequest;
 
 import java.io.IOException;
+import java.util.Map;
 
 /**
  * Handles resources under the `/accounting` endpoints.
@@ -35,7 +35,7 @@ public abstract class AccountingResource extends Resource {
         return this.handleRequest(method, url, null);
     }
 
-    protected AccountingResponse handleRequest(String method, String url, GenericRequest content) throws FreshBooksException {
+    protected AccountingResponse handleRequest(String method, String url, Map<String, Object> content) throws FreshBooksException {
         HttpResponse response;
         AccountingResponse model = null;
         int statusCode = 0;

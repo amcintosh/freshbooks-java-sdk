@@ -7,14 +7,15 @@ import com.google.api.client.http.json.JsonHttpContent;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.json.gson.GsonFactory;
-import net.amcintosh.freshbooks.models.api.GenericRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.annotation.Nullable;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.time.Instant;
+import java.util.Map;
 import java.util.Properties;
 
 /**
@@ -150,7 +151,7 @@ public class FreshBooksClient {
      * @return HttpRequest object
      * @throws IOException
      */
-    public HttpRequest request(String requestMethod, String resourceUrl, @Nullable GenericRequest data) throws IOException {
+    public HttpRequest request(String requestMethod, String resourceUrl, @Nullable Map<String, Object> data) throws IOException {
         GenericUrl requestUrl = new GenericUrl(this.baseUrl + resourceUrl);
         HttpHeaders requestHeaders = new HttpHeaders()
                 .setAuthorization("Bearer " + this.accessToken)

@@ -4,10 +4,10 @@ import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpResponse;
 import net.amcintosh.freshbooks.FreshBooksClient;
 import net.amcintosh.freshbooks.FreshBooksException;
-import net.amcintosh.freshbooks.models.api.GenericRequest;
 import net.amcintosh.freshbooks.models.api.ProjectResponse;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 public abstract class ProjectResource extends Resource {
 
@@ -30,7 +30,7 @@ public abstract class ProjectResource extends Resource {
         return this.handleRequest(method, url, null);
     }
 
-    protected ProjectResponse handleRequest(String method, String url, GenericRequest content) throws FreshBooksException {
+    protected ProjectResponse handleRequest(String method, String url, HashMap<String, Object> content) throws FreshBooksException {
         HttpResponse response;
         ProjectResponse model = null;
         int statusCode = 0;
@@ -50,7 +50,11 @@ public abstract class ProjectResource extends Resource {
         }
 
         if (!response.isSuccessStatusCode() && model != null) {
-            throw new FreshBooksException(model.error.title, statusMessage, statusCode, model.errno);
+            String errorMessage = statusMessage;
+            if (model.error != null) {
+                errorMessage = model.error.title;
+            }
+            throw new FreshBooksException(errorMessage, statusMessage, statusCode, model.errno);
         }
 
         if (response.isSuccessStatusCode() && model != null) {

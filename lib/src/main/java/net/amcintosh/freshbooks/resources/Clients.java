@@ -1,15 +1,17 @@
 package net.amcintosh.freshbooks.resources;
 
 import com.google.api.client.http.HttpMethods;
+import com.google.common.collect.ImmutableMap;
 import net.amcintosh.freshbooks.FreshBooksClient;
 import net.amcintosh.freshbooks.FreshBooksException;
 import net.amcintosh.freshbooks.models.Client;
 import net.amcintosh.freshbooks.models.ClientList;
 import net.amcintosh.freshbooks.models.VisState;
 import net.amcintosh.freshbooks.models.api.AccountingListResponse;
-import net.amcintosh.freshbooks.resources.api.AccountingResource;
 import net.amcintosh.freshbooks.models.api.AccountingResponse;
-import net.amcintosh.freshbooks.models.api.GenericRequest;
+import net.amcintosh.freshbooks.resources.api.AccountingResource;
+
+import java.util.Map;
 
 /**
  * FreshBooks clients resource with calls to get, list, create, update, delete
@@ -48,31 +50,33 @@ public class Clients extends AccountingResource {
     }
 
     public Client create(String accountId, Client data) throws FreshBooksException {
+        return this.create(accountId, data.getContent());
+    }
+
+    public Client create(String accountId, Map<String, Object> data) throws FreshBooksException {
         String url = this.getUrl(accountId);
-        GenericRequest content = new GenericRequest();
-        content.client = data;
+        ImmutableMap<String, Object> content = ImmutableMap.of("client", data);
         AccountingResponse result = this.handleRequest(HttpMethods.POST, url, content);
         return result.response.result.client;
     }
 
     public Client update(String accountId, long clientId, Client data) throws FreshBooksException {
+        return this.update(accountId, clientId, data.getContent());
+    }
+
+    public Client update(String accountId, long clientId, Map<String, Object> data) throws FreshBooksException {
         String url = this.getUrl(accountId, clientId);
-        GenericRequest content = new GenericRequest();
-        content.client = data;
+        ImmutableMap<String, Object> content = ImmutableMap.of("client", data);
         AccountingResponse result = this.handleRequest(HttpMethods.PUT, url, content);
         return result.response.result.client;
-
     }
 
     public Client delete(String accountId, long clientId) throws FreshBooksException {
         String url = this.getUrl(accountId, clientId);
-        GenericRequest content = new GenericRequest();
-        Client deleteClient = new Client();
-        deleteClient.setVisState(VisState.DELETED);
-        content.client = deleteClient;
+        ImmutableMap<String, Object> data = ImmutableMap.of("vis_state", VisState.DELETED);
+        ImmutableMap<String, Object> content = ImmutableMap.of("client", data);
         AccountingResponse result = this.handleRequest(HttpMethods.PUT, url, content);
         return result.response.result.client;
-
     }
 
 }
