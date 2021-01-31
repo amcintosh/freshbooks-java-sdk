@@ -51,8 +51,8 @@ public class Client {
      *
      * @return Client Id
      */
-    public Long getId() {
-        return id;
+    public long getId() {
+        return id.longValue();
     }
 
     /**
@@ -523,8 +523,8 @@ public class Client {
      *
      * @return
      */
-    public Long getUserid() {
-        return userid;
+    public long getUserid() {
+        return userid.longValue();
     }
 
     /**
