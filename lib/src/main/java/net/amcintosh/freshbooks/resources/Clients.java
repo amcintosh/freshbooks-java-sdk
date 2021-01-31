@@ -40,6 +40,7 @@ public class Clients extends AccountingResource {
      * @param accountId The alpha-numeric account id
      * @param clientId Id of the resource to return
      * //@param builder (Optional) IncludesBuilder object for including additional data, sub-resources, etc.
+     *
      * @return The Client
      * @throws FreshBooksException If the call is not successful
      */
@@ -49,10 +50,32 @@ public class Clients extends AccountingResource {
         return result.response.result.client;
     }
 
+    /**
+     * Create a new client from the provided client model.
+     * Makes a POST call against the client resource endpoint.
+     *
+     * This calls `client.getContent()` to get a hash map of data.
+     *
+     * @param accountId The alpha-numeric account id
+     * @param data Client model with create data
+     *
+     * @return The created Client
+     * @throws FreshBooksException If the call is not successful
+     */
     public Client create(String accountId, Client data) throws FreshBooksException {
         return this.create(accountId, data.getContent());
     }
 
+    /**
+     * Create a new client from the provided data.
+     * Makes a POST call against the client resource endpoint.
+     *
+     * @param accountId The alpha-numeric account id
+     * @param data Map of create data
+     *
+     * @return The created Client
+     * @throws FreshBooksException If the call is not successful
+     */
     public Client create(String accountId, Map<String, Object> data) throws FreshBooksException {
         String url = this.getUrl(accountId);
         ImmutableMap<String, Object> content = ImmutableMap.of("client", data);
@@ -60,10 +83,32 @@ public class Clients extends AccountingResource {
         return result.response.result.client;
     }
 
+    /**
+     * Update the client with the corresponding id.
+     * Makes a PUT call against the client resource endpoint.
+     *
+     * @param accountId The alpha-numeric account id
+     * @param clientId Id of the resource to return
+     * @param data Client model with updated data
+     *
+     * @return The updated Client
+     * @throws FreshBooksException If the call is not successful
+     */
     public Client update(String accountId, long clientId, Client data) throws FreshBooksException {
         return this.update(accountId, clientId, data.getContent());
     }
 
+    /**
+     * Update the client with the corresponding id.
+     * Makes a PUT call against the client resource endpoint.
+     *
+     * @param accountId The alpha-numeric account id
+     * @param clientId Id of the resource to return
+     * @param data Map of data to change
+     *
+     * @return The updated Client
+     * @throws FreshBooksException If the call is not successful
+     */
     public Client update(String accountId, long clientId, Map<String, Object> data) throws FreshBooksException {
         String url = this.getUrl(accountId, clientId);
         ImmutableMap<String, Object> content = ImmutableMap.of("client", data);
@@ -71,6 +116,19 @@ public class Clients extends AccountingResource {
         return result.response.result.client;
     }
 
+    /**
+     * Delete the client with the corresponding id.
+     * Makes a PUT call against the client resource endpoint with a `vis_state` of deleted.
+     *
+     * Note: Most FreshBooks resources are soft-deleted,
+     * See [FreshBooks API - Active and Deleted Objects](https://www.freshbooks.com/api/active_deleted)
+     *
+     * @param accountId The alpha-numeric account id
+     * @param clientId Id of the resource to return
+     *
+     * @return The deleted Client
+     * @throws FreshBooksException If the call is not successful
+     */
     public Client delete(String accountId, long clientId) throws FreshBooksException {
         String url = this.getUrl(accountId, clientId);
         ImmutableMap<String, Object> data = ImmutableMap.of("vis_state", VisState.DELETED);
