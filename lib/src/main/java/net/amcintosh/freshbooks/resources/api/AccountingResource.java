@@ -50,7 +50,7 @@ public abstract class AccountingResource extends Resource {
             if (response.getContent() != null) {
                 model = response.parseAs(AccountingResponse.class);
             }
-        } catch (IOException e) {
+        } catch (IOException | IllegalArgumentException e) {
             throw new FreshBooksException("Returned an unexpected response", statusMessage, statusCode, e);
         }
 
