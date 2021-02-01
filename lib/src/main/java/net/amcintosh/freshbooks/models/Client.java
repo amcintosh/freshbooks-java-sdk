@@ -52,7 +52,7 @@ public class Client {
      * @return Client Id
      */
     public long getId() {
-        return id.longValue();
+        return id;
     }
 
     /**
@@ -524,7 +524,7 @@ public class Client {
      * @return
      */
     public long getUserid() {
-        return userid.longValue();
+        return userid;
     }
 
     /**
@@ -579,7 +579,7 @@ public class Client {
     }
 
     /**
-     * Get the time of last modification to the clinet.
+     * Get the time of last modification to the client.
      *
      * Note: The API returns this data in "US/Eastern", but it is converted to UTC.
      *
@@ -605,7 +605,7 @@ public class Client {
     /**
      * Set the visibility state of the client.
      *
-     * @param visState
+     * @param visState VisState value
      */
     public void setVisState(VisState visState) {
         this.visState = visState.getValue();

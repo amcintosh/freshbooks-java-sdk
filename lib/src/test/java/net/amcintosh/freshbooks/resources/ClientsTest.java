@@ -3,6 +3,7 @@ package net.amcintosh.freshbooks.resources;
 import com.google.api.client.http.HttpMethods;
 import com.google.api.client.http.HttpRequest;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import net.amcintosh.freshbooks.FreshBooksClient;
 import net.amcintosh.freshbooks.FreshBooksException;
 import net.amcintosh.freshbooks.TestUtil;
@@ -13,6 +14,7 @@ import org.junit.Test;
 import java.io.IOException;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
+import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
@@ -147,4 +149,95 @@ public class ClientsTest {
         assertEquals(ImmutableList.of(), clientList.getClients());
     }
 
+    @Test
+    public void createClient_dataMap() throws FreshBooksException, IOException {
+        String email = "john.doe@abcorp.com";
+        Map data = ImmutableMap.of("email", email);
+
+        String jsonResponse = TestUtil.loadTestJson("fixtures/create_client_response.json");
+        FreshBooksClient mockedFreshBooksClient = mock(FreshBooksClient.class);
+        HttpRequest mockRequest = TestUtil.buildMockHttpRequest(200, jsonResponse);
+        when(mockedFreshBooksClient.request(
+                HttpMethods.POST,
+                "/accounting/account/ABC123/users/clients",
+                ImmutableMap.of("client", data))
+        ).thenReturn(mockRequest);
+
+
+        Clients clients = new Clients(mockedFreshBooksClient);
+        Client client = clients.create("ABC123", data);
+
+        assertEquals(56789, client.getId());
+        assertEquals(email, client.getEmail());
+    }
+
+    @Test
+    public void createClient_clientObject() throws FreshBooksException, IOException {
+        String email = "john.doe@abcorp.com";
+        Client data = new Client();
+        data.setEmail(email);
+
+        String jsonResponse = TestUtil.loadTestJson("fixtures/create_client_response.json");
+        FreshBooksClient mockedFreshBooksClient = mock(FreshBooksClient.class);
+        HttpRequest mockRequest = TestUtil.buildMockHttpRequest(200, jsonResponse);
+        when(mockedFreshBooksClient.request(
+                HttpMethods.POST,
+                "/accounting/account/ABC123/users/clients",
+                ImmutableMap.of("client", data.getContent()))
+        ).thenReturn(mockRequest);
+
+
+        Clients clients = new Clients(mockedFreshBooksClient);
+        Client client = clients.create("ABC123", data);
+
+        assertEquals(56789, client.getId());
+        assertEquals(email, client.getEmail());
+    }
+
+    @Test
+    public void updateClient_dataMap() throws FreshBooksException, IOException {
+        long clientId = 56789;
+        String email = "john.doe@abcorp.com";
+        Map data = ImmutableMap.of("email", email);
+
+        String jsonResponse = TestUtil.loadTestJson("fixtures/create_client_response.json");
+        FreshBooksClient mockedFreshBooksClient = mock(FreshBooksClient.class);
+        HttpRequest mockRequest = TestUtil.buildMockHttpRequest(200, jsonResponse);
+        when(mockedFreshBooksClient.request(
+                HttpMethods.PUT,
+                "/accounting/account/ABC123/users/clients/56789",
+                ImmutableMap.of("client", data))
+        ).thenReturn(mockRequest);
+
+
+        Clients clients = new Clients(mockedFreshBooksClient);
+        Client client = clients.update("ABC123", clientId, data);
+
+        assertEquals(clientId, client.getId());
+        assertEquals(email, client.getEmail());
+    }
+
+    @Test
+    public void updateClient_clientObject() throws FreshBooksException, IOException {
+        long clientId = 56789;
+        String email = "john.doe@abcorp.com";
+        Client data = new Client();
+        data.setEmail(email);
+
+        String jsonResponse = TestUtil.loadTestJson("fixtures/create_client_response.json");
+        FreshBooksClient mockedFreshBooksClient = mock(FreshBooksClient.class);
+        HttpRequest mockRequest = TestUtil.buildMockHttpRequest(200, jsonResponse);
+        when(mockedFreshBooksClient.request(
+                HttpMethods.PUT,
+                "/accounting/account/ABC123/users/clients/56789",
+                ImmutableMap.of("client", data.getContent()))
+        ).thenReturn(mockRequest);
+
+
+        Clients clients = new Clients(mockedFreshBooksClient);
+        Client client = clients.update("ABC123", clientId, data);
+
+        assertEquals(clientId, client.getId());
+        assertEquals(email, client.getEmail());
+    }
 }
