@@ -1,0 +1,22 @@
+# This workflows will run tests (flake8, mypy, pytest) when a pull_request is created
+
+name: Run Tests
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        java: [8, 11, 12, 13, 14, 15]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Java ${{ matrix.java }}
+      uses: actions/setup-java@v1
+      with:
+        java-version: ${{ matrix.java }}
+    - name: Build with Gradle
+      run: gradle build
