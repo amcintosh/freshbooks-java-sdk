@@ -1,10 +1,14 @@
 package net.amcintosh.freshbooks;
 
+import com.google.api.client.http.HttpContent;
 import com.google.api.client.http.HttpMethods;
 import com.google.api.client.http.HttpRequest;
+import com.google.common.collect.ImmutableMap;
 import org.junit.Test;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 
@@ -58,4 +62,17 @@ public class FreshBooksClientTest {
         assertEquals("Bearer my_valid_token", request.getHeaders().getAuthorization());
     }
 
+    @Test
+    public void FreshBooksClient_RequestContent() throws IOException {
+        FreshBooksClient freshBooksClient = new FreshBooksClient.FreshBooksClientBuilder("some_client_id").build();
+
+        Map<String, Object> data = ImmutableMap.of("foo", "bar");
+        HttpRequest request = freshBooksClient.request(HttpMethods.GET, "http://some_url.amcintosh.net", data);
+
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        HttpContent content = request.getContent();
+        content.writeTo(out);
+
+        assertEquals("{\"foo\":\"bar\"}", new String(out.toByteArray()));
+    }
 }

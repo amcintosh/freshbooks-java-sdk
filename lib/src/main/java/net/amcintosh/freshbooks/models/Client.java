@@ -3,6 +3,7 @@ package net.amcintosh.freshbooks.models;
 import com.google.api.client.util.Key;
 import net.amcintosh.freshbooks.Util;
 
+import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
 import java.util.HashMap;
 import java.util.Map;
@@ -10,7 +11,7 @@ import java.util.Map;
 public class Client {
 
     @Key Long id;
-    @Key String accountingSystemId;
+    @Key("accounting_systemid") String accountingSystemId;
     @Key("bus_phone") String businessPhone;
     @Key("company_industry") String companyIndustry;
     @Key("company_size") String companySize;
@@ -62,10 +63,6 @@ public class Client {
      */
     public String getAccountingSystemId() {
         return accountingSystemId;
-    }
-
-    private void setAccountingSystemId(String accountingSystemId) {
-        this.accountingSystemId = accountingSystemId;
     }
 
     /**
@@ -571,11 +568,8 @@ public class Client {
      * @return Signup time in UTC
      */
     public ZonedDateTime getSignupDate() {
-        return Util.getZonedDateTimeFromAccountingLocalTime(this.signupDate);
-    }
-
-    private void setSignupDate(ZonedDateTime signupDate) {
-        this.signupDate = Util.getAccountingLocalTimeFromZonedDateTime(signupDate);
+        LocalDateTime accountingLocalTime = LocalDateTime.parse(signupDate, Util.getAccountingDateTimeFormatter());
+        return accountingLocalTime.atZone(Util.UTC_ZONE);
     }
 
     /**
@@ -587,10 +581,6 @@ public class Client {
      */
     public ZonedDateTime getUpdated() {
         return Util.getZonedDateTimeFromAccountingLocalTime(this.updated);
-    }
-
-    private void setUpdated(ZonedDateTime updated) {
-        this.updated = Util.getAccountingLocalTimeFromZonedDateTime(updated);
     }
 
     /**

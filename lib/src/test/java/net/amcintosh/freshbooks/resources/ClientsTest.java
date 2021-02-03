@@ -9,6 +9,7 @@ import net.amcintosh.freshbooks.FreshBooksException;
 import net.amcintosh.freshbooks.TestUtil;
 import net.amcintosh.freshbooks.models.Client;
 import net.amcintosh.freshbooks.models.ClientList;
+import net.amcintosh.freshbooks.models.VisState;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -36,11 +37,43 @@ public class ClientsTest {
         Client client = clients.get("ABC123", clientId);
 
         assertEquals(clientId, client.getId());
+        assertEquals("ACM123", client.getAccountingSystemId());
+        assertEquals("416-867-5309", client.getBusinessPhone());
+        assertEquals("None", client.getCompanyIndustry());
+        assertEquals("None", client.getCompanySize());
+        assertEquals("CAD", client.getCurrencyCode());
+        assertEquals("gordon.shumway@AmericanCyanamid.com", client.getEmail());
+        assertEquals("416-444-4444", client.getFax());
+        assertEquals("Gordon", client.getFirstName());
+        assertEquals("416-444-4445", client.getHomePhone());
+        assertEquals("en", client.getLanguage());
+        assertEquals("Shumway", client.getLastName());
+        assertEquals("416-444-4446", client.getMobilePhone());
+        assertEquals("I like cats", client.getNote());
         assertEquals("American Cyanamid", client.getOrganization());
+        assertEquals("Toronto", client.getBillingCity());
+        assertEquals("M5T 2B3", client.getBillingCode());
+        assertEquals("Canada", client.getBillingCountry());
+        assertEquals("ON", client.getBillingProvince());
+        assertEquals("123 Huron St", client.getBillingStreet());
+        assertEquals("", client.getBillingStreet2());
+        assertEquals("", client.getShippingCity());
+        assertEquals("", client.getShippingCode());
+        assertEquals("", client.getShippingCountry());
+        assertEquals("", client.getShippingProvince());
+        assertEquals("", client.getShippingStreet());
+        assertEquals("", client.getShippingStreet2());
+        assertEquals(ZonedDateTime.of(2020, 10, 31, 15,
+                25, 34, 0, ZoneId.of("UTC")),
+                client.getSignupDate());
         assertEquals(ZonedDateTime.of(2020, 11, 1, 18,
                 11, 10, 0, ZoneId.of("UTC")),
                 client.getUpdated()
         );
+        assertEquals(clientId, client.getUserid());
+        assertEquals("None", client.getVatName());
+        assertEquals("None", client.getVatNumber());
+        assertEquals(VisState.ACTIVE, client.getVisState());
     }
 
     @Test
@@ -152,7 +185,7 @@ public class ClientsTest {
     @Test
     public void createClient_dataMap() throws FreshBooksException, IOException {
         String email = "john.doe@abcorp.com";
-        Map data = ImmutableMap.of("email", email);
+        Map<String, Object> data = ImmutableMap.of("email", email);
 
         String jsonResponse = TestUtil.loadTestJson("fixtures/create_client_response.json");
         FreshBooksClient mockedFreshBooksClient = mock(FreshBooksClient.class);
@@ -198,7 +231,7 @@ public class ClientsTest {
     public void updateClient_dataMap() throws FreshBooksException, IOException {
         long clientId = 56789;
         String email = "john.doe@abcorp.com";
-        Map data = ImmutableMap.of("email", email);
+        Map<String, Object> data = ImmutableMap.of("email", email);
 
         String jsonResponse = TestUtil.loadTestJson("fixtures/create_client_response.json");
         FreshBooksClient mockedFreshBooksClient = mock(FreshBooksClient.class);

@@ -120,15 +120,6 @@ public class FreshBooksClient {
     public String toString() {
         return "Client{" +
                 "clientId='" + clientId + '\'' +
-                ", clientSecret='" + clientSecret + '\'' +
-                ", redirectUri='" + redirectUri + '\'' +
-                ", baseUrl='" + baseUrl + '\'' +
-                ", authorizationUrl='" + authorizationUrl + '\'' +
-                ", tokenUrl='" + tokenUrl + '\'' +
-                ", accessToken='" + accessToken + '\'' +
-                ", refreshToken='" + refreshToken + '\'' +
-                ", accessTokenExpiresAt=" + accessTokenExpiresAt +
-                ", userAgent='" + userAgent + '\'' +
                 '}';
     }
 
