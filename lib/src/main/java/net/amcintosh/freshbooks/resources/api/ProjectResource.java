@@ -11,6 +11,9 @@ import net.amcintosh.freshbooks.models.api.ProjectResponse;
 import java.io.IOException;
 import java.util.HashMap;
 
+/**
+ * Handles resources under the `/project` and project-like endpoints.
+ */
 public abstract class ProjectResource extends Resource {
 
 
@@ -34,7 +37,7 @@ public abstract class ProjectResource extends Resource {
 
 
     protected ProjectResponse handleRequest(String method, String url, HashMap<String, Object> content) throws FreshBooksException {
-        HttpResponse response;
+        HttpResponse response = null;
         ProjectResponse model = null;
         int statusCode = 0;
         String statusMessage = null;
@@ -48,7 +51,10 @@ public abstract class ProjectResource extends Resource {
             if (response.getContent() != null) {
                 model = response.parseAs(ProjectResponse.class);
             }
-        } catch (IOException e) {
+        } catch (IOException | IllegalArgumentException e) {
+            if (response != null && response.getStatusCode() == 404) {
+                throw new FreshBooksException("Requested resource could not be found.", statusMessage, statusCode);
+            }
             throw new FreshBooksException("Returned an unexpected response", statusMessage, statusCode, e);
         }
 
