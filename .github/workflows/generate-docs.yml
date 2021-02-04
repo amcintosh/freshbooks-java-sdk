@@ -1,0 +1,35 @@
+# This workflows will re-generate the python docs when there are changes on master
+
+name: Generate Documentation
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Set up Java
+      uses: actions/setup-java@v1
+      with:
+        java-version: 11
+    - name: Generate Docs
+      run: gradle javadoc
+    - name: Commit files
+      run: |
+        rm -rf docs/*
+        mv lib/build/docs/javadoc/* docs/
+        git add docs
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git commit -m "CI: automated Generate Documentation" -a | exit 0
+    - name: Push changes
+      if: github.ref == 'refs/heads/master'
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: master
