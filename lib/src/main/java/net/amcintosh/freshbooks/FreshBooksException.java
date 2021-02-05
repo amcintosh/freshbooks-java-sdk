@@ -1,5 +1,8 @@
 package net.amcintosh.freshbooks;
 
+/**
+ * Wraps errors coming from FreshBooks API calls.
+ */
 public class FreshBooksException extends Exception {
     public String statusMessage;
     public int statusCode;

@@ -95,7 +95,7 @@ public class Client {
     /**
      * Description of industry client is in.
      *
-     * @param companyIndustry
+     * @param companyIndustry Industry
      */
     public void setCompanyIndustry(String companyIndustry) {
         this.companyIndustry = companyIndustry;
@@ -113,7 +113,7 @@ public class Client {
     /**
      * Size of client's company
      *
-     * @param companySize
+     * @param companySize Eg. "10"
      */
     public void setCompanySize(String companySize) {
         this.companySize = companySize;
@@ -122,7 +122,7 @@ public class Client {
     /**
      * 3-letter shortcode for client's preferred currency. Eg. USD, CAD, EUR
      *
-     * @return
+     * @return Eg. "USD"
      */
     public String getCurrencyCode() {
         return currencyCode;
@@ -131,7 +131,7 @@ public class Client {
     /**
      * 3-letter shortcode for client's preferred currency. Eg. USD, CAD, EUR
      *
-     * @param currencyCode
+     * @param currencyCode Eg. "USD"
      */
     public void setCurrencyCode(String currencyCode) {
         this.currencyCode = currencyCode;
@@ -140,7 +140,7 @@ public class Client {
     /**
      * Client's email.
      *
-     * @return
+     * @return The email
      */
     public String getEmail() {
         return email;
@@ -149,7 +149,7 @@ public class Client {
     /**
      * Client's email.
      *
-     * @param email
+     * @param email The email
      */
     public void setEmail(String email) {
         this.email = email;
@@ -158,7 +158,7 @@ public class Client {
     /**
      * Client's fax number.
      *
-     * @return
+     * @return Eg. "416-444-4444"
      */
     public String getFax() {
         return fax;
@@ -167,7 +167,7 @@ public class Client {
     /**
      * Client's fax number.
      *
-     * @param fax
+     * @param fax Eg. 416-444-4444
      */
     public void setFax(String fax) {
         this.fax = fax;
@@ -176,7 +176,7 @@ public class Client {
     /**
      * Client's first name.
      *
-     * @return
+     * @return Eg. "Gordon"
      */
     public String getFirstName() {
         return firstName;
@@ -185,7 +185,7 @@ public class Client {
     /**
      * Client's first name.
      *
-     * @param firstName
+     * @param firstName Eg. "Gordon"
      */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
@@ -194,7 +194,7 @@ public class Client {
     /**
      * Client's home phone number.
      *
-     * @return
+     * @return Eg. 416-444-4444
      */
     public String getHomePhone() {
         return homePhone;
@@ -203,7 +203,7 @@ public class Client {
     /**
      * Client's home phone number.
      *
-     * @param homePhone
+     * @param homePhone Eg. 416-444-4444
      */
     public void setHomePhone(String homePhone) {
         this.homePhone = homePhone;
@@ -212,7 +212,7 @@ public class Client {
     /**
      * Shortcode indicating user language e.g. "en"
      *
-     * @return
+     * @return Eg. "en"
      */
     public String getLanguage() {
         return language;
@@ -221,7 +221,7 @@ public class Client {
     /**
      * Shortcode indicating user language e.g. "en"
      *
-     * @param language
+     * @param language Eg. "en"
      */
     public void setLanguage(String language) {
         this.language = language;
@@ -230,7 +230,7 @@ public class Client {
     /**
      * Client's last name.
      *
-     * @return
+     * @return Eg. "Shumway"
      */
     public String getLastName() {
         return lastName;
@@ -239,7 +239,7 @@ public class Client {
     /**
      * Client's last name.
      *
-     * @param lastName
+     * @param lastName Eg. "Shumway"
      */
     public void setLastName(String lastName) {
         this.lastName = lastName;

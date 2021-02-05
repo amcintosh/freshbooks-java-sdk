@@ -21,11 +21,11 @@ import java.util.Properties;
 /**
  * FreshBooks API client.
  *
- * ```java
+ * <pre>{@code
  * FreshBooksClient freshBooksClient = new FreshBooksClient.FreshBooksClientBuilder("your application id")
  *     .withToken("a valid token")
  *     .build();
- * ```
+ * }</pre>
  */
 public class FreshBooksClient {
     private static final Logger log = LoggerFactory.getLogger(FreshBooksClient.class);
@@ -126,7 +126,7 @@ public class FreshBooksClient {
     /**
      *
      * @param requestMethod GET, POST, PUT, DELETE
-     * @param resourceUrl Relative URL (eg. /accounting/account/{accountId}/users/clients
+     * @param resourceUrl Relative URL (eg. <pre>/accounting/account/{accountId}/users/clients</pre>)
      * @return HttpRequest object
      * @throws IOException
      */
@@ -137,7 +137,7 @@ public class FreshBooksClient {
     /**
      *
      * @param requestMethod GET, POST, PUT, DELETE
-     * @param resourceUrl Relative URL (eg. /accounting/account/{accountId}/users/clients
+     * @param resourceUrl Relative URL (eg. <pre>/accounting/account/{accountId}/users/clients</pre>)
      * @param data
      * @return HttpRequest object
      * @throws IOException
@@ -170,6 +170,9 @@ public class FreshBooksClient {
         return request;
     }
 
+    /**
+     * Builder for FreshBooksClient.
+     */
     public static class FreshBooksClientBuilder {
         private static final String API_BASE_URL = "https://api.freshbooks.com";
         private static final String AUTH_BASE_URL = "https://auth.freshbooks.com";
@@ -193,9 +196,9 @@ public class FreshBooksClient {
         private int writeTimeout = -1;
 
         /**
-         * Builder for FreshBooksClient. Requires a `clientId`, which will then allow you to provide an `accessToken`
-         * by appending the call to `withAccessToken()`.
-
+         * Builder for FreshBooksClient. Requires a <pre>clientId</pre>, which will then allow you
+         * to provide an <pre>accessToken</pre> by appending the call to <pre>withAccessToken()</pre>.
+         *
          * @param clientId Your FreshBooks application client Id
          */
         public FreshBooksClientBuilder(String clientId) {
@@ -203,8 +206,9 @@ public class FreshBooksClient {
         }
 
         /**
-         * Builder for FreshBooksClient. Requires a `clientId`, `clientSecret`, and `redirectUri` which will allow
-         * you to follow the authentication flow to get an `accessToken`.
+         * Builder for FreshBooksClient. Requires a <pre>clientId</pre>, <pre>clientSecret</pre>, and
+         * <pre>redirectUri</pre> which will allow you to follow the authentication flow to get an
+         * <pre>accessToken</pre>.
          *
          * @param clientId Your FreshBooks application client Id
          * @param clientSecret Your FreshBooks application client secret
