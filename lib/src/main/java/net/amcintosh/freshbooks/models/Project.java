@@ -7,7 +7,15 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
+/**
+ * Projects in FreshBooks are used to track business projects and related information
+ * such as hourly rate, service(s) being offered, projected end date...etc
+ *
+ * @see <a href="https://www.freshbooks.com/api/project">FreshBooks API - Projects</a>
+ */
 public class Project {
 
     @Key Long id;
@@ -76,10 +84,20 @@ public class Project {
         this.billingMethod = billingMethod;
     }
 
+    /**
+     * Get time budgeted for the project in seconds.
+     *
+     * @return int of time budget in seconds.
+     */
     public int getBudget() {
         return budget;
     }
 
+    /**
+     * Set time budgeted for the project.
+     *
+     * @param budget seconds of time budget
+     */
     public void setBudget(int budget) {
         this.budget = budget;
     }
@@ -219,6 +237,28 @@ public class Project {
      */
     public ZonedDateTime getUpdatedAt() {
         return Util.getZonedDateTimeFromProjectNaiveUTC(this.updatedAt);
+    }
+
+    public Map<String, Object> getContent() {
+        Map<String, Object> content = new HashMap<>();
+        Util.putIfNotNull(content, "active", this.active);
+        Util.putIfNotNull(content, "billed_amount", this.billedAmount);
+        Util.putIfNotNull(content, "billed_status", this.billedStatus);
+        Util.putIfNotNull(content, "billing_method", this.billingMethod);
+        Util.putIfNotNull(content, "budget", this.budget);
+        Util.putIfNotNull(content, "client_id", this.clientId);
+        Util.putIfNotNull(content, "complete", this.complete);
+        Util.putIfNotNull(content, "description", this.description);
+        Util.putIfNotNull(content, "due_date", this.dueDate);
+        Util.putIfNotNull(content, "expense_markup", this.expenseMarkup);
+        Util.putIfNotNull(content, "fixed_price", this.fixedPrice);
+        Util.putIfNotNull(content, "internal", this.internal);
+        Util.putIfNotNull(content, "project_manager_id", this.projectManagerId);
+        Util.putIfNotNull(content, "project_type", this.projectType);
+        Util.putIfNotNull(content, "rate", this.rate);
+        Util.putIfNotNull(content, "retainer_id", this.retainerId);
+        Util.putIfNotNull(content, "title", this.title);
+        return content;
     }
 
     public static class ProjectGroup {

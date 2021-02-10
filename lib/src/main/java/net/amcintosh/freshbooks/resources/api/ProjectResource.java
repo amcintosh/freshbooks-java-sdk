@@ -3,13 +3,14 @@ package net.amcintosh.freshbooks.resources.api;
 import com.google.api.client.http.HttpMethods;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpResponse;
+import com.google.api.client.http.HttpStatusCodes;
 import net.amcintosh.freshbooks.FreshBooksClient;
 import net.amcintosh.freshbooks.FreshBooksException;
 import net.amcintosh.freshbooks.models.api.ProjectListResponse;
 import net.amcintosh.freshbooks.models.api.ProjectResponse;
 
 import java.io.IOException;
-import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Handles resources under the `/project` and project-like endpoints.
@@ -21,14 +22,21 @@ public abstract class ProjectResource extends Resource {
         super(freshBooksClient);
     }
 
-    protected abstract String getPath();
+    protected abstract String getPathForSingle();
+    protected abstract String getPathForList();
 
-    protected String getUrl(long businessId) {
-        return String.format("/projects/business/%s/%s", businessId, this.getPath());
+    protected String getUrl(long businessId, boolean isList) {
+        String path;
+        if (isList) {
+            path = getPathForList();
+        } else {
+            path = getPathForSingle();
+        }
+        return String.format("/projects/business/%s/%s", businessId, path);
     }
 
     protected String getUrl(long businessId, long resourceId) {
-        return String.format("/projects/business/%s/%s/%s", businessId, this.getPath(), resourceId);
+        return String.format("/projects/business/%s/%s/%s", businessId, this.getPathForSingle(), resourceId);
     }
 
     protected ProjectResponse handleRequest(String method, String url) throws FreshBooksException {
@@ -36,7 +44,7 @@ public abstract class ProjectResource extends Resource {
     }
 
 
-    protected ProjectResponse handleRequest(String method, String url, HashMap<String, Object> content) throws FreshBooksException {
+    protected ProjectResponse handleRequest(String method, String url, Map<String, Object> content) throws FreshBooksException {
         HttpResponse response = null;
         ProjectResponse model = null;
         int statusCode = 0;
@@ -48,11 +56,14 @@ public abstract class ProjectResource extends Resource {
             statusCode = response.getStatusCode();
             statusMessage = response.getStatusMessage();
 
+            if (response.getStatusCode() == HttpStatusCodes.STATUS_CODE_NO_CONTENT) {
+                return null;
+            }
             if (response.getContent() != null) {
                 model = response.parseAs(ProjectResponse.class);
             }
         } catch (IOException | IllegalArgumentException e) {
-            if (response != null && response.getStatusCode() == 404) {
+            if (response != null && response.getStatusCode() == HttpStatusCodes.STATUS_CODE_NOT_FOUND) {
                 throw new FreshBooksException("Requested resource could not be found.", statusMessage, statusCode);
             }
             throw new FreshBooksException("Returned an unexpected response", statusMessage, statusCode, e);
