@@ -214,7 +214,7 @@ extends <a href="api/AccountingResource.html" title="class in net.amcintosh.fres
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#create(java.lang.String,net.amcintosh.freshbooks.models.Client)">create</a></span>&#8203;(java.lang.String&nbsp;accountId,
       <a href="../models/Client.html" title="class in net.amcintosh.freshbooks.models">Client</a>&nbsp;data)</code></th>
 <td class="colLast">
-<div class="block">Create a new client from the provided client model.</div>
+<div class="block">Create a new client from the provided Client model.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
@@ -369,7 +369,7 @@ extends <a href="api/AccountingResource.html" title="class in net.amcintosh.fres
 <pre class="methodSignature">public&nbsp;<a href="../models/Client.html" title="class in net.amcintosh.freshbooks.models">Client</a>&nbsp;create&#8203;(java.lang.String&nbsp;accountId,
                      <a href="../models/Client.html" title="class in net.amcintosh.freshbooks.models">Client</a>&nbsp;data)
               throws <a href="../FreshBooksException.html" title="class in net.amcintosh.freshbooks">FreshBooksException</a></pre>
-<div class="block">Create a new client from the provided client model.
+<div class="block">Create a new client from the provided Client model.
  Makes a POST call against the client resource endpoint.
 
  This calls `client.getContent()` to get a hash map of data.</div>
@@ -445,7 +445,7 @@ extends <a href="api/AccountingResource.html" title="class in net.amcintosh.fres
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>accountId</code> - The alpha-numeric account id</dd>
-<dd><code>clientId</code> - Id of the resource to return</dd>
+<dd><code>clientId</code> - Id of the resource to update</dd>
 <dd><code>data</code> - Map of data to change</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The updated Client</dd>
@@ -465,17 +465,18 @@ extends <a href="api/AccountingResource.html" title="class in net.amcintosh.fres
               throws <a href="../FreshBooksException.html" title="class in net.amcintosh.freshbooks">FreshBooksException</a></pre>
 <div class="block">Delete the client with the corresponding id.
  Makes a PUT call against the client resource endpoint with a `vis_state` of deleted.
-
- Note: Most FreshBooks resources are soft-deleted,
- See [FreshBooks API - Active and Deleted Objects](https://www.freshbooks.com/api/active_deleted)</div>
+ <br><br>
+ <i>Note:</i> Most FreshBooks resources are soft-deleted,</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>accountId</code> - The alpha-numeric account id</dd>
-<dd><code>clientId</code> - Id of the resource to return</dd>
+<dd><code>clientId</code> - Id of the resource to update</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The deleted Client</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../FreshBooksException.html" title="class in net.amcintosh.freshbooks">FreshBooksException</a></code> - If the call is not successful</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Active and Deleted Objects</a></dd>
 </dl>
 </li>
 </ul>

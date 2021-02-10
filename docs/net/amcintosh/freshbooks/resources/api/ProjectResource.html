@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":6,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10};
+var data = {"i0":6,"i1":6,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -202,36 +202,42 @@ extends <a href="Resource.html" title="class in net.amcintosh.freshbooks.resourc
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>protected abstract java.lang.String</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getPath()">getPath</a></span>()</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getPathForList()">getPathForList</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code>protected java.lang.String</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getUrl(long)">getUrl</a></span>&#8203;(long&nbsp;businessId)</code></th>
+<td class="colFirst"><code>protected abstract java.lang.String</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getPathForSingle()">getPathForSingle</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
+<td class="colFirst"><code>protected java.lang.String</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getUrl(long,boolean)">getUrl</a></span>&#8203;(long&nbsp;businessId,
+      boolean&nbsp;isList)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>protected java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getUrl(long,long)">getUrl</a></span>&#8203;(long&nbsp;businessId,
       long&nbsp;resourceId)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>protected <a href="../../models/api/ProjectListResponse.html" title="class in net.amcintosh.freshbooks.models.api">ProjectListResponse</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#handleListRequest(java.lang.String)">handleListRequest</a></span>&#8203;(java.lang.String&nbsp;url)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>protected <a href="../../models/api/ProjectResponse.html" title="class in net.amcintosh.freshbooks.models.api">ProjectResponse</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#handleRequest(java.lang.String,java.lang.String)">handleRequest</a></span>&#8203;(java.lang.String&nbsp;method,
              java.lang.String&nbsp;url)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>protected <a href="../../models/api/ProjectResponse.html" title="class in net.amcintosh.freshbooks.models.api">ProjectResponse</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#handleRequest(java.lang.String,java.lang.String,java.util.HashMap)">handleRequest</a></span>&#8203;(java.lang.String&nbsp;method,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#handleRequest(java.lang.String,java.lang.String,java.util.Map)">handleRequest</a></span>&#8203;(java.lang.String&nbsp;method,
              java.lang.String&nbsp;url,
-             java.util.HashMap&lt;java.lang.String,&#8203;java.lang.Object&gt;&nbsp;content)</code></th>
+             java.util.Map&lt;java.lang.String,&#8203;java.lang.Object&gt;&nbsp;content)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 </table>
@@ -277,22 +283,32 @@ extends <a href="Resource.html" title="class in net.amcintosh.freshbooks.resourc
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a id="getPath()">
+<a id="getPathForSingle()">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getPath</h4>
-<pre class="methodSignature">protected abstract&nbsp;java.lang.String&nbsp;getPath()</pre>
+<h4>getPathForSingle</h4>
+<pre class="methodSignature">protected abstract&nbsp;java.lang.String&nbsp;getPathForSingle()</pre>
 </li>
 </ul>
-<a id="getUrl(long)">
+<a id="getPathForList()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPathForList</h4>
+<pre class="methodSignature">protected abstract&nbsp;java.lang.String&nbsp;getPathForList()</pre>
+</li>
+</ul>
+<a id="getUrl(long,boolean)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>getUrl</h4>
-<pre class="methodSignature">protected&nbsp;java.lang.String&nbsp;getUrl&#8203;(long&nbsp;businessId)</pre>
+<pre class="methodSignature">protected&nbsp;java.lang.String&nbsp;getUrl&#8203;(long&nbsp;businessId,
+                                  boolean&nbsp;isList)</pre>
 </li>
 </ul>
 <a id="getUrl(long,long)">
@@ -320,7 +336,7 @@ extends <a href="Resource.html" title="class in net.amcintosh.freshbooks.resourc
 </dl>
 </li>
 </ul>
-<a id="handleRequest(java.lang.String,java.lang.String,java.util.HashMap)">
+<a id="handleRequest(java.lang.String,java.lang.String,java.util.Map)">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -328,7 +344,7 @@ extends <a href="Resource.html" title="class in net.amcintosh.freshbooks.resourc
 <h4>handleRequest</h4>
 <pre class="methodSignature">protected&nbsp;<a href="../../models/api/ProjectResponse.html" title="class in net.amcintosh.freshbooks.models.api">ProjectResponse</a>&nbsp;handleRequest&#8203;(java.lang.String&nbsp;method,
                                         java.lang.String&nbsp;url,
-                                        java.util.HashMap&lt;java.lang.String,&#8203;java.lang.Object&gt;&nbsp;content)
+                                        java.util.Map&lt;java.lang.String,&#8203;java.lang.Object&gt;&nbsp;content)
                                  throws <a href="../../FreshBooksException.html" title="class in net.amcintosh.freshbooks">FreshBooksException</a></pre>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>

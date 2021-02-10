@@ -132,6 +132,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">Client</span>
 extends java.lang.Object</pre>
+<div class="block">A client in the new FreshBooks is a resource representing an entity you send invoices to.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="https://www.freshbooks.com/api/clients">FreshBooks API - Clients</a></dd>
+</dl>
 </li>
 </ul>
 </div>
@@ -219,7 +224,7 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code>java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getBillingStreet2()">getBillingStreet2</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Billing address, second street info.</div>
+<div class="block">Billing address, additional street info.</div>
 </td>
 </tr>
 <tr id="i7" class="rowColor">
@@ -406,7 +411,8 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code><a href="VisState.html" title="enum in net.amcintosh.freshbooks.models">VisState</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getVisState()">getVisState</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Get the visibility state: active, deleted, or archived</div>
+<div class="block">Get the visibility state: active, deleted, or archived
+ <br><br></div>
 </td>
 </tr>
 <tr id="i34" class="altColor">
@@ -714,6 +720,7 @@ extends java.lang.Object</pre>
 <div class="block">Description of industry client is in.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>The industry</dd>
 </dl>
 </li>
 </ul>
@@ -727,7 +734,7 @@ extends java.lang.Object</pre>
 <div class="block">Description of industry client is in.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>companyIndustry</code> - </dd>
+<dd><code>companyIndustry</code> - The industry</dd>
 </dl>
 </li>
 </ul>
@@ -741,6 +748,7 @@ extends java.lang.Object</pre>
 <div class="block">Size of client's company</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>Eg. "10"</dd>
 </dl>
 </li>
 </ul>
@@ -754,7 +762,7 @@ extends java.lang.Object</pre>
 <div class="block">Size of client's company</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>companySize</code> - </dd>
+<dd><code>companySize</code> - Eg. "10"</dd>
 </dl>
 </li>
 </ul>
@@ -768,6 +776,7 @@ extends java.lang.Object</pre>
 <div class="block">3-letter shortcode for client's preferred currency. Eg. USD, CAD, EUR</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>Eg. "USD"</dd>
 </dl>
 </li>
 </ul>
@@ -781,7 +790,7 @@ extends java.lang.Object</pre>
 <div class="block">3-letter shortcode for client's preferred currency. Eg. USD, CAD, EUR</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>currencyCode</code> - </dd>
+<dd><code>currencyCode</code> - Eg. "USD"</dd>
 </dl>
 </li>
 </ul>
@@ -795,6 +804,7 @@ extends java.lang.Object</pre>
 <div class="block">Client's email.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>The email</dd>
 </dl>
 </li>
 </ul>
@@ -808,7 +818,7 @@ extends java.lang.Object</pre>
 <div class="block">Client's email.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>email</code> - </dd>
+<dd><code>email</code> - The email</dd>
 </dl>
 </li>
 </ul>
@@ -822,6 +832,7 @@ extends java.lang.Object</pre>
 <div class="block">Client's fax number.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>Eg. "416-444-4444"</dd>
 </dl>
 </li>
 </ul>
@@ -835,7 +846,7 @@ extends java.lang.Object</pre>
 <div class="block">Client's fax number.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>fax</code> - </dd>
+<dd><code>fax</code> - Eg. 416-444-4444</dd>
 </dl>
 </li>
 </ul>
@@ -849,6 +860,7 @@ extends java.lang.Object</pre>
 <div class="block">Client's first name.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>Eg. "Gordon"</dd>
 </dl>
 </li>
 </ul>
@@ -862,7 +874,7 @@ extends java.lang.Object</pre>
 <div class="block">Client's first name.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>firstName</code> - </dd>
+<dd><code>firstName</code> - Eg. "Gordon"</dd>
 </dl>
 </li>
 </ul>
@@ -876,6 +888,7 @@ extends java.lang.Object</pre>
 <div class="block">Client's home phone number.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>Eg. 416-444-4444</dd>
 </dl>
 </li>
 </ul>
@@ -889,7 +902,7 @@ extends java.lang.Object</pre>
 <div class="block">Client's home phone number.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>homePhone</code> - </dd>
+<dd><code>homePhone</code> - Eg. 416-444-4444</dd>
 </dl>
 </li>
 </ul>
@@ -903,6 +916,7 @@ extends java.lang.Object</pre>
 <div class="block">Shortcode indicating user language e.g. "en"</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>Eg. "en"</dd>
 </dl>
 </li>
 </ul>
@@ -916,7 +930,7 @@ extends java.lang.Object</pre>
 <div class="block">Shortcode indicating user language e.g. "en"</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>language</code> - </dd>
+<dd><code>language</code> - Eg. "en"</dd>
 </dl>
 </li>
 </ul>
@@ -930,6 +944,7 @@ extends java.lang.Object</pre>
 <div class="block">Client's last name.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>Eg. "Shumway"</dd>
 </dl>
 </li>
 </ul>
@@ -943,7 +958,7 @@ extends java.lang.Object</pre>
 <div class="block">Client's last name.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>lastName</code> - </dd>
+<dd><code>lastName</code> - Eg. "Shumway"</dd>
 </dl>
 </li>
 </ul>
@@ -957,6 +972,7 @@ extends java.lang.Object</pre>
 <div class="block">Client's mobile phone number.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>Eg. "416-444-4444"</dd>
 </dl>
 </li>
 </ul>
@@ -970,7 +986,7 @@ extends java.lang.Object</pre>
 <div class="block">Client's mobile phone number.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>mobilePhone</code> - </dd>
+<dd><code>mobilePhone</code> - Eg. "416-444-4444"</dd>
 </dl>
 </li>
 </ul>
@@ -984,6 +1000,7 @@ extends java.lang.Object</pre>
 <div class="block">Notes kept by admin about client.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>The notes</dd>
 </dl>
 </li>
 </ul>
@@ -997,7 +1014,7 @@ extends java.lang.Object</pre>
 <div class="block">Notes kept by admin about client.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>note</code> - </dd>
+<dd><code>note</code> - The notes</dd>
 </dl>
 </li>
 </ul>
@@ -1011,6 +1028,7 @@ extends java.lang.Object</pre>
 <div class="block">Name for client's business.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>Organization name</dd>
 </dl>
 </li>
 </ul>
@@ -1024,7 +1042,7 @@ extends java.lang.Object</pre>
 <div class="block">Name for client's business.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>organization</code> - </dd>
+<dd><code>organization</code> - Organization name</dd>
 </dl>
 </li>
 </ul>
@@ -1038,6 +1056,7 @@ extends java.lang.Object</pre>
 <div class="block">Billing address city.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>The city</dd>
 </dl>
 </li>
 </ul>
@@ -1051,7 +1070,7 @@ extends java.lang.Object</pre>
 <div class="block">Billing address city.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>billingCity</code> - </dd>
+<dd><code>billingCity</code> - The city</dd>
 </dl>
 </li>
 </ul>
@@ -1065,6 +1084,7 @@ extends java.lang.Object</pre>
 <div class="block">Billing address postal code.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>The postal code</dd>
 </dl>
 </li>
 </ul>
@@ -1078,7 +1098,7 @@ extends java.lang.Object</pre>
 <div class="block">Billing address postal code.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>billingCode</code> - </dd>
+<dd><code>billingCode</code> - The postal code</dd>
 </dl>
 </li>
 </ul>
@@ -1092,6 +1112,7 @@ extends java.lang.Object</pre>
 <div class="block">Billing address country.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>The country</dd>
 </dl>
 </li>
 </ul>
@@ -1105,7 +1126,7 @@ extends java.lang.Object</pre>
 <div class="block">Billing address country.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>billingCountry</code> - </dd>
+<dd><code>billingCountry</code> - The country</dd>
 </dl>
 </li>
 </ul>
@@ -1119,6 +1140,7 @@ extends java.lang.Object</pre>
 <div class="block">Short form of province for billing address.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>The province/state</dd>
 </dl>
 </li>
 </ul>
@@ -1132,7 +1154,7 @@ extends java.lang.Object</pre>
 <div class="block">Short form of province for billing address.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>billingProvince</code> - </dd>
+<dd><code>billingProvince</code> - The province/state</dd>
 </dl>
 </li>
 </ul>
@@ -1146,6 +1168,7 @@ extends java.lang.Object</pre>
 <div class="block">Billing address street.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>The street address.</dd>
 </dl>
 </li>
 </ul>
@@ -1159,7 +1182,7 @@ extends java.lang.Object</pre>
 <div class="block">Billing address street.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>billingStreet</code> - </dd>
+<dd><code>billingStreet</code> - The street address.</dd>
 </dl>
 </li>
 </ul>
@@ -1170,9 +1193,10 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getBillingStreet2</h4>
 <pre class="methodSignature">public&nbsp;java.lang.String&nbsp;getBillingStreet2()</pre>
-<div class="block">Billing address, second street info.</div>
+<div class="block">Billing address, additional street info.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>The street address.</dd>
 </dl>
 </li>
 </ul>
@@ -1186,7 +1210,7 @@ extends java.lang.Object</pre>
 <div class="block">Billing address, second street info.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>billingStreet2</code> - </dd>
+<dd><code>billingStreet2</code> - The street address.</dd>
 </dl>
 </li>
 </ul>
@@ -1200,6 +1224,7 @@ extends java.lang.Object</pre>
 <div class="block">Shipping address city.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>The city</dd>
 </dl>
 </li>
 </ul>
@@ -1213,7 +1238,7 @@ extends java.lang.Object</pre>
 <div class="block">Shipping address city.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>shippingCity</code> - </dd>
+<dd><code>shippingCity</code> - The city</dd>
 </dl>
 </li>
 </ul>
@@ -1227,6 +1252,7 @@ extends java.lang.Object</pre>
 <div class="block">Shipping address postal code.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>The postal code</dd>
 </dl>
 </li>
 </ul>
@@ -1240,7 +1266,7 @@ extends java.lang.Object</pre>
 <div class="block">Shipping address postal code.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>shippingCode</code> - </dd>
+<dd><code>shippingCode</code> - The postal code</dd>
 </dl>
 </li>
 </ul>
@@ -1254,6 +1280,7 @@ extends java.lang.Object</pre>
 <div class="block">Shipping address country.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>The country</dd>
 </dl>
 </li>
 </ul>
@@ -1267,7 +1294,7 @@ extends java.lang.Object</pre>
 <div class="block">Shipping address country.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>shippingCountry</code> - </dd>
+<dd><code>shippingCountry</code> - The country</dd>
 </dl>
 </li>
 </ul>
@@ -1281,6 +1308,7 @@ extends java.lang.Object</pre>
 <div class="block">Short form of province for shipping address.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>The province/state</dd>
 </dl>
 </li>
 </ul>
@@ -1294,7 +1322,7 @@ extends java.lang.Object</pre>
 <div class="block">Short form of province for shipping address.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>shippingProvince</code> - </dd>
+<dd><code>shippingProvince</code> - The province/state</dd>
 </dl>
 </li>
 </ul>
@@ -1308,6 +1336,7 @@ extends java.lang.Object</pre>
 <div class="block">Shipping address street.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>The address</dd>
 </dl>
 </li>
 </ul>
@@ -1321,7 +1350,7 @@ extends java.lang.Object</pre>
 <div class="block">Shipping address street.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>shippingStreet</code> - </dd>
+<dd><code>shippingStreet</code> - The address</dd>
 </dl>
 </li>
 </ul>
@@ -1335,6 +1364,7 @@ extends java.lang.Object</pre>
 <div class="block">Shipping address, second street info.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>The address</dd>
 </dl>
 </li>
 </ul>
@@ -1348,7 +1378,7 @@ extends java.lang.Object</pre>
 <div class="block">Shipping address, second street info.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>shippingStreet2</code> - </dd>
+<dd><code>shippingStreet2</code> - The address</dd>
 </dl>
 </li>
 </ul>
@@ -1362,6 +1392,7 @@ extends java.lang.Object</pre>
 <div class="block">Duplicate of id</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>The id</dd>
 </dl>
 </li>
 </ul>
@@ -1429,8 +1460,8 @@ extends java.lang.Object</pre>
 <h4>getSignupDate</h4>
 <pre class="methodSignature">public&nbsp;java.time.ZonedDateTime&nbsp;getSignupDate()</pre>
 <div class="block">Get the signup time of the client.
-
- Note: The API returns this data in UTC.</div>
+ <br><br>
+ <i>Note:</i> The API returns this data in UTC.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>Signup time in UTC</dd>
@@ -1445,8 +1476,8 @@ extends java.lang.Object</pre>
 <h4>getUpdated</h4>
 <pre class="methodSignature">public&nbsp;java.time.ZonedDateTime&nbsp;getUpdated()</pre>
 <div class="block">Get the time of last modification to the client.
-
- Note: The API returns this data in "US/Eastern", but it is converted to UTC.</div>
+ <br><br>
+ <i>Note:</i> The API returns this data in "US/Eastern", but it is converted to UTC.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>Updated time in UTC</dd>
@@ -1460,10 +1491,13 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getVisState</h4>
 <pre class="methodSignature">public&nbsp;<a href="VisState.html" title="enum in net.amcintosh.freshbooks.models">VisState</a>&nbsp;getVisState()</pre>
-<div class="block">Get the visibility state: active, deleted, or archived</div>
+<div class="block">Get the visibility state: active, deleted, or archived
+ <br><br></div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>Enum of the visibility state.</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Active and Deleted Objects</a></dd>
 </dl>
 </li>
 </ul>
@@ -1474,10 +1508,13 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>setVisState</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;setVisState&#8203;(<a href="VisState.html" title="enum in net.amcintosh.freshbooks.models">VisState</a>&nbsp;visState)</pre>
-<div class="block">Set the visibility state of the client.</div>
+<div class="block">Set the visibility state of the client.
+ <br><br></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>visState</code> - VisState value</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Active and Deleted Objects</a></dd>
 </dl>
 </li>
 </ul>

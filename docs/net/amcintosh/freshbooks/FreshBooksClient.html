@@ -134,11 +134,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 extends java.lang.Object</pre>
 <div class="block">FreshBooks API client.
 
- ```java
+ <pre><code>
  FreshBooksClient freshBooksClient = new FreshBooksClient.FreshBooksClientBuilder("your application id")
      .withToken("a valid token")
      .build();
- ```</div>
+ </code></pre></div>
 </li>
 </ul>
 </div>
@@ -162,7 +162,9 @@ extends java.lang.Object</pre>
 <tr class="altColor">
 <td class="colFirst"><code>static class&nbsp;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="FreshBooksClient.FreshBooksClientBuilder.html" title="class in net.amcintosh.freshbooks">FreshBooksClient.FreshBooksClientBuilder</a></span></code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Builder for FreshBooksClient.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -270,7 +272,7 @@ extends java.lang.Object</pre>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>requestMethod</code> - GET, POST, PUT, DELETE</dd>
-<dd><code>resourceUrl</code> - Relative URL (eg. /accounting/account/{accountId}/users/clients</dd>
+<dd><code>resourceUrl</code> - Relative URL (eg. <pre>/accounting/account/{accountId}/users/clients</pre>)</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>HttpRequest object</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -292,7 +294,7 @@ extends java.lang.Object</pre>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>requestMethod</code> - GET, POST, PUT, DELETE</dd>
-<dd><code>resourceUrl</code> - Relative URL (eg. /accounting/account/{accountId}/users/clients</dd>
+<dd><code>resourceUrl</code> - Relative URL (eg. <pre>/accounting/account/{accountId}/users/clients</pre>)</dd>
 <dd><code>data</code> - </dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>HttpRequest object</dd>

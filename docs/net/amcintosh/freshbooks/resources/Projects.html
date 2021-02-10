@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -142,6 +142,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">Projects</span>
 extends <a href="api/ProjectResource.html" title="class in net.amcintosh.freshbooks.resources.api">ProjectResource</a></pre>
+<div class="block">FreshBooks projects resource with calls to get, list, create, update, delete</div>
 </li>
 </ul>
 </div>
@@ -202,21 +203,68 @@ extends <a href="api/ProjectResource.html" title="class in net.amcintosh.freshbo
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code><a href="../models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#create(long,java.util.Map)">create</a></span>&#8203;(long&nbsp;businessId,
+      java.util.Map&lt;java.lang.String,&#8203;java.lang.Object&gt;&nbsp;data)</code></th>
+<td class="colLast">
+<div class="block">Create a new project from the provided data.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code><a href="../models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#create(long,net.amcintosh.freshbooks.models.Project)">create</a></span>&#8203;(long&nbsp;businessId,
+      <a href="../models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a>&nbsp;data)</code></th>
+<td class="colLast">
+<div class="block">Create a new project from the provided Project model.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#delete(long,long)">delete</a></span>&#8203;(long&nbsp;businessId,
+      long&nbsp;projectId)</code></th>
+<td class="colLast">
+<div class="block">Delete the project with the corresponding id.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code><a href="../models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#get(long,long)">get</a></span>&#8203;(long&nbsp;businessId,
    long&nbsp;projectId)</code></th>
 <td class="colLast">
 <div class="block">Get a single project with the corresponding id.</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>protected java.lang.String</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getPath()">getPath</a></span>()</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getPathForList()">getPathForList</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>protected java.lang.String</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getPathForSingle()">getPathForSingle</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i6" class="altColor">
 <td class="colFirst"><code><a href="../models/ProjectList.html" title="class in net.amcintosh.freshbooks.models">ProjectList</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#list(long)">list</a></span>&#8203;(long&nbsp;businessId)</code></th>
 <td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code><a href="../models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#update(long,long,java.util.Map)">update</a></span>&#8203;(long&nbsp;businessId,
+      long&nbsp;projectId,
+      java.util.Map&lt;java.lang.String,&#8203;java.lang.Object&gt;&nbsp;data)</code></th>
+<td class="colLast">
+<div class="block">Update the project with the corresponding id.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code><a href="../models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#update(long,long,net.amcintosh.freshbooks.models.Project)">update</a></span>&#8203;(long&nbsp;businessId,
+      long&nbsp;projectId,
+      <a href="../models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a>&nbsp;data)</code></th>
+<td class="colLast">
+<div class="block">Update the project with the corresponding id.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -224,7 +272,7 @@ extends <a href="api/ProjectResource.html" title="class in net.amcintosh.freshbo
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;net.amcintosh.freshbooks.resources.api.<a href="api/ProjectResource.html" title="class in net.amcintosh.freshbooks.resources.api">ProjectResource</a></h3>
-<code><a href="api/ProjectResource.html#getUrl(long)">getUrl</a>, <a href="api/ProjectResource.html#getUrl(long,long)">getUrl</a>, <a href="api/ProjectResource.html#handleListRequest(java.lang.String)">handleListRequest</a>, <a href="api/ProjectResource.html#handleRequest(java.lang.String,java.lang.String)">handleRequest</a>, <a href="api/ProjectResource.html#handleRequest(java.lang.String,java.lang.String,java.util.HashMap)">handleRequest</a></code></li>
+<code><a href="api/ProjectResource.html#getUrl(long,boolean)">getUrl</a>, <a href="api/ProjectResource.html#getUrl(long,long)">getUrl</a>, <a href="api/ProjectResource.html#handleListRequest(java.lang.String)">handleListRequest</a>, <a href="api/ProjectResource.html#handleRequest(java.lang.String,java.lang.String)">handleRequest</a>, <a href="api/ProjectResource.html#handleRequest(java.lang.String,java.lang.String,java.util.Map)">handleRequest</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
@@ -268,16 +316,29 @@ extends <a href="api/ProjectResource.html" title="class in net.amcintosh.freshbo
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a id="getPath()">
+<a id="getPathForList()">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getPath</h4>
-<pre class="methodSignature">protected&nbsp;java.lang.String&nbsp;getPath()</pre>
+<h4>getPathForList</h4>
+<pre class="methodSignature">protected&nbsp;java.lang.String&nbsp;getPathForList()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="api/ProjectResource.html#getPath()">getPath</a></code>&nbsp;in class&nbsp;<code><a href="api/ProjectResource.html" title="class in net.amcintosh.freshbooks.resources.api">ProjectResource</a></code></dd>
+<dd><code><a href="api/ProjectResource.html#getPathForList()">getPathForList</a></code>&nbsp;in class&nbsp;<code><a href="api/ProjectResource.html" title="class in net.amcintosh.freshbooks.resources.api">ProjectResource</a></code></dd>
+</dl>
+</li>
+</ul>
+<a id="getPathForSingle()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPathForSingle</h4>
+<pre class="methodSignature">protected&nbsp;java.lang.String&nbsp;getPathForSingle()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="api/ProjectResource.html#getPathForSingle()">getPathForSingle</a></code>&nbsp;in class&nbsp;<code><a href="api/ProjectResource.html" title="class in net.amcintosh.freshbooks.resources.api">ProjectResource</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -298,7 +359,7 @@ extends <a href="api/ProjectResource.html" title="class in net.amcintosh.freshbo
 <a id="get(long,long)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>get</h4>
 <pre class="methodSignature">public&nbsp;<a href="../models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a>&nbsp;get&#8203;(long&nbsp;businessId,
@@ -312,6 +373,122 @@ extends <a href="api/ProjectResource.html" title="class in net.amcintosh.freshbo
  //@param builder (Optional) IncludesBuilder object for including additional data, sub-resources, etc.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The Project</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../FreshBooksException.html" title="class in net.amcintosh.freshbooks">FreshBooksException</a></code> - If the call is not successful</dd>
+</dl>
+</li>
+</ul>
+<a id="create(long,net.amcintosh.freshbooks.models.Project)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>create</h4>
+<pre class="methodSignature">public&nbsp;<a href="../models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a>&nbsp;create&#8203;(long&nbsp;businessId,
+                      <a href="../models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a>&nbsp;data)
+               throws <a href="../FreshBooksException.html" title="class in net.amcintosh.freshbooks">FreshBooksException</a></pre>
+<div class="block">Create a new project from the provided Project model.
+ Makes a POST call against the project resource endpoint.
+
+ This calls `project.getContent()` to get a hash map of data.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>businessId</code> - Id of the business</dd>
+<dd><code>data</code> - Project model with create data</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The created Project</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../FreshBooksException.html" title="class in net.amcintosh.freshbooks">FreshBooksException</a></code> - If the call is not successful</dd>
+</dl>
+</li>
+</ul>
+<a id="create(long,java.util.Map)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>create</h4>
+<pre class="methodSignature">public&nbsp;<a href="../models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a>&nbsp;create&#8203;(long&nbsp;businessId,
+                      java.util.Map&lt;java.lang.String,&#8203;java.lang.Object&gt;&nbsp;data)
+               throws <a href="../FreshBooksException.html" title="class in net.amcintosh.freshbooks">FreshBooksException</a></pre>
+<div class="block">Create a new project from the provided data.
+ Makes a POST call against the project resource endpoint.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>businessId</code> - Id of the business</dd>
+<dd><code>data</code> - Map of create data</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The created Project</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../FreshBooksException.html" title="class in net.amcintosh.freshbooks">FreshBooksException</a></code> - If the call is not successful</dd>
+</dl>
+</li>
+</ul>
+<a id="update(long,long,net.amcintosh.freshbooks.models.Project)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>update</h4>
+<pre class="methodSignature">public&nbsp;<a href="../models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a>&nbsp;update&#8203;(long&nbsp;businessId,
+                      long&nbsp;projectId,
+                      <a href="../models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a>&nbsp;data)
+               throws <a href="../FreshBooksException.html" title="class in net.amcintosh.freshbooks">FreshBooksException</a></pre>
+<div class="block">Update the project with the corresponding id.
+ Makes a PUT call against the project resource endpoint.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>businessId</code> - Id of the business</dd>
+<dd><code>projectId</code> - Id of the resource to update</dd>
+<dd><code>data</code> - Project model with updated data</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The updated Project</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../FreshBooksException.html" title="class in net.amcintosh.freshbooks">FreshBooksException</a></code> - If the call is not successful</dd>
+</dl>
+</li>
+</ul>
+<a id="update(long,long,java.util.Map)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>update</h4>
+<pre class="methodSignature">public&nbsp;<a href="../models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a>&nbsp;update&#8203;(long&nbsp;businessId,
+                      long&nbsp;projectId,
+                      java.util.Map&lt;java.lang.String,&#8203;java.lang.Object&gt;&nbsp;data)
+               throws <a href="../FreshBooksException.html" title="class in net.amcintosh.freshbooks">FreshBooksException</a></pre>
+<div class="block">Update the project with the corresponding id.
+ Makes a PUT call against the project resource endpoint.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>businessId</code> - Id of the business</dd>
+<dd><code>projectId</code> - Id of the resource to update</dd>
+<dd><code>data</code> - Map of data to change</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The updated Project</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../FreshBooksException.html" title="class in net.amcintosh.freshbooks">FreshBooksException</a></code> - If the call is not successful</dd>
+</dl>
+</li>
+</ul>
+<a id="delete(long,long)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>delete</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;delete&#8203;(long&nbsp;businessId,
+                   long&nbsp;projectId)
+            throws <a href="../FreshBooksException.html" title="class in net.amcintosh.freshbooks">FreshBooksException</a></pre>
+<div class="block">Delete the project with the corresponding id.
+ Makes a DELETE call against the project resource endpoint.
+ <br><br>
+ <i>Note:</i> Most FreshBooks resources are soft-deleted,</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>businessId</code> - Id of the business</dd>
+<dd><code>projectId</code> - Id of the resource to update</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../FreshBooksException.html" title="class in net.amcintosh.freshbooks">FreshBooksException</a></code> - If the call is not successful</dd>
 </dl>

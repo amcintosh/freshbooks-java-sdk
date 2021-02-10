@@ -141,6 +141,20 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public enum <span class="typeNameLabel">VisState</span>
 extends java.lang.Enum&lt;<a href="VisState.html" title="enum in net.amcintosh.freshbooks.models">VisState</a>&gt;</pre>
+<div class="block">Visibility values for a resource. Mostly used in accounting-type resources, not project-type.
+ <br>
+ Values are:
+ <ul>
+ <li><b>Active</b>: refers to objects that are both completed and non-completed.</li>
+ <li><b>Deleted</b>: objects are "soft-deleted" meaning they will not show up in list calls by default, and will not
+ count towards finances, account limits, etc., but can be undeleted at any time.</li>
+ <li><b>Archived</b>: Are hidden from FreshBook's UI by default, but still count towards finances, account limits,
+ etc.</li>
+ </ul></div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Active and Deleted Objects</a></dd>
+</dl>
 </li>
 </ul>
 </div>
