@@ -6,7 +6,7 @@ import com.google.api.client.util.Key;
  * Services represent things that a business offers to clients. Services are added to projects
  * to to allow tracking of time entries by type of work. Services keep track of details such
  * as hourly rate.
- * <br/>
+ * <br>
  * Services automatically get converted to tasks for inclusion on invoices.
  *
  * @see <a href="https://www.freshbooks.com/api/services">FreshBooks API - Services</a>
@@ -52,7 +52,7 @@ public class Service {
 
     /**
      * Get the visibility state: active, deleted, or archived
-     * <br/><br/>
+     * <br><br>
      * @see <a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Active and Deleted Objects</a>
      *
      * @return Enum of the visibility state.
@@ -63,7 +63,7 @@ public class Service {
 
     /**
      * Set the visibility state of the client.
-     * <br/><br/>
+     * <br><br>
      * @see <a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Active and Deleted Objects</a>
      *
      * @param visState VisState value

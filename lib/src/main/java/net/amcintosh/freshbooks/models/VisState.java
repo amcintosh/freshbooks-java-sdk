@@ -8,7 +8,7 @@ import java.util.Map;
 
 /**
  * Visibility values for a resource. Mostly used in accounting-type resources, not project-type.
- * <br/>
+ * <br>
  * Values are:
  * <ul>
  * <li><b>Active</b>: refers to objects that are both completed and non-completed.</li>

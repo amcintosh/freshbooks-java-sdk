@@ -567,7 +567,7 @@ public class Client {
 
     /**
      * Get the signup time of the client.
-     * <br/><br/>
+     * <br><br>
      * <i>Note:</i> The API returns this data in UTC.
      *
      * @return Signup time in UTC
@@ -579,7 +579,7 @@ public class Client {
 
     /**
      * Get the time of last modification to the client.
-     * <br/><br/>
+     * <br><br>
      * <i>Note:</i> The API returns this data in "US/Eastern", but it is converted to UTC.
      *
      * @return Updated time in UTC
@@ -590,7 +590,7 @@ public class Client {
 
     /**
      * Get the visibility state: active, deleted, or archived
-     * <br/><br/>
+     * <br><br>
      * @see <a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Active and Deleted Objects</a>
      *
      * @return Enum of the visibility state.
@@ -601,7 +601,7 @@ public class Client {
 
     /**
      * Set the visibility state of the client.
-     * <br/><br/>
+     * <br><br>
      * @see <a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Active and Deleted Objects</a>
      *
      * @param visState VisState value

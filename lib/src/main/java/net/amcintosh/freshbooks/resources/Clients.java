@@ -119,7 +119,7 @@ public class Clients extends AccountingResource {
     /**
      * Delete the client with the corresponding id.
      * Makes a PUT call against the client resource endpoint with a `vis_state` of deleted.
-     * <br/><br/>
+     * <br><br>
      * <i>Note:</i> Most FreshBooks resources are soft-deleted,
      * @see <a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Active and Deleted Objects</a>
      *

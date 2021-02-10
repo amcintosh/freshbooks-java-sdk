@@ -122,7 +122,7 @@ public class Projects extends ProjectResource {
     /**
      * Delete the project with the corresponding id.
      * Makes a DELETE call against the project resource endpoint.
-     * <br/><br/>
+     * <br><br>
      * <i>Note:</i> Most FreshBooks resources are soft-deleted,
      *
      * @param businessId Id of the business
