@@ -5,6 +5,9 @@ import net.amcintosh.freshbooks.models.api.AccountingListResponse;
 
 import java.util.ArrayList;
 
+/**
+ * Results of clients list call containing list of clients and pagination data.
+ */
 public class ClientList extends ListResult {
 
     @Key private final ArrayList<Client> clients;

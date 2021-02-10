@@ -8,6 +8,11 @@ import java.time.ZonedDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * A client in the new FreshBooks is a resource representing an entity you send invoices to.
+ *
+ * @see <a href="https://www.freshbooks.com/api/clients">FreshBooks API - Clients</a>
+ */
 public class Client {
 
     @Key Long id;
@@ -86,7 +91,7 @@ public class Client {
     /**
      * Description of industry client is in.
      *
-     * @return
+     * @return The industry
      */
     public String getCompanyIndustry() {
         return companyIndustry;
@@ -95,7 +100,7 @@ public class Client {
     /**
      * Description of industry client is in.
      *
-     * @param companyIndustry Industry
+     * @param companyIndustry The industry
      */
     public void setCompanyIndustry(String companyIndustry) {
         this.companyIndustry = companyIndustry;
@@ -104,7 +109,7 @@ public class Client {
     /**
      * Size of client's company
      *
-     * @return
+     * @return Eg. "10"
      */
     public String getCompanySize() {
         return companySize;
@@ -248,7 +253,7 @@ public class Client {
     /**
      * Client's mobile phone number.
      *
-     * @return
+     * @return Eg. "416-444-4444"
      */
     public String getMobilePhone() {
         return mobilePhone;
@@ -257,7 +262,7 @@ public class Client {
     /**
      * Client's mobile phone number.
      *
-     * @param mobilePhone
+     * @param mobilePhone Eg. "416-444-4444"
      */
     public void setMobilePhone(String mobilePhone) {
         this.mobilePhone = mobilePhone;
@@ -266,7 +271,7 @@ public class Client {
     /**
      * Notes kept by admin about client.
      *
-     * @return
+     * @return The notes
      */
     public String getNote() {
         return note;
@@ -275,7 +280,7 @@ public class Client {
     /**
      * Notes kept by admin about client.
      *
-     * @param note
+     * @param note The notes
      */
     public void setNote(String note) {
         this.note = note;
@@ -284,7 +289,7 @@ public class Client {
     /**
      * Name for client's business.
      *
-     * @return
+     * @return Organization name
      */
     public String getOrganization() {
         return organization;
@@ -293,7 +298,7 @@ public class Client {
     /**
      * Name for client's business.
      *
-     * @param organization
+     * @param organization Organization name
      */
     public void setOrganization(String organization) {
         this.organization = organization;
@@ -302,7 +307,7 @@ public class Client {
     /**
      * Billing address city.
      *
-     * @return
+     * @return The city
      */
     public String getBillingCity() {
         return billingCity;
@@ -311,7 +316,7 @@ public class Client {
     /**
      * Billing address city.
      *
-     * @param billingCity
+     * @param billingCity The city
      */
     public void setBillingCity(String billingCity) {
         this.billingCity = billingCity;
@@ -320,7 +325,7 @@ public class Client {
     /**
      * Billing address postal code.
      *
-     * @return
+     * @return The postal code
      */
     public String getBillingCode() {
         return billingCode;
@@ -329,7 +334,7 @@ public class Client {
     /**
      * Billing address postal code.
      *
-     * @param billingCode
+     * @param billingCode The postal code
      */
     public void setBillingCode(String billingCode) {
         this.billingCode = billingCode;
@@ -338,7 +343,7 @@ public class Client {
     /**
      * Billing address country.
      *
-     * @return
+     * @return The country
      */
     public String getBillingCountry() {
         return billingCountry;
@@ -347,7 +352,7 @@ public class Client {
     /**
      * Billing address country.
      *
-     * @param billingCountry
+     * @param billingCountry The country
      */
     public void setBillingCountry(String billingCountry) {
         this.billingCountry = billingCountry;
@@ -356,7 +361,7 @@ public class Client {
     /**
      * Short form of province for billing address.
      *
-     * @return
+     * @return The province/state
      */
     public String getBillingProvince() {
         return billingProvince;
@@ -365,7 +370,7 @@ public class Client {
     /**
      * Short form of province for billing address.
      *
-     * @param billingProvince
+     * @param billingProvince The province/state
      */
     public void setBillingProvince(String billingProvince) {
         this.billingProvince = billingProvince;
@@ -374,7 +379,7 @@ public class Client {
     /**
      * Billing address street.
      *
-     * @return
+     * @return The street address.
      */
     public String getBillingStreet() {
         return billingStreet;
@@ -383,16 +388,16 @@ public class Client {
     /**
      * Billing address street.
      *
-     * @param billingStreet
+     * @param billingStreet The street address.
      */
     public void setBillingStreet(String billingStreet) {
         this.billingStreet = billingStreet;
     }
 
     /**
-     * Billing address, second street info.
+     * Billing address, additional street info.
      *
-     * @return
+     * @return The street address.
      */
     public String getBillingStreet2() {
         return billingStreet2;
@@ -401,7 +406,7 @@ public class Client {
     /**
      * Billing address, second street info.
      *
-     * @param billingStreet2
+     * @param billingStreet2 The street address.
      */
     public void setBillingStreet2(String billingStreet2) {
         this.billingStreet2 = billingStreet2;
@@ -410,7 +415,7 @@ public class Client {
     /**
      * Shipping address city.
      *
-     * @return
+     * @return The city
      */
     public String getShippingCity() {
         return shippingCity;
@@ -419,7 +424,7 @@ public class Client {
     /**
      * Shipping address city.
      *
-     * @param shippingCity
+     * @param shippingCity The city
      */
     public void setShippingCity(String shippingCity) {
         this.shippingCity = shippingCity;
@@ -428,7 +433,7 @@ public class Client {
     /**
      * Shipping address postal code.
      *
-     * @return
+     * @return The postal code
      */
     public String getShippingCode() {
         return shippingCode;
@@ -437,7 +442,7 @@ public class Client {
     /**
      * Shipping address postal code.
      *
-     * @param shippingCode
+     * @param shippingCode The postal code
      */
     public void setShippingCode(String shippingCode) {
         this.shippingCode = shippingCode;
@@ -446,7 +451,7 @@ public class Client {
     /**
      * Shipping address country.
      *
-     * @return
+     * @return The country
      */
     public String getShippingCountry() {
         return shippingCountry;
@@ -455,7 +460,7 @@ public class Client {
     /**
      * Shipping address country.
      *
-     * @param shippingCountry
+     * @param shippingCountry The country
      */
     public void setShippingCountry(String shippingCountry) {
         this.shippingCountry = shippingCountry;
@@ -464,7 +469,7 @@ public class Client {
     /**
      * Short form of province for shipping address.
      *
-     * @return
+     * @return The province/state
      */
     public String getShippingProvince() {
         return shippingProvince;
@@ -473,7 +478,7 @@ public class Client {
     /**
      * Short form of province for shipping address.
      *
-     * @param shippingProvince
+     * @param shippingProvince The province/state
      */
     public void setShippingProvince(String shippingProvince) {
         this.shippingProvince = shippingProvince;
@@ -482,7 +487,7 @@ public class Client {
     /**
      * Shipping address street.
      *
-     * @return
+     * @return The address
      */
     public String getShippingStreet() {
         return shippingStreet;
@@ -491,7 +496,7 @@ public class Client {
     /**
      * Shipping address street.
      *
-     * @param shippingStreet
+     * @param shippingStreet The address
      */
     public void setShippingStreet(String shippingStreet) {
         this.shippingStreet = shippingStreet;
@@ -500,7 +505,7 @@ public class Client {
     /**
      * Shipping address, second street info.
      *
-     * @return
+     * @return The address
      */
     public String getShippingStreet2() {
         return shippingStreet2;
@@ -509,7 +514,7 @@ public class Client {
     /**
      * Shipping address, second street info.
      *
-     * @param shippingStreet2
+     * @param shippingStreet2 The address
      */
     public void setShippingStreet2(String shippingStreet2) {
         this.shippingStreet2 = shippingStreet2;
@@ -518,7 +523,7 @@ public class Client {
     /**
      * Duplicate of id
      *
-     * @return
+     * @return The id
      */
     public long getUserid() {
         return userid;
@@ -562,8 +567,8 @@ public class Client {
 
     /**
      * Get the signup time of the client.
-     *
-     * Note: The API returns this data in UTC.
+     * <br/><br/>
+     * <i>Note:</i> The API returns this data in UTC.
      *
      * @return Signup time in UTC
      */
@@ -574,8 +579,8 @@ public class Client {
 
     /**
      * Get the time of last modification to the client.
-     *
-     * Note: The API returns this data in "US/Eastern", but it is converted to UTC.
+     * <br/><br/>
+     * <i>Note:</i> The API returns this data in "US/Eastern", but it is converted to UTC.
      *
      * @return Updated time in UTC
      */
@@ -585,6 +590,8 @@ public class Client {
 
     /**
      * Get the visibility state: active, deleted, or archived
+     * <br/><br/>
+     * @see <a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Active and Deleted Objects</a>
      *
      * @return Enum of the visibility state.
      */
@@ -594,6 +601,8 @@ public class Client {
 
     /**
      * Set the visibility state of the client.
+     * <br/><br/>
+     * @see <a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Active and Deleted Objects</a>
      *
      * @param visState VisState value
      */

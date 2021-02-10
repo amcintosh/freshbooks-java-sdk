@@ -5,6 +5,9 @@ import net.amcintosh.freshbooks.models.api.ProjectListResponse;
 
 import java.util.ArrayList;
 
+/**
+ * Results of projects list call containing list of projects and pagination data.
+ */
 public class ProjectList extends ListResult {
 
     @Key private final ArrayList<Project> projects;

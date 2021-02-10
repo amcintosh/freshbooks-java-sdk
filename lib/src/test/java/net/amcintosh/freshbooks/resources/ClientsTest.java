@@ -2,6 +2,8 @@ package net.amcintosh.freshbooks.resources;
 
 import com.google.api.client.http.HttpMethods;
 import com.google.api.client.http.HttpRequest;
+import com.google.api.client.json.Json;
+import com.google.api.client.json.JsonParser;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import net.amcintosh.freshbooks.FreshBooksClient;
@@ -18,7 +20,6 @@ import java.time.ZonedDateTime;
 import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -39,8 +40,8 @@ public class ClientsTest {
         assertEquals(clientId, client.getId());
         assertEquals("ACM123", client.getAccountingSystemId());
         assertEquals("416-867-5309", client.getBusinessPhone());
-        assertEquals("None", client.getCompanyIndustry());
-        assertEquals("None", client.getCompanySize());
+        assertEquals("", client.getCompanyIndustry());
+        assertEquals("", client.getCompanySize());
         assertEquals("CAD", client.getCurrencyCode());
         assertEquals("gordon.shumway@AmericanCyanamid.com", client.getEmail());
         assertEquals("416-444-4444", client.getFax());
@@ -71,78 +72,9 @@ public class ClientsTest {
                 client.getUpdated()
         );
         assertEquals(clientId, client.getUserid());
-        assertEquals("None", client.getVatName());
-        assertEquals("None", client.getVatNumber());
+        assertEquals("", client.getVatName());
+        assertEquals("", client.getVatNumber());
         assertEquals(VisState.ACTIVE, client.getVisState());
-    }
-
-    @Test
-    public void getClient_notFound() throws IOException {
-        String jsonResponse = TestUtil.loadTestJson("fixtures/get_client_response__not_found.json");
-        FreshBooksClient mockedFreshBooksClient = mock(FreshBooksClient.class);
-        HttpRequest mockRequest = TestUtil.buildMockHttpRequest(404, jsonResponse);
-        when(mockedFreshBooksClient.request(HttpMethods.GET,
-                "/accounting/account/ABC123/users/clients/12345", null)).thenReturn(mockRequest);
-
-        long clientId = 12345;
-        Clients clients = new Clients(mockedFreshBooksClient);
-
-        try {
-            clients.get("ABC123", clientId);
-        } catch (FreshBooksException e) {
-            assertEquals(404, e.statusCode);
-            assertEquals("Client not found.", e.getMessage());
-            assertEquals(1012, e.errorNo);
-            assertEquals("userid", e.field);
-            assertEquals("client", e.object);
-            assertEquals("12345", e.value);
-        }
-    }
-
-    @Test
-    public void getClient_badResponse() throws IOException {
-        String jsonResponse = "stuff";
-        FreshBooksClient mockedFreshBooksClient = mock(FreshBooksClient.class);
-        HttpRequest mockRequest = TestUtil.buildMockHttpRequest(500, jsonResponse);
-        when(mockedFreshBooksClient.request(HttpMethods.GET,
-                "/accounting/account/ABC123/users/clients/12345", null)).thenReturn(mockRequest);
-
-        long clientId = 12345;
-        Clients clients = new Clients(mockedFreshBooksClient);
-
-        try {
-            clients.get("ABC123", clientId);
-        } catch (FreshBooksException e) {
-            assertEquals(500, e.statusCode);
-            assertEquals("Returned an unexpected response", e.getMessage());
-            assertEquals(0, e.errorNo);
-            assertNull(e.field);
-            assertNull(e.object);
-            assertNull(e.value);
-        }
-    }
-
-    @Test
-    public void getClient_missingResponse() throws IOException {
-        String jsonResponse = "{\"foo\": \"bar\"}";
-        FreshBooksClient mockedFreshBooksClient = mock(FreshBooksClient.class);
-        HttpRequest mockRequest = TestUtil.buildMockHttpRequest(200, jsonResponse);
-        when(mockedFreshBooksClient.request(HttpMethods.GET,
-                "/accounting/account/ABC123/users/clients/12345", null)).thenReturn(mockRequest);
-
-        long clientId = 12345;
-        Clients clients = new Clients(mockedFreshBooksClient);
-
-        try {
-            clients.get("ABC123", clientId);
-        } catch (FreshBooksException e) {
-            assertEquals(200, e.statusCode);
-            assertEquals("Returned an unexpected response", e.getMessage());
-            assertEquals(0, e.errorNo);
-            assertNull(e.field);
-            assertNull(e.object);
-            assertNull(e.value);
-        }
     }
 
     @Test
@@ -163,23 +95,6 @@ public class ClientsTest {
         for (int i=0; i<clientIds.size(); i++) {
             assertEquals(clientIds.get(i).longValue(), clientList.getClients().get(i).getId());
         }
-    }
-
-    @Test
-    public void listClients_noMatchingClients() throws FreshBooksException, IOException {
-        String jsonResponse = "{\"response\": {\"result\": {\"clients\": [], " +
-                "\"page\": 1,\"pages\": 0,\"per_page\": 15,\"total\": 0} } }";
-        FreshBooksClient mockedFreshBooksClient = mock(FreshBooksClient.class);
-        HttpRequest mockRequest = TestUtil.buildMockHttpRequest(200, jsonResponse);
-        when(mockedFreshBooksClient.request(HttpMethods.GET,
-                "/accounting/account/ABC123/users/clients")).thenReturn(mockRequest);
-
-        Clients clients = new Clients(mockedFreshBooksClient);
-        ClientList clientList = clients.list("ABC123");
-
-
-        assertEquals(0, clientList.getPages().getTotal());
-        assertEquals(ImmutableList.of(), clientList.getClients());
     }
 
     @Test
@@ -272,5 +187,30 @@ public class ClientsTest {
 
         assertEquals(clientId, client.getId());
         assertEquals(email, client.getEmail());
+    }
+
+    @Test
+    public void deleteClient() throws FreshBooksException, IOException {
+        long clientId = 12345;
+
+        String jsonResponse = TestUtil.loadTestJson("fixtures/get_client_response.json");
+        jsonResponse = jsonResponse.replace("\"vis_state\": 0", "\"vis_state\": 1");
+
+        ImmutableMap<String, Object> data = ImmutableMap.of("vis_state", VisState.DELETED);
+
+        FreshBooksClient mockedFreshBooksClient = mock(FreshBooksClient.class);
+        HttpRequest mockRequest = TestUtil.buildMockHttpRequest(200, jsonResponse);
+        when(mockedFreshBooksClient.request(
+                HttpMethods.PUT,
+                "/accounting/account/ABC123/users/clients/12345",
+                ImmutableMap.of("client", data))
+        ).thenReturn(mockRequest);
+
+
+        Clients clients = new Clients(mockedFreshBooksClient);
+        Client client = clients.delete("ABC123", clientId);
+
+        assertEquals(clientId, client.getId());
+        assertEquals(VisState.DELETED, client.getVisState());
     }
 }

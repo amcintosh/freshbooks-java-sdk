@@ -6,6 +6,9 @@ import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Map;
 
+/**
+ * Utility functions. Mostly around dates and timezones.
+ */
 public class Util {
     public static final ZoneId UTC_ZONE = ZoneId.of("UTC");
     public static final ZoneId ACCOUNTING_LOCAL_ZONE = ZoneId.of("US/Eastern");

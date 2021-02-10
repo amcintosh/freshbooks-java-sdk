@@ -51,7 +51,7 @@ public class Clients extends AccountingResource {
     }
 
     /**
-     * Create a new client from the provided client model.
+     * Create a new client from the provided Client model.
      * Makes a POST call against the client resource endpoint.
      *
      * This calls `client.getContent()` to get a hash map of data.
@@ -103,7 +103,7 @@ public class Clients extends AccountingResource {
      * Makes a PUT call against the client resource endpoint.
      *
      * @param accountId The alpha-numeric account id
-     * @param clientId Id of the resource to return
+     * @param clientId Id of the resource to update
      * @param data Map of data to change
      *
      * @return The updated Client
@@ -118,13 +118,13 @@ public class Clients extends AccountingResource {
 
     /**
      * Delete the client with the corresponding id.
-     * Makes a PUT call against the client resource endpoint with a <pre>vis_state</pre> of deleted.
-     *
-     * Note: Most FreshBooks resources are soft-deleted,
-     * See [FreshBooks API - Active and Deleted Objects](https://www.freshbooks.com/api/active_deleted)
+     * Makes a PUT call against the client resource endpoint with a `vis_state` of deleted.
+     * <br/><br/>
+     * <i>Note:</i> Most FreshBooks resources are soft-deleted,
+     * @see <a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Active and Deleted Objects</a>
      *
      * @param accountId The alpha-numeric account id
-     * @param clientId Id of the resource to return
+     * @param clientId Id of the resource to update
      *
      * @return The deleted Client
      * @throws FreshBooksException If the call is not successful
