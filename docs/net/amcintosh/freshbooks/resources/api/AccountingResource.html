@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":6,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10};
+var data = {"i0":6,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -206,28 +206,39 @@ extends <a href="Resource.html" title="class in net.amcintosh.freshbooks.resourc
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
+<td class="colFirst"><code>protected <a href="ResourceType.html" title="enum in net.amcintosh.freshbooks.resources.api">ResourceType</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getResourceType()">getResourceType</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>protected java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getUrl(java.lang.String)">getUrl</a></span>&#8203;(java.lang.String&nbsp;accountId)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>protected java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getUrl(java.lang.String,long)">getUrl</a></span>&#8203;(java.lang.String&nbsp;accountId,
       long&nbsp;resourceId)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>protected java.lang.String</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getUrl(java.lang.String,java.util.List)">getUrl</a></span>&#8203;(java.lang.String&nbsp;accountId,
+      java.util.List&lt;<a href="../../models/builders/QueryBuilder.html" title="interface in net.amcintosh.freshbooks.models.builders">QueryBuilder</a>&gt;&nbsp;builders)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>protected <a href="../../models/api/AccountingListResponse.html" title="class in net.amcintosh.freshbooks.models.api">AccountingListResponse</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#handleListRequest(java.lang.String)">handleListRequest</a></span>&#8203;(java.lang.String&nbsp;url)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>protected <a href="../../models/api/AccountingResponse.html" title="class in net.amcintosh.freshbooks.models.api">AccountingResponse</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#handleRequest(java.lang.String,java.lang.String)">handleRequest</a></span>&#8203;(java.lang.String&nbsp;method,
              java.lang.String&nbsp;url)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>protected <a href="../../models/api/AccountingResponse.html" title="class in net.amcintosh.freshbooks.models.api">AccountingResponse</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#handleRequest(java.lang.String,java.lang.String,java.util.Map)">handleRequest</a></span>&#8203;(java.lang.String&nbsp;method,
              java.lang.String&nbsp;url,
@@ -235,6 +246,13 @@ extends <a href="Resource.html" title="class in net.amcintosh.freshbooks.resourc
 <td class="colLast">&nbsp;</td>
 </tr>
 </table>
+<ul class="blockList">
+<li class="blockList"><a id="methods.inherited.from.class.net.amcintosh.freshbooks.resources.api.Resource">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;net.amcintosh.freshbooks.resources.api.<a href="Resource.html" title="class in net.amcintosh.freshbooks.resources.api">Resource</a></h3>
+<code><a href="Resource.html#buildQueryString(java.util.List)">buildQueryString</a></code></li>
+</ul>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
 <!--   -->
@@ -281,6 +299,19 @@ extends <a href="Resource.html" title="class in net.amcintosh.freshbooks.resourc
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a id="getResourceType()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getResourceType</h4>
+<pre class="methodSignature">protected&nbsp;<a href="ResourceType.html" title="enum in net.amcintosh.freshbooks.resources.api">ResourceType</a>&nbsp;getResourceType()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Resource.html#getResourceType()">getResourceType</a></code>&nbsp;in class&nbsp;<code><a href="Resource.html" title="class in net.amcintosh.freshbooks.resources.api">Resource</a></code></dd>
+</dl>
+</li>
+</ul>
 <a id="getPath()">
 <!--   -->
 </a>
@@ -297,6 +328,16 @@ extends <a href="Resource.html" title="class in net.amcintosh.freshbooks.resourc
 <li class="blockList">
 <h4>getUrl</h4>
 <pre class="methodSignature">protected&nbsp;java.lang.String&nbsp;getUrl&#8203;(java.lang.String&nbsp;accountId)</pre>
+</li>
+</ul>
+<a id="getUrl(java.lang.String,java.util.List)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getUrl</h4>
+<pre class="methodSignature">protected&nbsp;java.lang.String&nbsp;getUrl&#8203;(java.lang.String&nbsp;accountId,
+                                  java.util.List&lt;<a href="../../models/builders/QueryBuilder.html" title="interface in net.amcintosh.freshbooks.models.builders">QueryBuilder</a>&gt;&nbsp;builders)</pre>
 </li>
 </ul>
 <a id="getUrl(java.lang.String,long)">

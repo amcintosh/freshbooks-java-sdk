@@ -1,5 +1,6 @@
 net.amcintosh.freshbooks
 net.amcintosh.freshbooks.models
 net.amcintosh.freshbooks.models.api
+net.amcintosh.freshbooks.models.builders
 net.amcintosh.freshbooks.resources
 net.amcintosh.freshbooks.resources.api
