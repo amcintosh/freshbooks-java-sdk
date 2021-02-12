@@ -7,6 +7,8 @@ import com.google.api.client.http.json.JsonHttpContent;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.json.gson.GsonFactory;
+import net.amcintosh.freshbooks.resources.Clients;
+import net.amcintosh.freshbooks.resources.Projects;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,6 +18,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.time.Instant;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Properties;
 
 /**
@@ -48,7 +51,7 @@ public class FreshBooksClient {
     private Instant accessTokenExpiresAt; //ofEpochSecond(long)
 
     private final String userAgent;
-    private static String version;
+    private static Optional<String> version;
 
     private final int connectTimeout;
     private final int readTimeout;
@@ -77,14 +80,14 @@ public class FreshBooksClient {
         this.redirectUri = builder.redirectUri;
         this.accessToken = builder.accessToken;
         this.refreshToken = builder.refreshToken;
-        if (builder.userAgent != null) {
-            this.userAgent = builder.userAgent;
-        } else {
-            this.userAgent = String.format("FreshBooks java sdk/%s client_id %s", this.getVersion(), this.clientId);
-        }
+        this.userAgent = Optional.ofNullable(builder.userAgent).orElseGet(this::defaultUserAgent);
         this.connectTimeout = builder.connectTimeout;
         this.readTimeout = builder.readTimeout;
         this.writeTimeout = builder.writeTimeout;
+    }
+
+    private String defaultUserAgent() {
+        return String.format("FreshBooks java sdk/%s client_id %s", this.getVersion(), this.clientId);
     }
 
     /**
@@ -93,8 +96,8 @@ public class FreshBooksClient {
      * @return the version number
      */
     public String getVersion() {
-        if (version != null) {
-            return version;
+        if (version.isPresent()) {
+            return version.get();
         }
         InputStream inputStream = null;
         Properties props = new Properties();
@@ -112,8 +115,8 @@ public class FreshBooksClient {
                 }
             }
         }
-        version = props.getProperty("version", "unknown");
-        return version;
+        version = Optional.of(props.getProperty("version", "unknown"));
+        return version.get();
     }
 
     @Override
@@ -168,6 +171,24 @@ public class FreshBooksClient {
                 .setWriteTimeout(this.writeTimeout)
                 .setThrowExceptionOnExecuteError(false);
         return request;
+    }
+
+    /**
+     * FreshBooks clients resource with calls to get, list, create, update, delete
+     *
+     * @return Clients resource initialized with this FreshBooksClient
+     */
+    public Clients clients() {
+        return new Clients(this);
+    }
+
+    /**
+     * FreshBooks projects resource with calls to get, list, create, update, delete
+     *
+     * @return Projects resource initialized with this FreshBooksClient
+     */
+    public Projects projects() {
+        return new Projects(this);
     }
 
     /**
