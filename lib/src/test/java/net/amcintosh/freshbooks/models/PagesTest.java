@@ -5,7 +5,7 @@ import org.junit.Test;
 public class PagesTest {
 
     @Test
-    public void BuildPages() {
+    public void buildPages() {
         Pages pages = new Pages(1, 2, 15, 20);
         assertEquals(1, pages.getPage());
         assertEquals(2, pages.getPages());

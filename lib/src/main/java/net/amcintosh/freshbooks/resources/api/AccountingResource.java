@@ -8,9 +8,12 @@ import net.amcintosh.freshbooks.FreshBooksException;
 import net.amcintosh.freshbooks.models.api.AccountingError;
 import net.amcintosh.freshbooks.models.api.AccountingListResponse;
 import net.amcintosh.freshbooks.models.api.AccountingResponse;
+import net.amcintosh.freshbooks.models.builders.QueryBuilder;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 /**
  * Handles resources under the `/accounting` endpoints.
@@ -25,10 +28,23 @@ public abstract class AccountingResource extends Resource {
         super(freshBooksClient);
     }
 
+    @Override
+    protected ResourceType getResourceType() {
+        return ResourceType.ACCOUNTING_LIKE;
+    }
+
     protected abstract String getPath();
 
     protected String getUrl(String accountId) {
-        return String.format("/accounting/account/%s/%s", accountId, this.getPath());
+        return this.getUrl(accountId, null);
+    }
+
+    protected String getUrl(String accountId, List<QueryBuilder> builders) {
+        String queryString = null;
+        if (builders != null) {
+            queryString = this.buildQueryString(builders);
+        }
+        return String.format("/accounting/account/%s/%s%s", accountId, this.getPath(), queryString);
     }
 
     protected String getUrl(String accountId, long resourceId) {

@@ -9,8 +9,11 @@ import net.amcintosh.freshbooks.models.ClientList;
 import net.amcintosh.freshbooks.models.VisState;
 import net.amcintosh.freshbooks.models.api.AccountingListResponse;
 import net.amcintosh.freshbooks.models.api.AccountingResponse;
+import net.amcintosh.freshbooks.models.builders.QueryBuilder;
 import net.amcintosh.freshbooks.resources.api.AccountingResource;
+import net.amcintosh.freshbooks.resources.api.ResourceType;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -27,9 +30,12 @@ public class Clients extends AccountingResource {
         return "users/clients";
     }
 
-
     public ClientList list(String accountId) throws FreshBooksException {
-        String url = this.getUrl(accountId);
+        return this.list(accountId, null);
+    }
+
+    public ClientList list(String accountId, List<QueryBuilder> builders) throws FreshBooksException {
+        String url = this.getUrl(accountId, builders);
         AccountingListResponse result = this.handleListRequest(url);
         return new ClientList(result.response.result);
     }

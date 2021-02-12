@@ -17,9 +17,13 @@ import java.util.Map;
  */
 public abstract class ProjectResource extends Resource {
 
-
     public ProjectResource(FreshBooksClient freshBooksClient) {
         super(freshBooksClient);
+    }
+
+    @Override
+    protected ResourceType getResourceType() {
+        return ResourceType.PROJECT_LIKE;
     }
 
     protected abstract String getPathForSingle();
