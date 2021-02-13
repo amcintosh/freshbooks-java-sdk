@@ -18,7 +18,7 @@ public class Service {
     @Key boolean billable;
     @Key("vis_state") int visState;
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
@@ -26,12 +26,8 @@ public class Service {
         this.id = id;
     }
 
-    public Long getBusinessId() {
+    public long getBusinessId() {
         return businessId;
-    }
-
-    public void setBusinessId(Long businessId) {
-        this.businessId = businessId;
     }
 
     public String getName() {

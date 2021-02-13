@@ -198,11 +198,11 @@ public class Project {
         this.rate = rate.toString();
     }
 
-    public Long getRetainerId() {
+    public long getRetainerId() {
         return retainerId;
     }
 
-    public void setRetainerId(Long retainerId) {
+    public void setRetainerId(long retainerId) {
         this.retainerId = retainerId;
     }
 
@@ -284,11 +284,11 @@ public class Project {
         @Key("last_name") String lastName;
         @Key String role;
 
-        public Long getId() {
+        public long getId() {
             return id;
         }
 
-        public Boolean getActive() {
+        public boolean getActive() {
             return active;
         }
 
@@ -304,7 +304,7 @@ public class Project {
             return firstName;
         }
 
-        public Long getIdentityId() {
+        public long getIdentityId() {
             return identityId;
         }
 
