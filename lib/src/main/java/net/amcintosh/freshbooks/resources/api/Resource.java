@@ -25,6 +25,5 @@ public abstract class Resource {
             return "?" + queryString.toString().replaceFirst("&", "");
         }
         return "";
-
     }
 }

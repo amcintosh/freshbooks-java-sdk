@@ -40,7 +40,7 @@ public abstract class AccountingResource extends Resource {
     }
 
     protected String getUrl(String accountId, List<QueryBuilder> builders) {
-        String queryString = null;
+        String queryString = "";
         if (builders != null) {
             queryString = this.buildQueryString(builders);
         }

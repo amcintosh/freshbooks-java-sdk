@@ -51,7 +51,7 @@ public class FreshBooksClient {
     private Instant accessTokenExpiresAt; //ofEpochSecond(long)
 
     private final String userAgent;
-    private static Optional<String> version;
+    private static Optional<String> version = Optional.empty();
 
     private final int connectTimeout;
     private final int readTimeout;

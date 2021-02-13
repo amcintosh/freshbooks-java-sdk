@@ -73,8 +73,7 @@ Project project = new Projects(freshBooksClient).get(businessId, projectId);
 #### Get and List
 
 API calls with a single resource return a model Class of the appropriate resource.
-For active vs deleted resources, see [FreshBooks API - Active and Deleted Objects](https://www.freshbooks.
-com/api/active_deleted).
+For active vs deleted resources, see [FreshBooks API - Active and Deleted Objects](https://www.freshbooks.com/api/active_deleted).
 
 ```java
 import net.amcintosh.freshbooks.models.Client;
