@@ -47,7 +47,7 @@ FreshBooksClient freshBooksClient = new FreshBooksClient.FreshBooksClientBuilder
 
 Each resource in the client has provides calls for `get`, `list`, `create`, `update` and `delete` calls. Please note that some API resources are scoped to a FreshBooks `account_id` while others are scoped to a `business_id`. In general these fall along the lines of accounting resources vs projects/time tracking resources, but that is not precise.
 
-Not all resources have full CRUD methods available. For example expense categories have `list` and `get` calls, but 
+Not all resources have full CRUD functions available. For example expense categories have `list` and `get` calls, but
 are not deletable.
 
 ```java
@@ -92,7 +92,7 @@ and pagination data (see Pagination below).
 import net.amcintosh.freshbooks.models.Client;
 import net.amcintosh.freshbooks.models.ClientList;
 
-ClientList clientListResponse = freshBooksClient.clients().list(accountId)
+ClientList clientListResponse = freshBooksClient.clients().list(accountId);
 List<Client> clients = clientListResponse.getClients();
 
 assertEquals("FreshBooks", clients.get(0).getOrganization());
@@ -131,12 +131,12 @@ Client existingClient = freshBooksClient.clients().get(accountId, clientUserId);
 assertEquals("john.doe@abcorp.com", existingClient.getEmail());
 
 existingClient.setEmail("new.email@abcorp.ca");
-existingClient = freshBooksClient.clients().update(accountId, clientUserId, existingClient)
+existingClient = freshBooksClient.clients().update(accountId, clientUserId, existingClient);
 assertEquals("new.email@abcorp.ca", existingClient.getEmail());
 
 HashMap<String, Object> updateData = new HashMap();
 updateData.put("email", "newer.email@abcorp.ca");
-existingClient = freshBooksClient.clients().update(accountId, clientUserId, updateData)
+existingClient = freshBooksClient.clients().update(accountId, clientUserId, updateData);
 assertEquals("new.email@abcorp.ca", existingClient.getEmail());
 ```
 
@@ -151,6 +151,50 @@ assertEquals(VisState.DELETED, client.getVisState());
 #### Error Handling
 
 #### Pagination, Filters, and Includes
+
+`list` calls can take a List of QueryBuilder objects that can be used to paginate, filter, and include
+optional data in the response. See [FreshBooks API - Parameters](https://www.freshbooks.com/api/parameters) documentation.
+
+##### Pagination
+
+Pagination results are included in `ListResult` responses:
+
+```java
+import net.amcintosh.freshbooks.models.Pages;
+
+ClientList clientListResponse = freshBooksClient.clients().list(accountId);
+Pages pageResult = clientListResponse.getPages();
+
+assertEquals("Pages{page=1, pages=1, perPage=30, total=6}", pageResult.toString());
+assertEquals(1, pageResult.getPage());
+assertEquals(1, pageResult.getPages());
+assertEquals(30, pageResult.getPerPage());
+assertEquals(6, pageResult.getTotal());
+```
+
+To make change a paginated call, pass a `PaginationQueryBuilder` object into the `list` call.
+
+```java
+import net.amcintosh.freshbooks.models.builders.PaginationQueryBuilder;
+
+PaginationQueryBuilder paginator = new PaginationQueryBuilder(2, 4);
+ArrayList<QueryBuilder> builders = new ArrayList();
+builders.add(paginator);
+
+ClientList clientListResponse = freshBooksClient.clients().list(accountId, builders);
+
+assertEquals("Pages{page=2, pages=3, perPage=4, total=9}", clientListResponse.getPages().toString());
+```
+
+`PaginationQueryBuilder` can also be updated with the `page` and `perPage` functions.
+
+```java
+PaginationQueryBuilder paginator = new PaginationQueryBuilder(2, 4);
+assertEquals("PaginationQueryBuilder{page=2, perPage=4}", paginator.toString());
+
+paginator.page(3).per_page(5);
+assertEquals("PaginationQueryBuilder{page=3, perPage=5}", paginator.toString());
+```
 
 ##### Filters
 
