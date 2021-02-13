@@ -7,10 +7,13 @@ import net.amcintosh.freshbooks.FreshBooksClient;
 import net.amcintosh.freshbooks.FreshBooksException;
 import net.amcintosh.freshbooks.TestUtil;
 import net.amcintosh.freshbooks.models.ClientList;
+import net.amcintosh.freshbooks.models.builders.PaginationQueryBuilder;
+import net.amcintosh.freshbooks.models.builders.QueryBuilder;
 import net.amcintosh.freshbooks.resources.Clients;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
@@ -103,5 +106,20 @@ public class AccountingResourceTest {
 
         assertEquals(0, clientList.getPages().getTotal());
         assertEquals(ImmutableList.of(), clientList.getClients());
+    }
+
+    @Test
+    public void listResource_paged() throws FreshBooksException, IOException {
+        String jsonResponse = TestUtil.loadTestJson("fixtures/list_clients_response.json");
+        FreshBooksClient mockedFreshBooksClient = mock(FreshBooksClient.class);
+        HttpRequest mockRequest = TestUtil.buildMockHttpRequest(200, jsonResponse);
+        when(mockedFreshBooksClient.request(HttpMethods.GET,
+                "/accounting/account/ABC123/users/clients?page=2&per_page=3")).thenReturn(mockRequest);
+
+        List<QueryBuilder> builders = ImmutableList.of(new PaginationQueryBuilder(2,3));
+        Clients clients = new Clients(mockedFreshBooksClient);
+        ClientList clientList = clients.list("ABC123", builders);
+
+        assertEquals(3, clientList.getPages().getTotal());
     }
 }

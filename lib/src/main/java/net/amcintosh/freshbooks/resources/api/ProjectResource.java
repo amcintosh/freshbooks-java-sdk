@@ -8,8 +8,10 @@ import net.amcintosh.freshbooks.FreshBooksClient;
 import net.amcintosh.freshbooks.FreshBooksException;
 import net.amcintosh.freshbooks.models.api.ProjectListResponse;
 import net.amcintosh.freshbooks.models.api.ProjectResponse;
+import net.amcintosh.freshbooks.models.builders.QueryBuilder;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -30,13 +32,16 @@ public abstract class ProjectResource extends Resource {
     protected abstract String getPathForList();
 
     protected String getUrl(long businessId, boolean isList) {
-        String path;
-        if (isList) {
-            path = getPathForList();
-        } else {
-            path = getPathForSingle();
+        return this.getUrl(businessId, isList, null);
+    }
+
+    protected String getUrl(long businessId, boolean isList,  List<QueryBuilder> builders) {
+        String path = isList ? getPathForList() : getPathForSingle();
+        String queryString = "";
+        if (builders != null) {
+            queryString = this.buildQueryString(builders);
         }
-        return String.format("/projects/business/%s/%s", businessId, path);
+        return String.format("/projects/business/%s/%s%s", businessId, path, queryString);
     }
 
     protected String getUrl(long businessId, long resourceId) {

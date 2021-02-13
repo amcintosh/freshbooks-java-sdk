@@ -6,11 +6,16 @@ import com.google.common.collect.ImmutableList;
 import net.amcintosh.freshbooks.FreshBooksClient;
 import net.amcintosh.freshbooks.FreshBooksException;
 import net.amcintosh.freshbooks.TestUtil;
+import net.amcintosh.freshbooks.models.ClientList;
 import net.amcintosh.freshbooks.models.ProjectList;
+import net.amcintosh.freshbooks.models.builders.PaginationQueryBuilder;
+import net.amcintosh.freshbooks.models.builders.QueryBuilder;
+import net.amcintosh.freshbooks.resources.Clients;
 import net.amcintosh.freshbooks.resources.Projects;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
@@ -103,6 +108,21 @@ public class ProjectResourceTest {
 
         assertEquals(0, projectList.getPages().getTotal());
         assertEquals(ImmutableList.of(), projectList.getProjects());
+    }
+
+    @Test
+    public void listResource_paged() throws FreshBooksException, IOException {
+        String jsonResponse = TestUtil.loadTestJson("fixtures/list_projects_response.json");
+        FreshBooksClient mockedFreshBooksClient = mock(FreshBooksClient.class);
+        HttpRequest mockRequest = TestUtil.buildMockHttpRequest(200, jsonResponse);
+        when(mockedFreshBooksClient.request(HttpMethods.GET,
+                "/projects/business/439000/projects?page=2&per_page=3")).thenReturn(mockRequest);
+
+        List<QueryBuilder> builders = ImmutableList.of(new PaginationQueryBuilder(2,3));
+        Projects projects = new Projects(mockedFreshBooksClient);
+        ProjectList projectList = projects.list(439000, builders);
+
+        assertEquals(3, projectList.getPages().getTotal());
     }
 
 }

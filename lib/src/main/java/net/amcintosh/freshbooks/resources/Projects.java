@@ -8,8 +8,10 @@ import net.amcintosh.freshbooks.models.Project;
 import net.amcintosh.freshbooks.models.ProjectList;
 import net.amcintosh.freshbooks.models.api.ProjectListResponse;
 import net.amcintosh.freshbooks.models.api.ProjectResponse;
+import net.amcintosh.freshbooks.models.builders.QueryBuilder;
 import net.amcintosh.freshbooks.resources.api.ProjectResource;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -32,7 +34,11 @@ public class Projects extends ProjectResource {
     }
 
     public ProjectList list(long businessId) throws FreshBooksException {
-        String url = this.getUrl(businessId, true);
+        return this.list(businessId, null);
+    }
+
+    public ProjectList list(long businessId, List<QueryBuilder> builders) throws FreshBooksException {
+        String url = this.getUrl(businessId, true, builders);
         ProjectListResponse result = this.handleListRequest(url);
         return new ProjectList(result);
     }

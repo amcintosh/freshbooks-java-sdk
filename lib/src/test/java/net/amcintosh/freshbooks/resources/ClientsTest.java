@@ -2,8 +2,6 @@ package net.amcintosh.freshbooks.resources;
 
 import com.google.api.client.http.HttpMethods;
 import com.google.api.client.http.HttpRequest;
-import com.google.api.client.json.Json;
-import com.google.api.client.json.JsonParser;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import net.amcintosh.freshbooks.FreshBooksClient;
