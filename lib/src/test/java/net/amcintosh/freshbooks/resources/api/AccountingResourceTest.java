@@ -7,6 +7,7 @@ import net.amcintosh.freshbooks.FreshBooksClient;
 import net.amcintosh.freshbooks.FreshBooksException;
 import net.amcintosh.freshbooks.TestUtil;
 import net.amcintosh.freshbooks.models.ClientList;
+import net.amcintosh.freshbooks.models.builders.IncludesQueryBuilder;
 import net.amcintosh.freshbooks.models.builders.PaginationQueryBuilder;
 import net.amcintosh.freshbooks.models.builders.QueryBuilder;
 import net.amcintosh.freshbooks.resources.Clients;
@@ -121,5 +122,21 @@ public class AccountingResourceTest {
         ClientList clientList = clients.list("ABC123", builders);
 
         assertEquals(3, clientList.getPages().getTotal());
+    }
+
+    @Test
+    public void listResource_includes() throws FreshBooksException, IOException {
+        String jsonResponse = TestUtil.loadTestJson("fixtures/list_clients_response.json");
+        FreshBooksClient mockedFreshBooksClient = mock(FreshBooksClient.class);
+        HttpRequest mockRequest = TestUtil.buildMockHttpRequest(200, jsonResponse);
+        when(mockedFreshBooksClient.request(HttpMethods.GET,
+                "/accounting/account/ABC123/users/clients" +
+                "?include[]=late_reminders&include[]=last_activity")).thenReturn(mockRequest);
+
+        IncludesQueryBuilder includes = new IncludesQueryBuilder().include("late_reminders").include("last_activity");
+        List<QueryBuilder> builders = ImmutableList.of(includes);
+
+        Clients clients = new Clients(mockedFreshBooksClient);
+        clients.list("ABC123", builders);
     }
 }

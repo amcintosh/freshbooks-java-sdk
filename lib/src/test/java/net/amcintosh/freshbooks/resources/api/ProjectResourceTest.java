@@ -8,6 +8,7 @@ import net.amcintosh.freshbooks.FreshBooksException;
 import net.amcintosh.freshbooks.TestUtil;
 import net.amcintosh.freshbooks.models.ClientList;
 import net.amcintosh.freshbooks.models.ProjectList;
+import net.amcintosh.freshbooks.models.builders.IncludesQueryBuilder;
 import net.amcintosh.freshbooks.models.builders.PaginationQueryBuilder;
 import net.amcintosh.freshbooks.models.builders.QueryBuilder;
 import net.amcintosh.freshbooks.resources.Clients;
@@ -125,4 +126,18 @@ public class ProjectResourceTest {
         assertEquals(3, projectList.getPages().getTotal());
     }
 
+    @Test
+    public void listResource_includes() throws FreshBooksException, IOException {
+        String jsonResponse = TestUtil.loadTestJson("fixtures/list_projects_response.json");
+        FreshBooksClient mockedFreshBooksClient = mock(FreshBooksClient.class);
+        HttpRequest mockRequest = TestUtil.buildMockHttpRequest(200, jsonResponse);
+        when(mockedFreshBooksClient.request(HttpMethods.GET,
+                "/projects/business/439000/projects?include_overdue_fees=true")).thenReturn(mockRequest);
+
+        IncludesQueryBuilder includes = new IncludesQueryBuilder().include("include_overdue_fees");
+        List<QueryBuilder> builders = ImmutableList.of(includes);
+
+        Projects projects = new Projects(mockedFreshBooksClient);
+        projects.list(439000, builders);
+    }
 }
