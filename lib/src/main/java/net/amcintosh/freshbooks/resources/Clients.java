@@ -9,9 +9,9 @@ import net.amcintosh.freshbooks.models.ClientList;
 import net.amcintosh.freshbooks.models.VisState;
 import net.amcintosh.freshbooks.models.api.AccountingListResponse;
 import net.amcintosh.freshbooks.models.api.AccountingResponse;
+import net.amcintosh.freshbooks.models.builders.IncludesQueryBuilder;
 import net.amcintosh.freshbooks.models.builders.QueryBuilder;
 import net.amcintosh.freshbooks.resources.api.AccountingResource;
-import net.amcintosh.freshbooks.resources.api.ResourceType;
 
 import java.util.List;
 import java.util.Map;
@@ -66,7 +66,21 @@ public class Clients extends AccountingResource {
      * @throws FreshBooksException If the call is not successful
      */
     public Client get(String accountId, long clientId) throws FreshBooksException {
-        String url = this.getUrl(accountId, clientId);
+        return this.get(accountId, clientId, null);
+    }
+
+    /**
+     * Get a single client with the corresponding id.
+     *
+     * @param accountId The alpha-numeric account id
+     * @param clientId Id of the resource to return
+     * @param builder IncludesQueryBuilder object for including additional data, sub-resources, etc.
+     *
+     * @return The Client
+     * @throws FreshBooksException If the call is not successful
+     */
+    public Client get(String accountId, long clientId, IncludesQueryBuilder builder) throws FreshBooksException {
+        String url = this.getUrl(accountId, clientId, builder);
         AccountingResponse result = this.handleRequest(HttpMethods.GET, url);
         return result.response.result.client;
     }

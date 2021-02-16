@@ -4,10 +4,12 @@ import com.google.api.client.http.HttpMethods;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpResponse;
 import com.google.api.client.http.HttpStatusCodes;
+import com.google.common.collect.ImmutableList;
 import net.amcintosh.freshbooks.FreshBooksClient;
 import net.amcintosh.freshbooks.FreshBooksException;
 import net.amcintosh.freshbooks.models.api.ProjectListResponse;
 import net.amcintosh.freshbooks.models.api.ProjectResponse;
+import net.amcintosh.freshbooks.models.builders.IncludesQueryBuilder;
 import net.amcintosh.freshbooks.models.builders.QueryBuilder;
 
 import java.io.IOException;
@@ -45,7 +47,15 @@ public abstract class ProjectResource extends Resource {
     }
 
     protected String getUrl(long businessId, long resourceId) {
-        return String.format("/projects/business/%s/%s/%s", businessId, this.getPathForSingle(), resourceId);
+        return this.getUrl(businessId, resourceId, null);
+    }
+
+    protected String getUrl(long businessId, long resourceId, IncludesQueryBuilder builder) {
+        String queryString = "";
+        if (builder != null) {
+            queryString = this.buildQueryString(ImmutableList.of(builder));
+        }
+        return String.format("/projects/business/%s/%s/%s%s", businessId, this.getPathForSingle(), resourceId, queryString);
     }
 
     protected ProjectResponse handleRequest(String method, String url) throws FreshBooksException {

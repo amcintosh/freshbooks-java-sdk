@@ -6,12 +6,11 @@ import com.google.common.collect.ImmutableList;
 import net.amcintosh.freshbooks.FreshBooksClient;
 import net.amcintosh.freshbooks.FreshBooksException;
 import net.amcintosh.freshbooks.TestUtil;
-import net.amcintosh.freshbooks.models.ClientList;
+import net.amcintosh.freshbooks.models.Project;
 import net.amcintosh.freshbooks.models.ProjectList;
 import net.amcintosh.freshbooks.models.builders.IncludesQueryBuilder;
 import net.amcintosh.freshbooks.models.builders.PaginationQueryBuilder;
 import net.amcintosh.freshbooks.models.builders.QueryBuilder;
-import net.amcintosh.freshbooks.resources.Clients;
 import net.amcintosh.freshbooks.resources.Projects;
 import org.junit.Test;
 
@@ -24,6 +23,25 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 public class ProjectResourceTest {
+
+    @Test
+    public void getProject_includes() throws FreshBooksException, IOException {
+        String jsonResponse = TestUtil.loadTestJson("fixtures/get_project_response.json");
+        FreshBooksClient mockedFreshBooksClient = mock(FreshBooksClient.class);
+        HttpRequest mockRequest = TestUtil.buildMockHttpRequest(200, jsonResponse);
+        when(mockedFreshBooksClient.request(HttpMethods.GET,
+                "/projects/business/439000/project/654321?include_overdue_fees=true",
+                null)).thenReturn(mockRequest);
+
+        IncludesQueryBuilder builder = new IncludesQueryBuilder().include("include_overdue_fees");
+
+        long projectId = 654321;
+        Projects projects = new Projects(mockedFreshBooksClient);
+        Project project = projects.get(439000, projectId, builder);
+
+        assertEquals(projectId, project.getId());
+        assertEquals("Awesome Project", project.getTitle());
+    }
 
     @Test
     public void getResource_notFound() throws IOException {

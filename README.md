@@ -22,7 +22,6 @@ import net.amcintosh.freshbooks.FreshBooksClient;
 
 FreshBooksClient freshBooksClient = new FreshBooksClient.FreshBooksClientBuilder(
         "your application id", "your secret", "https://some-redirect")
-        .withToken(<a valid token>)
         .build();
 ```
 
@@ -192,13 +191,39 @@ assertEquals("Pages{page=2, pages=3, perPage=4, total=9}", clientListResponse.ge
 PaginationQueryBuilder paginator = new PaginationQueryBuilder(2, 4);
 assertEquals("PaginationQueryBuilder{page=2, perPage=4}", paginator.toString());
 
-paginator.page(3).per_page(5);
+paginator.page(3).perPage(5);
 assertEquals("PaginationQueryBuilder{page=3, perPage=5}", paginator.toString());
 ```
 
 ##### Filters
 
 ##### Includes
+
+To include additional relationships, sub-resources, or data in a list or get response, a `IncludesQueryBuilder`
+can be constructed.
+
+```java
+import net.amcintosh.freshbooks.models.builders.IncludesQueryBuilder;
+
+IncludesQueryBuilder includes = new IncludesQueryBuilder().include("outstanding_balance");
+assertEquals("IncludesQueryBuilder{includes=[outstanding_balance]}", query.toString());
+```
+
+Which can then be passed into `get` or `list` calls:
+
+```java
+// Get call
+Client client = freshBooksClient.clients().get(accountId, clientId, includes);
+assertEquals("USD", client.getOutstandingBalance().getCode());
+
+// List call
+ArrayList<QueryBuilder> builders = new ArrayList();
+builders.add(includes);
+
+ClientList clientListResponse = freshBooksClient.clients().list(accountId, builders);
+List<Client> clients = clientListResponse.getClients();
+assertEquals("USD", clients.get(0).getOutstandingBalance().getCode());
+```
 
 ##### Sorting
 

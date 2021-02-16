@@ -3,17 +3,18 @@ package net.amcintosh.freshbooks.resources.api;
 import com.google.api.client.http.HttpMethods;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpResponse;
+import com.google.common.collect.ImmutableList;
 import net.amcintosh.freshbooks.FreshBooksClient;
 import net.amcintosh.freshbooks.FreshBooksException;
 import net.amcintosh.freshbooks.models.api.AccountingError;
 import net.amcintosh.freshbooks.models.api.AccountingListResponse;
 import net.amcintosh.freshbooks.models.api.AccountingResponse;
+import net.amcintosh.freshbooks.models.builders.IncludesQueryBuilder;
 import net.amcintosh.freshbooks.models.builders.QueryBuilder;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 
 /**
  * Handles resources under the `/accounting` endpoints.
@@ -48,7 +49,15 @@ public abstract class AccountingResource extends Resource {
     }
 
     protected String getUrl(String accountId, long resourceId) {
-        return String.format("/accounting/account/%s/%s/%s", accountId, this.getPath(), resourceId);
+        return this.getUrl(accountId, resourceId, null);
+    }
+
+    protected String getUrl(String accountId, long resourceId, IncludesQueryBuilder builder) {
+        String queryString = "";
+        if (builder != null) {
+            queryString = this.buildQueryString(ImmutableList.of(builder));
+        }
+        return String.format("/accounting/account/%s/%s/%s%s", accountId, this.getPath(), resourceId, queryString);
     }
 
     protected AccountingResponse handleRequest(String method, String url) throws FreshBooksException {
