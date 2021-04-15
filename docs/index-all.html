@@ -151,7 +151,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Build the FreshBooksClient.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/builders/IncludesQueryBuilder.html#build(net.amcintosh.freshbooks.resources.api.ResourceType)">build(ResourceType)</a></span> - Method in class net.amcintosh.freshbooks.models.builders.<a href="net/amcintosh/freshbooks/models/builders/IncludesQueryBuilder.html" title="class in net.amcintosh.freshbooks.models.builders">IncludesQueryBuilder</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Build the query string parameters for the list or get call.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/builders/PaginationQueryBuilder.html#build(net.amcintosh.freshbooks.resources.api.ResourceType)">build(ResourceType)</a></span> - Method in class net.amcintosh.freshbooks.models.builders.<a href="net/amcintosh/freshbooks/models/builders/PaginationQueryBuilder.html" title="class in net.amcintosh.freshbooks.models.builders">PaginationQueryBuilder</a></dt>
 <dd>
 <div class="block">Build the query string parameters for the list call.</div>
@@ -298,7 +300,15 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Get a single project with the corresponding id.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Projects.html#get(long,long,net.amcintosh.freshbooks.models.builders.IncludesQueryBuilder)">get(long, long, IncludesQueryBuilder)</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Projects.html" title="class in net.amcintosh.freshbooks.resources">Projects</a></dt>
+<dd>
+<div class="block">Get a single project with the corresponding id.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Clients.html#get(java.lang.String,long)">get(String, long)</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Clients.html" title="class in net.amcintosh.freshbooks.resources">Clients</a></dt>
+<dd>
+<div class="block">Get a single client with the corresponding id.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Clients.html#get(java.lang.String,long,net.amcintosh.freshbooks.models.builders.IncludesQueryBuilder)">get(String, long, IncludesQueryBuilder)</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Clients.html" title="class in net.amcintosh.freshbooks.resources">Clients</a></dt>
 <dd>
 <div class="block">Get a single client with the corresponding id.</div>
 </dd>
@@ -436,6 +446,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Shortcode indicating user language e.g.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Client.html#getLastActivity()">getLastActivity()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Client.html" title="class in net.amcintosh.freshbooks.models">Client</a></dt>
+<dd>
+<div class="block">The last client activity action.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Client.html#getLastName()">getLastName()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Client.html" title="class in net.amcintosh.freshbooks.models">Client</a></dt>
 <dd>
 <div class="block">Client's last name.</div>
@@ -552,9 +566,13 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/api/ProjectResource.html#getUrl(long,long)">getUrl(long, long)</a></span> - Method in class net.amcintosh.freshbooks.resources.api.<a href="net/amcintosh/freshbooks/resources/api/ProjectResource.html" title="class in net.amcintosh.freshbooks.resources.api">ProjectResource</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/api/ProjectResource.html#getUrl(long,long,net.amcintosh.freshbooks.models.builders.IncludesQueryBuilder)">getUrl(long, long, IncludesQueryBuilder)</a></span> - Method in class net.amcintosh.freshbooks.resources.api.<a href="net/amcintosh/freshbooks/resources/api/ProjectResource.html" title="class in net.amcintosh.freshbooks.resources.api">ProjectResource</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/api/AccountingResource.html#getUrl(java.lang.String)">getUrl(String)</a></span> - Method in class net.amcintosh.freshbooks.resources.api.<a href="net/amcintosh/freshbooks/resources/api/AccountingResource.html" title="class in net.amcintosh.freshbooks.resources.api">AccountingResource</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/api/AccountingResource.html#getUrl(java.lang.String,long)">getUrl(String, long)</a></span> - Method in class net.amcintosh.freshbooks.resources.api.<a href="net/amcintosh/freshbooks/resources/api/AccountingResource.html" title="class in net.amcintosh.freshbooks.resources.api">AccountingResource</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/api/AccountingResource.html#getUrl(java.lang.String,long,net.amcintosh.freshbooks.models.builders.IncludesQueryBuilder)">getUrl(String, long, IncludesQueryBuilder)</a></span> - Method in class net.amcintosh.freshbooks.resources.api.<a href="net/amcintosh/freshbooks/resources/api/AccountingResource.html" title="class in net.amcintosh.freshbooks.resources.api">AccountingResource</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/api/AccountingResource.html#getUrl(java.lang.String,java.util.List)">getUrl(String, List&lt;QueryBuilder&gt;)</a></span> - Method in class net.amcintosh.freshbooks.resources.api.<a href="net/amcintosh/freshbooks/resources/api/AccountingResource.html" title="class in net.amcintosh.freshbooks.resources.api">AccountingResource</a></dt>
 <dd>&nbsp;</dd>
@@ -621,9 +639,13 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#id">id</a></span> - Variable in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/builders/IncludesQueryBuilder.html#include(java.lang.String)">include(String)</a></span> - Method in class net.amcintosh.freshbooks.models.builders.<a href="net/amcintosh/freshbooks/models/builders/IncludesQueryBuilder.html" title="class in net.amcintosh.freshbooks.models.builders">IncludesQueryBuilder</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Add an include key to the builder.</div>
+</dd>
 <dt><a href="net/amcintosh/freshbooks/models/builders/IncludesQueryBuilder.html" title="class in net.amcintosh.freshbooks.models.builders"><span class="typeNameLink">IncludesQueryBuilder</span></a> - Class in <a href="net/amcintosh/freshbooks/models/builders/package-summary.html">net.amcintosh.freshbooks.models.builders</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Builder for including relationships, sub-resources, or additional data in the response.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/builders/IncludesQueryBuilder.html#%3Cinit%3E()">IncludesQueryBuilder()</a></span> - Constructor for class net.amcintosh.freshbooks.models.builders.<a href="net/amcintosh/freshbooks/models/builders/IncludesQueryBuilder.html" title="class in net.amcintosh.freshbooks.models.builders">IncludesQueryBuilder</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/api/AccountingResponse.AccountingResult.html#invoice">invoice</a></span> - Variable in class net.amcintosh.freshbooks.models.api.<a href="net/amcintosh/freshbooks/models/api/AccountingResponse.AccountingResult.html" title="class in net.amcintosh.freshbooks.models.api">AccountingResponse.AccountingResult</a></dt>

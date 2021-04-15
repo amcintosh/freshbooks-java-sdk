@@ -137,6 +137,26 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <pre>public class <span class="typeNameLabel">IncludesQueryBuilder</span>
 extends java.lang.Object
 implements <a href="QueryBuilder.html" title="interface in net.amcintosh.freshbooks.models.builders">QueryBuilder</a></pre>
+<div class="block">Builder for including relationships, sub-resources, or additional data in the response.
+
+ Can be passed to a `.get()` call, or to a `.list()` call.
+
+ <pre><code>
+     FreshBooksClient freshBooksClient = new FreshBooksClient.FreshBooksClientBuilder("some_client_id")
+         .withAccessToken("some_token")
+         .build();
+     Clients clients = new Clients(freshBooksClient);
+
+     IncludesQueryBuilder inc = new IncludesQueryBuilder();
+     inc.includes("last_activity").includes("late_reminders");
+     assertEquals("&amp;includes[]=last_activity&amp;includes[]=late_reminders", inc.build(ResourceType.ACCOUNTING_LIKE));
+
+     ClientList clientResponse = clients.get(accountId, clientId, inc);
+
+     ArrayList&lt;QueryBuilder&gt; builders = new ArrayList&lt;QueryBuilder&gt;();
+     builders.add(inc);
+     ClientList clientListResponse = clients.list(accountId, builders);
+ </code></pre></div>
 </li>
 </ul>
 </div>
@@ -181,12 +201,16 @@ implements <a href="QueryBuilder.html" title="interface in net.amcintosh.freshbo
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#build(net.amcintosh.freshbooks.resources.api.ResourceType)">build</a></span>&#8203;(<a href="../../resources/api/ResourceType.html" title="enum in net.amcintosh.freshbooks.resources.api">ResourceType</a>&nbsp;resourceType)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Build the query string parameters for the list or get call.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code><a href="IncludesQueryBuilder.html" title="class in net.amcintosh.freshbooks.models.builders">IncludesQueryBuilder</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#include(java.lang.String)">include</a></span>&#8203;(java.lang.String&nbsp;key)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Add an include key to the builder.</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
@@ -243,6 +267,13 @@ implements <a href="QueryBuilder.html" title="interface in net.amcintosh.freshbo
 <li class="blockList">
 <h4>include</h4>
 <pre class="methodSignature">public&nbsp;<a href="IncludesQueryBuilder.html" title="class in net.amcintosh.freshbooks.models.builders">IncludesQueryBuilder</a>&nbsp;include&#8203;(java.lang.String&nbsp;key)</pre>
+<div class="block">Add an include key to the builder.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>key</code> - The key for the included field, sub-resource, etc.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The IncludesQueryBuilder instance.</dd>
+</dl>
 </li>
 </ul>
 <a id="toString()">
@@ -265,9 +296,15 @@ implements <a href="QueryBuilder.html" title="interface in net.amcintosh.freshbo
 <li class="blockList">
 <h4>build</h4>
 <pre class="methodSignature">public&nbsp;java.lang.String&nbsp;build&#8203;(<a href="../../resources/api/ResourceType.html" title="enum in net.amcintosh.freshbooks.resources.api">ResourceType</a>&nbsp;resourceType)</pre>
+<div class="block">Build the query string parameters for the list or get call. As different FreshBooks resources
+ use different structure for includes paramters, a resource type is required.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="QueryBuilder.html#build(net.amcintosh.freshbooks.resources.api.ResourceType)">build</a></code>&nbsp;in interface&nbsp;<code><a href="QueryBuilder.html" title="interface in net.amcintosh.freshbooks.models.builders">QueryBuilder</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>resourceType</code> - The resource type.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The composed query string parameters.</dd>
 </dl>
 </li>
 </ul>
