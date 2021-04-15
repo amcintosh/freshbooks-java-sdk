@@ -1,5 +1,6 @@
 package net.amcintosh.freshbooks.models;
 
+import com.google.api.client.json.GenericJson;
 import com.google.api.client.util.Key;
 
 /**
@@ -11,7 +12,7 @@ import com.google.api.client.util.Key;
  *
  * @see <a href="https://www.freshbooks.com/api/services">FreshBooks API - Services</a>
  */
-public class Service {
+public class Service extends GenericJson {
     @Key Long id;
     @Key("business_id") Long businessId;
     @Key String name;

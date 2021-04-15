@@ -1,5 +1,6 @@
 package net.amcintosh.freshbooks.models;
 
+import com.google.api.client.json.GenericJson;
 import com.google.api.client.util.Key;
 import net.amcintosh.freshbooks.Util;
 
@@ -16,7 +17,7 @@ import java.util.Map;
  *
  * @see <a href="https://www.freshbooks.com/api/project">FreshBooks API - Projects</a>
  */
-public class Project {
+public class Project extends GenericJson {
 
     @Key Long id;
     @Key Boolean active;

@@ -36,6 +36,7 @@ public class ClientsTest {
         Client client = clients.get("ABC123", clientId);
 
         assertEquals(clientId, client.getId());
+        assertEquals(clientId, client.get("id"));
         assertEquals("ACM123", client.getAccountingSystemId());
         assertEquals("416-867-5309", client.getBusinessPhone());
         assertEquals("", client.getCompanyIndustry());
@@ -46,6 +47,7 @@ public class ClientsTest {
         assertEquals("Gordon", client.getFirstName());
         assertEquals("416-444-4445", client.getHomePhone());
         assertEquals("en", client.getLanguage());
+        assertEquals("", client.getLastActivity());
         assertEquals("Shumway", client.getLastName());
         assertEquals("416-444-4446", client.getMobilePhone());
         assertEquals("I like cats", client.getNote());

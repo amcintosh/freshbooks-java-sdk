@@ -1,5 +1,6 @@
 package net.amcintosh.freshbooks.models;
 
+import com.google.api.client.json.GenericJson;
 import com.google.api.client.util.Key;
 import net.amcintosh.freshbooks.Util;
 
@@ -13,7 +14,7 @@ import java.util.Map;
  *
  * @see <a href="https://www.freshbooks.com/api/clients">FreshBooks API - Clients</a>
  */
-public class Client {
+public class Client extends GenericJson {
 
     @Key Long id;
     @Key("accounting_systemid") String accountingSystemId;
@@ -26,7 +27,7 @@ public class Client {
     @Key("fname") String firstName;
     @Key("home_phone") String homePhone;
     @Key String language;
-    //@Key("last_activity") last_activity	datetime	//time of last client activity
+    @Key("last_activity") String lastActivity;
     @Key("lname") String lastName;
     @Key("mob_phone") String mobilePhone;
     @Key String note;
@@ -230,6 +231,18 @@ public class Client {
      */
     public void setLanguage(String language) {
         this.language = language;
+    }
+
+    /**
+     * The last client activity action.
+     * <br><br>
+     * <i>Note:</i> This returns as "null" in all calls unless a "last_activity"
+     * include parameter is provided.
+     *
+     * @return eg. "Client Updated"
+     */
+    public String getLastActivity() {
+        return lastActivity;
     }
 
     /**

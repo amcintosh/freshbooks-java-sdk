@@ -12,9 +12,9 @@ TODO: See for module documentation.
 
 You can create an instance of the API client in one of two ways:
 
-- By providing your application's OAuth2 `clientId` and `clientSecret` and following through the auth flow, which 
+- By providing your application's OAuth2 `clientId` and `clientSecret` and following through the auth flow, which
   when complete will return an access token
-- Or if you already have a valid access token, you can instantiate the client with that token, however token refresh 
+- Or if you already have a valid access token, you can instantiate the client with that token, however token refresh
   flows will not function without the application id and secret.
 
 ```java
@@ -99,6 +99,21 @@ assertEquals("FreshBooks", clients.get(0).getOrganization());
 for (Client client: clientListResponse.getClients()) {
     assertEquals("FreshBooks", client.getOrganization());
 }
+```
+
+Response objects implements Map so the `get()` method can be used to access the JSON content. This can be useful if
+the raw response data of a field is needed, or in the case where a field does not have a corresponding field in the
+reponse object. This is most common in the case of 'includes' which can have special cases or undocumented
+additional fields.
+
+```java
+assertEquals("FreshBooks", client.getOrganization());
+assertEquals("FreshBooks", client.get("organization"));
+
+assertEquals(VisState.ACTIVE, client.getVisState());
+assertEquals(0, client.get("vis_state"));
+
+assertEquals("Unexpected Data", client.get("some_undocumented_field"));
 ```
 
 #### Create, Update, and Delete

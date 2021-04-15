@@ -36,6 +36,7 @@ public class ProjectsTest {
         Project project = projects.get(439000, projectId);
 
         assertEquals(projectId, project.getId());
+        assertEquals(projectId, project.get("id"));
         assertEquals(true, project.getActive());
         assertEquals(new BigDecimal("0.00"), project.getBilledAmount());
         assertEquals(ProjectBilledStatus.unbilled, project.getBilledStatus());
