@@ -39,8 +39,8 @@ public class ProjectsTest {
         assertEquals(projectId, project.get("id"));
         assertEquals(true, project.getActive());
         assertEquals(new BigDecimal("0.00"), project.getBilledAmount());
-        assertEquals(ProjectBilledStatus.unbilled, project.getBilledStatus());
-        assertEquals(ProjectBillingMethod.project_rate, project.getBillingMethod());
+        assertEquals(ProjectBilledStatus.UNBILLED, project.getBilledStatus());
+        assertEquals(ProjectBillingMethod.PROJECT_RATE, project.getBillingMethod());
         assertEquals(0, project.getBudget());
         assertEquals(1234, project.getClientId());
         assertEquals(false, project.getComplete());
@@ -66,7 +66,7 @@ public class ProjectsTest {
         assertEquals(0, project.getLoggedDuration());
         assertEquals(null, project.getPendingInvitations());
         assertEquals(43, project.getProjectManagerId());
-        assertEquals(ProjectType.hourly_rate, project.getProjectType());
+        assertEquals(ProjectType.HOURLY_RATE, project.getProjectType());
         assertEquals(new BigDecimal("5.00"), project.getRate());
         assertEquals(0, project.getRetainerId());
         assertEquals(false, project.getSample());

@@ -71,7 +71,7 @@ public class ClientsTest {
                 11, 10, 0, ZoneId.of("UTC")),
                 client.getUpdated()
         );
-        assertEquals(clientId, client.getUserid());
+        assertEquals(clientId, client.getUserId());
         assertEquals("", client.getVatName());
         assertEquals("", client.getVatNumber());
         assertEquals(VisState.ACTIVE, client.getVisState());

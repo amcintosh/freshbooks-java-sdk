@@ -48,7 +48,7 @@ public class Client extends GenericJson {
     @Key("s_street2") String shippingStreet2;
     @Key("signup_date") String signupDate;
     @Key String updated;
-    @Key Long userid;
+    @Key("userid") Long userId;
     @Key("vat_name") String vatName;
     @Key("vat_number") String vatNumber;
     @Key("vis_state") int visState;
@@ -538,8 +538,8 @@ public class Client extends GenericJson {
      *
      * @return The id
      */
-    public long getUserid() {
-        return userid;
+    public long getUserId() {
+        return userId;
     }
 
     /**
@@ -634,7 +634,6 @@ public class Client extends GenericJson {
         Util.putIfNotNull(content, "fname", this.firstName);
         Util.putIfNotNull(content, "home_phone", this.homePhone);
         Util.putIfNotNull(content, "language", this.language);
-        //Util.putIfNotNull(content, "last_activity", this.last_activity);
         Util.putIfNotNull(content, "lname", this.lastName);
         Util.putIfNotNull(content, "note", this.note);
         Util.putIfNotNull(content, "organization", this.organization);

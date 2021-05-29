@@ -9,6 +9,10 @@ public class ListResult extends GenericJson {
 
     protected Pages pages;
 
+    /**
+     * Get Pages object of list pagination details
+     * @return
+     */
     public Pages getPages() {
         return this.pages;
     }

@@ -1,0 +1,160 @@
+{
+    "response": {
+        "result": {
+            "invoices": [
+                {
+                    "accountid": "ACM123",
+                    "accounting_systemid": "ACM123",
+                    "address": "",
+                    "amount": {
+                        "amount": "41.94",
+                        "code": "CAD"
+                    },
+                    "auto_bill": false,
+                    "autobill_status": null,
+                    "basecampid": 0,
+                    "city": "Toronto",
+                    "code": "M5T 2B3",
+                    "country": "Canada",
+                    "create_date": "2021-04-16",
+                    "created_at": "2021-04-16 10:31:19",
+                    "currency_code": "CAD",
+                    "current_organization": "Gordon Shumway",
+                    "customerid": 12345,
+                    "date_paid": null,
+                    "deposit_amount": null,
+                    "deposit_percentage": null,
+                    "deposit_status": "none",
+                    "description": "Melmac melamine resin molded dinnerware",
+                    "discount_description": null,
+                    "discount_total": {
+                        "amount": "-4.40",
+                        "code": "CAD"
+                    },
+                    "discount_value": "10",
+                    "display_status": "sent",
+                    "dispute_status": null,
+                    "due_date": "2021-04-16",
+                    "due_offset_days": 0,
+                    "estimateid": 0,
+                    "ext_archive": 0,
+                    "fname": "Gordon",
+                    "fulfillment_date": "2021-04-16",
+                    "generation_date": null,
+                    "gmail": false,
+                    "id": 987654,
+                    "invoice_number": "ACM0002",
+                    "invoiceid": 987654,
+                    "language": "en",
+                    "last_order_status": null,
+                    "lines": [
+                        {
+                            "amount": {
+                                "amount": "20.00",
+                                "code": "CAD"
+                            },
+                            "basecampid": 0,
+                            "compounded_tax": false,
+                            "date": null,
+                            "description": "Melmac melamine resin molded dinnerware",
+                            "expenseid": 0,
+                            "invoiceid": 987654,
+                            "lineid": 1,
+                            "modern_project_id": null,
+                            "modern_time_entries": [],
+                            "name": "Bowls",
+                            "qty": "4",
+                            "retainer_id": null,
+                            "retainer_period_id": null,
+                            "taskno": 1,
+                            "taxAmount1": "13",
+                            "taxAmount2": "0",
+                            "taxName1": "HST1",
+                            "taxName2": null,
+                            "taxNumber1": "RT",
+                            "taxNumber2": null,
+                            "type": 0,
+                            "unit_cost": {
+                                "amount": "5.00",
+                                "code": "CAD"
+                            },
+                            "updated": "2021-04-16 10:31:19"
+                        },
+                        {
+                            "amount": {
+                                "amount": "24.00",
+                                "code": "CAD"
+                            },
+                            "basecampid": 0,
+                            "compounded_tax": false,
+                            "date": null,
+                            "description": "Melmac melamine resin molded mug",
+                            "expenseid": 0,
+                            "invoiceid": 987654,
+                            "lineid": 2,
+                            "modern_project_id": null,
+                            "modern_time_entries": [],
+                            "name": "Mugs",
+                            "qty": "6",
+                            "retainer_id": null,
+                            "retainer_period_id": null,
+                            "taskno": 2,
+                            "taxAmount1": "0",
+                            "taxAmount2": "0",
+                            "taxName1": "",
+                            "taxName2": "",
+                            "taxNumber1": null,
+                            "taxNumber2": null,
+                            "type": 0,
+                            "unit_cost": {
+                                "amount": "4.00",
+                                "code": "CAD"
+                            },
+                            "updated": "2021-04-16 10:31:19"
+                        }
+                    ],
+                    "lname": "Shumway",
+                    "net_paid_amount": {
+                        "amount": "7.60133524082021936099189318",
+                        "code": "CAD"
+                    },
+                    "notes": "Thanks for your business",
+                    "organization": "Gordon Shumway",
+                    "outstanding": {
+                        "amount": "21.94",
+                        "code": "CAD"
+                    },
+                    "ownerid": 1,
+                    "paid": {
+                        "amount": "20.00",
+                        "code": "CAD"
+                    },
+                    "parent": 0,
+                    "payment_details": "",
+                    "payment_status": "partial",
+                    "po_number": null,
+                    "province": "Ontario",
+                    "return_uri": null,
+                    "sentid": 1,
+                    "show_attachments": false,
+                    "status": 2,
+                    "street": "123 Huron St.",
+                    "street2": "",
+                    "template": "clean-grouped",
+                    "terms": null,
+                    "updated": "2021-04-16 10:31:58",
+                    "uuid": "ab1c33f1-8827-4a46-b335-75a6a4149db8",
+                    "v3_status": "partial",
+                    "vat_name": null,
+                    "vat_number": "",
+                    "version": "2021-04-16 10:31:58.480684",
+                    "vis_state": 0
+                }
+            ],
+            "page": 1,
+            "pages": 1,
+            "per_page": 15,
+            "total": 1
+        }
+    }
+}

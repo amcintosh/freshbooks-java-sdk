@@ -7,9 +7,9 @@ import com.google.api.client.util.Value;
  * Method of calculating billing for a project
  */
 public enum ProjectBillingMethod {
-    @Value business_rate,
-    @Value project_rate,
-    @Value service_rate,
-    @Value team_member_rate,
-    @NullValue none
+    @Value("business_rate") BUSINESS_RATE,
+    @Value("project_rate") PROJECT_RATE,
+    @Value("service_rate") SERVICE_RATE,
+    @Value("team_member_rate") TEAM_MEMBER_RATE,
+    @NullValue NONE
 }

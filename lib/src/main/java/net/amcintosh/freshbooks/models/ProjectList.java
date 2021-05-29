@@ -17,6 +17,11 @@ public class ProjectList extends ListResult {
         this.pages = new Pages(result.meta.page, result.meta.pages, result.meta.perPage, result.meta.total);
     }
 
+    /**
+     * Array of projects returned by the `list` call.
+     *
+     * @return Arraylist of Project objects
+     */
     public ArrayList<Project> getProjects() {
         return projects;
     }

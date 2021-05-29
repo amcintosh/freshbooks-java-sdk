@@ -60,7 +60,6 @@ public class Clients extends AccountingResource {
      *
      * @param accountId The alpha-numeric account id
      * @param clientId Id of the resource to return
-     * //@param builder (Optional) IncludesBuilder object for including additional data, sub-resources, etc.
      *
      * @return The Client
      * @throws FreshBooksException If the call is not successful

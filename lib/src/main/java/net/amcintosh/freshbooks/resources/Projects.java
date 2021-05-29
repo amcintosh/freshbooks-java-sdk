@@ -167,7 +167,6 @@ public class Projects extends ProjectResource {
      */
     public void delete(long businessId, long projectId) throws FreshBooksException {
         String url = this.getUrl(businessId, projectId);
-        System.out.println(url);
         this.handleRequest(HttpMethods.DELETE, url);
     }
 

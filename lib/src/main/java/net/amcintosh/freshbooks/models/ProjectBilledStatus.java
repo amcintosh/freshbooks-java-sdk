@@ -7,7 +7,7 @@ import com.google.api.client.util.Value;
  * for that project.
  */
 public enum ProjectBilledStatus {
-    @Value billed,
-    @Value partially_billed,
-    @Value unbilled
+    @Value("billed") BILLED,
+    @Value("partially_billed") PARTIALLY_BILLED,
+    @Value("unbilled") UNBILLED
 }

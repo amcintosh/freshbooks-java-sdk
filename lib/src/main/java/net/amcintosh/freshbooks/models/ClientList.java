@@ -17,6 +17,11 @@ public class ClientList extends ListResult {
         this.pages = new Pages(result.page, result.pages, result.perPage, result.total);
     }
 
+    /**
+     * Array of clients returned by the `list` call.
+     *
+     * @return Arraylist of Client objects
+     */
     public ArrayList<Client> getClients() {
         return clients;
     }

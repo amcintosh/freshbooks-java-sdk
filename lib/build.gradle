@@ -17,13 +17,10 @@ version = '0.1'
 repositories {
     // Use JCenter for resolving dependencies.
     jcenter()
-    // Until jacoco 0.8.7 releases, we need this
-    maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
 }
 
 jacoco {
-    // Support for Java 15
-    toolVersion = '0.8.7-SNAPSHOT'
+    toolVersion = '0.8.7'
 }
 
 dependencies {
