@@ -1,9 +1,14 @@
 package net.amcintosh.freshbooks;
 
+import com.google.api.client.json.GenericJson;
+import com.google.common.collect.ImmutableList;
+import net.amcintosh.freshbooks.models.Money;
+
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -67,7 +72,11 @@ public class Util {
      */
     public static void putIfNotNull(Map<String, Object> data, String key, Object value){
         if (value != null) {
-            data.put(key, value);
+            if (value instanceof Money) {
+                data.put(key, ((Money) value).getContent());
+            } else {
+                data.put(key, value);
+            }
         }
     }
 }

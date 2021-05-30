@@ -89,6 +89,9 @@ public abstract class AccountingResource extends Resource {
                     error.errno, error.field, error.object, error.value);
         }
 
+        if (response.isSuccessStatusCode() && method.equals(HttpMethods.DELETE)  && model != null && model.response != null ) {
+            return null;
+        }
         if (response.isSuccessStatusCode() && model != null && model.response != null && model.response.result != null) {
             return model;
         }

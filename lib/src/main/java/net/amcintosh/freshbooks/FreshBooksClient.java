@@ -8,6 +8,7 @@ import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.json.gson.GsonFactory;
 import net.amcintosh.freshbooks.resources.Clients;
+import net.amcintosh.freshbooks.resources.Invoices;
 import net.amcintosh.freshbooks.resources.Projects;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -174,7 +175,7 @@ public class FreshBooksClient {
     }
 
     /**
-     * FreshBooks clients resource with calls to get, list, create, update, delete
+     * FreshBooks clients resource with calls to get, list, create, update, delete.
      *
      * @return Clients resource initialized with this FreshBooksClient
      */
@@ -183,7 +184,16 @@ public class FreshBooksClient {
     }
 
     /**
-     * FreshBooks projects resource with calls to get, list, create, update, delete
+     * FreshBooks invoices resource with calls to get, list, create, update, delete.
+     *
+     * @return Invoices resource initialized with this FreshBooksClient
+     */
+    public Invoices invoices() {
+        return new Invoices(this);
+    }
+
+    /**
+     * FreshBooks projects resource with calls to get, list, create, update, delete.
      *
      * @return Projects resource initialized with this FreshBooksClient
      */
