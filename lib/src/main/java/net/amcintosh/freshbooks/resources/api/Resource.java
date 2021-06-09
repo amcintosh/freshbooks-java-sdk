@@ -12,10 +12,20 @@ public abstract class Resource {
 
     protected abstract ResourceType getResourceType();
 
+    /**
+     *
+     * @param freshBooksClient Initialized instance of FreshBooksClient
+     */
     public Resource(FreshBooksClient freshBooksClient) {
         this.freshBooksClient = freshBooksClient;
     }
 
+    /**
+     * Construct the http call query string from the List of QueryBuilders provided.
+     *
+     * @param builders List of QueryBuilders
+     * @return
+     */
     protected String buildQueryString(List<QueryBuilder> builders) {
         StringBuilder queryString = new StringBuilder();
         for (QueryBuilder builder : builders) {

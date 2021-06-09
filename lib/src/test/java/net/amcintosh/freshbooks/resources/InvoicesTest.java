@@ -2,6 +2,8 @@ package net.amcintosh.freshbooks.resources;
 
 import com.google.api.client.http.HttpMethods;
 import com.google.api.client.http.HttpRequest;
+import com.google.api.client.util.Key;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import net.amcintosh.freshbooks.FreshBooksClient;
 import net.amcintosh.freshbooks.FreshBooksException;
@@ -43,7 +45,7 @@ public class InvoicesTest {
         assertEquals("41.94", invoice.getAmount().getAmount().toString());
         assertEquals("CAD", invoice.getAmount().getCode());
         assertFalse(invoice.isAutoBill());
-        assertEquals(InvoiceAutoBillStatus.NONE, invoice.getAutoBillStatus());
+        assertEquals(Invoice.InvoiceAutoBillStatus.NONE, invoice.getAutoBillStatus());
         assertEquals("Toronto", invoice.getCity());
         assertEquals("M5T 2B3", invoice.getCode());
         assertEquals("Canada", invoice.getCountry());
@@ -63,12 +65,12 @@ public class InvoicesTest {
         assertEquals("CAD", invoice.getDepositAmount().getCode());
         assertEquals("", invoice.getDiscountDescription());
         assertEquals(new BigDecimal("1.5"), invoice.getDepositPercentage());
-        assertEquals(InvoiceDepositStatus.NONE, invoice.getDepositStatus());
+        assertEquals(Invoice.InvoiceDepositStatus.NONE, invoice.getDepositStatus());
         assertEquals("Melmac melamine resin molded dinnerware", invoice.getDescription());
         assertEquals("-4.40", invoice.getDiscountTotal().getAmount().toString());
         assertEquals("CAD", invoice.getDiscountTotal().getCode());
         assertEquals(new BigDecimal("10"), invoice.getDiscountValue());
-        assertEquals(InvoiceDisplayStatus.SENT, invoice.getDisplayStatus());
+        assertEquals(Invoice.InvoiceDisplayStatus.SENT, invoice.getDisplayStatus());
         assertEquals(LocalDate.of(2021, 4, 16), invoice.getDueDate());
         assertEquals(0, invoice.getDueOffsetDays());
         assertEquals(0, invoice.getEstimateId());
@@ -77,7 +79,7 @@ public class InvoicesTest {
         assertFalse(invoice.isGroundMail());
         assertEquals("ACM0002", invoice.getInvoiceNumber());
         assertEquals("en", invoice.getLanguage());
-        assertEquals(InvoiceOrderStatus.NONE, invoice.getLastOrderStatus());
+        assertEquals(Invoice.InvoiceOrderStatus.NONE, invoice.getLastOrderStatus());
         assertEquals("Shumway", invoice.getLastName());
         assertEquals("Gordon Shumway", invoice.getOrganization());
         assertEquals("21.94", invoice.getOutstanding().getAmount().toString());
@@ -87,20 +89,20 @@ public class InvoicesTest {
         assertEquals("20.00", invoice.getPaid().getAmount().toString());
         assertEquals("CAD", invoice.getPaid().getCode());
         assertEquals(0, invoice.getParent());
-        assertEquals(InvoicePaymentStatus.PARTIAL, invoice.getPaymentStatus());
+        assertEquals(Invoice.InvoicePaymentStatus.PARTIAL, invoice.getPaymentStatus());
         assertEquals("", invoice.getPONumber());
         assertEquals("Ontario", invoice.getProvince());
         assertEquals(1, invoice.getSentId());
         assertFalse(invoice.isShowAttachments());
         assertEquals("123 Huron St.", invoice.getStreet());
         assertEquals("", invoice.getStreet2());
-        assertEquals(InvoiceStatus.SENT, invoice.getStatus());
+        assertEquals(Invoice.InvoiceStatus.SENT, invoice.getStatus());
         assertEquals("", invoice.getTerms());
         assertEquals(ZonedDateTime.of(2021, 4, 16, 14,
                 31, 58, 0, ZoneId.of("UTC")),
                 invoice.getUpdated()
         );
-        assertEquals(InvoiceV3Status.PARTIAL, invoice.getV3Status());
+        assertEquals(Invoice.InvoiceV3Status.PARTIAL, invoice.getV3Status());
         assertEquals("VAT Number", invoice.getVATName());
         assertEquals("123", invoice.getVATNumber());
         assertEquals(VisState.ACTIVE, invoice.getVisState());
@@ -120,13 +122,20 @@ public class InvoicesTest {
         assertEquals("", invoice.getLines().get(0).getTaxName2());
         assertEquals("RT", invoice.getLines().get(0).getTaxNumber1());
         assertEquals("", invoice.getLines().get(0).getTaxNumber2());
-        assertEquals(LineItemType.NORMAL, invoice.getLines().get(0).getType());
+        assertEquals(LineItem.LineItemType.NORMAL, invoice.getLines().get(0).getType());
         assertEquals(new BigDecimal("5.00"), invoice.getLines().get(0).getUnitCost().getAmount());
         assertEquals("CAD", invoice.getLines().get(0).getUnitCost().getCode());
         assertEquals(ZonedDateTime.of(2021, 4, 16, 14,
                 31, 19, 0, ZoneId.of("UTC")),
                 invoice.getLines().get(0).getUpdated()
         );
+
+        // Presentation
+        assertEquals("dd/mm/yyyy", invoice.getPresentation().getDateFormat());
+        assertEquals("", invoice.getPresentation().getImageLogoSrc());
+        assertEquals("modern", invoice.getPresentation().getThemeFontName());
+        assertEquals("simple", invoice.getPresentation().getThemeLayout());
+        assertEquals("#663399", invoice.getPresentation().getThemePrimaryColor());
     }
 
     @Test
@@ -169,8 +178,14 @@ public class InvoicesTest {
     @Test
     public void createInvoice_invoiceObject() throws FreshBooksException, IOException {
         long clientId = 12345;
+        LineItem line = new LineItem();
+        line.setName("Bowls");
+        line.setUnitCost(new Money(new BigDecimal("20.00"), "CAD"));
+        line.setQuantity(4);
+
         Invoice data = new Invoice();
         data.setCustomerId(clientId);
+        data.setLines(ImmutableList.of(line));
 
         String jsonResponse = TestUtil.loadTestJson("fixtures/get_invoice_response.json");
         FreshBooksClient mockedFreshBooksClient = mock(FreshBooksClient.class);
@@ -186,6 +201,7 @@ public class InvoicesTest {
 
         assertEquals(987654, invoice.getId());
         assertEquals(clientId, invoice.getCustomerId());
+        assertEquals("Bowls", invoice.getLines().get(0).getName());
     }
 
     @Test

@@ -1,6 +1,5 @@
 package net.amcintosh.freshbooks.models;
 
-import com.google.api.client.json.GenericJson;
 import com.google.api.client.util.Key;
 import net.amcintosh.freshbooks.Util;
 
@@ -8,12 +7,24 @@ import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Money extends GenericJson {
+/**
+ * Monetary amount represented by a decimal value and a currency code.
+ */
+public class Money implements ConvertibleContent {
     @Key String amount;
     @Key String code;
 
+    /**
+     * Create an uninitialized Money object.
+     */
     public Money() { }
 
+    /**
+     * Create a Money object.
+     *
+     * @param amount Decimal amount
+     * @param code Three-letter currency code (Eg. USD, CAD, EUR, GBP)
+     */
     public Money(BigDecimal amount, String code) {
         this.amount = amount.toString();
         this.code = code;
@@ -22,7 +33,7 @@ public class Money extends GenericJson {
     /**
      * Monetary amount with decimal places appropriate to the currency.
      *
-     * @return Eg. "9.99"
+     * @return Eg. BigDecimal("9.99")
      */
     public BigDecimal getAmount() {
         return new BigDecimal(amount);
@@ -31,7 +42,7 @@ public class Money extends GenericJson {
     /**
      * Monetary amount with decimal places appropriate to the currency.
      *
-     * @param amount Eg. "9.99"
+     * @param amount Eg. BigDecimal("9.99")
      */
     public void setAmount(BigDecimal amount) {
         this.amount = amount.toString();
@@ -40,7 +51,7 @@ public class Money extends GenericJson {
     /**
      * The three-letter currency code
      *
-     * @return Eg. "USD"
+     * @return (Eg. USD, CAD, EUR, GBP)
      */
     public String getCode() {
         return code;
@@ -49,7 +60,7 @@ public class Money extends GenericJson {
     /**
      * The three-letter currency code
      *
-     * @param code Eg. "USD"
+     * @param code (Eg. USD, CAD, EUR, GBP)
      */
     public void setCode(String code) {
         this.code = code;
@@ -57,8 +68,8 @@ public class Money extends GenericJson {
 
     public Map<String, Object> getContent() {
         Map<String, Object> content = new HashMap<>();
-        Util.putIfNotNull(content, "amount", this.amount);
-        Util.putIfNotNull(content, "code", this.code);
+        Util.convertContent(content, "amount", this.amount);
+        Util.convertContent(content, "code", this.code);
         return content;
     }
 }

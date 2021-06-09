@@ -11,7 +11,7 @@ public class ListResult extends GenericJson {
 
     /**
      * Get Pages object of list pagination details
-     * @return
+     * @return Populated Pages object
      */
     public Pages getPages() {
         return this.pages;

@@ -21,6 +21,10 @@ import java.util.Map;
  */
 public abstract class ProjectResource extends Resource {
 
+    /**
+     *
+     * @param freshBooksClient Initialized instance of FreshBooksClient
+     */
     public ProjectResource(FreshBooksClient freshBooksClient) {
         super(freshBooksClient);
     }

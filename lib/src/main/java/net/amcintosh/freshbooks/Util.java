@@ -1,8 +1,7 @@
 package net.amcintosh.freshbooks;
 
-import com.google.api.client.json.GenericJson;
 import com.google.common.collect.ImmutableList;
-import net.amcintosh.freshbooks.models.Money;
+import net.amcintosh.freshbooks.models.ConvertibleContent;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -70,10 +69,18 @@ public class Util {
      * @param key The key to add
      * @param value The value of the key if not null
      */
-    public static void putIfNotNull(Map<String, Object> data, String key, Object value){
+    public static void convertContent(Map<String, Object> data, String key, Object value){
         if (value != null) {
-            if (value instanceof Money) {
-                data.put(key, ((Money) value).getContent());
+            if (value instanceof List) {
+                ImmutableList.Builder builder = ImmutableList.builder();
+                for (Object item : (List)value) {
+                    if (item instanceof ConvertibleContent) {
+                        builder.add(((ConvertibleContent)item).getContent());
+                    }
+                    data.put(key, builder.build());
+                }
+            } else if (value instanceof ConvertibleContent) {
+                data.put(key, ((ConvertibleContent)value).getContent());
             } else {
                 data.put(key, value);
             }

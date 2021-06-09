@@ -2,12 +2,14 @@ package net.amcintosh.freshbooks.models;
 
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.util.Key;
+import com.google.api.client.util.NullValue;
+import com.google.api.client.util.Value;
 import net.amcintosh.freshbooks.Util;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.ZonedDateTime;
-import java.util.ArrayList;
+import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,7 +19,7 @@ import java.util.Map;
  *
  * @see <a href="https://www.freshbooks.com/api/project">FreshBooks API - Projects</a>
  */
-public class Project extends GenericJson {
+public class Project extends GenericJson implements ConvertibleContent {
 
     @Key Long id;
     @Key Boolean active;
@@ -35,13 +37,13 @@ public class Project extends GenericJson {
     @Key ProjectGroup group;
     @Key Boolean internal;
     @Key("logged_duration") Integer loggedDuration;
-    @Key("pending_invitations") ArrayList<PendingInvitation> pendingInvitations;
+    @Key("pending_invitations") List<PendingInvitation> pendingInvitations;
     @Key("project_manager_id") Long projectManagerId;
     @Key("project_type") ProjectType projectType;
     @Key String rate;
     @Key("retainer_id") Long retainerId;
     @Key Boolean sample;
-    @Key ArrayList<Service> services;
+    @Key List<Service> services;
     @Key String title;
     @Key("updated_at") String updatedAt;
 
@@ -171,7 +173,7 @@ public class Project extends GenericJson {
         return loggedDuration;
     }
 
-    public ArrayList<PendingInvitation> getPendingInvitations() {
+    public List<PendingInvitation> getPendingInvitations() {
         return pendingInvitations;
     }
 
@@ -215,11 +217,11 @@ public class Project extends GenericJson {
         this.sample = sample;
     }
 
-    public ArrayList<Service> getServices() {
+    public List<Service> getServices() {
         return services;
     }
 
-    public void setServices(ArrayList<Service> services) {
+    public void setServices(List<Service> services) {
         this.services = services;
     }
 
@@ -242,35 +244,35 @@ public class Project extends GenericJson {
 
     public Map<String, Object> getContent() {
         Map<String, Object> content = new HashMap<>();
-        Util.putIfNotNull(content, "active", this.active);
-        Util.putIfNotNull(content, "billed_amount", this.billedAmount);
-        Util.putIfNotNull(content, "billed_status", this.billedStatus);
-        Util.putIfNotNull(content, "billing_method", this.billingMethod);
-        Util.putIfNotNull(content, "budget", this.budget);
-        Util.putIfNotNull(content, "client_id", this.clientId);
-        Util.putIfNotNull(content, "complete", this.complete);
-        Util.putIfNotNull(content, "description", this.description);
-        Util.putIfNotNull(content, "due_date", this.dueDate);
-        Util.putIfNotNull(content, "expense_markup", this.expenseMarkup);
-        Util.putIfNotNull(content, "fixed_price", this.fixedPrice);
-        Util.putIfNotNull(content, "internal", this.internal);
-        Util.putIfNotNull(content, "project_manager_id", this.projectManagerId);
-        Util.putIfNotNull(content, "project_type", this.projectType);
-        Util.putIfNotNull(content, "rate", this.rate);
-        Util.putIfNotNull(content, "retainer_id", this.retainerId);
-        Util.putIfNotNull(content, "title", this.title);
+        Util.convertContent(content, "active", this.active);
+        Util.convertContent(content, "billed_amount", this.billedAmount);
+        Util.convertContent(content, "billed_status", this.billedStatus);
+        Util.convertContent(content, "billing_method", this.billingMethod);
+        Util.convertContent(content, "budget", this.budget);
+        Util.convertContent(content, "client_id", this.clientId);
+        Util.convertContent(content, "complete", this.complete);
+        Util.convertContent(content, "description", this.description);
+        Util.convertContent(content, "due_date", this.dueDate);
+        Util.convertContent(content, "expense_markup", this.expenseMarkup);
+        Util.convertContent(content, "fixed_price", this.fixedPrice);
+        Util.convertContent(content, "internal", this.internal);
+        Util.convertContent(content, "project_manager_id", this.projectManagerId);
+        Util.convertContent(content, "project_type", this.projectType);
+        Util.convertContent(content, "rate", this.rate);
+        Util.convertContent(content, "retainer_id", this.retainerId);
+        Util.convertContent(content, "title", this.title);
         return content;
     }
 
     public static class ProjectGroup {
         @Key Long id;
-        @Key ArrayList<ProjectGroupMember> members;
+        @Key List<ProjectGroupMember> members;
 
         public long getId() {
             return id;
         }
 
-        public ArrayList<ProjectGroupMember> getMembers() {
+        public List<ProjectGroupMember> getMembers() {
             return members;
         }
     }
@@ -340,4 +342,34 @@ public class Project extends GenericJson {
             return toEmail;
         }
     }
+
+    /**
+     * Billing statuses for a project, computed from invoice totals that have been sent
+     * for that project.
+     */
+    public enum ProjectBilledStatus {
+        @Value("billed") BILLED,
+        @Value("partially_billed") PARTIALLY_BILLED,
+        @Value("unbilled") UNBILLED
+    }
+
+    /**
+     * Method of calculating billing for a project
+     */
+    public enum ProjectBillingMethod {
+        @Value("business_rate") BUSINESS_RATE,
+        @Value("project_rate") PROJECT_RATE,
+        @Value("service_rate") SERVICE_RATE,
+        @Value("team_member_rate") TEAM_MEMBER_RATE,
+        @NullValue NONE
+    }
+
+    /**
+     * Types of projects
+     */
+    public enum ProjectType {
+        @Value("fixed_price") FIXED_PRICE,
+        @Value("hourly_rate") HOURLY_RATE;
+    }
+
 }

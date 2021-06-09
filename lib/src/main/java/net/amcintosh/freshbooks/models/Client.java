@@ -14,7 +14,7 @@ import java.util.Map;
  *
  * @see <a href="https://www.freshbooks.com/api/clients">FreshBooks API - Clients</a>
  */
-public class Client extends GenericJson {
+public class Client extends GenericJson implements ConvertibleContent {
 
     @Key Long id;
     @Key("accounting_systemid") String accountingSystemId;
@@ -625,34 +625,34 @@ public class Client extends GenericJson {
 
     public Map<String, Object> getContent() {
         Map<String, Object> content = new HashMap<>();
-        Util.putIfNotNull(content, "bus_phone", this.businessPhone);
-        Util.putIfNotNull(content, "company_industry", this.companyIndustry);
-        Util.putIfNotNull(content, "company_size", this.companySize);
-        Util.putIfNotNull(content, "currency_code", this.currencyCode);
-        Util.putIfNotNull(content, "email", this.email);
-        Util.putIfNotNull(content, "fax", this.fax);
-        Util.putIfNotNull(content, "fname", this.firstName);
-        Util.putIfNotNull(content, "home_phone", this.homePhone);
-        Util.putIfNotNull(content, "language", this.language);
-        Util.putIfNotNull(content, "lname", this.lastName);
-        Util.putIfNotNull(content, "note", this.note);
-        Util.putIfNotNull(content, "organization", this.organization);
-        Util.putIfNotNull(content, "p_city", this.billingCity);
-        Util.putIfNotNull(content, "p_code", this.billingCode);
-        Util.putIfNotNull(content, "p_country", this.billingCountry);
-        Util.putIfNotNull(content, "p_province", this.billingProvince);
-        Util.putIfNotNull(content, "p_street", this.billingStreet);
-        Util.putIfNotNull(content, "p_street2", this.billingStreet2);
+        Util.convertContent(content, "bus_phone", this.businessPhone);
+        Util.convertContent(content, "company_industry", this.companyIndustry);
+        Util.convertContent(content, "company_size", this.companySize);
+        Util.convertContent(content, "currency_code", this.currencyCode);
+        Util.convertContent(content, "email", this.email);
+        Util.convertContent(content, "fax", this.fax);
+        Util.convertContent(content, "fname", this.firstName);
+        Util.convertContent(content, "home_phone", this.homePhone);
+        Util.convertContent(content, "language", this.language);
+        Util.convertContent(content, "lname", this.lastName);
+        Util.convertContent(content, "note", this.note);
+        Util.convertContent(content, "organization", this.organization);
+        Util.convertContent(content, "p_city", this.billingCity);
+        Util.convertContent(content, "p_code", this.billingCode);
+        Util.convertContent(content, "p_country", this.billingCountry);
+        Util.convertContent(content, "p_province", this.billingProvince);
+        Util.convertContent(content, "p_street", this.billingStreet);
+        Util.convertContent(content, "p_street2", this.billingStreet2);
         //@Key("pref_email") pref_email	bool	prefers email over ground mail
         //@Key("pref_gmail") pref_gmail	bool	prefers ground mail over email
-        Util.putIfNotNull(content, "s_city", this.shippingCity);
-        Util.putIfNotNull(content, "s_code", this.shippingCode);
-        Util.putIfNotNull(content, "s_country", this.shippingCountry);
-        Util.putIfNotNull(content, "s_province", this.shippingProvince);
-        Util.putIfNotNull(content, "s_street", this.shippingStreet);
-        Util.putIfNotNull(content, "s_street2", this.shippingStreet2);
-        Util.putIfNotNull(content, "vat_name", this.vatName);
-        Util.putIfNotNull(content, "vat_number", this.vatNumber);
+        Util.convertContent(content, "s_city", this.shippingCity);
+        Util.convertContent(content, "s_code", this.shippingCode);
+        Util.convertContent(content, "s_country", this.shippingCountry);
+        Util.convertContent(content, "s_province", this.shippingProvince);
+        Util.convertContent(content, "s_street", this.shippingStreet);
+        Util.convertContent(content, "s_street2", this.shippingStreet2);
+        Util.convertContent(content, "vat_name", this.vatName);
+        Util.convertContent(content, "vat_number", this.vatNumber);
         return content;
     }
 }

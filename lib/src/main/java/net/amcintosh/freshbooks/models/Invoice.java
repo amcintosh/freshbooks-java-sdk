@@ -2,7 +2,8 @@ package net.amcintosh.freshbooks.models;
 
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.util.Key;
-import com.google.common.collect.ImmutableList;
+import com.google.api.client.util.NullValue;
+import com.google.api.client.util.Value;
 import net.amcintosh.freshbooks.Util;
 
 import java.math.BigDecimal;
@@ -19,7 +20,7 @@ import java.util.Map;
  *
  * @see <a href="https://www.freshbooks.com/api/invoices">FreshBooks API - Invoices</a>
  */
-public class Invoice extends GenericJson {
+public class Invoice extends GenericJson implements ConvertibleContent {
 
     @Key Long id;
     @Key("invoiceid") Long invoiceId;
@@ -80,7 +81,7 @@ public class Invoice extends GenericJson {
 
     // Includes
     @Key List<LineItem> lines;
-    //presentation	object	where invoice logo and styles are defined. See our postman collection for details.
+    @Key InvoicePresentation presentation;
 
     /**
      * Get unique to this business id for invoice.
@@ -124,7 +125,7 @@ public class Invoice extends GenericJson {
     /**
      * First line of address on invoice.
      *
-     * @return
+     * @return String of the address
      */
     public String getAddress() {
         return address;
@@ -133,7 +134,7 @@ public class Invoice extends GenericJson {
     /**
      * First line of address on invoice.
      *
-     * @param address
+     * @param address String of the address
      */
     public void setAddress(String address) {
         this.address = address;
@@ -151,7 +152,7 @@ public class Invoice extends GenericJson {
     /**
      * Whether this invoice has a credit card saved.
      *
-     * @return
+     * @return boolean if invoice has autobill enabled.
      */
     public boolean isAutoBill() {
         return autoBill;
@@ -675,16 +676,16 @@ public class Invoice extends GenericJson {
      * Lines of the invoice.
      * <br/><br/>
      * <i>Note:</i> These are only returned with a invoice call using a "lines" include.
-     * Eg. IncludesQueryBuilder includes = new IncludesQueryBuilder().include("outstanding_balance");
-     * assertEquals("IncludesQueryBuilder{includes=[outstanding_balance]}", query.toString());
-     * <pre>{@codex
+     * <br/>
+     * Eg.
+     * <pre>{@code
      *     IncludesQueryBuilder inc = new IncludesQueryBuilder().include("lines");
      *
-     *     Client clientResponse = clients.get(accountId, clientId, inc);
+     *     Invoice invoiceResponse = invoices.get(accountId, invoiceId, inc);
      *
      *     ArrayList<QueryBuilder> builders = new ArrayList<QueryBuilder>();
      *     builders.add(inc);
-     *     ClientList clientListResponse = clients.list(accountId, builders);
+     *     InvoiceList invoiceListResponse = invoices.list(accountId, builders);
      * }</pre>
      * @return
      */
@@ -733,7 +734,7 @@ public class Invoice extends GenericJson {
      * Name of organization being invoiced. This is the value of the organization of the client
      * but is denormalized so that changes to the client are not reflected on past invoices.
      *
-     * @return The client organization
+     * @param organization The client organization
      */
     public void setOrganization(String organization) {
         this.organization = organization;
@@ -838,6 +839,58 @@ public class Invoice extends GenericJson {
      */
     public void setPONumber(String PONumber) {
         this.PONumber = PONumber;
+    }
+
+    /**
+     * Define invoice logo and styles.
+     * <br/>
+     * By default, if no presentation specified in a new invoice request payload,
+     * it will be assigned a default presentation. To override this default behaviour,
+     * set `useDefaultPresentation` to false.
+     * <br/><br/>
+     * <i>Note:</i> The presentation details are only returned with a invoice call
+     * using a "presentation" include.
+     * <br/>
+     * <pre>{@code
+     *     IncludesQueryBuilder inc = new IncludesQueryBuilder().include("presentation");
+     *
+     *     Invoice invoiceResponse = invoices.get(accountId, invoiceId, inc);
+     *
+     *     ArrayList<QueryBuilder> builders = new ArrayList<QueryBuilder>();
+     *     builders.add(inc);
+     *     InvoiceList invoiceListResponse = invoices.list(accountId, builders);
+     * }</pre>
+     *
+     * @return
+     */
+    public InvoicePresentation getPresentation() {
+        return presentation;
+    }
+
+    /**
+     * Define invoice logo and styles.
+     * <br/>
+     * By default, if no presentation specified in a new invoice request payload,
+     * it will be assigned a default presentation. To override this default behaviour,
+     * set `useDefaultPresentation` to false.
+     * <br/><br/>
+     * <i>Note:</i> The presentation details are only returned with a invoice call
+     * using a "presentation" include.
+     * <br/>
+     * <pre>{@code
+     *     IncludesQueryBuilder inc = new IncludesQueryBuilder().include("presentation");
+     *
+     *     Invoice invoiceResponse = invoices.get(accountId, invoiceId, inc);
+     *
+     *     ArrayList<QueryBuilder> builders = new ArrayList<QueryBuilder>();
+     *     builders.add(inc);
+     *     InvoiceList invoiceListResponse = invoices.list(accountId, builders);
+     * }</pre>
+     *
+     * @param presentation
+     */
+    public void setPresentation(InvoicePresentation presentation) {
+        this.presentation = presentation;
     }
 
     /**
@@ -1085,56 +1138,283 @@ public class Invoice extends GenericJson {
     public Map<String, Object> getContent() {
         Map<String, Object> content = new HashMap<>();
         if (this.id == null) {
-            Util.putIfNotNull(content, "ownerid", this.ownerId);
-            Util.putIfNotNull(content, "estimateid", this.estimateId);
-            Util.putIfNotNull(content, "sentid", this.sentId);
-            Util.putIfNotNull(content, "status", this.status);
-            Util.putIfNotNull(content, "display_status", this.displayStatus);
-            Util.putIfNotNull(content, "autobill_status", this.autoBillStatus);
-            Util.putIfNotNull(content, "payment_status", this.paymentStatus);
-            Util.putIfNotNull(content, "last_order_status", this.lastOrderStatus);
-            Util.putIfNotNull(content, "deposit_status", this.depositStatus);
-            Util.putIfNotNull(content, "auto_bill", this.autoBill);
-            Util.putIfNotNull(content, "v3_status", this.v3Status);
+            Util.convertContent(content, "ownerid", this.ownerId);
+            Util.convertContent(content, "estimateid", this.estimateId);
+            Util.convertContent(content, "sentid", this.sentId);
+            Util.convertContent(content, "status", this.status);
+            Util.convertContent(content, "display_status", this.displayStatus);
+            Util.convertContent(content, "autobill_status", this.autoBillStatus);
+            Util.convertContent(content, "payment_status", this.paymentStatus);
+            Util.convertContent(content, "last_order_status", this.lastOrderStatus);
+            Util.convertContent(content, "deposit_status", this.depositStatus);
+            Util.convertContent(content, "auto_bill", this.autoBill);
+            Util.convertContent(content, "v3_status", this.v3Status);
         }
-        Util.putIfNotNull(content, "invoice_number", this.invoiceNumber);
-        Util.putIfNotNull(content, "customerid", this.customerId);
-        Util.putIfNotNull(content, "create_date", this.createDate);
-        Util.putIfNotNull(content, "generation_date", this.generationDate);
-        Util.putIfNotNull(content, "discount_value", this.discountValue);
-        Util.putIfNotNull(content, "discount_description", this.discountDescription);
-        Util.putIfNotNull(content, "po_number", this.PONumber);
-        Util.putIfNotNull(content, "currency_code", this.currencyCode);
-        Util.putIfNotNull(content, "language", this.language);
-        Util.putIfNotNull(content, "terms", this.terms);
-        Util.putIfNotNull(content, "notes", this.notes);
-        Util.putIfNotNull(content, "address", this.address);
-        Util.putIfNotNull(content, "deposit_amount", this.depositAmount);
-        Util.putIfNotNull(content, "deposit_percentage", this.depositPercentage);
-        Util.putIfNotNull(content, "show_attachments", this.showAttachments);
-        Util.putIfNotNull(content, "street", this.street);
-        Util.putIfNotNull(content, "street2", this.street2);
-        Util.putIfNotNull(content, "city", this.city);
-        Util.putIfNotNull(content, "province", this.province);
-        Util.putIfNotNull(content, "code", this.code);
-        Util.putIfNotNull(content, "country", this.country);
-        Util.putIfNotNull(content, "organization", this.organization);
-        Util.putIfNotNull(content, "fname", this.fname);
-        Util.putIfNotNull(content, "lname", this.lname);
-        Util.putIfNotNull(content, "vat_name", this.VATName);
-        Util.putIfNotNull(content, "vat_number", this.VATNumber);
-        Util.putIfNotNull(content, "due_offset_days", this.dueOffsetDays);
-        Util.putIfNotNull(content, "use_default_presentation", this.useDefaultPresentation);
+        Util.convertContent(content, "invoice_number", this.invoiceNumber);
+        Util.convertContent(content, "customerid", this.customerId);
+        Util.convertContent(content, "create_date", this.createDate);
+        Util.convertContent(content, "generation_date", this.generationDate);
+        Util.convertContent(content, "discount_value", this.discountValue);
+        Util.convertContent(content, "discount_description", this.discountDescription);
+        Util.convertContent(content, "po_number", this.PONumber);
+        Util.convertContent(content, "currency_code", this.currencyCode);
+        Util.convertContent(content, "language", this.language);
+        Util.convertContent(content, "terms", this.terms);
+        Util.convertContent(content, "notes", this.notes);
+        Util.convertContent(content, "address", this.address);
+        Util.convertContent(content, "deposit_amount", this.depositAmount);
+        Util.convertContent(content, "deposit_percentage", this.depositPercentage);
+        Util.convertContent(content, "show_attachments", this.showAttachments);
+        Util.convertContent(content, "street", this.street);
+        Util.convertContent(content, "street2", this.street2);
+        Util.convertContent(content, "city", this.city);
+        Util.convertContent(content, "province", this.province);
+        Util.convertContent(content, "code", this.code);
+        Util.convertContent(content, "country", this.country);
+        Util.convertContent(content, "organization", this.organization);
+        Util.convertContent(content, "fname", this.fname);
+        Util.convertContent(content, "lname", this.lname);
+        Util.convertContent(content, "vat_name", this.VATName);
+        Util.convertContent(content, "vat_number", this.VATNumber);
+        Util.convertContent(content, "due_offset_days", this.dueOffsetDays);
+        Util.convertContent(content, "use_default_presentation", this.useDefaultPresentation);
 
-        if (this.lines != null && this.lines.size() > 0) {
-            ImmutableList.Builder linesBuilder = ImmutableList.builder();
-            for (LineItem line : this.lines) {
-                linesBuilder.add(line.getContent());
-            }
-            content.put("lines", linesBuilder.build());
-        }
-        //Util.putIfNotNull(content, "presentation", this.ownerId);
+        // Includes and sub-resources
+        Util.convertContent(content, "lines", this.lines);
+        Util.convertContent(content, "presentation", this.presentation);
 
         return content;
+    }
+
+
+    /**
+     * To define invoice logo and styles.
+     */
+    public static class InvoicePresentation extends GenericJson {
+        @Key("date_format") String dateFormat;
+        @Key("image_logo_src") String imageLogoSrc;
+        @Key("theme_font_name") String themeFontName;
+        @Key("theme_layout") String themeLayout;
+        @Key("theme_primary_color") String themePrimaryColor;
+
+        public String getDateFormat() {
+            return dateFormat;
+        }
+
+        public void setDateFormat(String dateFormat) {
+            this.dateFormat = dateFormat;
+        }
+
+        public String getImageLogoSrc() {
+            return imageLogoSrc;
+        }
+
+        public void setImageLogoSrc(String imageLogoSrc) {
+            this.imageLogoSrc = imageLogoSrc;
+        }
+
+        public String getThemeFontName() {
+            return themeFontName;
+        }
+
+        public void setThemeFontName(String themeFontName) {
+            this.themeFontName = themeFontName;
+        }
+
+        public String getThemeLayout() {
+            return themeLayout;
+        }
+
+        public void setThemeLayout(String themeLayout) {
+            this.themeLayout = themeLayout;
+        }
+
+        public String getThemePrimaryColor() {
+            return themePrimaryColor;
+        }
+
+        public void setThemePrimaryColor(String themePrimaryColor) {
+            this.themePrimaryColor = themePrimaryColor;
+        }
+
+        public Map<String, Object> getContent() {
+            Map<String, Object> content = new HashMap<>();
+            Util.convertContent(content, "date_format", this.dateFormat);
+            Util.convertContent(content, "image_logo_src", this.imageLogoSrc);
+            Util.convertContent(content, "theme_font_name", this.themeFontName);
+            Util.convertContent(content, "theme_layout", this.themeLayout);
+            Util.convertContent(content, "theme_primary_color", this.themePrimaryColor);
+            return content;
+        }
+
+    }
+
+    public enum InvoiceAutoBillStatus {
+        @Value("failed") FAILED,
+        @Value("retry") RETRY,
+        @Value("success") SUCCESS,
+        @NullValue NONE;
+    }
+
+    /**
+     * Description of deposits applied to invoice.
+     */
+    public enum InvoiceDepositStatus {
+        @Value("paid") PAID,
+        @Value("unpaid") UNPAID,
+        @Value("partial") PARTIAL,
+        @Value("converted") CONVERTED,
+        @Value("none") NONE;
+    }
+
+    /**
+     * Description of status. Used primarily for the FreshBooks UI.
+     *
+     * <br>
+     * Values are:
+     * <ul>
+     * <li><b>DRAFT</b>
+     * <li><b>CREATED</b>
+     * <li><b>SENT</b>
+     * <li><b>VIEWED</b>
+     * <li><b>OUTSTANDING</b>
+     * </ul>
+     *
+     * @see <a href="https://www.freshbooks.com/api/invoices">FreshBooks API - Invoices</a>
+     */
+    public enum InvoiceDisplayStatus {
+        @Value("draft") DRAFT,
+        @Value("created") CREATED,
+        @Value("sent") SENT,
+        @Value("viewed") VIEWED,
+        @Value("outstanding") OUTSTANDING;
+    }
+
+    public enum InvoiceOrderStatus {
+        @Value("pending") PENDING,
+        @Value("declined") DECLINED,
+        @Value("success") SUCCESS,
+        @NullValue NONE;
+    }
+
+    /**
+     * Description of payment status.
+     * <br>
+     * Values are:
+     * <ul>
+     * <li><b>UNPAID</b>
+     * <li><b>PARTIAL</b>
+     * <li><b>PAID</b>
+     * <li><b>AUTO_PAID</b>
+     * </ul>
+     *
+     * @see <a href="https://www.freshbooks.com/api/invoices">FreshBooks API - Invoices</a>
+     */
+    public enum InvoicePaymentStatus {
+        @Value("unpaid") UNPAID,
+        @Value("partial") PARTIAL,
+        @Value("paid") PAID,
+        @Value("auto-paid") AUTO_PAID;
+    }
+
+    /**
+     * Status values for an invoice.
+     *
+     * <br>
+     * Values are:
+     * <ul>
+     * <li><b>DISPUTED</b>: An Invoice with the Dispute option enabled, which has been disputed by a Client.
+     * This is a feature of FreshBooks Classic only and should only appear in migrated accounts.</li>
+     * <li><b>DRAFT</b>: An Invoice that has been created, but not yet sent.</li>
+     * <li><b>SENT</b>: An Invoice that has been sent to a Client or marked as sent.</li>
+     * <li><b>VIEWED</b>: An Invoice that has been viewed by a Client.</li>
+     * <li><b>PAID</b>: A fully paid Invoice.</li>
+     * <li><b>AUTOPAID</b>: An Invoice paid automatically with a saved credit card.</li>
+     * <li><b>RETRY</b>: An Invoice that would normally be paid automatically, but encountered a processing
+     * issue, either due to a bad card or a service outage. It will be retried 1 day later.</li>
+     * <li><b>FAILED</b>: An Invoice that was in Retry status which again encountered a processing
+     * issue when being retried.</li>
+     * <li><b>PARTIAL</b>: An Invoice that has been partially paid.</li>
+     * </ul>
+     *
+     * @see <a href="https://www.freshbooks.com/api/invoices">FreshBooks API - Invoices</a>
+     */
+    public enum InvoiceStatus {
+        @Value DISPUTED(0),
+        @Value DRAFT(1),
+        @Value SENT(2),
+        @Value VIEWED(3),
+        @Value PAID(4),
+        @Value AUTOPAID(5),
+        @Value RETRY(6),
+        @Value FAILED(7),
+        @Value PARTIAL(8);
+
+        private final int value;
+        private static final Map<Integer, InvoiceStatus> map = new HashMap<>();
+
+        InvoiceStatus(int value) {
+            this.value = value;
+        }
+
+        static {
+            for (InvoiceStatus status : InvoiceStatus.values()) {
+                map.put(status.value, status);
+            }
+        }
+
+        public static InvoiceStatus valueOf(int invoiceStatus) {
+            return map.get(invoiceStatus);
+        }
+
+        public int getValue() {
+            return value;
+        }
+    }
+
+    /**
+     * v3 status fields give a descriptive name to states which can be used in filters.
+     * <br>
+     * Values are:
+     * <ul>
+     * <li><b>CREATED</b>: Invoice is created and in no other state</li>
+     * <li><b>DRAFT</b>: Invoice is saved in draft status</li>
+     * <li><b>SENT</b>: Invoice has been sent</li>
+     * <li><b>VIEWED</b>: Invoice has been viewed by recipient</li>
+     * <li><b>FAILED</b>: An autobill related to the invoice has been tried more than once and failed</li>
+     * <li><b>RETRY</b>: An autobill related to the invoice has been tried once and failed, and will be retried</li>
+     * <li><b>SUCCESS</b>: An autobill related to the invoice has succeeded</li>
+     * <li><b>AUTOPAID</b>: A payment has been tied to the invoice automatically via autobill</li>
+     * <li><b>PAID</b>: Payments related to the invoice have succeeded and the object is fully paid</li>
+     * <li><b>PARTIAL</b>: Some payment related to the invoice has succeeded but the invoice is not yet paid off</li>
+     * <li><b>DISPUTED</b>: The invoice is disputed</li>
+     * <li><b>RESOLVED</b>: The invoice was disputed and the dispute has been marked as resolved</li>
+     * <li><b>OVERDUE</b>: The invoice required an action at an earlier date that was not met</li>
+     * <li><b>DEPOSIT_PARTIAL</b>: The invoice has a related deposit which has been partially paid</li>
+     * <li><b>DEPOSIT_PAID</b>: The invoice has a related deposit which has been fully paid</li>
+     * <li><b>DECLINED</b>: The invoice has a related order which has been declined</li>
+     * <li><b>PENDING</b>: The invoice has a related order which is pending</li>
+     * </ul>
+     *
+     * @see <a href="https://www.freshbooks.com/api/invoices">FreshBooks API - Invoices</a>
+     */
+    public enum InvoiceV3Status {
+        @Value("created") CREATED,
+        @Value("draft") DRAFT,
+        @Value("sent") SENT,
+        @Value("viewed") VIEWED,
+        @Value("failed") FAILED,
+        @Value("retry") RETRY,
+        @Value("success") SUCCESS,
+        @Value("autopaid") AUTOPAID,
+        @Value("paid") PAID,
+        @Value("partial") PARTIAL,
+        @Value("disputed") DISPUTED,
+        @Value("resolved") RESOLVED,
+        @Value("overdue") OVERDUE,
+        @Value("deposit-partial") DEPOSIT_PARTIAL,
+        @Value("deposit-paid") DEPOSIT_PAID,
+        @Value("declined") DECLINED,
+        @Value("pending") PENDING;
     }
 }

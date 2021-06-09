@@ -2,13 +2,22 @@ package net.amcintosh.freshbooks.models;
 
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.util.Key;
+import com.google.api.client.util.Value;
 import net.amcintosh.freshbooks.Util;
 
 import java.time.ZonedDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
-public class LineItem extends GenericJson {
+/**
+ * Invoice lines are used to determine the amount of an invoice, in addition to
+ * being able to tie the invoice to rebilled expenses. The invoice line type
+ * determines whether a line is an amount or whether it refers to an unbilled expense.
+ * <br><br>
+ * <i>Note:</i> When updating lines with a PUT request, the request payload must
+ * contain all the lines of the invoice that you wish to remain.
+ */
+public class LineItem extends GenericJson implements ConvertibleContent {
 
     @Key("lineid") Long lineId;
     @Key Money amount;
@@ -284,19 +293,53 @@ public class LineItem extends GenericJson {
 
     public Map<String, Object> getContent() {
         Map<String, Object> content = new HashMap<>();
-        Util.putIfNotNull(content, "lineid", this.lineId);
-        Util.putIfNotNull(content, "description", this.description);
-        Util.putIfNotNull(content, "expenseid", this.expenseId);
-        Util.putIfNotNull(content, "name", this.name);
-        Util.putIfNotNull(content, "qty", this.quantity);
-        Util.putIfNotNull(content, "taxAmount1", this.taxAmount1);
-        Util.putIfNotNull(content, "taxAmount2", this.taxAmount2);
-        Util.putIfNotNull(content, "taxName1", this.taxName1);
-        Util.putIfNotNull(content, "taxName2", this.taxName2);
-        Util.putIfNotNull(content, "taxNumber1", this.taxNumber1);
-        Util.putIfNotNull(content, "taxNumber2", this.taxNumber2);
-        Util.putIfNotNull(content, "type", this.type);
-        Util.putIfNotNull(content, "unit_cost", this.unitCost);
+        Util.convertContent(content, "lineid", this.lineId);
+        Util.convertContent(content, "description", this.description);
+        Util.convertContent(content, "expenseid", this.expenseId);
+        Util.convertContent(content, "name", this.name);
+        Util.convertContent(content, "qty", this.quantity);
+        Util.convertContent(content, "taxAmount1", this.taxAmount1);
+        Util.convertContent(content, "taxAmount2", this.taxAmount2);
+        Util.convertContent(content, "taxName1", this.taxName1);
+        Util.convertContent(content, "taxName2", this.taxName2);
+        Util.convertContent(content, "taxNumber1", this.taxNumber1);
+        Util.convertContent(content, "taxNumber2", this.taxNumber2);
+        Util.convertContent(content, "type", this.type);
+        Util.convertContent(content, "unit_cost", this.unitCost);
         return content;
     }
+
+    /**
+     * Type for line items.
+     * <ul>
+     * <li><b>NORMAL</b>: A regular inovice line item.
+     * <li><b>REBILLING_EXPENSE</b>: A rebilling expense line item.
+     * </ul>
+     */
+    public enum LineItemType {
+        @Value NORMAL(0),
+        @Value REBILLING_EXPENSE(1);
+
+        private final int value;
+        private static final Map<Integer, LineItemType> map = new HashMap<>();
+
+        LineItemType(int value) {
+            this.value = value;
+        }
+
+        static {
+            for (LineItemType lineItemType : LineItemType.values()) {
+                map.put(lineItemType.value, lineItemType);
+            }
+        }
+
+        public static LineItemType valueOf(int lineItemType) {
+            return map.get(lineItemType);
+        }
+
+        public int getValue() {
+            return value;
+        }
+    }
+
 }
