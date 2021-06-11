@@ -26,6 +26,12 @@
     catch(err) {
     }
 //-->
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10,"i29":10,"i30":10,"i31":10,"i32":10,"i33":10,"i34":10,"i35":10,"i36":10,"i37":10,"i38":10,"i39":10,"i40":10,"i41":10,"i42":10,"i43":10,"i44":10,"i45":10,"i46":10,"i47":10,"i48":10,"i49":10,"i50":10,"i51":10,"i52":10,"i53":10,"i54":10,"i55":10,"i56":10,"i57":10,"i58":10,"i59":10,"i60":10,"i61":10,"i62":10,"i63":10,"i64":10,"i65":10,"i66":10,"i67":10,"i68":10,"i69":10,"i70":10,"i71":10,"i72":10,"i73":10,"i74":10,"i75":10,"i76":10,"i77":10,"i78":10,"i79":10,"i80":10,"i81":10,"i82":10,"i83":10,"i84":10,"i85":10,"i86":10,"i87":10,"i88":10,"i89":10,"i90":10,"i91":10,"i92":10,"i93":10,"i94":10,"i95":10,"i96":10,"i97":10,"i98":10,"i99":10,"i100":10,"i101":10,"i102":10,"i103":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
 var pathtoroot = "../../../../";
 var useModuleDirectories = true;
 loadScripts(document, 'script');</script>
@@ -82,15 +88,15 @@ loadScripts(document, 'script');</script>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li>
-<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
-<li>Method</li>
+<li><a href="#method.detail">Method</a></li>
 </ul>
 </div>
 <a id="skip.navbar.top">
@@ -140,11 +146,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd><code>java.lang.Cloneable</code>, <code>java.util.Map&lt;java.lang.String,&#8203;java.lang.Object&gt;</code></dd>
+<dd><code>java.lang.Cloneable</code>, <code>java.util.Map&lt;java.lang.String,&#8203;java.lang.Object&gt;</code>, <code><a href="api/ConvertibleContent.html" title="interface in net.amcintosh.freshbooks.models.api">ConvertibleContent</a></code></dd>
 </dl>
 <hr>
 <pre>public class <span class="typeNameLabel">Invoice</span>
-extends com.google.api.client.json.GenericJson</pre>
+extends com.google.api.client.json.GenericJson
+implements <a href="api/ConvertibleContent.html" title="interface in net.amcintosh.freshbooks.models.api">ConvertibleContent</a></pre>
 <div class="block">Invoices in FreshBooks are what gets sent to Clients, detailing specific goods or
  services performed or provided by the Administrator of their System, and the amount
  that Client owes to the Admin.</div>
@@ -165,6 +172,66 @@ extends com.google.api.client.json.GenericJson</pre>
 <!--   -->
 </a>
 <h3>Nested Class Summary</h3>
+<table class="memberSummary">
+<caption><span>Nested Classes</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colSecond" scope="col">Class</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static class&nbsp;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="Invoice.InvoiceAutoBillStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceAutoBillStatus</a></span></code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static class&nbsp;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="Invoice.InvoiceDepositStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceDepositStatus</a></span></code></th>
+<td class="colLast">
+<div class="block">Description of deposits applied to invoice.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static class&nbsp;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="Invoice.InvoiceDisplayStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceDisplayStatus</a></span></code></th>
+<td class="colLast">
+<div class="block">Description of status.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static class&nbsp;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="Invoice.InvoiceOrderStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceOrderStatus</a></span></code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static class&nbsp;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="Invoice.InvoicePaymentStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoicePaymentStatus</a></span></code></th>
+<td class="colLast">
+<div class="block">Description of payment status.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static class&nbsp;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="Invoice.InvoicePresentation.html" title="class in net.amcintosh.freshbooks.models">Invoice.InvoicePresentation</a></span></code></th>
+<td class="colLast">
+<div class="block">To define invoice logo and styles.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static class&nbsp;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="Invoice.InvoiceStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceStatus</a></span></code></th>
+<td class="colLast">
+<div class="block">Status values for an invoice.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static class&nbsp;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="Invoice.InvoiceV3Status.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceV3Status</a></span></code></th>
+<td class="colLast">
+<div class="block">v3 status fields give a descriptive name to states which can be used in filters.</div>
+</td>
+</tr>
+</table>
 <ul class="blockList">
 <li class="blockList"><a id="nested.classes.inherited.from.class.com.google.api.client.util.GenericData">
 <!--   -->
@@ -186,29 +253,6 @@ extends com.google.api.client.json.GenericJson</pre>
 <h3>Nested classes/interfaces inherited from interface&nbsp;java.util.Map</h3>
 <code>java.util.Map.Entry&lt;K extends java.lang.Object,&#8203;V extends java.lang.Object&gt;</code></li>
 </ul>
-</li>
-</ul>
-</section>
-<!-- =========== FIELD SUMMARY =========== -->
-<section role="region">
-<ul class="blockList">
-<li class="blockList"><a id="field.summary">
-<!--   -->
-</a>
-<h3>Field Summary</h3>
-<table class="memberSummary">
-<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
-<tr>
-<th class="colFirst" scope="col">Modifier and Type</th>
-<th class="colSecond" scope="col">Field</th>
-<th class="colLast" scope="col">Description</th>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>long</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#id">id</a></span></code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-</table>
 </li>
 </ul>
 </section>
@@ -240,6 +284,752 @@ extends com.google.api.client.json.GenericJson</pre>
 <!--   -->
 </a>
 <h3>Method Summary</h3>
+<table class="memberSummary">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colSecond" scope="col">Method</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAccountId()">getAccountId</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Get unique identifier of the account the invoice exists on.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAccountingSystemId()">getAccountingSystemId</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Get unique identifier of the account the invoice exists on.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAddress()">getAddress</a></span>()</code></th>
+<td class="colLast">
+<div class="block">First line of address on invoice.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code><a href="Money.html" title="class in net.amcintosh.freshbooks.models">Money</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAmount()">getAmount</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Total amount of invoice</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code><a href="Invoice.InvoiceAutoBillStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceAutoBillStatus</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAutoBillStatus()">getAutoBillStatus</a></span>()</code></th>
+<td class="colLast">
+<div class="block">One of retry, failed, or success.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getCity()">getCity</a></span>()</code></th>
+<td class="colLast">
+<div class="block">City for address on invoice.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>long</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getClientId()">getClientId</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Get the id of the client the invoice is for.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getCode()">getCode</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Postal/ZIP code for address on invoice.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>java.util.Map&lt;java.lang.String,&#8203;java.lang.Object&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getContent()">getContent</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Return the objects values as a Map suitable to sending to FreshBooks
+ in a POST or PUT request.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getCountry()">getCountry</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Country for address on invoice.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>java.time.ZonedDateTime</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getCreatedAt()">getCreatedAt</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Get the time the invoice was created.</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>java.time.LocalDate</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getCreateDate()">getCreateDate</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Date the invoice was created.</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getCurrencyCode()">getCurrencyCode</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Three-letter currency code for invoice.</div>
+</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getCurrentOrganization()">getCurrentOrganization</a></span>()</code></th>
+<td class="colLast">
+<div class="block">The current name of the client's organization.</div>
+</td>
+</tr>
+<tr id="i14" class="altColor">
+<td class="colFirst"><code>long</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getCustomerId()">getCustomerId</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Get the id of the client the invoice is for.</div>
+</td>
+</tr>
+<tr id="i15" class="rowColor">
+<td class="colFirst"><code>java.time.LocalDate</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getDatePaid()">getDatePaid</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Date invoice was fully paid.</div>
+</td>
+</tr>
+<tr id="i16" class="altColor">
+<td class="colFirst"><code><a href="Money.html" title="class in net.amcintosh.freshbooks.models">Money</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getDepositAmount()">getDepositAmount</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Amount required as deposit if required.</div>
+</td>
+</tr>
+<tr id="i17" class="rowColor">
+<td class="colFirst"><code>java.math.BigDecimal</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getDepositPercentage()">getDepositPercentage</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Percent of the invoice's value required as a deposit.</div>
+</td>
+</tr>
+<tr id="i18" class="altColor">
+<td class="colFirst"><code><a href="Invoice.InvoiceDepositStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceDepositStatus</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getDepositStatus()">getDepositStatus</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Description of deposits applied to invoice.</div>
+</td>
+</tr>
+<tr id="i19" class="rowColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getDescription()">getDescription</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Description of first line of invoice</div>
+</td>
+</tr>
+<tr id="i20" class="altColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getDiscountDescription()">getDiscountDescription</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Client-visible note about discount.</div>
+</td>
+</tr>
+<tr id="i21" class="rowColor">
+<td class="colFirst"><code><a href="Money.html" title="class in net.amcintosh.freshbooks.models">Money</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getDiscountTotal()">getDiscountTotal</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Amount outstanding on invoice.</div>
+</td>
+</tr>
+<tr id="i22" class="altColor">
+<td class="colFirst"><code>java.math.BigDecimal</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getDiscountValue()">getDiscountValue</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Percent amount being discounted from the subtotal.</div>
+</td>
+</tr>
+<tr id="i23" class="rowColor">
+<td class="colFirst"><code><a href="Invoice.InvoiceDisplayStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceDisplayStatus</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getDisplayStatus()">getDisplayStatus</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Description of status.</div>
+</td>
+</tr>
+<tr id="i24" class="altColor">
+<td class="colFirst"><code>java.time.LocalDate</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getDueDate()">getDueDate</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Date invoice is marked as due by calculated from <code>due_offset_days</code>.</div>
+</td>
+</tr>
+<tr id="i25" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getDueOffsetDays()">getDueOffsetDays</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Number of days from creation that invoice is due.</div>
+</td>
+</tr>
+<tr id="i26" class="altColor">
+<td class="colFirst"><code>long</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getEstimateId()">getEstimateId</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Id of associated estimate, 0 if none.</div>
+</td>
+</tr>
+<tr id="i27" class="rowColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getFirstName()">getFirstName</a></span>()</code></th>
+<td class="colLast">
+<div class="block">First name of client being invoiced.</div>
+</td>
+</tr>
+<tr id="i28" class="altColor">
+<td class="colFirst"><code>java.time.LocalDate</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getGenerationDate()">getGenerationDate</a></span>()</code></th>
+<td class="colLast">
+<div class="block">The date the invoice was generated from a invoice profile or
+ null if it was not generated.</div>
+</td>
+</tr>
+<tr id="i29" class="rowColor">
+<td class="colFirst"><code>long</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getId()">getId</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Get the unique identifier of this invoice within this business.</div>
+</td>
+</tr>
+<tr id="i30" class="altColor">
+<td class="colFirst"><code>long</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getInvoiceId()">getInvoiceId</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Get unique to this business id for invoice.</div>
+</td>
+</tr>
+<tr id="i31" class="rowColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getInvoiceNumber()">getInvoiceNumber</a></span>()</code></th>
+<td class="colLast">
+<div class="block">The user-specified number that appears on the invoice.</div>
+</td>
+</tr>
+<tr id="i32" class="altColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getLanguage()">getLanguage</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Two-letter language code, e.g.</div>
+</td>
+</tr>
+<tr id="i33" class="rowColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getLastName()">getLastName</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Last name of client being invoiced.</div>
+</td>
+</tr>
+<tr id="i34" class="altColor">
+<td class="colFirst"><code><a href="Invoice.InvoiceOrderStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceOrderStatus</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getLastOrderStatus()">getLastOrderStatus</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Describes status of last attempted payment.</div>
+</td>
+</tr>
+<tr id="i35" class="rowColor">
+<td class="colFirst"><code>java.util.List&lt;<a href="LineItem.html" title="class in net.amcintosh.freshbooks.models">LineItem</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getLines()">getLines</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Lines of the invoice.</div>
+</td>
+</tr>
+<tr id="i36" class="altColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getNotes()">getNotes</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Notes listed on invoice.</div>
+</td>
+</tr>
+<tr id="i37" class="rowColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getOrganization()">getOrganization</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Name of organization being invoiced.</div>
+</td>
+</tr>
+<tr id="i38" class="altColor">
+<td class="colFirst"><code><a href="Money.html" title="class in net.amcintosh.freshbooks.models">Money</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getOutstanding()">getOutstanding</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Amount outstanding on invoice.</div>
+</td>
+</tr>
+<tr id="i39" class="rowColor">
+<td class="colFirst"><code>long</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getOwnerId()">getOwnerId</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Id of creator of invoice.</div>
+</td>
+</tr>
+<tr id="i40" class="altColor">
+<td class="colFirst"><code><a href="Money.html" title="class in net.amcintosh.freshbooks.models">Money</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getPaid()">getPaid</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Amount paid on invoice.</div>
+</td>
+</tr>
+<tr id="i41" class="rowColor">
+<td class="colFirst"><code>long</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getParent()">getParent</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Id of object this invoice was generated from, 0 if none</div>
+</td>
+</tr>
+<tr id="i42" class="altColor">
+<td class="colFirst"><code><a href="Invoice.InvoicePaymentStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoicePaymentStatus</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getPaymentStatus()">getPaymentStatus</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Description of payment status.</div>
+</td>
+</tr>
+<tr id="i43" class="rowColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getPONumber()">getPONumber</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Reference number for address on invoice.</div>
+</td>
+</tr>
+<tr id="i44" class="altColor">
+<td class="colFirst"><code><a href="Invoice.InvoicePresentation.html" title="class in net.amcintosh.freshbooks.models">Invoice.InvoicePresentation</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getPresentation()">getPresentation</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Define invoice logo and styles.</div>
+</td>
+</tr>
+<tr id="i45" class="rowColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getProvince()">getProvince</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Province/state for address on invoice.</div>
+</td>
+</tr>
+<tr id="i46" class="altColor">
+<td class="colFirst"><code>long</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSentId()">getSentId</a></span>()</code></th>
+<td class="colLast">
+<div class="block">User id of user who sent the invoice.</div>
+</td>
+</tr>
+<tr id="i47" class="rowColor">
+<td class="colFirst"><code><a href="Invoice.InvoiceStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceStatus</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getStatus()">getStatus</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Get the status of the invoice.</div>
+</td>
+</tr>
+<tr id="i48" class="altColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getStreet()">getStreet</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Street for address on invoice.</div>
+</td>
+</tr>
+<tr id="i49" class="rowColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getStreet2()">getStreet2</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Second line of street for address on invoice.</div>
+</td>
+</tr>
+<tr id="i50" class="altColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getTerms()">getTerms</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Terms listed on invoice.</div>
+</td>
+</tr>
+<tr id="i51" class="rowColor">
+<td class="colFirst"><code>java.time.ZonedDateTime</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getUpdated()">getUpdated</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Get the time of last modification to the invoice.</div>
+</td>
+</tr>
+<tr id="i52" class="altColor">
+<td class="colFirst"><code><a href="Invoice.InvoiceV3Status.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceV3Status</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getV3Status()">getV3Status</a></span>()</code></th>
+<td class="colLast">
+<div class="block">v3 status fields give a descriptive name to states which can be used in filters</div>
+</td>
+</tr>
+<tr id="i53" class="rowColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getVATName()">getVATName</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Value Added Tax name of client if provided.</div>
+</td>
+</tr>
+<tr id="i54" class="altColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getVATNumber()">getVATNumber</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Value Added Tax number of client if provided.</div>
+</td>
+</tr>
+<tr id="i55" class="rowColor">
+<td class="colFirst"><code><a href="VisState.html" title="enum in net.amcintosh.freshbooks.models">VisState</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getVisState()">getVisState</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Get the visibility state: active, deleted, or archived
+ <br><br></div>
+</td>
+</tr>
+<tr id="i56" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isAutoBill()">isAutoBill</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Whether this invoice has a credit card saved.</div>
+</td>
+</tr>
+<tr id="i57" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isGroundMail()">isGroundMail</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Whether to send via ground mail.</div>
+</td>
+</tr>
+<tr id="i58" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isShowAttachments()">isShowAttachments</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Whether attachments on invoice are rendered in FreshBooks UI.</div>
+</td>
+</tr>
+<tr id="i59" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isUseDefaultPresentation()">isUseDefaultPresentation</a></span>()</code></th>
+<td class="colLast">
+<div class="block">By default, if no presentation specified in new invoice request payload,
+ it will be assigned a default presentation.</div>
+</td>
+</tr>
+<tr id="i60" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setAddress(java.lang.String)">setAddress</a></span>&#8203;(java.lang.String&nbsp;address)</code></th>
+<td class="colLast">
+<div class="block">First line of address on invoice.</div>
+</td>
+</tr>
+<tr id="i61" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setAutoBill(boolean)">setAutoBill</a></span>&#8203;(boolean&nbsp;autoBill)</code></th>
+<td class="colLast">
+<div class="block">Whether this invoice has a credit card saved.</div>
+</td>
+</tr>
+<tr id="i62" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setAutoBillStatus(net.amcintosh.freshbooks.models.Invoice.InvoiceAutoBillStatus)">setAutoBillStatus</a></span>&#8203;(<a href="Invoice.InvoiceAutoBillStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceAutoBillStatus</a>&nbsp;autoBillStatus)</code></th>
+<td class="colLast">
+<div class="block">One of retry, failed, or success.</div>
+</td>
+</tr>
+<tr id="i63" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setCity(java.lang.String)">setCity</a></span>&#8203;(java.lang.String&nbsp;city)</code></th>
+<td class="colLast">
+<div class="block">City for address on invoice.</div>
+</td>
+</tr>
+<tr id="i64" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setClientId(long)">setClientId</a></span>&#8203;(long&nbsp;clientId)</code></th>
+<td class="colLast">
+<div class="block">Set the id of the client the invoice is for.</div>
+</td>
+</tr>
+<tr id="i65" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setCode(java.lang.String)">setCode</a></span>&#8203;(java.lang.String&nbsp;code)</code></th>
+<td class="colLast">
+<div class="block">Postal/ZIP code for address on invoice.</div>
+</td>
+</tr>
+<tr id="i66" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setCountry(java.lang.String)">setCountry</a></span>&#8203;(java.lang.String&nbsp;country)</code></th>
+<td class="colLast">
+<div class="block">Country for address on invoice.</div>
+</td>
+</tr>
+<tr id="i67" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setCreateDate(java.time.LocalDate)">setCreateDate</a></span>&#8203;(java.time.LocalDate&nbsp;createDate)</code></th>
+<td class="colLast">
+<div class="block">Date the invoice was created.</div>
+</td>
+</tr>
+<tr id="i68" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setCurrencyCode(java.lang.String)">setCurrencyCode</a></span>&#8203;(java.lang.String&nbsp;currencyCode)</code></th>
+<td class="colLast">
+<div class="block">Three-letter currency code for invoice.</div>
+</td>
+</tr>
+<tr id="i69" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setCustomerId(long)">setCustomerId</a></span>&#8203;(long&nbsp;customerId)</code></th>
+<td class="colLast">
+<div class="block">Set the id of the client the invoice is for.</div>
+</td>
+</tr>
+<tr id="i70" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setDepositAmount(net.amcintosh.freshbooks.models.Money)">setDepositAmount</a></span>&#8203;(<a href="Money.html" title="class in net.amcintosh.freshbooks.models">Money</a>&nbsp;depositAmount)</code></th>
+<td class="colLast">
+<div class="block">Amount required as deposit if required.</div>
+</td>
+</tr>
+<tr id="i71" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setDepositPercentage(java.math.BigDecimal)">setDepositPercentage</a></span>&#8203;(java.math.BigDecimal&nbsp;depositPercentage)</code></th>
+<td class="colLast">
+<div class="block">Percent of the invoice's value required as a deposit.</div>
+</td>
+</tr>
+<tr id="i72" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setDepositStatus(net.amcintosh.freshbooks.models.Invoice.InvoiceDepositStatus)">setDepositStatus</a></span>&#8203;(<a href="Invoice.InvoiceDepositStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceDepositStatus</a>&nbsp;depositStatus)</code></th>
+<td class="colLast">
+<div class="block">Description of deposits applied to invoice.</div>
+</td>
+</tr>
+<tr id="i73" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setDiscountDescription(java.lang.String)">setDiscountDescription</a></span>&#8203;(java.lang.String&nbsp;discountDescription)</code></th>
+<td class="colLast">
+<div class="block">Client-visible note about discount.</div>
+</td>
+</tr>
+<tr id="i74" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setDiscountValue(java.math.BigDecimal)">setDiscountValue</a></span>&#8203;(java.math.BigDecimal&nbsp;discountValue)</code></th>
+<td class="colLast">
+<div class="block">Percent amount being discounted from the subtotal, decimal amount ranging from 0 to 100.</div>
+</td>
+</tr>
+<tr id="i75" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setDisplayStatus(net.amcintosh.freshbooks.models.Invoice.InvoiceDisplayStatus)">setDisplayStatus</a></span>&#8203;(<a href="Invoice.InvoiceDisplayStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceDisplayStatus</a>&nbsp;displayStatus)</code></th>
+<td class="colLast">
+<div class="block">Description of status.</div>
+</td>
+</tr>
+<tr id="i76" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setDueOffsetDays(int)">setDueOffsetDays</a></span>&#8203;(int&nbsp;dueOffsetDays)</code></th>
+<td class="colLast">
+<div class="block">Number of days from creation that invoice is due.</div>
+</td>
+</tr>
+<tr id="i77" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setEstimateId(long)">setEstimateId</a></span>&#8203;(long&nbsp;estimateId)</code></th>
+<td class="colLast">
+<div class="block">Id of associated estimate</div>
+</td>
+</tr>
+<tr id="i78" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setFirstName(java.lang.String)">setFirstName</a></span>&#8203;(java.lang.String&nbsp;fname)</code></th>
+<td class="colLast">
+<div class="block">First name of client being invoiced.</div>
+</td>
+</tr>
+<tr id="i79" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setGenerationDate(java.time.LocalDate)">setGenerationDate</a></span>&#8203;(java.time.LocalDate&nbsp;generationDate)</code></th>
+<td class="colLast">
+<div class="block">The date the invoice was generated from a invoice profile or
+ null if it was not generated.</div>
+</td>
+</tr>
+<tr id="i80" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setInvoiceNumber(java.lang.String)">setInvoiceNumber</a></span>&#8203;(java.lang.String&nbsp;invoiceNumber)</code></th>
+<td class="colLast">
+<div class="block">The user-specified number that appears on the invoice.</div>
+</td>
+</tr>
+<tr id="i81" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setLanguage(java.lang.String)">setLanguage</a></span>&#8203;(java.lang.String&nbsp;language)</code></th>
+<td class="colLast">
+<div class="block">Two-letter language code, e.g.</div>
+</td>
+</tr>
+<tr id="i82" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setLastName(java.lang.String)">setLastName</a></span>&#8203;(java.lang.String&nbsp;lname)</code></th>
+<td class="colLast">
+<div class="block">Last name of client being invoiced.</div>
+</td>
+</tr>
+<tr id="i83" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setLastOrderStatus(net.amcintosh.freshbooks.models.Invoice.InvoiceOrderStatus)">setLastOrderStatus</a></span>&#8203;(<a href="Invoice.InvoiceOrderStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceOrderStatus</a>&nbsp;lastOrderStatus)</code></th>
+<td class="colLast">
+<div class="block">Describes status of last attempted payment.</div>
+</td>
+</tr>
+<tr id="i84" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setLines(java.util.List)">setLines</a></span>&#8203;(java.util.List&lt;<a href="LineItem.html" title="class in net.amcintosh.freshbooks.models">LineItem</a>&gt;&nbsp;lines)</code></th>
+<td class="colLast">
+<div class="block">Lines of the invoice.</div>
+</td>
+</tr>
+<tr id="i85" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setNotes(java.lang.String)">setNotes</a></span>&#8203;(java.lang.String&nbsp;notes)</code></th>
+<td class="colLast">
+<div class="block">Notes listed on invoice.</div>
+</td>
+</tr>
+<tr id="i86" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setOrganization(java.lang.String)">setOrganization</a></span>&#8203;(java.lang.String&nbsp;organization)</code></th>
+<td class="colLast">
+<div class="block">Name of organization being invoiced.</div>
+</td>
+</tr>
+<tr id="i87" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setOwnerId(long)">setOwnerId</a></span>&#8203;(long&nbsp;ownerId)</code></th>
+<td class="colLast">
+<div class="block">User id of creator of invoice.</div>
+</td>
+</tr>
+<tr id="i88" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParent(long)">setParent</a></span>&#8203;(long&nbsp;parent)</code></th>
+<td class="colLast">
+<div class="block">Id of object this invoice was generated from, 0 if none
+ <br><br>
+ <i>Note:</i> This is only writeable on creation.</div>
+</td>
+</tr>
+<tr id="i89" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setPaymentStatus(net.amcintosh.freshbooks.models.Invoice.InvoicePaymentStatus)">setPaymentStatus</a></span>&#8203;(<a href="Invoice.InvoicePaymentStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoicePaymentStatus</a>&nbsp;paymentStatus)</code></th>
+<td class="colLast">
+<div class="block">Description of payment status.</div>
+</td>
+</tr>
+<tr id="i90" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setPONumber(java.lang.String)">setPONumber</a></span>&#8203;(java.lang.String&nbsp;PONumber)</code></th>
+<td class="colLast">
+<div class="block">Reference number for address on invoice.</div>
+</td>
+</tr>
+<tr id="i91" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setPresentation(net.amcintosh.freshbooks.models.Invoice.InvoicePresentation)">setPresentation</a></span>&#8203;(<a href="Invoice.InvoicePresentation.html" title="class in net.amcintosh.freshbooks.models">Invoice.InvoicePresentation</a>&nbsp;presentation)</code></th>
+<td class="colLast">
+<div class="block">Define invoice logo and styles.</div>
+</td>
+</tr>
+<tr id="i92" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setProvince(java.lang.String)">setProvince</a></span>&#8203;(java.lang.String&nbsp;province)</code></th>
+<td class="colLast">
+<div class="block">Province/state for address on invoice.</div>
+</td>
+</tr>
+<tr id="i93" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setSentId(long)">setSentId</a></span>&#8203;(long&nbsp;sentId)</code></th>
+<td class="colLast">
+<div class="block">User id of user who sent the invoice.</div>
+</td>
+</tr>
+<tr id="i94" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setShowAttachments(boolean)">setShowAttachments</a></span>&#8203;(boolean&nbsp;showAttachments)</code></th>
+<td class="colLast">
+<div class="block">Whether attachments on invoice are rendered in FreshBooks UI.</div>
+</td>
+</tr>
+<tr id="i95" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setStatus(net.amcintosh.freshbooks.models.Invoice.InvoiceStatus)">setStatus</a></span>&#8203;(<a href="Invoice.InvoiceStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceStatus</a>&nbsp;status)</code></th>
+<td class="colLast">
+<div class="block">Set the status of the invoice.</div>
+</td>
+</tr>
+<tr id="i96" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setStreet(java.lang.String)">setStreet</a></span>&#8203;(java.lang.String&nbsp;street)</code></th>
+<td class="colLast">
+<div class="block">Street for address on invoice.</div>
+</td>
+</tr>
+<tr id="i97" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setStreet2(java.lang.String)">setStreet2</a></span>&#8203;(java.lang.String&nbsp;street2)</code></th>
+<td class="colLast">
+<div class="block">Second line of street for address on invoice.</div>
+</td>
+</tr>
+<tr id="i98" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setTerms(java.lang.String)">setTerms</a></span>&#8203;(java.lang.String&nbsp;terms)</code></th>
+<td class="colLast">
+<div class="block">Terms listed on invoice.</div>
+</td>
+</tr>
+<tr id="i99" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setUseDefaultPresentation(boolean)">setUseDefaultPresentation</a></span>&#8203;(boolean&nbsp;useDefaultPresentation)</code></th>
+<td class="colLast">
+<div class="block">By default, if no presentation specified in new invoice request payload,
+ it will be assigned a default presentation.</div>
+</td>
+</tr>
+<tr id="i100" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setV3Status(net.amcintosh.freshbooks.models.Invoice.InvoiceV3Status)">setV3Status</a></span>&#8203;(<a href="Invoice.InvoiceV3Status.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceV3Status</a>&nbsp;v3Status)</code></th>
+<td class="colLast">
+<div class="block">v3 status fields give a descriptive name to states which can be used in filters
+ <br><br>
+ <i>Note:</i> This is only writeable on creation.</div>
+</td>
+</tr>
+<tr id="i101" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setVATName(java.lang.String)">setVATName</a></span>&#8203;(java.lang.String&nbsp;VATName)</code></th>
+<td class="colLast">
+<div class="block">Value Added Tax name of client.</div>
+</td>
+</tr>
+<tr id="i102" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setVATNumber(java.lang.String)">setVATNumber</a></span>&#8203;(java.lang.String&nbsp;VATNumber)</code></th>
+<td class="colLast">
+<div class="block">Value Added Tax number of client.</div>
+</td>
+</tr>
+<tr id="i103" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setVisState(net.amcintosh.freshbooks.models.VisState)">setVisState</a></span>&#8203;(<a href="VisState.html" title="enum in net.amcintosh.freshbooks.models">VisState</a>&nbsp;visState)</code></th>
+<td class="colLast">
+<div class="block">Set the visibility state of the invoice.</div>
+</td>
+</tr>
+</table>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.com.google.api.client.json.GenericJson">
 <!--   -->
@@ -284,25 +1074,6 @@ extends com.google.api.client.json.GenericJson</pre>
 <div class="details">
 <ul class="blockList">
 <li class="blockList">
-<!-- ============ FIELD DETAIL =========== -->
-<section role="region">
-<ul class="blockList">
-<li class="blockList"><a id="field.detail">
-<!--   -->
-</a>
-<h3>Field Detail</h3>
-<a id="id">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>id</h4>
-<pre>public&nbsp;long id</pre>
-</li>
-</ul>
-</li>
-</ul>
-</section>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <section role="region">
 <ul class="blockList">
@@ -317,6 +1088,1574 @@ extends com.google.api.client.json.GenericJson</pre>
 <li class="blockList">
 <h4>Invoice</h4>
 <pre>public&nbsp;Invoice()</pre>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<!-- ============ METHOD DETAIL ========== -->
+<section role="region">
+<ul class="blockList">
+<li class="blockList"><a id="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a id="getId()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getId</h4>
+<pre class="methodSignature">public&nbsp;long&nbsp;getId()</pre>
+<div class="block">Get the unique identifier of this invoice within this business.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The id of the invoice</dd>
+</dl>
+</li>
+</ul>
+<a id="getInvoiceId()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getInvoiceId</h4>
+<pre class="methodSignature">public&nbsp;long&nbsp;getInvoiceId()</pre>
+<div class="block">Get unique to this business id for invoice.
+
+ Note: This is the same as <code>getId</code>.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The id of the invoice</dd>
+</dl>
+</li>
+</ul>
+<a id="getAccountingSystemId()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAccountingSystemId</h4>
+<pre class="methodSignature">public&nbsp;java.lang.String&nbsp;getAccountingSystemId()</pre>
+<div class="block">Get unique identifier of the account the invoice exists on.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Accounting System Id</dd>
+</dl>
+</li>
+</ul>
+<a id="getAccountId()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAccountId</h4>
+<pre class="methodSignature">public&nbsp;java.lang.String&nbsp;getAccountId()</pre>
+<div class="block">Get unique identifier of the account the invoice exists on.
+ The same as <code>getAccountingSystemId()</code>.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Accounting System Id</dd>
+</dl>
+</li>
+</ul>
+<a id="getAddress()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAddress</h4>
+<pre class="methodSignature">public&nbsp;java.lang.String&nbsp;getAddress()</pre>
+<div class="block">First line of address on invoice.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>String of the address</dd>
+</dl>
+</li>
+</ul>
+<a id="setAddress(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAddress</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setAddress&#8203;(java.lang.String&nbsp;address)</pre>
+<div class="block">First line of address on invoice.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>address</code> - String of the address</dd>
+</dl>
+</li>
+</ul>
+<a id="getAmount()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAmount</h4>
+<pre class="methodSignature">public&nbsp;<a href="Money.html" title="class in net.amcintosh.freshbooks.models">Money</a>&nbsp;getAmount()</pre>
+<div class="block">Total amount of invoice</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Object containing amount and currency code.</dd>
+</dl>
+</li>
+</ul>
+<a id="isAutoBill()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isAutoBill</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;isAutoBill()</pre>
+<div class="block">Whether this invoice has a credit card saved.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>boolean if invoice has autobill enabled.</dd>
+</dl>
+</li>
+</ul>
+<a id="setAutoBill(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAutoBill</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setAutoBill&#8203;(boolean&nbsp;autoBill)</pre>
+<div class="block">Whether this invoice has a credit card saved.
+ <br><br>
+ <i>Note:</i> This is only writeable on creation.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>autoBill</code> - </dd>
+</dl>
+</li>
+</ul>
+<a id="getAutoBillStatus()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAutoBillStatus</h4>
+<pre class="methodSignature">public&nbsp;<a href="Invoice.InvoiceAutoBillStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceAutoBillStatus</a>&nbsp;getAutoBillStatus()</pre>
+<div class="block">One of retry, failed, or success.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
+</li>
+</ul>
+<a id="setAutoBillStatus(net.amcintosh.freshbooks.models.Invoice.InvoiceAutoBillStatus)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAutoBillStatus</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setAutoBillStatus&#8203;(<a href="Invoice.InvoiceAutoBillStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceAutoBillStatus</a>&nbsp;autoBillStatus)</pre>
+<div class="block">One of retry, failed, or success.
+ <br><br>
+ <i>Note:</i> This is only writeable on creation.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>autoBillStatus</code> - </dd>
+</dl>
+</li>
+</ul>
+<a id="getCity()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCity</h4>
+<pre class="methodSignature">public&nbsp;java.lang.String&nbsp;getCity()</pre>
+<div class="block">City for address on invoice.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
+</li>
+</ul>
+<a id="setCity(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCity</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setCity&#8203;(java.lang.String&nbsp;city)</pre>
+<div class="block">City for address on invoice.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>city</code> - </dd>
+</dl>
+</li>
+</ul>
+<a id="getCode()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCode</h4>
+<pre class="methodSignature">public&nbsp;java.lang.String&nbsp;getCode()</pre>
+<div class="block">Postal/ZIP code for address on invoice.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
+</li>
+</ul>
+<a id="setCode(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCode</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setCode&#8203;(java.lang.String&nbsp;code)</pre>
+<div class="block">Postal/ZIP code for address on invoice.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>code</code> - </dd>
+</dl>
+</li>
+</ul>
+<a id="getCountry()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCountry</h4>
+<pre class="methodSignature">public&nbsp;java.lang.String&nbsp;getCountry()</pre>
+<div class="block">Country for address on invoice.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
+</li>
+</ul>
+<a id="setCountry(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCountry</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setCountry&#8203;(java.lang.String&nbsp;country)</pre>
+<div class="block">Country for address on invoice.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>country</code> - </dd>
+</dl>
+</li>
+</ul>
+<a id="getClientId()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getClientId</h4>
+<pre class="methodSignature">public&nbsp;long&nbsp;getClientId()</pre>
+<div class="block">Get the id of the client the invoice is for.
+ <br><br>
+ <i>Note:</i> The API request/response uses <code>customerid</code> rather than
+ <code>clientid</code>, so this method is identical to <code>getCustomerId()</code>.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Id of client</dd>
+</dl>
+</li>
+</ul>
+<a id="setClientId(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setClientId</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setClientId&#8203;(long&nbsp;clientId)</pre>
+<div class="block">Set the id of the client the invoice is for.
+ <br><br>
+ <i>Note:</i> The API request/response uses <code>customerid</code> rather than
+ <code>clientid</code>, so this method is identical to <code>setCustomerId()</code>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>clientId</code> - Id of client</dd>
+</dl>
+</li>
+</ul>
+<a id="getCreateDate()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCreateDate</h4>
+<pre class="methodSignature">public&nbsp;java.time.LocalDate&nbsp;getCreateDate()</pre>
+<div class="block">Date the invoice was created.
+ <br>
+ The API returns this in YYYY-MM-DD format. It is converted to a LocalDate.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>converted LocalDate object</dd>
+</dl>
+</li>
+</ul>
+<a id="setCreateDate(java.time.LocalDate)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCreateDate</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setCreateDate&#8203;(java.time.LocalDate&nbsp;createDate)</pre>
+<div class="block">Date the invoice was created.
+ <br>
+ This is sent to the API in YYYY-MM-DD format.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>createDate</code> - </dd>
+</dl>
+</li>
+</ul>
+<a id="getCreatedAt()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCreatedAt</h4>
+<pre class="methodSignature">public&nbsp;java.time.ZonedDateTime&nbsp;getCreatedAt()</pre>
+<div class="block">Get the time the invoice was created.
+ <br><br>
+ <i>Note:</i> The API returns this data in "US/Eastern", but it is converted here to UTC.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Created time in UTC</dd>
+</dl>
+</li>
+</ul>
+<a id="getCurrencyCode()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCurrencyCode</h4>
+<pre class="methodSignature">public&nbsp;java.lang.String&nbsp;getCurrencyCode()</pre>
+<div class="block">Three-letter currency code for invoice.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
+</li>
+</ul>
+<a id="setCurrencyCode(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCurrencyCode</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setCurrencyCode&#8203;(java.lang.String&nbsp;currencyCode)</pre>
+<div class="block">Three-letter currency code for invoice.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>currencyCode</code> - </dd>
+</dl>
+</li>
+</ul>
+<a id="getCurrentOrganization()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCurrentOrganization</h4>
+<pre class="methodSignature">public&nbsp;java.lang.String&nbsp;getCurrentOrganization()</pre>
+<div class="block">The current name of the client's organization. Once an invoice is set, the organization
+ will not reflect any changes to the client but the current organization is available.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The client organization</dd>
+</dl>
+</li>
+</ul>
+<a id="getCustomerId()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCustomerId</h4>
+<pre class="methodSignature">public&nbsp;long&nbsp;getCustomerId()</pre>
+<div class="block">Get the id of the client the invoice is for.
+ <br><br>
+ <i>Note:</i> The API request/response uses <code>customerid</code> rather than
+ <code>clientid</code>, so this method is identical to <code>getClientId()</code>.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Id of client</dd>
+</dl>
+</li>
+</ul>
+<a id="setCustomerId(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCustomerId</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setCustomerId&#8203;(long&nbsp;customerId)</pre>
+<div class="block">Set the id of the client the invoice is for.
+ <br><br>
+ <i>Note:</i> The API request/response uses <code>customerid</code> rather than
+ <code>clientid</code>, so this method is identical to <code>setClientId()</code>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>customerId</code> - Id of client</dd>
+</dl>
+</li>
+</ul>
+<a id="getDatePaid()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDatePaid</h4>
+<pre class="methodSignature">public&nbsp;java.time.LocalDate&nbsp;getDatePaid()</pre>
+<div class="block">Date invoice was fully paid.
+
+ The API returns this in YYYY-MM-DD format.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>date object</dd>
+</dl>
+</li>
+</ul>
+<a id="getDepositAmount()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDepositAmount</h4>
+<pre class="methodSignature">public&nbsp;<a href="Money.html" title="class in net.amcintosh.freshbooks.models">Money</a>&nbsp;getDepositAmount()</pre>
+<div class="block">Amount required as deposit if required.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Money object of required deposit</dd>
+</dl>
+</li>
+</ul>
+<a id="getDepositStatus()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDepositStatus</h4>
+<pre class="methodSignature">public&nbsp;<a href="Invoice.InvoiceDepositStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceDepositStatus</a>&nbsp;getDepositStatus()</pre>
+<div class="block">Description of deposits applied to invoice.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
+</li>
+</ul>
+<a id="setDepositStatus(net.amcintosh.freshbooks.models.Invoice.InvoiceDepositStatus)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDepositStatus</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setDepositStatus&#8203;(<a href="Invoice.InvoiceDepositStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceDepositStatus</a>&nbsp;depositStatus)</pre>
+<div class="block">Description of deposits applied to invoice.
+ <br><br>
+ <i>Note:</i> This is only writeable on creation.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>depositStatus</code> - </dd>
+</dl>
+</li>
+</ul>
+<a id="setDepositAmount(net.amcintosh.freshbooks.models.Money)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDepositAmount</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setDepositAmount&#8203;(<a href="Money.html" title="class in net.amcintosh.freshbooks.models">Money</a>&nbsp;depositAmount)</pre>
+<div class="block">Amount required as deposit if required. Can be set directly or calculated
+ by the invoice <code>depositPercentage</code>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>depositAmount</code> - Money object of required deposit</dd>
+</dl>
+</li>
+</ul>
+<a id="getDepositPercentage()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDepositPercentage</h4>
+<pre class="methodSignature">public&nbsp;java.math.BigDecimal&nbsp;getDepositPercentage()</pre>
+<div class="block">Percent of the invoice's value required as a deposit.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>BigDecimal of percentage</dd>
+</dl>
+</li>
+</ul>
+<a id="setDepositPercentage(java.math.BigDecimal)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDepositPercentage</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setDepositPercentage&#8203;(java.math.BigDecimal&nbsp;depositPercentage)</pre>
+<div class="block">Percent of the invoice's value required as a deposit.
+ If set, invoice will have a <code>depositAmount</code> calculated.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>depositPercentage</code> - BigDecimal of percentage</dd>
+</dl>
+</li>
+</ul>
+<a id="getDescription()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDescription</h4>
+<pre class="methodSignature">public&nbsp;java.lang.String&nbsp;getDescription()</pre>
+<div class="block">Description of first line of invoice</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The description</dd>
+</dl>
+</li>
+</ul>
+<a id="getDiscountDescription()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDiscountDescription</h4>
+<pre class="methodSignature">public&nbsp;java.lang.String&nbsp;getDiscountDescription()</pre>
+<div class="block">Client-visible note about discount.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
+</li>
+</ul>
+<a id="setDiscountDescription(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDiscountDescription</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setDiscountDescription&#8203;(java.lang.String&nbsp;discountDescription)</pre>
+<div class="block">Client-visible note about discount.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>discountDescription</code> - </dd>
+</dl>
+</li>
+</ul>
+<a id="getDiscountTotal()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDiscountTotal</h4>
+<pre class="methodSignature">public&nbsp;<a href="Money.html" title="class in net.amcintosh.freshbooks.models">Money</a>&nbsp;getDiscountTotal()</pre>
+<div class="block">Amount outstanding on invoice.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Object containing amount and currency code.</dd>
+</dl>
+</li>
+</ul>
+<a id="getDiscountValue()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDiscountValue</h4>
+<pre class="methodSignature">public&nbsp;java.math.BigDecimal&nbsp;getDiscountValue()</pre>
+<div class="block">Percent amount being discounted from the subtotal.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>BigDecimal of percentage</dd>
+</dl>
+</li>
+</ul>
+<a id="setDiscountValue(java.math.BigDecimal)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDiscountValue</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setDiscountValue&#8203;(java.math.BigDecimal&nbsp;discountValue)</pre>
+<div class="block">Percent amount being discounted from the subtotal, decimal amount ranging from 0 to 100.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>discountValue</code> - BigDecimal of percentage</dd>
+</dl>
+</li>
+</ul>
+<a id="getDisplayStatus()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDisplayStatus</h4>
+<pre class="methodSignature">public&nbsp;<a href="Invoice.InvoiceDisplayStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceDisplayStatus</a>&nbsp;getDisplayStatus()</pre>
+<div class="block">Description of status. Used primarily for the FreshBooks UI.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>InvoiceDisplayStatus value</dd>
+</dl>
+</li>
+</ul>
+<a id="setDisplayStatus(net.amcintosh.freshbooks.models.Invoice.InvoiceDisplayStatus)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDisplayStatus</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setDisplayStatus&#8203;(<a href="Invoice.InvoiceDisplayStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceDisplayStatus</a>&nbsp;displayStatus)</pre>
+<div class="block">Description of status. Used primarily for the FreshBooks UI.
+
+ <br><br>
+ <i>Note:</i> This is only writeable on creation.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>displayStatus</code> - </dd>
+</dl>
+</li>
+</ul>
+<a id="getDueDate()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDueDate</h4>
+<pre class="methodSignature">public&nbsp;java.time.LocalDate&nbsp;getDueDate()</pre>
+<div class="block">Date invoice is marked as due by calculated from <code>due_offset_days</code>.
+ If <code>due_offset_days</code> is not set, it will default to the date of issue.
+
+ The API returns this in YYYY-MM-DD format.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>date object</dd>
+</dl>
+</li>
+</ul>
+<a id="getDueOffsetDays()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDueOffsetDays</h4>
+<pre class="methodSignature">public&nbsp;int&nbsp;getDueOffsetDays()</pre>
+<div class="block">Number of days from creation that invoice is due.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
+</li>
+</ul>
+<a id="setDueOffsetDays(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDueOffsetDays</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setDueOffsetDays&#8203;(int&nbsp;dueOffsetDays)</pre>
+<div class="block">Number of days from creation that invoice is due.
+ <br>
+ If not set, the due date will default to the date of issue.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>dueOffsetDays</code> - </dd>
+</dl>
+</li>
+</ul>
+<a id="getFirstName()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getFirstName</h4>
+<pre class="methodSignature">public&nbsp;java.lang.String&nbsp;getFirstName()</pre>
+<div class="block">First name of client being invoiced.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
+</li>
+</ul>
+<a id="setFirstName(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setFirstName</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setFirstName&#8203;(java.lang.String&nbsp;fname)</pre>
+<div class="block">First name of client being invoiced.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>fname</code> - </dd>
+</dl>
+</li>
+</ul>
+<a id="getEstimateId()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getEstimateId</h4>
+<pre class="methodSignature">public&nbsp;long&nbsp;getEstimateId()</pre>
+<div class="block">Id of associated estimate, 0 if none.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Id of estimate</dd>
+</dl>
+</li>
+</ul>
+<a id="setEstimateId(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setEstimateId</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setEstimateId&#8203;(long&nbsp;estimateId)</pre>
+<div class="block">Id of associated estimate</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>estimateId</code> - Id of estimate</dd>
+</dl>
+</li>
+</ul>
+<a id="getGenerationDate()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getGenerationDate</h4>
+<pre class="methodSignature">public&nbsp;java.time.LocalDate&nbsp;getGenerationDate()</pre>
+<div class="block">The date the invoice was generated from a invoice profile or
+ null if it was not generated.
+ <br>
+ The API returns this in YYYY-MM-DD format.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>date object</dd>
+</dl>
+</li>
+</ul>
+<a id="setGenerationDate(java.time.LocalDate)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setGenerationDate</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setGenerationDate&#8203;(java.time.LocalDate&nbsp;generationDate)</pre>
+<div class="block">The date the invoice was generated from a invoice profile or
+ null if it was not generated.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>generationDate</code> - The date</dd>
+</dl>
+</li>
+</ul>
+<a id="isGroundMail()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isGroundMail</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;isGroundMail()</pre>
+<div class="block">Whether to send via ground mail.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
+</li>
+</ul>
+<a id="getInvoiceNumber()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getInvoiceNumber</h4>
+<pre class="methodSignature">public&nbsp;java.lang.String&nbsp;getInvoiceNumber()</pre>
+<div class="block">The user-specified number that appears on the invoice.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The invoice number</dd>
+</dl>
+</li>
+</ul>
+<a id="setInvoiceNumber(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setInvoiceNumber</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setInvoiceNumber&#8203;(java.lang.String&nbsp;invoiceNumber)</pre>
+<div class="block">The user-specified number that appears on the invoice.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>invoiceNumber</code> - The invoice number</dd>
+</dl>
+</li>
+</ul>
+<a id="getLanguage()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getLanguage</h4>
+<pre class="methodSignature">public&nbsp;java.lang.String&nbsp;getLanguage()</pre>
+<div class="block">Two-letter language code, e.g. "en".</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
+</li>
+</ul>
+<a id="setLanguage(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setLanguage</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setLanguage&#8203;(java.lang.String&nbsp;language)</pre>
+<div class="block">Two-letter language code, e.g. "en".</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>language</code> - </dd>
+</dl>
+</li>
+</ul>
+<a id="getLastOrderStatus()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getLastOrderStatus</h4>
+<pre class="methodSignature">public&nbsp;<a href="Invoice.InvoiceOrderStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceOrderStatus</a>&nbsp;getLastOrderStatus()</pre>
+<div class="block">Describes status of last attempted payment.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
+</li>
+</ul>
+<a id="setLastOrderStatus(net.amcintosh.freshbooks.models.Invoice.InvoiceOrderStatus)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setLastOrderStatus</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setLastOrderStatus&#8203;(<a href="Invoice.InvoiceOrderStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceOrderStatus</a>&nbsp;lastOrderStatus)</pre>
+<div class="block">Describes status of last attempted payment.
+ <br><br>
+ <i>Note:</i> This is only writeable on creation.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>lastOrderStatus</code> - </dd>
+</dl>
+</li>
+</ul>
+<a id="getLastName()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getLastName</h4>
+<pre class="methodSignature">public&nbsp;java.lang.String&nbsp;getLastName()</pre>
+<div class="block">Last name of client being invoiced.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
+</li>
+</ul>
+<a id="setLastName(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setLastName</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setLastName&#8203;(java.lang.String&nbsp;lname)</pre>
+<div class="block">Last name of client being invoiced.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>lname</code> - </dd>
+</dl>
+</li>
+</ul>
+<a id="getLines()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getLines</h4>
+<pre class="methodSignature">public&nbsp;java.util.List&lt;<a href="LineItem.html" title="class in net.amcintosh.freshbooks.models">LineItem</a>&gt;&nbsp;getLines()</pre>
+<div class="block">Lines of the invoice.
+ <br><br>
+ <i>Note:</i> These are only returned with a invoice call using a "lines" include.
+ <br>
+ Eg.
+ <pre><code>
+     IncludesQueryBuilder inc = new IncludesQueryBuilder().include("lines");
+
+     Invoice invoiceResponse = invoices.get(accountId, invoiceId, inc);
+
+     ArrayList&lt;QueryBuilder&gt; builders = new ArrayList&lt;QueryBuilder&gt;();
+     builders.add(inc);
+     InvoiceList invoiceListResponse = invoices.list(accountId, builders);
+ </code></pre></div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
+</li>
+</ul>
+<a id="setLines(java.util.List)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setLines</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setLines&#8203;(java.util.List&lt;<a href="LineItem.html" title="class in net.amcintosh.freshbooks.models">LineItem</a>&gt;&nbsp;lines)</pre>
+<div class="block">Lines of the invoice.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>lines</code> - </dd>
+</dl>
+</li>
+</ul>
+<a id="getNotes()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getNotes</h4>
+<pre class="methodSignature">public&nbsp;java.lang.String&nbsp;getNotes()</pre>
+<div class="block">Notes listed on invoice.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
+</li>
+</ul>
+<a id="setNotes(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setNotes</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setNotes&#8203;(java.lang.String&nbsp;notes)</pre>
+<div class="block">Notes listed on invoice.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>notes</code> - </dd>
+</dl>
+</li>
+</ul>
+<a id="getOrganization()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getOrganization</h4>
+<pre class="methodSignature">public&nbsp;java.lang.String&nbsp;getOrganization()</pre>
+<div class="block">Name of organization being invoiced. This is the value of the organization of the client
+ but is denormalized so that changes to the client are not reflected on past invoices.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The client organization</dd>
+</dl>
+</li>
+</ul>
+<a id="setOrganization(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setOrganization</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setOrganization&#8203;(java.lang.String&nbsp;organization)</pre>
+<div class="block">Name of organization being invoiced. This is the value of the organization of the client
+ but is denormalized so that changes to the client are not reflected on past invoices.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>organization</code> - The client organization</dd>
+</dl>
+</li>
+</ul>
+<a id="getOutstanding()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getOutstanding</h4>
+<pre class="methodSignature">public&nbsp;<a href="Money.html" title="class in net.amcintosh.freshbooks.models">Money</a>&nbsp;getOutstanding()</pre>
+<div class="block">Amount outstanding on invoice.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Object containing amount and currency code.</dd>
+</dl>
+</li>
+</ul>
+<a id="getOwnerId()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getOwnerId</h4>
+<pre class="methodSignature">public&nbsp;long&nbsp;getOwnerId()</pre>
+<div class="block">Id of creator of invoice. 1 if business admin, other if created by another user.
+ Eg. a contractor.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>User id from system</dd>
+</dl>
+</li>
+</ul>
+<a id="setOwnerId(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setOwnerId</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setOwnerId&#8203;(long&nbsp;ownerId)</pre>
+<div class="block">User id of creator of invoice. Typically 1 for the business admin.
+ <br><br>
+ <i>Note:</i> This is only writeable on creation.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>ownerId</code> - User id</dd>
+</dl>
+</li>
+</ul>
+<a id="getPaid()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPaid</h4>
+<pre class="methodSignature">public&nbsp;<a href="Money.html" title="class in net.amcintosh.freshbooks.models">Money</a>&nbsp;getPaid()</pre>
+<div class="block">Amount paid on invoice.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Object containing amount and currency code.</dd>
+</dl>
+</li>
+</ul>
+<a id="getParent()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getParent</h4>
+<pre class="methodSignature">public&nbsp;long&nbsp;getParent()</pre>
+<div class="block">Id of object this invoice was generated from, 0 if none</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Id of parent resource</dd>
+</dl>
+</li>
+</ul>
+<a id="setParent(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setParent</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setParent&#8203;(long&nbsp;parent)</pre>
+<div class="block">Id of object this invoice was generated from, 0 if none
+ <br><br>
+ <i>Note:</i> This is only writeable on creation.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>parent</code> - Id of the parent resource</dd>
+</dl>
+</li>
+</ul>
+<a id="getPaymentStatus()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPaymentStatus</h4>
+<pre class="methodSignature">public&nbsp;<a href="Invoice.InvoicePaymentStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoicePaymentStatus</a>&nbsp;getPaymentStatus()</pre>
+<div class="block">Description of payment status.
+ One of 'unpaid', 'partial', 'paid', and 'auto-paid'.
+ <br>See the v3_status table on this page for descriptions of each.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
+</li>
+</ul>
+<a id="setPaymentStatus(net.amcintosh.freshbooks.models.Invoice.InvoicePaymentStatus)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setPaymentStatus</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setPaymentStatus&#8203;(<a href="Invoice.InvoicePaymentStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoicePaymentStatus</a>&nbsp;paymentStatus)</pre>
+<div class="block">Description of payment status.
+ One of 'unpaid', 'partial', 'paid', and 'auto-paid'.
+ <br>See the v3_status table on this page for descriptions of each.
+ <br><br>
+ <i>Note:</i> This is only writeable on creation.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>paymentStatus</code> - </dd>
+</dl>
+</li>
+</ul>
+<a id="getPONumber()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPONumber</h4>
+<pre class="methodSignature">public&nbsp;java.lang.String&nbsp;getPONumber()</pre>
+<div class="block">Reference number for address on invoice.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
+</li>
+</ul>
+<a id="setPONumber(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setPONumber</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setPONumber&#8203;(java.lang.String&nbsp;PONumber)</pre>
+<div class="block">Reference number for address on invoice.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>PONumber</code> - </dd>
+</dl>
+</li>
+</ul>
+<a id="getPresentation()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPresentation</h4>
+<pre class="methodSignature">public&nbsp;<a href="Invoice.InvoicePresentation.html" title="class in net.amcintosh.freshbooks.models">Invoice.InvoicePresentation</a>&nbsp;getPresentation()</pre>
+<div class="block">Define invoice logo and styles.
+ <br>
+ By default, if no presentation specified in a new invoice request payload,
+ it will be assigned a default presentation. To override this default behaviour,
+ set <code>useDefaultPresentation</code> to false.
+ <br><br>
+ <i>Note:</i> The presentation details are only returned with a invoice call
+ using a "presentation" include.
+ <br>
+ <pre><code>
+     IncludesQueryBuilder inc = new IncludesQueryBuilder().include("presentation");
+
+     Invoice invoiceResponse = invoices.get(accountId, invoiceId, inc);
+
+     ArrayList&lt;QueryBuilder&gt; builders = new ArrayList&lt;QueryBuilder&gt;();
+     builders.add(inc);
+     InvoiceList invoiceListResponse = invoices.list(accountId, builders);
+ </code></pre></div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
+</li>
+</ul>
+<a id="setPresentation(net.amcintosh.freshbooks.models.Invoice.InvoicePresentation)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setPresentation</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setPresentation&#8203;(<a href="Invoice.InvoicePresentation.html" title="class in net.amcintosh.freshbooks.models">Invoice.InvoicePresentation</a>&nbsp;presentation)</pre>
+<div class="block">Define invoice logo and styles.
+ <br>
+ By default, if no presentation specified in a new invoice request payload,
+ it will be assigned a default presentation. To override this default behaviour,
+ set <code>useDefaultPresentation</code> to false.
+ <br><br>
+ <i>Note:</i> The presentation details are only returned with a invoice call
+ using a "presentation" include.
+ <br>
+ <pre><code>
+     IncludesQueryBuilder inc = new IncludesQueryBuilder().include("presentation");
+
+     Invoice invoiceResponse = invoices.get(accountId, invoiceId, inc);
+
+     ArrayList&lt;QueryBuilder&gt; builders = new ArrayList&lt;QueryBuilder&gt;();
+     builders.add(inc);
+     InvoiceList invoiceListResponse = invoices.list(accountId, builders);
+ </code></pre></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>presentation</code> - </dd>
+</dl>
+</li>
+</ul>
+<a id="getProvince()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getProvince</h4>
+<pre class="methodSignature">public&nbsp;java.lang.String&nbsp;getProvince()</pre>
+<div class="block">Province/state for address on invoice.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
+</li>
+</ul>
+<a id="setProvince(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setProvince</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setProvince&#8203;(java.lang.String&nbsp;province)</pre>
+<div class="block">Province/state for address on invoice.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>province</code> - </dd>
+</dl>
+</li>
+</ul>
+<a id="getSentId()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSentId</h4>
+<pre class="methodSignature">public&nbsp;long&nbsp;getSentId()</pre>
+<div class="block">User id of user who sent the invoice. Typically 1 for the business admin.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>User id from system</dd>
+</dl>
+</li>
+</ul>
+<a id="setSentId(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSentId</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setSentId&#8203;(long&nbsp;sentId)</pre>
+<div class="block">User id of user who sent the invoice. Typically 1 for the business admin.
+ <br><br>
+ <i>Note:</i> This is only writeable on creation.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>sentId</code> - User id</dd>
+</dl>
+</li>
+</ul>
+<a id="isShowAttachments()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isShowAttachments</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;isShowAttachments()</pre>
+<div class="block">Whether attachments on invoice are rendered in FreshBooks UI.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
+</li>
+</ul>
+<a id="setShowAttachments(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setShowAttachments</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setShowAttachments&#8203;(boolean&nbsp;showAttachments)</pre>
+<div class="block">Whether attachments on invoice are rendered in FreshBooks UI.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>showAttachments</code> - </dd>
+</dl>
+</li>
+</ul>
+<a id="getStreet()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getStreet</h4>
+<pre class="methodSignature">public&nbsp;java.lang.String&nbsp;getStreet()</pre>
+<div class="block">Street for address on invoice.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
+</li>
+</ul>
+<a id="setStreet(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setStreet</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setStreet&#8203;(java.lang.String&nbsp;street)</pre>
+<div class="block">Street for address on invoice.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>street</code> - </dd>
+</dl>
+</li>
+</ul>
+<a id="getStreet2()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getStreet2</h4>
+<pre class="methodSignature">public&nbsp;java.lang.String&nbsp;getStreet2()</pre>
+<div class="block">Second line of street for address on invoice.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
+</li>
+</ul>
+<a id="setStreet2(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setStreet2</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setStreet2&#8203;(java.lang.String&nbsp;street2)</pre>
+<div class="block">Second line of street for address on invoice.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>street2</code> - </dd>
+</dl>
+</li>
+</ul>
+<a id="getStatus()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getStatus</h4>
+<pre class="methodSignature">public&nbsp;<a href="Invoice.InvoiceStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceStatus</a>&nbsp;getStatus()</pre>
+<div class="block">Get the status of the invoice.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Enum of the invoice status.</dd>
+</dl>
+</li>
+</ul>
+<a id="setStatus(net.amcintosh.freshbooks.models.Invoice.InvoiceStatus)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setStatus</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setStatus&#8203;(<a href="Invoice.InvoiceStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceStatus</a>&nbsp;status)</pre>
+<div class="block">Set the status of the invoice. This is only writable at creation and cannot
+ be manually set later.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>status</code> - InvoiceStatus value</dd>
+</dl>
+</li>
+</ul>
+<a id="getTerms()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTerms</h4>
+<pre class="methodSignature">public&nbsp;java.lang.String&nbsp;getTerms()</pre>
+<div class="block">Terms listed on invoice.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
+</li>
+</ul>
+<a id="setTerms(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTerms</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setTerms&#8203;(java.lang.String&nbsp;terms)</pre>
+<div class="block">Terms listed on invoice.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>terms</code> - </dd>
+</dl>
+</li>
+</ul>
+<a id="getUpdated()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getUpdated</h4>
+<pre class="methodSignature">public&nbsp;java.time.ZonedDateTime&nbsp;getUpdated()</pre>
+<div class="block">Get the time of last modification to the invoice.
+ <br><br>
+ <i>Note:</i> The API returns this data in "US/Eastern", but it is converted here to UTC.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Updated time in UTC</dd>
+</dl>
+</li>
+</ul>
+<a id="isUseDefaultPresentation()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isUseDefaultPresentation</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;isUseDefaultPresentation()</pre>
+<div class="block">By default, if no presentation specified in new invoice request payload,
+ it will be assigned a default presentation.
+ <br>
+ To override this default behaviour, set useDefaultPresentation to false.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
+</li>
+</ul>
+<a id="setUseDefaultPresentation(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setUseDefaultPresentation</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setUseDefaultPresentation&#8203;(boolean&nbsp;useDefaultPresentation)</pre>
+<div class="block">By default, if no presentation specified in new invoice request payload,
+ it will be assigned a default presentation.
+ <br>
+ To override this default behaviour, set useDefaultPresentation to false.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>useDefaultPresentation</code> - </dd>
+</dl>
+</li>
+</ul>
+<a id="getV3Status()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getV3Status</h4>
+<pre class="methodSignature">public&nbsp;<a href="Invoice.InvoiceV3Status.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceV3Status</a>&nbsp;getV3Status()</pre>
+<div class="block">v3 status fields give a descriptive name to states which can be used in filters</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>InvoiceV3Status value</dd>
+</dl>
+</li>
+</ul>
+<a id="setV3Status(net.amcintosh.freshbooks.models.Invoice.InvoiceV3Status)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setV3Status</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setV3Status&#8203;(<a href="Invoice.InvoiceV3Status.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceV3Status</a>&nbsp;v3Status)</pre>
+<div class="block">v3 status fields give a descriptive name to states which can be used in filters
+ <br><br>
+ <i>Note:</i> This is only writeable on creation.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>v3Status</code> - </dd>
+</dl>
+</li>
+</ul>
+<a id="getVATName()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getVATName</h4>
+<pre class="methodSignature">public&nbsp;java.lang.String&nbsp;getVATName()</pre>
+<div class="block">Value Added Tax name of client if provided.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
+</li>
+</ul>
+<a id="setVATName(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setVATName</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setVATName&#8203;(java.lang.String&nbsp;VATName)</pre>
+<div class="block">Value Added Tax name of client.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>VATName</code> - </dd>
+</dl>
+</li>
+</ul>
+<a id="getVATNumber()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getVATNumber</h4>
+<pre class="methodSignature">public&nbsp;java.lang.String&nbsp;getVATNumber()</pre>
+<div class="block">Value Added Tax number of client if provided.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
+</li>
+</ul>
+<a id="setVATNumber(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setVATNumber</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setVATNumber&#8203;(java.lang.String&nbsp;VATNumber)</pre>
+<div class="block">Value Added Tax number of client.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>VATNumber</code> - </dd>
+</dl>
+</li>
+</ul>
+<a id="getVisState()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getVisState</h4>
+<pre class="methodSignature">public&nbsp;<a href="VisState.html" title="enum in net.amcintosh.freshbooks.models">VisState</a>&nbsp;getVisState()</pre>
+<div class="block">Get the visibility state: active, deleted, or archived
+ <br><br></div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Enum of the visibility state.</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Active and Deleted Objects</a></dd>
+</dl>
+</li>
+</ul>
+<a id="setVisState(net.amcintosh.freshbooks.models.VisState)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setVisState</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setVisState&#8203;(<a href="VisState.html" title="enum in net.amcintosh.freshbooks.models">VisState</a>&nbsp;visState)</pre>
+<div class="block">Set the visibility state of the invoice.
+ <br><br></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>visState</code> - VisState value</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Active and Deleted Objects</a></dd>
+</dl>
+</li>
+</ul>
+<a id="getContent()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getContent</h4>
+<pre class="methodSignature">public&nbsp;java.util.Map&lt;java.lang.String,&#8203;java.lang.Object&gt;&nbsp;getContent()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="api/ConvertibleContent.html#getContent()">ConvertibleContent</a></code></span></div>
+<div class="block">Return the objects values as a Map suitable to sending to FreshBooks
+ in a POST or PUT request.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="api/ConvertibleContent.html#getContent()">getContent</a></code>&nbsp;in interface&nbsp;<code><a href="api/ConvertibleContent.html" title="interface in net.amcintosh.freshbooks.models.api">ConvertibleContent</a></code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
 </li>
 </ul>
 </li>
@@ -371,15 +2710,15 @@ extends com.google.api.client.json.GenericJson</pre>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li>
-<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
-<li>Method</li>
+<li><a href="#method.detail">Method</a></li>
 </ul>
 </div>
 <a id="skip.navbar.bottom">

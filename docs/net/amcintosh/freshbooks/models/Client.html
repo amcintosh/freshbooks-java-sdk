@@ -146,11 +146,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd><code>java.lang.Cloneable</code>, <code>java.util.Map&lt;java.lang.String,&#8203;java.lang.Object&gt;</code></dd>
+<dd><code>java.lang.Cloneable</code>, <code>java.util.Map&lt;java.lang.String,&#8203;java.lang.Object&gt;</code>, <code><a href="api/ConvertibleContent.html" title="interface in net.amcintosh.freshbooks.models.api">ConvertibleContent</a></code></dd>
 </dl>
 <hr>
 <pre>public class <span class="typeNameLabel">Client</span>
-extends com.google.api.client.json.GenericJson</pre>
+extends com.google.api.client.json.GenericJson
+implements <a href="api/ConvertibleContent.html" title="interface in net.amcintosh.freshbooks.models.api">ConvertibleContent</a></pre>
 <div class="block">A client in the new FreshBooks is a resource representing an entity you send invoices to.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
@@ -301,7 +302,10 @@ extends com.google.api.client.json.GenericJson</pre>
 <tr id="i10" class="altColor">
 <td class="colFirst"><code>java.util.Map&lt;java.lang.String,&#8203;java.lang.Object&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getContent()">getContent</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Return the objects values as a Map suitable to sending to FreshBooks
+ in a POST or PUT request.</div>
+</td>
 </tr>
 <tr id="i11" class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
@@ -342,7 +346,7 @@ extends com.google.api.client.json.GenericJson</pre>
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getId()">getId</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Get unique to this business id for client</div>
+<div class="block">Get the unique identifier of this client within this business.</div>
 </td>
 </tr>
 <tr id="i17" class="rowColor">
@@ -445,7 +449,7 @@ extends com.google.api.client.json.GenericJson</pre>
 </tr>
 <tr id="i31" class="rowColor">
 <td class="colFirst"><code>long</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getUserid()">getUserid</a></span>()</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getUserId()">getUserId</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Duplicate of id</div>
 </td>
@@ -746,7 +750,7 @@ extends com.google.api.client.json.GenericJson</pre>
 <li class="blockList">
 <h4>getId</h4>
 <pre class="methodSignature">public&nbsp;long&nbsp;getId()</pre>
-<div class="block">Get unique to this business id for client</div>
+<div class="block">Get the unique identifier of this client within this business.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>Client Id</dd>
@@ -1484,13 +1488,13 @@ extends com.google.api.client.json.GenericJson</pre>
 </dl>
 </li>
 </ul>
-<a id="getUserid()">
+<a id="getUserId()">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getUserid</h4>
-<pre class="methodSignature">public&nbsp;long&nbsp;getUserid()</pre>
+<h4>getUserId</h4>
+<pre class="methodSignature">public&nbsp;long&nbsp;getUserId()</pre>
 <div class="block">Duplicate of id</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -1627,6 +1631,14 @@ extends com.google.api.client.json.GenericJson</pre>
 <li class="blockList">
 <h4>getContent</h4>
 <pre class="methodSignature">public&nbsp;java.util.Map&lt;java.lang.String,&#8203;java.lang.Object&gt;&nbsp;getContent()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="api/ConvertibleContent.html#getContent()">ConvertibleContent</a></code></span></div>
+<div class="block">Return the objects values as a Map suitable to sending to FreshBooks
+ in a POST or PUT request.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="api/ConvertibleContent.html#getContent()">getContent</a></code>&nbsp;in interface&nbsp;<code><a href="api/ConvertibleContent.html" title="interface in net.amcintosh.freshbooks.models.api">ConvertibleContent</a></code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
 </li>
 </ul>
 </li>

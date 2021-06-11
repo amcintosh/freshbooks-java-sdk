@@ -156,12 +156,16 @@ extends java.lang.Object</pre>
 <tr class="altColor">
 <td class="colFirst"><code>static java.time.ZoneId</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#ACCOUNTING_LOCAL_ZONE">ACCOUNTING_LOCAL_ZONE</a></span></code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Local timezone used by the FreshBooks accounting service.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static java.time.ZoneId</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#UTC_ZONE">UTC_ZONE</a></span></code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">UTC timezone.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -203,31 +207,41 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>static java.time.format.DateTimeFormatter</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAccountingDateTimeFormatter()">getAccountingDateTimeFormatter</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colFirst"><code>static void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#convertContent(java.util.Map,java.lang.String,java.lang.Object)">convertContent</a></span>&#8203;(java.util.Map&lt;java.lang.String,&#8203;java.lang.Object&gt;&nbsp;data,
+              java.lang.String&nbsp;key,
+              java.lang.Object&nbsp;value)</code></th>
+<td class="colLast">
+<div class="block">Add a key/value to the provided Map only if the value is not null.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code>static java.lang.String</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAccountingLocalTimeFromZonedDateTime(java.time.ZonedDateTime)">getAccountingLocalTimeFromZonedDateTime</a></span>&#8203;(java.time.ZonedDateTime&nbsp;datetime)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colFirst"><code>static java.time.format.DateTimeFormatter</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAccountingDateTimeFormatter()">getAccountingDateTimeFormatter</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Get a DateTimeFormmatter configured for accounting endpoint format ("yyyy-MM-dd HH:mm:ss").</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code>static java.time.ZonedDateTime</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getZonedDateTimeFromAccountingLocalTime(java.lang.String)">getZonedDateTimeFromAccountingLocalTime</a></span>&#8203;(java.lang.String&nbsp;dateString)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colFirst"><code>static java.lang.String</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAccountingLocalTimeFromZonedDateTime(java.time.ZonedDateTime)">getAccountingLocalTimeFromZonedDateTime</a></span>&#8203;(java.time.ZonedDateTime&nbsp;datetime)</code></th>
+<td class="colLast">
+<div class="block">Get a date string in the accounting endpoint format and timezone from a ZonedDateTime object.</div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>static java.time.ZonedDateTime</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getZonedDateTimeFromProjectNaiveUTC(java.lang.String)">getZonedDateTimeFromProjectNaiveUTC</a></span>&#8203;(java.lang.String&nbsp;dateString)</code></th>
-<td class="colLast">&nbsp;</td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getZonedDateTimeFromAccountingLocalTime(java.lang.String)">getZonedDateTimeFromAccountingLocalTime</a></span>&#8203;(java.lang.String&nbsp;dateString)</code></th>
+<td class="colLast">
+<div class="block">Get a datetime zoned to UTC from an accounting endpoint date string.</div>
+</td>
 </tr>
 <tr id="i4" class="altColor">
-<td class="colFirst"><code>static void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#putIfNotNull(java.util.Map,java.lang.String,java.lang.Object)">putIfNotNull</a></span>&#8203;(java.util.Map&lt;java.lang.String,&#8203;java.lang.Object&gt;&nbsp;data,
-            java.lang.String&nbsp;key,
-            java.lang.Object&nbsp;value)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colFirst"><code>static java.time.ZonedDateTime</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getZonedDateTimeFromProjectNaiveUTC(java.lang.String)">getZonedDateTimeFromProjectNaiveUTC</a></span>&#8203;(java.lang.String&nbsp;dateString)</code></th>
+<td class="colLast">
+<div class="block">Get a datetime zoned to UTC from an project-like endpoint date string.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -260,6 +274,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>UTC_ZONE</h4>
 <pre>public static final&nbsp;java.time.ZoneId UTC_ZONE</pre>
+<div class="block">UTC timezone.</div>
 </li>
 </ul>
 <a id="ACCOUNTING_LOCAL_ZONE">
@@ -269,6 +284,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>ACCOUNTING_LOCAL_ZONE</h4>
 <pre>public static final&nbsp;java.time.ZoneId ACCOUNTING_LOCAL_ZONE</pre>
+<div class="block">Local timezone used by the FreshBooks accounting service.</div>
 </li>
 </ul>
 </li>
@@ -307,6 +323,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getAccountingDateTimeFormatter</h4>
 <pre class="methodSignature">public static&nbsp;java.time.format.DateTimeFormatter&nbsp;getAccountingDateTimeFormatter()</pre>
+<div class="block">Get a DateTimeFormmatter configured for accounting endpoint format ("yyyy-MM-dd HH:mm:ss").</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The formatter for accounting endpoints. Eg. 2021-01-08 20:39:52</dd>
+</dl>
 </li>
 </ul>
 <a id="getZonedDateTimeFromAccountingLocalTime(java.lang.String)">
@@ -316,6 +337,14 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getZonedDateTimeFromAccountingLocalTime</h4>
 <pre class="methodSignature">public static&nbsp;java.time.ZonedDateTime&nbsp;getZonedDateTimeFromAccountingLocalTime&#8203;(java.lang.String&nbsp;dateString)</pre>
+<div class="block">Get a datetime zoned to UTC from an accounting endpoint date string.
+ The accounting service stores almost all dates in the US/Eastern timezone.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>dateString</code> - An accounting date-string. eg. 2021-01-08 20:39:52</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>UTC-zoned datetime</dd>
+</dl>
 </li>
 </ul>
 <a id="getAccountingLocalTimeFromZonedDateTime(java.time.ZonedDateTime)">
@@ -325,6 +354,14 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getAccountingLocalTimeFromZonedDateTime</h4>
 <pre class="methodSignature">public static&nbsp;java.lang.String&nbsp;getAccountingLocalTimeFromZonedDateTime&#8203;(java.time.ZonedDateTime&nbsp;datetime)</pre>
+<div class="block">Get a date string in the accounting endpoint format and timezone from a ZonedDateTime object.
+ The accounting service stores almost all dates in the US/Eastern timezone.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>datetime</code> - datetime object from any timezone</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>String An accounting date-string in US/Eastern. eg. 2021-01-08 20:39:52</dd>
+</dl>
 </li>
 </ul>
 <a id="getZonedDateTimeFromProjectNaiveUTC(java.lang.String)">
@@ -334,17 +371,39 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getZonedDateTimeFromProjectNaiveUTC</h4>
 <pre class="methodSignature">public static&nbsp;java.time.ZonedDateTime&nbsp;getZonedDateTimeFromProjectNaiveUTC&#8203;(java.lang.String&nbsp;dateString)</pre>
+<div class="block">Get a datetime zoned to UTC from an project-like endpoint date string.
+
+ The project services store their dates in UTC, but depending on the resource do not
+ indicate that in the response. Eg. "2020-09-13T03:10:13" rather than "2020-09-13T03:10:13Z".</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>dateString</code> - A project-like date-string. eg. 2020-09-13T03:10:13</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>UTC-zoned datetime</dd>
+</dl>
 </li>
 </ul>
-<a id="putIfNotNull(java.util.Map,java.lang.String,java.lang.Object)">
+<a id="convertContent(java.util.Map,java.lang.String,java.lang.Object)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>putIfNotNull</h4>
-<pre class="methodSignature">public static&nbsp;void&nbsp;putIfNotNull&#8203;(java.util.Map&lt;java.lang.String,&#8203;java.lang.Object&gt;&nbsp;data,
-                                java.lang.String&nbsp;key,
-                                java.lang.Object&nbsp;value)</pre>
+<h4>convertContent</h4>
+<pre class="methodSignature">public static&nbsp;void&nbsp;convertContent&#8203;(java.util.Map&lt;java.lang.String,&#8203;java.lang.Object&gt;&nbsp;data,
+                                  java.lang.String&nbsp;key,
+                                  java.lang.Object&nbsp;value)</pre>
+<div class="block">Add a key/value to the provided Map only if the value is not null.
+ <br>
+ If the value is a List, then iterates over the list.
+ <br>
+ If the value is an object implementing <code>ConvertibleContent</code> then
+ it returns a Map of that object by calling <code>getContent()</code>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>data</code> - The Map to add to</dd>
+<dd><code>key</code> - The key to add</dd>
+<dd><code>value</code> - The value of the key if not null</dd>
+</dl>
 </li>
 </ul>
 </li>

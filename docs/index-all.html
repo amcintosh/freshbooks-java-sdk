@@ -99,7 +99,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/api/ResourceType.html#ACCOUNTING_LIKE">ACCOUNTING_LIKE</a></span> - net.amcintosh.freshbooks.resources.api.<a href="net/amcintosh/freshbooks/resources/api/ResourceType.html" title="enum in net.amcintosh.freshbooks.resources.api">ResourceType</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/Util.html#ACCOUNTING_LOCAL_ZONE">ACCOUNTING_LOCAL_ZONE</a></span> - Static variable in class net.amcintosh.freshbooks.<a href="net/amcintosh/freshbooks/Util.html" title="class in net.amcintosh.freshbooks">Util</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Local timezone used by the FreshBooks accounting service.</div>
+</dd>
 <dt><a href="net/amcintosh/freshbooks/models/api/AccountingError.html" title="class in net.amcintosh.freshbooks.models.api"><span class="typeNameLink">AccountingError</span></a> - Class in <a href="net/amcintosh/freshbooks/models/api/package-summary.html">net.amcintosh.freshbooks.models.api</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/api/AccountingError.html#%3Cinit%3E()">AccountingError()</a></span> - Constructor for class net.amcintosh.freshbooks.models.api.<a href="net/amcintosh/freshbooks/models/api/AccountingError.html" title="class in net.amcintosh.freshbooks.models.api">AccountingError</a></dt>
@@ -120,7 +122,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><a href="net/amcintosh/freshbooks/resources/api/AccountingResource.html" title="class in net.amcintosh.freshbooks.resources.api"><span class="typeNameLink">AccountingResource</span></a> - Class in <a href="net/amcintosh/freshbooks/resources/api/package-summary.html">net.amcintosh.freshbooks.resources.api</a></dt>
 <dd>
-<div class="block">Handles resources under the `/accounting` endpoints.</div>
+<div class="block">Handles resources under the <code>/accounting</code> endpoints.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/api/AccountingResource.html#%3Cinit%3E(net.amcintosh.freshbooks.FreshBooksClient)">AccountingResource(FreshBooksClient)</a></span> - Constructor for class net.amcintosh.freshbooks.resources.api.<a href="net/amcintosh/freshbooks/resources/api/AccountingResource.html" title="class in net.amcintosh.freshbooks.resources.api">AccountingResource</a></dt>
 <dd>&nbsp;</dd>
@@ -138,13 +140,19 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/VisState.html#ARCHIVED">ARCHIVED</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/VisState.html" title="enum in net.amcintosh.freshbooks.models">VisState</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoicePaymentStatus.html#AUTO_PAID">AUTO_PAID</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoicePaymentStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoicePaymentStatus</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceStatus.html#AUTOPAID">AUTOPAID</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceStatus</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceV3Status.html#AUTOPAID">AUTOPAID</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceV3Status.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceV3Status</a></dt>
+<dd>&nbsp;</dd>
 </dl>
 <a id="I:B">
 <!--   -->
 </a>
 <h2 class="title">B</h2>
 <dl>
-<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/ProjectBilledStatus.html#billed">billed</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/ProjectBilledStatus.html" title="enum in net.amcintosh.freshbooks.models">ProjectBilledStatus</a></dt>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.ProjectBilledStatus.html#BILLED">BILLED</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.ProjectBilledStatus.html" title="enum in net.amcintosh.freshbooks.models">Project.ProjectBilledStatus</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/FreshBooksClient.FreshBooksClientBuilder.html#build()">build()</a></span> - Method in class net.amcintosh.freshbooks.<a href="net/amcintosh/freshbooks/FreshBooksClient.FreshBooksClientBuilder.html" title="class in net.amcintosh.freshbooks">FreshBooksClient.FreshBooksClientBuilder</a></dt>
 <dd>
@@ -159,10 +167,15 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Build the query string parameters for the list call.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/builders/QueryBuilder.html#build(net.amcintosh.freshbooks.resources.api.ResourceType)">build(ResourceType)</a></span> - Method in interface net.amcintosh.freshbooks.models.builders.<a href="net/amcintosh/freshbooks/models/builders/QueryBuilder.html" title="interface in net.amcintosh.freshbooks.models.builders">QueryBuilder</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Build a http query string from the paramters of this builder that conforms to the
+ style of the <code>ResourceType</code>.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/api/Resource.html#buildQueryString(java.util.List)">buildQueryString(List&lt;QueryBuilder&gt;)</a></span> - Method in class net.amcintosh.freshbooks.resources.api.<a href="net/amcintosh/freshbooks/resources/api/Resource.html" title="class in net.amcintosh.freshbooks.resources.api">Resource</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/ProjectBillingMethod.html#business_rate">business_rate</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/ProjectBillingMethod.html" title="enum in net.amcintosh.freshbooks.models">ProjectBillingMethod</a></dt>
+<dd>
+<div class="block">Construct the http call query string from the List of QueryBuilders provided.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.ProjectBillingMethod.html#BUSINESS_RATE">BUSINESS_RATE</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.ProjectBillingMethod.html" title="enum in net.amcintosh.freshbooks.models">Project.ProjectBillingMethod</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <a id="I:C">
@@ -188,7 +201,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/FreshBooksClient.html#clients()">clients()</a></span> - Method in class net.amcintosh.freshbooks.<a href="net/amcintosh/freshbooks/FreshBooksClient.html" title="class in net.amcintosh.freshbooks">FreshBooksClient</a></dt>
 <dd>
-<div class="block">FreshBooks clients resource with calls to get, list, create, update, delete</div>
+<div class="block">FreshBooks clients resource with calls to get, list, create, update, delete.</div>
 </dd>
 <dt><a href="net/amcintosh/freshbooks/resources/Clients.html" title="class in net.amcintosh.freshbooks.resources"><span class="typeNameLink">Clients</span></a> - Class in <a href="net/amcintosh/freshbooks/resources/package-summary.html">net.amcintosh.freshbooks.resources</a></dt>
 <dd>
@@ -196,6 +209,16 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Clients.html#%3Cinit%3E(net.amcintosh.freshbooks.FreshBooksClient)">Clients(FreshBooksClient)</a></span> - Constructor for class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Clients.html" title="class in net.amcintosh.freshbooks.resources">Clients</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/Util.html#convertContent(java.util.Map,java.lang.String,java.lang.Object)">convertContent(Map&lt;String, Object&gt;, String, Object)</a></span> - Static method in class net.amcintosh.freshbooks.<a href="net/amcintosh/freshbooks/Util.html" title="class in net.amcintosh.freshbooks">Util</a></dt>
+<dd>
+<div class="block">Add a key/value to the provided Map only if the value is not null.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceDepositStatus.html#CONVERTED">CONVERTED</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceDepositStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceDepositStatus</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="net/amcintosh/freshbooks/models/api/ConvertibleContent.html" title="interface in net.amcintosh.freshbooks.models.api"><span class="typeNameLink">ConvertibleContent</span></a> - Interface in <a href="net/amcintosh/freshbooks/models/api/package-summary.html">net.amcintosh.freshbooks.models.api</a></dt>
+<dd>
+<div class="block">Interface for models that can be converted into Maps.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Projects.html#create(long,java.util.Map)">create(long, Map&lt;String, Object&gt;)</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Projects.html" title="class in net.amcintosh.freshbooks.resources">Projects</a></dt>
 <dd>
 <div class="block">Create a new project from the provided data.</div>
@@ -208,16 +231,40 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Create a new client from the provided data.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Invoices.html#create(java.lang.String,java.util.Map)">create(String, Map&lt;String, Object&gt;)</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Invoices.html" title="class in net.amcintosh.freshbooks.resources">Invoices</a></dt>
+<dd>
+<div class="block">Create a new invoice from the provided data.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Taxes.html#create(java.lang.String,java.util.Map)">create(String, Map&lt;String, Object&gt;)</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Taxes.html" title="class in net.amcintosh.freshbooks.resources">Taxes</a></dt>
+<dd>
+<div class="block">Create a new tax from the provided data.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Clients.html#create(java.lang.String,net.amcintosh.freshbooks.models.Client)">create(String, Client)</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Clients.html" title="class in net.amcintosh.freshbooks.resources">Clients</a></dt>
 <dd>
 <div class="block">Create a new client from the provided Client model.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Invoices.html#create(java.lang.String,net.amcintosh.freshbooks.models.Invoice)">create(String, Invoice)</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Invoices.html" title="class in net.amcintosh.freshbooks.resources">Invoices</a></dt>
+<dd>
+<div class="block">Create a new invoice from the provided Invoice model.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Taxes.html#create(java.lang.String,net.amcintosh.freshbooks.models.Tax)">create(String, Tax)</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Taxes.html" title="class in net.amcintosh.freshbooks.resources">Taxes</a></dt>
+<dd>
+<div class="block">Create a new tax from the provided Tax model.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceDisplayStatus.html#CREATED">CREATED</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceDisplayStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceDisplayStatus</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceV3Status.html#CREATED">CREATED</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceV3Status.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceV3Status</a></dt>
+<dd>&nbsp;</dd>
 </dl>
 <a id="I:D">
 <!--   -->
 </a>
 <h2 class="title">D</h2>
 <dl>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceOrderStatus.html#DECLINED">DECLINED</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceOrderStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceOrderStatus</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceV3Status.html#DECLINED">DECLINED</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceV3Status.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceV3Status</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Projects.html#delete(long,long)">delete(long, long)</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Projects.html" title="class in net.amcintosh.freshbooks.resources">Projects</a></dt>
 <dd>
 <div class="block">Delete the project with the corresponding id.</div>
@@ -226,7 +273,29 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Delete the client with the corresponding id.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Invoices.html#delete(java.lang.String,long)">delete(String, long)</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Invoices.html" title="class in net.amcintosh.freshbooks.resources">Invoices</a></dt>
+<dd>
+<div class="block">Delete the invoice with the corresponding id.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Taxes.html#delete(java.lang.String,long)">delete(String, long)</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Taxes.html" title="class in net.amcintosh.freshbooks.resources">Taxes</a></dt>
+<dd>
+<div class="block">Delete the tax with the corresponding id.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/VisState.html#DELETED">DELETED</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/VisState.html" title="enum in net.amcintosh.freshbooks.models">VisState</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceV3Status.html#DEPOSIT_PAID">DEPOSIT_PAID</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceV3Status.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceV3Status</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceV3Status.html#DEPOSIT_PARTIAL">DEPOSIT_PARTIAL</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceV3Status.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceV3Status</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceStatus.html#DISPUTED">DISPUTED</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceStatus</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceV3Status.html#DISPUTED">DISPUTED</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceV3Status.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceV3Status</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceDisplayStatus.html#DRAFT">DRAFT</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceDisplayStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceDisplayStatus</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceStatus.html#DRAFT">DRAFT</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceStatus</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceV3Status.html#DRAFT">DRAFT</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceV3Status.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceV3Status</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <a id="I:E">
@@ -254,11 +323,17 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a>
 <h2 class="title">F</h2>
 <dl>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceAutoBillStatus.html#FAILED">FAILED</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceAutoBillStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceAutoBillStatus</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceStatus.html#FAILED">FAILED</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceStatus</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceV3Status.html#FAILED">FAILED</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceV3Status.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceV3Status</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/FreshBooksException.html#field">field</a></span> - Variable in exception net.amcintosh.freshbooks.<a href="net/amcintosh/freshbooks/FreshBooksException.html" title="class in net.amcintosh.freshbooks">FreshBooksException</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/api/AccountingError.html#field">field</a></span> - Variable in class net.amcintosh.freshbooks.models.api.<a href="net/amcintosh/freshbooks/models/api/AccountingError.html" title="class in net.amcintosh.freshbooks.models.api">AccountingError</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/ProjectType.html#fixed_price">fixed_price</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/ProjectType.html" title="enum in net.amcintosh.freshbooks.models">ProjectType</a></dt>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.ProjectType.html#FIXED_PRICE">FIXED_PRICE</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.ProjectType.html" title="enum in net.amcintosh.freshbooks.models">Project.ProjectType</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/api/Resource.html#freshBooksClient">freshBooksClient</a></span> - Variable in class net.amcintosh.freshbooks.resources.api.<a href="net/amcintosh/freshbooks/resources/api/Resource.html" title="class in net.amcintosh.freshbooks.resources.api">Resource</a></dt>
 <dd>&nbsp;</dd>
@@ -308,22 +383,78 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Get a single client with the corresponding id.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Invoices.html#get(java.lang.String,long)">get(String, long)</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Invoices.html" title="class in net.amcintosh.freshbooks.resources">Invoices</a></dt>
+<dd>
+<div class="block">Get a single invoice with the corresponding id.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Taxes.html#get(java.lang.String,long)">get(String, long)</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Taxes.html" title="class in net.amcintosh.freshbooks.resources">Taxes</a></dt>
+<dd>
+<div class="block">Get a single tax with the corresponding id.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Clients.html#get(java.lang.String,long,net.amcintosh.freshbooks.models.builders.IncludesQueryBuilder)">get(String, long, IncludesQueryBuilder)</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Clients.html" title="class in net.amcintosh.freshbooks.resources">Clients</a></dt>
 <dd>
 <div class="block">Get a single client with the corresponding id.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Invoices.html#get(java.lang.String,long,net.amcintosh.freshbooks.models.builders.IncludesQueryBuilder)">get(String, long, IncludesQueryBuilder)</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Invoices.html" title="class in net.amcintosh.freshbooks.resources">Invoices</a></dt>
+<dd>
+<div class="block">Get a single invoice with the corresponding id.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Taxes.html#get(java.lang.String,long,net.amcintosh.freshbooks.models.builders.IncludesQueryBuilder)">get(String, long, IncludesQueryBuilder)</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Taxes.html" title="class in net.amcintosh.freshbooks.resources">Taxes</a></dt>
+<dd>
+<div class="block">Get a single tax with the corresponding id.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getAccountId()">getAccountId()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Get unique identifier of the account the invoice exists on.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/Util.html#getAccountingDateTimeFormatter()">getAccountingDateTimeFormatter()</a></span> - Static method in class net.amcintosh.freshbooks.<a href="net/amcintosh/freshbooks/Util.html" title="class in net.amcintosh.freshbooks">Util</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Get a DateTimeFormmatter configured for accounting endpoint format ("yyyy-MM-dd HH:mm:ss").</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/Util.html#getAccountingLocalTimeFromZonedDateTime(java.time.ZonedDateTime)">getAccountingLocalTimeFromZonedDateTime(ZonedDateTime)</a></span> - Static method in class net.amcintosh.freshbooks.<a href="net/amcintosh/freshbooks/Util.html" title="class in net.amcintosh.freshbooks">Util</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Get a date string in the accounting endpoint format and timezone from a ZonedDateTime object.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Client.html#getAccountingSystemId()">getAccountingSystemId()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Client.html" title="class in net.amcintosh.freshbooks.models">Client</a></dt>
 <dd>
 <div class="block">Get unique identifier of business client exists on.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getAccountingSystemId()">getAccountingSystemId()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Get unique identifier of the account the invoice exists on.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Tax.html#getAccountingSystemId()">getAccountingSystemId()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Tax.html" title="class in net.amcintosh.freshbooks.models">Tax</a></dt>
+<dd>
+<div class="block">Get unique identifier of business tax exists on.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#getActive()">getActive()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.ProjectGroupMember.html#getActive()">getActive()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.ProjectGroupMember.html" title="class in net.amcintosh.freshbooks.models">Project.ProjectGroupMember</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getAddress()">getAddress()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">First line of address on invoice.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getAmount()">getAmount()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Total amount of invoice</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/LineItem.html#getAmount()">getAmount()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/LineItem.html" title="class in net.amcintosh.freshbooks.models">LineItem</a></dt>
+<dd>
+<div class="block">Amount total of a line item, calculated from unit cost, quantity and tax.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Money.html#getAmount()">getAmount()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Money.html" title="class in net.amcintosh.freshbooks.models">Money</a></dt>
+<dd>
+<div class="block">Monetary amount with decimal places appropriate to the currency.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Tax.html#getAmount()">getAmount()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Tax.html" title="class in net.amcintosh.freshbooks.models">Tax</a></dt>
+<dd>
+<div class="block">Decimal representing percentage value of tax.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getAutoBillStatus()">getAutoBillStatus()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">One of retry, failed, or success.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#getBilledAmount()">getBilledAmount()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#getBilledStatus()">getBilledStatus()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
@@ -366,10 +497,28 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.PendingInvitation.html#getCapacity()">getCapacity()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.PendingInvitation.html" title="class in net.amcintosh.freshbooks.models">Project.PendingInvitation</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getCity()">getCity()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">City for address on invoice.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getClientId()">getClientId()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Get the id of the client the invoice is for.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#getClientId()">getClientId()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/ClientList.html#getClients()">getClients()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/ClientList.html" title="class in net.amcintosh.freshbooks.models">ClientList</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Array of clients returned by the `list` call.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getCode()">getCode()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Postal/ZIP code for address on invoice.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Money.html#getCode()">getCode()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Money.html" title="class in net.amcintosh.freshbooks.models">Money</a></dt>
+<dd>
+<div class="block">The three-letter currency code</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.ProjectGroupMember.html#getCompany()">getCompany()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.ProjectGroupMember.html" title="class in net.amcintosh.freshbooks.models">Project.ProjectGroupMember</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Client.html#getCompanyIndustry()">getCompanyIndustry()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Client.html" title="class in net.amcintosh.freshbooks.models">Client</a></dt>
@@ -382,26 +531,124 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#getComplete()">getComplete()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/api/ConvertibleContent.html#getContent()">getContent()</a></span> - Method in interface net.amcintosh.freshbooks.models.api.<a href="net/amcintosh/freshbooks/models/api/ConvertibleContent.html" title="interface in net.amcintosh.freshbooks.models.api">ConvertibleContent</a></dt>
+<dd>
+<div class="block">Return the objects values as a Map suitable to sending to FreshBooks
+ in a POST or PUT request.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Client.html#getContent()">getContent()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Client.html" title="class in net.amcintosh.freshbooks.models">Client</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getContent()">getContent()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html#getContent()">getContent()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html" title="class in net.amcintosh.freshbooks.models">Invoice.InvoicePresentation</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/LineItem.html#getContent()">getContent()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/LineItem.html" title="class in net.amcintosh.freshbooks.models">LineItem</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Money.html#getContent()">getContent()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Money.html" title="class in net.amcintosh.freshbooks.models">Money</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#getContent()">getContent()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Tax.html#getContent()">getContent()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Tax.html" title="class in net.amcintosh.freshbooks.models">Tax</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getCountry()">getCountry()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Country for address on invoice.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getCreatedAt()">getCreatedAt()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Get the time the invoice was created.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#getCreatedAt()">getCreatedAt()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getCreateDate()">getCreateDate()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Date the invoice was created.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Client.html#getCurrencyCode()">getCurrencyCode()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Client.html" title="class in net.amcintosh.freshbooks.models">Client</a></dt>
 <dd>
 <div class="block">3-letter shortcode for client's preferred currency.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getCurrencyCode()">getCurrencyCode()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Three-letter currency code for invoice.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getCurrentOrganization()">getCurrentOrganization()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">The current name of the client's organization.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getCustomerId()">getCustomerId()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Get the id of the client the invoice is for.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html#getDateFormat()">getDateFormat()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html" title="class in net.amcintosh.freshbooks.models">Invoice.InvoicePresentation</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getDatePaid()">getDatePaid()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Date invoice was fully paid.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getDepositAmount()">getDepositAmount()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Amount required as deposit if required.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getDepositPercentage()">getDepositPercentage()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Percent of the invoice's value required as a deposit.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getDepositStatus()">getDepositStatus()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Description of deposits applied to invoice.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getDescription()">getDescription()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Description of first line of invoice</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/LineItem.html#getDescription()">getDescription()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/LineItem.html" title="class in net.amcintosh.freshbooks.models">LineItem</a></dt>
+<dd>
+<div class="block">Description for the line item.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#getDescription()">getDescription()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getDiscountDescription()">getDiscountDescription()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Client-visible note about discount.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getDiscountTotal()">getDiscountTotal()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Amount outstanding on invoice.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getDiscountValue()">getDiscountValue()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Percent amount being discounted from the subtotal.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getDisplayStatus()">getDisplayStatus()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Description of status.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getDueDate()">getDueDate()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Date invoice is marked as due by calculated from <code>due_offset_days</code>.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#getDueDate()">getDueDate()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getDueOffsetDays()">getDueOffsetDays()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Number of days from creation that invoice is due.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Client.html#getEmail()">getEmail()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Client.html" title="class in net.amcintosh.freshbooks.models">Client</a></dt>
 <dd>
 <div class="block">Client's email.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.ProjectGroupMember.html#getEmail()">getEmail()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.ProjectGroupMember.html" title="class in net.amcintosh.freshbooks.models">Project.ProjectGroupMember</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getEstimateId()">getEstimateId()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Id of associated estimate, 0 if none.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/LineItem.html#getExpenseId()">getExpenseId()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/LineItem.html" title="class in net.amcintosh.freshbooks.models">LineItem</a></dt>
+<dd>
+<div class="block">Id of unbilled expense, required when invoice line type is REBILLING_EXPENSE,
+ otherwise should be excluded.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#getExpenseMarkup()">getExpenseMarkup()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Client.html#getFax()">getFax()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Client.html" title="class in net.amcintosh.freshbooks.models">Client</a></dt>
@@ -412,10 +659,19 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Client's first name.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getFirstName()">getFirstName()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">First name of client being invoiced.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.ProjectGroupMember.html#getFirstName()">getFirstName()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.ProjectGroupMember.html" title="class in net.amcintosh.freshbooks.models">Project.ProjectGroupMember</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#getFixedPrice()">getFixedPrice()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getGenerationDate()">getGenerationDate()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">The date the invoice was generated from a invoice profile or
+ null if it was not generated.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.PendingInvitation.html#getGroundId()">getGroundId()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.PendingInvitation.html" title="class in net.amcintosh.freshbooks.models">Project.PendingInvitation</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#getGroup()">getGroup()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
@@ -426,7 +682,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Client.html#getId()">getId()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Client.html" title="class in net.amcintosh.freshbooks.models">Client</a></dt>
 <dd>
-<div class="block">Get unique to this business id for client</div>
+<div class="block">Get the unique identifier of this client within this business.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getId()">getId()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Get the unique identifier of this invoice within this business.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#getId()">getId()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
@@ -438,13 +698,35 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Service.html#getId()">getId()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Service.html" title="class in net.amcintosh.freshbooks.models">Service</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Tax.html#getId()">getId()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Tax.html" title="class in net.amcintosh.freshbooks.models">Tax</a></dt>
+<dd>
+<div class="block">Get the unique identifier of this tax within this business.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.ProjectGroupMember.html#getIdentityId()">getIdentityId()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.ProjectGroupMember.html" title="class in net.amcintosh.freshbooks.models">Project.ProjectGroupMember</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html#getImageLogoSrc()">getImageLogoSrc()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html" title="class in net.amcintosh.freshbooks.models">Invoice.InvoicePresentation</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#getInternal()">getInternal()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getInvoiceId()">getInvoiceId()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Get unique to this business id for invoice.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getInvoiceNumber()">getInvoiceNumber()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">The user-specified number that appears on the invoice.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/InvoiceList.html#getInvoices()">getInvoices()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/InvoiceList.html" title="class in net.amcintosh.freshbooks.models">InvoiceList</a></dt>
+<dd>
+<div class="block">Array of invoices returned by the `list` call.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Client.html#getLanguage()">getLanguage()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Client.html" title="class in net.amcintosh.freshbooks.models">Client</a></dt>
 <dd>
 <div class="block">Shortcode indicating user language e.g.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getLanguage()">getLanguage()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Two-letter language code, e.g.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Client.html#getLastActivity()">getLastActivity()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Client.html" title="class in net.amcintosh.freshbooks.models">Client</a></dt>
 <dd>
@@ -454,8 +736,24 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Client's last name.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getLastName()">getLastName()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Last name of client being invoiced.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.ProjectGroupMember.html#getLastName()">getLastName()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.ProjectGroupMember.html" title="class in net.amcintosh.freshbooks.models">Project.ProjectGroupMember</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getLastOrderStatus()">getLastOrderStatus()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Describes status of last attempted payment.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/LineItem.html#getLineId()">getLineId()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/LineItem.html" title="class in net.amcintosh.freshbooks.models">LineItem</a></dt>
+<dd>
+<div class="block">Unique-to-this-invoice line id.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getLines()">getLines()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Lines of the invoice.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#getLoggedDuration()">getLoggedDuration()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.ProjectGroup.html#getMembers()">getMembers()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.ProjectGroup.html" title="class in net.amcintosh.freshbooks.models">Project.ProjectGroup</a></dt>
@@ -464,25 +762,67 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Client's mobile phone number.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/LineItem.html#getName()">getName()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/LineItem.html" title="class in net.amcintosh.freshbooks.models">LineItem</a></dt>
+<dd>
+<div class="block">Name for the line item.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Service.html#getName()">getName()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Service.html" title="class in net.amcintosh.freshbooks.models">Service</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Tax.html#getName()">getName()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Tax.html" title="class in net.amcintosh.freshbooks.models">Tax</a></dt>
+<dd>
+<div class="block">Identifiable name for the tax.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Client.html#getNote()">getNote()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Client.html" title="class in net.amcintosh.freshbooks.models">Client</a></dt>
 <dd>
 <div class="block">Notes kept by admin about client.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getNotes()">getNotes()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Notes listed on invoice.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Tax.html#getNumber()">getNumber()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Tax.html" title="class in net.amcintosh.freshbooks.models">Tax</a></dt>
+<dd>
+<div class="block">An external number that identifies your tax submission.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Client.html#getOrganization()">getOrganization()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Client.html" title="class in net.amcintosh.freshbooks.models">Client</a></dt>
 <dd>
 <div class="block">Name for client's business.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getOrganization()">getOrganization()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Name of organization being invoiced.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getOutstanding()">getOutstanding()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Amount outstanding on invoice.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getOwnerId()">getOwnerId()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Id of creator of invoice.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Pages.html#getPage()">getPage()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Pages.html" title="class in net.amcintosh.freshbooks.models">Pages</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/ListResult.html#getPages()">getPages()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/ListResult.html" title="class in net.amcintosh.freshbooks.models">ListResult</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Get Pages object of list pagination details</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Pages.html#getPages()">getPages()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Pages.html" title="class in net.amcintosh.freshbooks.models">Pages</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getPaid()">getPaid()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Amount paid on invoice.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getParent()">getParent()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Id of object this invoice was generated from, 0 if none</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/api/AccountingResource.html#getPath()">getPath()</a></span> - Method in class net.amcintosh.freshbooks.resources.api.<a href="net/amcintosh/freshbooks/resources/api/AccountingResource.html" title="class in net.amcintosh.freshbooks.resources.api">AccountingResource</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Clients.html#getPath()">getPath()</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Clients.html" title="class in net.amcintosh.freshbooks.resources">Clients</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Invoices.html#getPath()">getPath()</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Invoices.html" title="class in net.amcintosh.freshbooks.resources">Invoices</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Taxes.html#getPath()">getPath()</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Taxes.html" title="class in net.amcintosh.freshbooks.resources">Taxes</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/api/ProjectResource.html#getPathForList()">getPathForList()</a></span> - Method in class net.amcintosh.freshbooks.resources.api.<a href="net/amcintosh/freshbooks/resources/api/ProjectResource.html" title="class in net.amcintosh.freshbooks.resources.api">ProjectResource</a></dt>
 <dd>&nbsp;</dd>
@@ -492,16 +832,38 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Projects.html#getPathForSingle()">getPathForSingle()</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Projects.html" title="class in net.amcintosh.freshbooks.resources">Projects</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getPaymentStatus()">getPaymentStatus()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Description of payment status.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#getPendingInvitations()">getPendingInvitations()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Pages.html#getPerPage()">getPerPage()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Pages.html" title="class in net.amcintosh.freshbooks.models">Pages</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getPONumber()">getPONumber()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Reference number for address on invoice.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getPresentation()">getPresentation()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Define invoice logo and styles.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#getProjectManagerId()">getProjectManagerId()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/ProjectList.html#getProjects()">getProjects()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/ProjectList.html" title="class in net.amcintosh.freshbooks.models">ProjectList</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Array of projects returned by the `list` call.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#getProjectType()">getProjectType()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getProvince()">getProvince()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Province/state for address on invoice.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/LineItem.html#getQuantity()">getQuantity()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/LineItem.html" title="class in net.amcintosh.freshbooks.models">LineItem</a></dt>
+<dd>
+<div class="block">Quantity of the line unit, multiplied against unit_cost to get amount.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#getRate()">getRate()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/api/AccountingResource.html#getResourceType()">getResourceType()</a></span> - Method in class net.amcintosh.freshbooks.resources.api.<a href="net/amcintosh/freshbooks/resources/api/AccountingResource.html" title="class in net.amcintosh.freshbooks.resources.api">AccountingResource</a></dt>
@@ -516,6 +878,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#getSample()">getSample()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getSentId()">getSentId()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">User id of user who sent the invoice.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#getServices()">getServices()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Client.html#getShippingCity()">getShippingCity()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Client.html" title="class in net.amcintosh.freshbooks.models">Client</a></dt>
@@ -546,15 +912,89 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Get the signup time of the client.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getStatus()">getStatus()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Get the status of the invoice.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getStreet()">getStreet()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Street for address on invoice.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getStreet2()">getStreet2()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Second line of street for address on invoice.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/LineItem.html#getTaxAmount1()">getTaxAmount1()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/LineItem.html" title="class in net.amcintosh.freshbooks.models">LineItem</a></dt>
+<dd>
+<div class="block">First tax amount, in percentage, up to 3 decimal places.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/LineItem.html#getTaxAmount2()">getTaxAmount2()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/LineItem.html" title="class in net.amcintosh.freshbooks.models">LineItem</a></dt>
+<dd>
+<div class="block">Second tax amount, in percentage, up to 3 decimal places.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/TaxList.html#getTaxes()">getTaxes()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/TaxList.html" title="class in net.amcintosh.freshbooks.models">TaxList</a></dt>
+<dd>
+<div class="block">Array of taxes returned by the `list` call.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Tax.html#getTaxId()">getTaxId()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Tax.html" title="class in net.amcintosh.freshbooks.models">Tax</a></dt>
+<dd>
+<div class="block">Duplicate of id.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/LineItem.html#getTaxName1()">getTaxName1()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/LineItem.html" title="class in net.amcintosh.freshbooks.models">LineItem</a></dt>
+<dd>
+<div class="block">Name for the first tax on the line item.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/LineItem.html#getTaxName2()">getTaxName2()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/LineItem.html" title="class in net.amcintosh.freshbooks.models">LineItem</a></dt>
+<dd>
+<div class="block">Name for the second tax on the line item.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/LineItem.html#getTaxNumber1()">getTaxNumber1()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/LineItem.html" title="class in net.amcintosh.freshbooks.models">LineItem</a></dt>
+<dd>
+<div class="block">First tax number on the line item.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/LineItem.html#getTaxNumber2()">getTaxNumber2()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/LineItem.html" title="class in net.amcintosh.freshbooks.models">LineItem</a></dt>
+<dd>
+<div class="block">Second tax number on the line item.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getTerms()">getTerms()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Terms listed on invoice.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html#getThemeFontName()">getThemeFontName()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html" title="class in net.amcintosh.freshbooks.models">Invoice.InvoicePresentation</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html#getThemeLayout()">getThemeLayout()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html" title="class in net.amcintosh.freshbooks.models">Invoice.InvoicePresentation</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html#getThemePrimaryColor()">getThemePrimaryColor()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html" title="class in net.amcintosh.freshbooks.models">Invoice.InvoicePresentation</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#getTitle()">getTitle()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.PendingInvitation.html#getToEmail()">getToEmail()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.PendingInvitation.html" title="class in net.amcintosh.freshbooks.models">Project.PendingInvitation</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Pages.html#getTotal()">getTotal()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Pages.html" title="class in net.amcintosh.freshbooks.models">Pages</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/LineItem.html#getType()">getType()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/LineItem.html" title="class in net.amcintosh.freshbooks.models">LineItem</a></dt>
+<dd>
+<div class="block">Line item type.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/LineItem.html#getUnitCost()">getUnitCost()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/LineItem.html" title="class in net.amcintosh.freshbooks.models">LineItem</a></dt>
+<dd>
+<div class="block">Unit cost of the line item.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Client.html#getUpdated()">getUpdated()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Client.html" title="class in net.amcintosh.freshbooks.models">Client</a></dt>
 <dd>
 <div class="block">Get the time of last modification to the client.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getUpdated()">getUpdated()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Get the time of last modification to the invoice.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/LineItem.html#getUpdated()">getUpdated()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/LineItem.html" title="class in net.amcintosh.freshbooks.models">LineItem</a></dt>
+<dd>
+<div class="block">Get the time this line was last updated at.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Tax.html#getUpdated()">getUpdated()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Tax.html" title="class in net.amcintosh.freshbooks.models">Tax</a></dt>
+<dd>
+<div class="block">Get the time of last modification.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#getUpdatedAt()">getUpdatedAt()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>
@@ -576,11 +1016,19 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/api/AccountingResource.html#getUrl(java.lang.String,java.util.List)">getUrl(String, List&lt;QueryBuilder&gt;)</a></span> - Method in class net.amcintosh.freshbooks.resources.api.<a href="net/amcintosh/freshbooks/resources/api/AccountingResource.html" title="class in net.amcintosh.freshbooks.resources.api">AccountingResource</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Client.html#getUserid()">getUserid()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Client.html" title="class in net.amcintosh.freshbooks.models">Client</a></dt>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Client.html#getUserId()">getUserId()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Client.html" title="class in net.amcintosh.freshbooks.models">Client</a></dt>
 <dd>
 <div class="block">Duplicate of id</div>
 </dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getV3Status()">getV3Status()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">v3 status fields give a descriptive name to states which can be used in filters</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/FreshBooksException.html#getValidationError()">getValidationError()</a></span> - Method in exception net.amcintosh.freshbooks.<a href="net/amcintosh/freshbooks/FreshBooksException.html" title="class in net.amcintosh.freshbooks">FreshBooksException</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceStatus.html#getValue()">getValue()</a></span> - Method in enum net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceStatus</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/LineItem.LineItemType.html#getValue()">getValue()</a></span> - Method in enum net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/LineItem.LineItemType.html" title="enum in net.amcintosh.freshbooks.models">LineItem.LineItemType</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/VisState.html#getValue()">getValue()</a></span> - Method in enum net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/VisState.html" title="enum in net.amcintosh.freshbooks.models">VisState</a></dt>
 <dd>&nbsp;</dd>
@@ -588,9 +1036,17 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Get the "Value Added Tax" name</div>
 </dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getVATName()">getVATName()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Value Added Tax name of client if provided.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Client.html#getVatNumber()">getVatNumber()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Client.html" title="class in net.amcintosh.freshbooks.models">Client</a></dt>
 <dd>
 <div class="block">Get the "Value Added Tax" number</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getVATNumber()">getVATNumber()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Value Added Tax number of client if provided.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/FreshBooksClient.html#getVersion()">getVersion()</a></span> - Method in class net.amcintosh.freshbooks.<a href="net/amcintosh/freshbooks/FreshBooksClient.html" title="class in net.amcintosh.freshbooks">FreshBooksClient</a></dt>
 <dd>
@@ -601,15 +1057,24 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Get the visibility state: active, deleted, or archived
  <br><br></div>
 </dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getVisState()">getVisState()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Get the visibility state: active, deleted, or archived
+ <br><br></div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Service.html#getVisState()">getVisState()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Service.html" title="class in net.amcintosh.freshbooks.models">Service</a></dt>
 <dd>
 <div class="block">Get the visibility state: active, deleted, or archived
  <br><br></div>
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/Util.html#getZonedDateTimeFromAccountingLocalTime(java.lang.String)">getZonedDateTimeFromAccountingLocalTime(String)</a></span> - Static method in class net.amcintosh.freshbooks.<a href="net/amcintosh/freshbooks/Util.html" title="class in net.amcintosh.freshbooks">Util</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Get a datetime zoned to UTC from an accounting endpoint date string.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/Util.html#getZonedDateTimeFromProjectNaiveUTC(java.lang.String)">getZonedDateTimeFromProjectNaiveUTC(String)</a></span> - Static method in class net.amcintosh.freshbooks.<a href="net/amcintosh/freshbooks/Util.html" title="class in net.amcintosh.freshbooks">Util</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Get a datetime zoned to UTC from an project-like endpoint date string.</div>
+</dd>
 </dl>
 <a id="I:H">
 <!--   -->
@@ -628,7 +1093,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/api/ProjectResource.html#handleRequest(java.lang.String,java.lang.String,java.util.Map)">handleRequest(String, String, Map&lt;String, Object&gt;)</a></span> - Method in class net.amcintosh.freshbooks.resources.api.<a href="net/amcintosh/freshbooks/resources/api/ProjectResource.html" title="class in net.amcintosh.freshbooks.resources.api">ProjectResource</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/ProjectType.html#hourly_rate">hourly_rate</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/ProjectType.html" title="enum in net.amcintosh.freshbooks.models">ProjectType</a></dt>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.ProjectType.html#HOURLY_RATE">HOURLY_RATE</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.ProjectType.html" title="enum in net.amcintosh.freshbooks.models">Project.ProjectType</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <a id="I:I">
@@ -636,8 +1101,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a>
 <h2 class="title">I</h2>
 <dl>
-<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#id">id</a></span> - Variable in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/builders/IncludesQueryBuilder.html#include(java.lang.String)">include(String)</a></span> - Method in class net.amcintosh.freshbooks.models.builders.<a href="net/amcintosh/freshbooks/models/builders/IncludesQueryBuilder.html" title="class in net.amcintosh.freshbooks.models.builders">IncludesQueryBuilder</a></dt>
 <dd>
 <div class="block">Add an include key to the builder.</div>
@@ -658,16 +1121,90 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#%3Cinit%3E()">Invoice()</a></span> - Constructor for class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceAutoBillStatus.html" title="enum in net.amcintosh.freshbooks.models"><span class="typeNameLink">Invoice.InvoiceAutoBillStatus</span></a> - Enum in <a href="net/amcintosh/freshbooks/models/package-summary.html">net.amcintosh.freshbooks.models</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceDepositStatus.html" title="enum in net.amcintosh.freshbooks.models"><span class="typeNameLink">Invoice.InvoiceDepositStatus</span></a> - Enum in <a href="net/amcintosh/freshbooks/models/package-summary.html">net.amcintosh.freshbooks.models</a></dt>
+<dd>
+<div class="block">Description of deposits applied to invoice.</div>
+</dd>
+<dt><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceDisplayStatus.html" title="enum in net.amcintosh.freshbooks.models"><span class="typeNameLink">Invoice.InvoiceDisplayStatus</span></a> - Enum in <a href="net/amcintosh/freshbooks/models/package-summary.html">net.amcintosh.freshbooks.models</a></dt>
+<dd>
+<div class="block">Description of status.</div>
+</dd>
+<dt><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceOrderStatus.html" title="enum in net.amcintosh.freshbooks.models"><span class="typeNameLink">Invoice.InvoiceOrderStatus</span></a> - Enum in <a href="net/amcintosh/freshbooks/models/package-summary.html">net.amcintosh.freshbooks.models</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="net/amcintosh/freshbooks/models/Invoice.InvoicePaymentStatus.html" title="enum in net.amcintosh.freshbooks.models"><span class="typeNameLink">Invoice.InvoicePaymentStatus</span></a> - Enum in <a href="net/amcintosh/freshbooks/models/package-summary.html">net.amcintosh.freshbooks.models</a></dt>
+<dd>
+<div class="block">Description of payment status.</div>
+</dd>
+<dt><a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html" title="class in net.amcintosh.freshbooks.models"><span class="typeNameLink">Invoice.InvoicePresentation</span></a> - Class in <a href="net/amcintosh/freshbooks/models/package-summary.html">net.amcintosh.freshbooks.models</a></dt>
+<dd>
+<div class="block">To define invoice logo and styles.</div>
+</dd>
+<dt><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceStatus.html" title="enum in net.amcintosh.freshbooks.models"><span class="typeNameLink">Invoice.InvoiceStatus</span></a> - Enum in <a href="net/amcintosh/freshbooks/models/package-summary.html">net.amcintosh.freshbooks.models</a></dt>
+<dd>
+<div class="block">Status values for an invoice.</div>
+</dd>
+<dt><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceV3Status.html" title="enum in net.amcintosh.freshbooks.models"><span class="typeNameLink">Invoice.InvoiceV3Status</span></a> - Enum in <a href="net/amcintosh/freshbooks/models/package-summary.html">net.amcintosh.freshbooks.models</a></dt>
+<dd>
+<div class="block">v3 status fields give a descriptive name to states which can be used in filters.</div>
+</dd>
+<dt><a href="net/amcintosh/freshbooks/models/InvoiceList.html" title="class in net.amcintosh.freshbooks.models"><span class="typeNameLink">InvoiceList</span></a> - Class in <a href="net/amcintosh/freshbooks/models/package-summary.html">net.amcintosh.freshbooks.models</a></dt>
+<dd>
+<div class="block">Results of invoices list call containing list of invoices and pagination data.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/InvoiceList.html#%3Cinit%3E(net.amcintosh.freshbooks.models.api.AccountingListResponse.AccountingListInnerResponse.AccountingListResult)">InvoiceList(AccountingListResponse.AccountingListInnerResponse.AccountingListResult)</a></span> - Constructor for class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/InvoiceList.html" title="class in net.amcintosh.freshbooks.models">InvoiceList</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html#%3Cinit%3E()">InvoicePresentation()</a></span> - Constructor for class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html" title="class in net.amcintosh.freshbooks.models">Invoice.InvoicePresentation</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/api/AccountingListResponse.AccountingListInnerResponse.AccountingListResult.html#invoices">invoices</a></span> - Variable in class net.amcintosh.freshbooks.models.api.<a href="net/amcintosh/freshbooks/models/api/AccountingListResponse.AccountingListInnerResponse.AccountingListResult.html" title="class in net.amcintosh.freshbooks.models.api">AccountingListResponse.AccountingListInnerResponse.AccountingListResult</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/FreshBooksClient.html#invoices()">invoices()</a></span> - Method in class net.amcintosh.freshbooks.<a href="net/amcintosh/freshbooks/FreshBooksClient.html" title="class in net.amcintosh.freshbooks">FreshBooksClient</a></dt>
+<dd>
+<div class="block">FreshBooks invoices resource with calls to get, list, create, update, delete.</div>
+</dd>
+<dt><a href="net/amcintosh/freshbooks/resources/Invoices.html" title="class in net.amcintosh.freshbooks.resources"><span class="typeNameLink">Invoices</span></a> - Class in <a href="net/amcintosh/freshbooks/resources/package-summary.html">net.amcintosh.freshbooks.resources</a></dt>
+<dd>
+<div class="block">FreshBooks invoices resource with calls to get, list, create, update, delete</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Invoices.html#%3Cinit%3E(net.amcintosh.freshbooks.FreshBooksClient)">Invoices(FreshBooksClient)</a></span> - Constructor for class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Invoices.html" title="class in net.amcintosh.freshbooks.resources">Invoices</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#isAutoBill()">isAutoBill()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Whether this invoice has a credit card saved.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Service.html#isBillable()">isBillable()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Service.html" title="class in net.amcintosh.freshbooks.models">Service</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#isGroundMail()">isGroundMail()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Whether to send via ground mail.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#isShowAttachments()">isShowAttachments()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Whether attachments on invoice are rendered in FreshBooks UI.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#isUseDefaultPresentation()">isUseDefaultPresentation()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">By default, if no presentation specified in new invoice request payload,
+ it will be assigned a default presentation.</div>
+</dd>
 </dl>
 <a id="I:L">
 <!--   -->
 </a>
 <h2 class="title">L</h2>
 <dl>
+<dt><a href="net/amcintosh/freshbooks/models/LineItem.html" title="class in net.amcintosh.freshbooks.models"><span class="typeNameLink">LineItem</span></a> - Class in <a href="net/amcintosh/freshbooks/models/package-summary.html">net.amcintosh.freshbooks.models</a></dt>
+<dd>
+<div class="block">Invoice lines are used to determine the amount of an invoice, in addition to
+ being able to tie the invoice to rebilled expenses.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/LineItem.html#%3Cinit%3E()">LineItem()</a></span> - Constructor for class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/LineItem.html" title="class in net.amcintosh.freshbooks.models">LineItem</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="net/amcintosh/freshbooks/models/LineItem.LineItemType.html" title="enum in net.amcintosh.freshbooks.models"><span class="typeNameLink">LineItem.LineItemType</span></a> - Enum in <a href="net/amcintosh/freshbooks/models/package-summary.html">net.amcintosh.freshbooks.models</a></dt>
+<dd>
+<div class="block">Type for line items.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Projects.html#list(long)">list(long)</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Projects.html" title="class in net.amcintosh.freshbooks.resources">Projects</a></dt>
 <dd>
 <div class="block">Get a list of projects.</div>
@@ -680,9 +1217,25 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Get a list of clients using the query strings generated by the QueryBuilder list.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Invoices.html#list(java.lang.String)">list(String)</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Invoices.html" title="class in net.amcintosh.freshbooks.resources">Invoices</a></dt>
+<dd>
+<div class="block">Get a list of invoices using the query strings generated by the QueryBuilder list.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Taxes.html#list(java.lang.String)">list(String)</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Taxes.html" title="class in net.amcintosh.freshbooks.resources">Taxes</a></dt>
+<dd>
+<div class="block">Get a list of taxes using the query strings generated by the QueryBuilder list.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Clients.html#list(java.lang.String,java.util.List)">list(String, List&lt;QueryBuilder&gt;)</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Clients.html" title="class in net.amcintosh.freshbooks.resources">Clients</a></dt>
 <dd>
 <div class="block">Get a list of clients using the query strings generated by the QueryBuilder list.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Invoices.html#list(java.lang.String,java.util.List)">list(String, List&lt;QueryBuilder&gt;)</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Invoices.html" title="class in net.amcintosh.freshbooks.resources">Invoices</a></dt>
+<dd>
+<div class="block">Get a list of invoices using the query strings generated by the QueryBuilder list.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Taxes.html#list(java.lang.String,java.util.List)">list(String, List&lt;QueryBuilder&gt;)</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Taxes.html" title="class in net.amcintosh.freshbooks.resources">Taxes</a></dt>
+<dd>
+<div class="block">Get a list of taxes using the query strings generated by the QueryBuilder list.</div>
 </dd>
 <dt><a href="net/amcintosh/freshbooks/models/ListResult.html" title="class in net.amcintosh.freshbooks.models"><span class="typeNameLink">ListResult</span></a> - Class in <a href="net/amcintosh/freshbooks/models/package-summary.html">net.amcintosh.freshbooks.models</a></dt>
 <dd>
@@ -700,6 +1253,18 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/api/ProjectListResponse.html#meta">meta</a></span> - Variable in class net.amcintosh.freshbooks.models.api.<a href="net/amcintosh/freshbooks/models/api/ProjectListResponse.html" title="class in net.amcintosh.freshbooks.models.api">ProjectListResponse</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="net/amcintosh/freshbooks/models/Money.html" title="class in net.amcintosh.freshbooks.models"><span class="typeNameLink">Money</span></a> - Class in <a href="net/amcintosh/freshbooks/models/package-summary.html">net.amcintosh.freshbooks.models</a></dt>
+<dd>
+<div class="block">Monetary amount represented by a decimal value and a currency code.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Money.html#%3Cinit%3E()">Money()</a></span> - Constructor for class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Money.html" title="class in net.amcintosh.freshbooks.models">Money</a></dt>
+<dd>
+<div class="block">Create an uninitialized Money object.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Money.html#%3Cinit%3E(java.math.BigDecimal,java.lang.String)">Money(BigDecimal, String)</a></span> - Constructor for class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Money.html" title="class in net.amcintosh.freshbooks.models">Money</a></dt>
+<dd>
+<div class="block">Create a Money object.</div>
+</dd>
 </dl>
 <a id="I:N">
 <!--   -->
@@ -718,7 +1283,15 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><a href="net/amcintosh/freshbooks/resources/api/package-summary.html">net.amcintosh.freshbooks.resources.api</a> - package net.amcintosh.freshbooks.resources.api</dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/ProjectBillingMethod.html#none">none</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/ProjectBillingMethod.html" title="enum in net.amcintosh.freshbooks.models">ProjectBillingMethod</a></dt>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceAutoBillStatus.html#NONE">NONE</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceAutoBillStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceAutoBillStatus</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceDepositStatus.html#NONE">NONE</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceDepositStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceDepositStatus</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceOrderStatus.html#NONE">NONE</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceOrderStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceOrderStatus</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.ProjectBillingMethod.html#NONE">NONE</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.ProjectBillingMethod.html" title="enum in net.amcintosh.freshbooks.models">Project.ProjectBillingMethod</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/LineItem.LineItemType.html#NORMAL">NORMAL</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/LineItem.LineItemType.html" title="enum in net.amcintosh.freshbooks.models">LineItem.LineItemType</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <a id="I:O">
@@ -729,6 +1302,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/FreshBooksException.html#object">object</a></span> - Variable in exception net.amcintosh.freshbooks.<a href="net/amcintosh/freshbooks/FreshBooksException.html" title="class in net.amcintosh.freshbooks">FreshBooksException</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/api/AccountingError.html#object">object</a></span> - Variable in class net.amcintosh.freshbooks.models.api.<a href="net/amcintosh/freshbooks/models/api/AccountingError.html" title="class in net.amcintosh.freshbooks.models.api">AccountingError</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceDisplayStatus.html#OUTSTANDING">OUTSTANDING</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceDisplayStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceDisplayStatus</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceV3Status.html#OVERDUE">OVERDUE</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceV3Status.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceV3Status</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <a id="I:P">
@@ -766,7 +1343,27 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Create an pagination query builder.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/ProjectBilledStatus.html#partially_billed">partially_billed</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/ProjectBilledStatus.html" title="enum in net.amcintosh.freshbooks.models">ProjectBilledStatus</a></dt>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceDepositStatus.html#PAID">PAID</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceDepositStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceDepositStatus</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoicePaymentStatus.html#PAID">PAID</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoicePaymentStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoicePaymentStatus</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceStatus.html#PAID">PAID</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceStatus</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceV3Status.html#PAID">PAID</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceV3Status.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceV3Status</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceDepositStatus.html#PARTIAL">PARTIAL</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceDepositStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceDepositStatus</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoicePaymentStatus.html#PARTIAL">PARTIAL</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoicePaymentStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoicePaymentStatus</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceStatus.html#PARTIAL">PARTIAL</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceStatus</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceV3Status.html#PARTIAL">PARTIAL</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceV3Status.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceV3Status</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.ProjectBilledStatus.html#PARTIALLY_BILLED">PARTIALLY_BILLED</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.ProjectBilledStatus.html" title="enum in net.amcintosh.freshbooks.models">Project.ProjectBilledStatus</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceOrderStatus.html#PENDING">PENDING</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceOrderStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceOrderStatus</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceV3Status.html#PENDING">PENDING</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceV3Status.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceV3Status</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.PendingInvitation.html#%3Cinit%3E()">PendingInvitation()</a></span> - Constructor for class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.PendingInvitation.html" title="class in net.amcintosh.freshbooks.models">Project.PendingInvitation</a></dt>
 <dd>&nbsp;</dd>
@@ -787,22 +1384,26 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/api/ResourceType.html#PROJECT_LIKE">PROJECT_LIKE</a></span> - net.amcintosh.freshbooks.resources.api.<a href="net/amcintosh/freshbooks/resources/api/ResourceType.html" title="enum in net.amcintosh.freshbooks.resources.api">ResourceType</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/ProjectBillingMethod.html#project_rate">project_rate</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/ProjectBillingMethod.html" title="enum in net.amcintosh.freshbooks.models">ProjectBillingMethod</a></dt>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.ProjectBillingMethod.html#PROJECT_RATE">PROJECT_RATE</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.ProjectBillingMethod.html" title="enum in net.amcintosh.freshbooks.models">Project.ProjectBillingMethod</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/amcintosh/freshbooks/models/Project.PendingInvitation.html" title="class in net.amcintosh.freshbooks.models"><span class="typeNameLink">Project.PendingInvitation</span></a> - Class in <a href="net/amcintosh/freshbooks/models/package-summary.html">net.amcintosh.freshbooks.models</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="net/amcintosh/freshbooks/models/Project.ProjectGroup.html" title="class in net.amcintosh.freshbooks.models"><span class="typeNameLink">Project.ProjectGroup</span></a> - Class in <a href="net/amcintosh/freshbooks/models/package-summary.html">net.amcintosh.freshbooks.models</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="net/amcintosh/freshbooks/models/Project.ProjectGroupMember.html" title="class in net.amcintosh.freshbooks.models"><span class="typeNameLink">Project.ProjectGroupMember</span></a> - Class in <a href="net/amcintosh/freshbooks/models/package-summary.html">net.amcintosh.freshbooks.models</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="net/amcintosh/freshbooks/models/ProjectBilledStatus.html" title="enum in net.amcintosh.freshbooks.models"><span class="typeNameLink">ProjectBilledStatus</span></a> - Enum in <a href="net/amcintosh/freshbooks/models/package-summary.html">net.amcintosh.freshbooks.models</a></dt>
+<dt><a href="net/amcintosh/freshbooks/models/Project.ProjectBilledStatus.html" title="enum in net.amcintosh.freshbooks.models"><span class="typeNameLink">Project.ProjectBilledStatus</span></a> - Enum in <a href="net/amcintosh/freshbooks/models/package-summary.html">net.amcintosh.freshbooks.models</a></dt>
 <dd>
 <div class="block">Billing statuses for a project, computed from invoice totals that have been sent
  for that project.</div>
 </dd>
-<dt><a href="net/amcintosh/freshbooks/models/ProjectBillingMethod.html" title="enum in net.amcintosh.freshbooks.models"><span class="typeNameLink">ProjectBillingMethod</span></a> - Enum in <a href="net/amcintosh/freshbooks/models/package-summary.html">net.amcintosh.freshbooks.models</a></dt>
+<dt><a href="net/amcintosh/freshbooks/models/Project.ProjectBillingMethod.html" title="enum in net.amcintosh.freshbooks.models"><span class="typeNameLink">Project.ProjectBillingMethod</span></a> - Enum in <a href="net/amcintosh/freshbooks/models/package-summary.html">net.amcintosh.freshbooks.models</a></dt>
 <dd>
 <div class="block">Method of calculating billing for a project</div>
+</dd>
+<dt><a href="net/amcintosh/freshbooks/models/Project.ProjectGroup.html" title="class in net.amcintosh.freshbooks.models"><span class="typeNameLink">Project.ProjectGroup</span></a> - Class in <a href="net/amcintosh/freshbooks/models/package-summary.html">net.amcintosh.freshbooks.models</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="net/amcintosh/freshbooks/models/Project.ProjectGroupMember.html" title="class in net.amcintosh.freshbooks.models"><span class="typeNameLink">Project.ProjectGroupMember</span></a> - Class in <a href="net/amcintosh/freshbooks/models/package-summary.html">net.amcintosh.freshbooks.models</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="net/amcintosh/freshbooks/models/Project.ProjectType.html" title="enum in net.amcintosh.freshbooks.models"><span class="typeNameLink">Project.ProjectType</span></a> - Enum in <a href="net/amcintosh/freshbooks/models/package-summary.html">net.amcintosh.freshbooks.models</a></dt>
+<dd>
+<div class="block">Types of projects</div>
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/api/ProjectResponse.ProjectError.html#%3Cinit%3E()">ProjectError()</a></span> - Constructor for class net.amcintosh.freshbooks.models.api.<a href="net/amcintosh/freshbooks/models/api/ProjectResponse.ProjectError.html" title="class in net.amcintosh.freshbooks.models.api">ProjectResponse.ProjectError</a></dt>
 <dd>&nbsp;</dd>
@@ -840,19 +1441,13 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/FreshBooksClient.html#projects()">projects()</a></span> - Method in class net.amcintosh.freshbooks.<a href="net/amcintosh/freshbooks/FreshBooksClient.html" title="class in net.amcintosh.freshbooks">FreshBooksClient</a></dt>
 <dd>
-<div class="block">FreshBooks projects resource with calls to get, list, create, update, delete</div>
+<div class="block">FreshBooks projects resource with calls to get, list, create, update, delete.</div>
 </dd>
 <dt><a href="net/amcintosh/freshbooks/resources/Projects.html" title="class in net.amcintosh.freshbooks.resources"><span class="typeNameLink">Projects</span></a> - Class in <a href="net/amcintosh/freshbooks/resources/package-summary.html">net.amcintosh.freshbooks.resources</a></dt>
 <dd>
 <div class="block">FreshBooks projects resource with calls to get, list, create, update, delete</div>
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Projects.html#%3Cinit%3E(net.amcintosh.freshbooks.FreshBooksClient)">Projects(FreshBooksClient)</a></span> - Constructor for class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Projects.html" title="class in net.amcintosh.freshbooks.resources">Projects</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="net/amcintosh/freshbooks/models/ProjectType.html" title="enum in net.amcintosh.freshbooks.models"><span class="typeNameLink">ProjectType</span></a> - Enum in <a href="net/amcintosh/freshbooks/models/package-summary.html">net.amcintosh.freshbooks.models</a></dt>
-<dd>
-<div class="block">Types of projects</div>
-</dd>
-<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/Util.html#putIfNotNull(java.util.Map,java.lang.String,java.lang.Object)">putIfNotNull(Map&lt;String, Object&gt;, String, Object)</a></span> - Static method in class net.amcintosh.freshbooks.<a href="net/amcintosh/freshbooks/Util.html" title="class in net.amcintosh.freshbooks">Util</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <a id="I:Q">
@@ -868,9 +1463,17 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a>
 <h2 class="title">R</h2>
 <dl>
-<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/FreshBooksClient.html#request(java.lang.String,java.lang.String)">request(String, String)</a></span> - Method in class net.amcintosh.freshbooks.<a href="net/amcintosh/freshbooks/FreshBooksClient.html" title="class in net.amcintosh.freshbooks">FreshBooksClient</a></dt>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/LineItem.LineItemType.html#REBILLING_EXPENSE">REBILLING_EXPENSE</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/LineItem.LineItemType.html" title="enum in net.amcintosh.freshbooks.models">LineItem.LineItemType</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/FreshBooksClient.html#request(java.lang.String,java.lang.String)">request(String, String)</a></span> - Method in class net.amcintosh.freshbooks.<a href="net/amcintosh/freshbooks/FreshBooksClient.html" title="class in net.amcintosh.freshbooks">FreshBooksClient</a></dt>
+<dd>
+<div class="block">Make a request to FreshBooks.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/FreshBooksClient.html#request(java.lang.String,java.lang.String,java.util.Map)">request(String, String, Map&lt;String, Object&gt;)</a></span> - Method in class net.amcintosh.freshbooks.<a href="net/amcintosh/freshbooks/FreshBooksClient.html" title="class in net.amcintosh.freshbooks">FreshBooksClient</a></dt>
+<dd>
+<div class="block">Make a request to FreshBooks with a data payload.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceV3Status.html#RESOLVED">RESOLVED</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceV3Status.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceV3Status</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/amcintosh/freshbooks/resources/api/Resource.html" title="class in net.amcintosh.freshbooks.resources.api"><span class="typeNameLink">Resource</span></a> - Class in <a href="net/amcintosh/freshbooks/resources/api/package-summary.html">net.amcintosh.freshbooks.resources.api</a></dt>
 <dd>
@@ -879,7 +1482,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/api/Resource.html#%3Cinit%3E(net.amcintosh.freshbooks.FreshBooksClient)">Resource(FreshBooksClient)</a></span> - Constructor for class net.amcintosh.freshbooks.resources.api.<a href="net/amcintosh/freshbooks/resources/api/Resource.html" title="class in net.amcintosh.freshbooks.resources.api">Resource</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/amcintosh/freshbooks/resources/api/ResourceType.html" title="enum in net.amcintosh.freshbooks.resources.api"><span class="typeNameLink">ResourceType</span></a> - Enum in <a href="net/amcintosh/freshbooks/resources/api/package-summary.html">net.amcintosh.freshbooks.resources.api</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Ued internally to determine the style of FreshBooks API the resource conforms to.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/api/AccountingListResponse.html#response">response</a></span> - Variable in class net.amcintosh.freshbooks.models.api.<a href="net/amcintosh/freshbooks/models/api/AccountingListResponse.html" title="class in net.amcintosh.freshbooks.models.api">AccountingListResponse</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/api/AccountingResponse.html#response">response</a></span> - Variable in class net.amcintosh.freshbooks.models.api.<a href="net/amcintosh/freshbooks/models/api/AccountingResponse.html" title="class in net.amcintosh.freshbooks.models.api">AccountingResponse</a></dt>
@@ -888,27 +1493,59 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/api/AccountingResponse.AccountingInnerResponse.html#result">result</a></span> - Variable in class net.amcintosh.freshbooks.models.api.<a href="net/amcintosh/freshbooks/models/api/AccountingResponse.AccountingInnerResponse.html" title="class in net.amcintosh.freshbooks.models.api">AccountingResponse.AccountingInnerResponse</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceAutoBillStatus.html#RETRY">RETRY</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceAutoBillStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceAutoBillStatus</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceStatus.html#RETRY">RETRY</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceStatus</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceV3Status.html#RETRY">RETRY</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceV3Status.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceV3Status</a></dt>
+<dd>&nbsp;</dd>
 </dl>
 <a id="I:S">
 <!--   -->
 </a>
 <h2 class="title">S</h2>
 <dl>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceDisplayStatus.html#SENT">SENT</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceDisplayStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceDisplayStatus</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceStatus.html#SENT">SENT</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceStatus</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceV3Status.html#SENT">SENT</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceV3Status.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceV3Status</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="net/amcintosh/freshbooks/models/Service.html" title="class in net.amcintosh.freshbooks.models"><span class="typeNameLink">Service</span></a> - Class in <a href="net/amcintosh/freshbooks/models/package-summary.html">net.amcintosh.freshbooks.models</a></dt>
 <dd>
 <div class="block">Services represent things that a business offers to clients.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Service.html#%3Cinit%3E()">Service()</a></span> - Constructor for class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Service.html" title="class in net.amcintosh.freshbooks.models">Service</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/ProjectBillingMethod.html#service_rate">service_rate</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/ProjectBillingMethod.html" title="enum in net.amcintosh.freshbooks.models">ProjectBillingMethod</a></dt>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.ProjectBillingMethod.html#SERVICE_RATE">SERVICE_RATE</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.ProjectBillingMethod.html" title="enum in net.amcintosh.freshbooks.models">Project.ProjectBillingMethod</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#setActive(boolean)">setActive(boolean)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setAddress(java.lang.String)">setAddress(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">First line of address on invoice.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Money.html#setAmount(java.math.BigDecimal)">setAmount(BigDecimal)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Money.html" title="class in net.amcintosh.freshbooks.models">Money</a></dt>
+<dd>
+<div class="block">Monetary amount with decimal places appropriate to the currency.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Tax.html#setAmount(java.math.BigDecimal)">setAmount(BigDecimal)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Tax.html" title="class in net.amcintosh.freshbooks.models">Tax</a></dt>
+<dd>
+<div class="block">Decimal representing percentage value of tax.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setAutoBill(boolean)">setAutoBill(boolean)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Whether this invoice has a credit card saved.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setAutoBillStatus(net.amcintosh.freshbooks.models.Invoice.InvoiceAutoBillStatus)">setAutoBillStatus(Invoice.InvoiceAutoBillStatus)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">One of retry, failed, or success.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Service.html#setBillable(boolean)">setBillable(boolean)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Service.html" title="class in net.amcintosh.freshbooks.models">Service</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#setBilledAmount(java.math.BigDecimal)">setBilledAmount(BigDecimal)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#setBilledStatus(net.amcintosh.freshbooks.models.ProjectBilledStatus)">setBilledStatus(ProjectBilledStatus)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#setBilledStatus(net.amcintosh.freshbooks.models.Project.ProjectBilledStatus)">setBilledStatus(Project.ProjectBilledStatus)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Client.html#setBillingCity(java.lang.String)">setBillingCity(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Client.html" title="class in net.amcintosh.freshbooks.models">Client</a></dt>
 <dd>
@@ -922,7 +1559,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Billing address country.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#setBillingMethod(net.amcintosh.freshbooks.models.ProjectBillingMethod)">setBillingMethod(ProjectBillingMethod)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#setBillingMethod(net.amcintosh.freshbooks.models.Project.ProjectBillingMethod)">setBillingMethod(Project.ProjectBillingMethod)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Client.html#setBillingProvince(java.lang.String)">setBillingProvince(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Client.html" title="class in net.amcintosh.freshbooks.models">Client</a></dt>
 <dd>
@@ -944,8 +1581,24 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Business phone number.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setCity(java.lang.String)">setCity(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">City for address on invoice.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setClientId(long)">setClientId(long)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Set the id of the client the invoice is for.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#setClientId(long)">setClientId(long)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setCode(java.lang.String)">setCode(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Postal/ZIP code for address on invoice.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Money.html#setCode(java.lang.String)">setCode(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Money.html" title="class in net.amcintosh.freshbooks.models">Money</a></dt>
+<dd>
+<div class="block">The three-letter currency code</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Client.html#setCompanyIndustry(java.lang.String)">setCompanyIndustry(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Client.html" title="class in net.amcintosh.freshbooks.models">Client</a></dt>
 <dd>
 <div class="block">Description of industry client is in.</div>
@@ -956,17 +1609,76 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#setComplete(boolean)">setComplete(boolean)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setCountry(java.lang.String)">setCountry(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Country for address on invoice.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setCreateDate(java.time.LocalDate)">setCreateDate(LocalDate)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Date the invoice was created.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Client.html#setCurrencyCode(java.lang.String)">setCurrencyCode(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Client.html" title="class in net.amcintosh.freshbooks.models">Client</a></dt>
 <dd>
 <div class="block">3-letter shortcode for client's preferred currency.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setCurrencyCode(java.lang.String)">setCurrencyCode(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Three-letter currency code for invoice.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setCustomerId(long)">setCustomerId(long)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Set the id of the client the invoice is for.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html#setDateFormat(java.lang.String)">setDateFormat(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html" title="class in net.amcintosh.freshbooks.models">Invoice.InvoicePresentation</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setDepositAmount(net.amcintosh.freshbooks.models.Money)">setDepositAmount(Money)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Amount required as deposit if required.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setDepositPercentage(java.math.BigDecimal)">setDepositPercentage(BigDecimal)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Percent of the invoice's value required as a deposit.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setDepositStatus(net.amcintosh.freshbooks.models.Invoice.InvoiceDepositStatus)">setDepositStatus(Invoice.InvoiceDepositStatus)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Description of deposits applied to invoice.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/LineItem.html#setDescription(java.lang.String)">setDescription(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/LineItem.html" title="class in net.amcintosh.freshbooks.models">LineItem</a></dt>
+<dd>
+<div class="block">Description for the line item.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#setDescription(java.lang.String)">setDescription(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setDiscountDescription(java.lang.String)">setDiscountDescription(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Client-visible note about discount.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setDiscountValue(java.math.BigDecimal)">setDiscountValue(BigDecimal)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Percent amount being discounted from the subtotal, decimal amount ranging from 0 to 100.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setDisplayStatus(net.amcintosh.freshbooks.models.Invoice.InvoiceDisplayStatus)">setDisplayStatus(Invoice.InvoiceDisplayStatus)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Description of status.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#setDueDate(java.time.LocalDate)">setDueDate(LocalDate)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setDueOffsetDays(int)">setDueOffsetDays(int)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Number of days from creation that invoice is due.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Client.html#setEmail(java.lang.String)">setEmail(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Client.html" title="class in net.amcintosh.freshbooks.models">Client</a></dt>
 <dd>
 <div class="block">Client's email.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setEstimateId(long)">setEstimateId(long)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Id of associated estimate</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/LineItem.html#setExpenseId(long)">setExpenseId(long)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/LineItem.html" title="class in net.amcintosh.freshbooks.models">LineItem</a></dt>
+<dd>
+<div class="block">Id of unbilled expense, required when invoice line type is REBILLING_EXPENSE,
+ otherwise should be excluded.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#setExpenseMarkup(int)">setExpenseMarkup(int)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
@@ -978,8 +1690,17 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Client's first name.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setFirstName(java.lang.String)">setFirstName(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">First name of client being invoiced.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#setFixedPrice(java.math.BigDecimal)">setFixedPrice(BigDecimal)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setGenerationDate(java.time.LocalDate)">setGenerationDate(LocalDate)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">The date the invoice was generated from a invoice profile or
+ null if it was not generated.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Client.html#setHomePhone(java.lang.String)">setHomePhone(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Client.html" title="class in net.amcintosh.freshbooks.models">Client</a></dt>
 <dd>
 <div class="block">Client's home phone number.</div>
@@ -988,41 +1709,121 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Service.html#setId(java.lang.Long)">setId(Long)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Service.html" title="class in net.amcintosh.freshbooks.models">Service</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html#setImageLogoSrc(java.lang.String)">setImageLogoSrc(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html" title="class in net.amcintosh.freshbooks.models">Invoice.InvoicePresentation</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#setInternal(boolean)">setInternal(boolean)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setInvoiceNumber(java.lang.String)">setInvoiceNumber(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">The user-specified number that appears on the invoice.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Client.html#setLanguage(java.lang.String)">setLanguage(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Client.html" title="class in net.amcintosh.freshbooks.models">Client</a></dt>
 <dd>
 <div class="block">Shortcode indicating user language e.g.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setLanguage(java.lang.String)">setLanguage(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Two-letter language code, e.g.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Client.html#setLastName(java.lang.String)">setLastName(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Client.html" title="class in net.amcintosh.freshbooks.models">Client</a></dt>
 <dd>
 <div class="block">Client's last name.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setLastName(java.lang.String)">setLastName(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Last name of client being invoiced.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setLastOrderStatus(net.amcintosh.freshbooks.models.Invoice.InvoiceOrderStatus)">setLastOrderStatus(Invoice.InvoiceOrderStatus)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Describes status of last attempted payment.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/LineItem.html#setLineId(long)">setLineId(long)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/LineItem.html" title="class in net.amcintosh.freshbooks.models">LineItem</a></dt>
+<dd>
+<div class="block">Unique-to-this-invoice line id.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setLines(java.util.List)">setLines(List&lt;LineItem&gt;)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Lines of the invoice.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Client.html#setMobilePhone(java.lang.String)">setMobilePhone(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Client.html" title="class in net.amcintosh.freshbooks.models">Client</a></dt>
 <dd>
 <div class="block">Client's mobile phone number.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/LineItem.html#setName(java.lang.String)">setName(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/LineItem.html" title="class in net.amcintosh.freshbooks.models">LineItem</a></dt>
+<dd>
+<div class="block">Name for the line item.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Service.html#setName(java.lang.String)">setName(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Service.html" title="class in net.amcintosh.freshbooks.models">Service</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Tax.html#setName(java.lang.String)">setName(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Tax.html" title="class in net.amcintosh.freshbooks.models">Tax</a></dt>
+<dd>
+<div class="block">Identifiable name for the tax.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Client.html#setNote(java.lang.String)">setNote(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Client.html" title="class in net.amcintosh.freshbooks.models">Client</a></dt>
 <dd>
 <div class="block">Notes kept by admin about client.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setNotes(java.lang.String)">setNotes(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Notes listed on invoice.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Tax.html#setNumber(java.lang.String)">setNumber(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Tax.html" title="class in net.amcintosh.freshbooks.models">Tax</a></dt>
+<dd>
+<div class="block">An external number that identifies your tax submission.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Client.html#setOrganization(java.lang.String)">setOrganization(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Client.html" title="class in net.amcintosh.freshbooks.models">Client</a></dt>
 <dd>
 <div class="block">Name for client's business.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setOrganization(java.lang.String)">setOrganization(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Name of organization being invoiced.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setOwnerId(long)">setOwnerId(long)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">User id of creator of invoice.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setParent(long)">setParent(long)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Id of object this invoice was generated from, 0 if none
+ <br><br>
+ <i>Note:</i> This is only writeable on creation.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setPaymentStatus(net.amcintosh.freshbooks.models.Invoice.InvoicePaymentStatus)">setPaymentStatus(Invoice.InvoicePaymentStatus)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Description of payment status.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setPONumber(java.lang.String)">setPONumber(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Reference number for address on invoice.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setPresentation(net.amcintosh.freshbooks.models.Invoice.InvoicePresentation)">setPresentation(Invoice.InvoicePresentation)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Define invoice logo and styles.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#setProjectManagerId(java.lang.Long)">setProjectManagerId(Long)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#setProjectType(net.amcintosh.freshbooks.models.ProjectType)">setProjectType(ProjectType)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#setProjectType(net.amcintosh.freshbooks.models.Project.ProjectType)">setProjectType(Project.ProjectType)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setProvince(java.lang.String)">setProvince(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Province/state for address on invoice.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/LineItem.html#setQuantity(int)">setQuantity(int)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/LineItem.html" title="class in net.amcintosh.freshbooks.models">LineItem</a></dt>
+<dd>
+<div class="block">Quantity of the line unit, multiplied against unit_cost to get amount.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#setRate(java.math.BigDecimal)">setRate(BigDecimal)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#setRetainerId(long)">setRetainerId(long)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#setSample(java.lang.Boolean)">setSample(Boolean)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#setServices(java.util.ArrayList)">setServices(ArrayList&lt;Service&gt;)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setSentId(long)">setSentId(long)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">User id of user who sent the invoice.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#setServices(java.util.List)">setServices(List&lt;Service&gt;)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Client.html#setShippingCity(java.lang.String)">setShippingCity(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Client.html" title="class in net.amcintosh.freshbooks.models">Client</a></dt>
 <dd>
@@ -1048,19 +1849,100 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Shipping address, second street info.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setShowAttachments(boolean)">setShowAttachments(boolean)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Whether attachments on invoice are rendered in FreshBooks UI.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setStatus(net.amcintosh.freshbooks.models.Invoice.InvoiceStatus)">setStatus(Invoice.InvoiceStatus)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Set the status of the invoice.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setStreet(java.lang.String)">setStreet(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Street for address on invoice.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setStreet2(java.lang.String)">setStreet2(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Second line of street for address on invoice.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/LineItem.html#setTaxAmount1(java.lang.String)">setTaxAmount1(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/LineItem.html" title="class in net.amcintosh.freshbooks.models">LineItem</a></dt>
+<dd>
+<div class="block">First tax amount, in percentage, up to 3 decimal places.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/LineItem.html#setTaxAmount2(java.lang.String)">setTaxAmount2(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/LineItem.html" title="class in net.amcintosh.freshbooks.models">LineItem</a></dt>
+<dd>
+<div class="block">Second tax amount, in percentage, up to 3 decimal places.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/LineItem.html#setTaxName1(java.lang.String)">setTaxName1(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/LineItem.html" title="class in net.amcintosh.freshbooks.models">LineItem</a></dt>
+<dd>
+<div class="block">Name for the first tax on the line item.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/LineItem.html#setTaxName2(java.lang.String)">setTaxName2(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/LineItem.html" title="class in net.amcintosh.freshbooks.models">LineItem</a></dt>
+<dd>
+<div class="block">Name for the second tax on the line item.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/LineItem.html#setTaxNumber1(java.lang.String)">setTaxNumber1(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/LineItem.html" title="class in net.amcintosh.freshbooks.models">LineItem</a></dt>
+<dd>
+<div class="block">First tax number on the line item.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/LineItem.html#setTaxNumber2(java.lang.String)">setTaxNumber2(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/LineItem.html" title="class in net.amcintosh.freshbooks.models">LineItem</a></dt>
+<dd>
+<div class="block">Second tax number on the line item.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setTerms(java.lang.String)">setTerms(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Terms listed on invoice.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html#setThemeFontName(java.lang.String)">setThemeFontName(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html" title="class in net.amcintosh.freshbooks.models">Invoice.InvoicePresentation</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html#setThemeLayout(java.lang.String)">setThemeLayout(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html" title="class in net.amcintosh.freshbooks.models">Invoice.InvoicePresentation</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html#setThemePrimaryColor(java.lang.String)">setThemePrimaryColor(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html" title="class in net.amcintosh.freshbooks.models">Invoice.InvoicePresentation</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#setTitle(java.lang.String)">setTitle(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/LineItem.html#setType(net.amcintosh.freshbooks.models.LineItem.LineItemType)">setType(LineItem.LineItemType)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/LineItem.html" title="class in net.amcintosh.freshbooks.models">LineItem</a></dt>
+<dd>
+<div class="block">Line item type.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/LineItem.html#setUnitCost(net.amcintosh.freshbooks.models.Money)">setUnitCost(Money)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/LineItem.html" title="class in net.amcintosh.freshbooks.models">LineItem</a></dt>
+<dd>
+<div class="block">Unit cost of the line item.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setUseDefaultPresentation(boolean)">setUseDefaultPresentation(boolean)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">By default, if no presentation specified in new invoice request payload,
+ it will be assigned a default presentation.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setV3Status(net.amcintosh.freshbooks.models.Invoice.InvoiceV3Status)">setV3Status(Invoice.InvoiceV3Status)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">v3 status fields give a descriptive name to states which can be used in filters
+ <br><br>
+ <i>Note:</i> This is only writeable on creation.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Client.html#setVatName(java.lang.String)">setVatName(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Client.html" title="class in net.amcintosh.freshbooks.models">Client</a></dt>
 <dd>
 <div class="block">Set the "Value Added Tax" name</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setVATName(java.lang.String)">setVATName(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Value Added Tax name of client.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Client.html#setVatNumber(java.lang.String)">setVatNumber(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Client.html" title="class in net.amcintosh.freshbooks.models">Client</a></dt>
 <dd>
 <div class="block">Set the "Value Added Tax" number</div>
 </dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setVATNumber(java.lang.String)">setVATNumber(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Value Added Tax number of client.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Client.html#setVisState(net.amcintosh.freshbooks.models.VisState)">setVisState(VisState)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Client.html" title="class in net.amcintosh.freshbooks.models">Client</a></dt>
 <dd>
 <div class="block">Set the visibility state of the client.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setVisState(net.amcintosh.freshbooks.models.VisState)">setVisState(VisState)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
+<dd>
+<div class="block">Set the visibility state of the invoice.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Service.html#setVisState(net.amcintosh.freshbooks.models.VisState)">setVisState(VisState)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Service.html" title="class in net.amcintosh.freshbooks.models">Service</a></dt>
 <dd>
@@ -1070,13 +1952,45 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/FreshBooksException.html#statusMessage">statusMessage</a></span> - Variable in exception net.amcintosh.freshbooks.<a href="net/amcintosh/freshbooks/FreshBooksException.html" title="class in net.amcintosh.freshbooks">FreshBooksException</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceAutoBillStatus.html#SUCCESS">SUCCESS</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceAutoBillStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceAutoBillStatus</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceOrderStatus.html#SUCCESS">SUCCESS</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceOrderStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceOrderStatus</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceV3Status.html#SUCCESS">SUCCESS</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceV3Status.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceV3Status</a></dt>
+<dd>&nbsp;</dd>
 </dl>
 <a id="I:T">
 <!--   -->
 </a>
 <h2 class="title">T</h2>
 <dl>
-<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/ProjectBillingMethod.html#team_member_rate">team_member_rate</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/ProjectBillingMethod.html" title="enum in net.amcintosh.freshbooks.models">ProjectBillingMethod</a></dt>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/api/AccountingResponse.AccountingResult.html#tax">tax</a></span> - Variable in class net.amcintosh.freshbooks.models.api.<a href="net/amcintosh/freshbooks/models/api/AccountingResponse.AccountingResult.html" title="class in net.amcintosh.freshbooks.models.api">AccountingResponse.AccountingResult</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="net/amcintosh/freshbooks/models/Tax.html" title="class in net.amcintosh.freshbooks.models"><span class="typeNameLink">Tax</span></a> - Class in <a href="net/amcintosh/freshbooks/models/package-summary.html">net.amcintosh.freshbooks.models</a></dt>
+<dd>
+<div class="block">System-wide taxes for invoices.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Tax.html#%3Cinit%3E()">Tax()</a></span> - Constructor for class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Tax.html" title="class in net.amcintosh.freshbooks.models">Tax</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/api/AccountingListResponse.AccountingListInnerResponse.AccountingListResult.html#taxes">taxes</a></span> - Variable in class net.amcintosh.freshbooks.models.api.<a href="net/amcintosh/freshbooks/models/api/AccountingListResponse.AccountingListInnerResponse.AccountingListResult.html" title="class in net.amcintosh.freshbooks.models.api">AccountingListResponse.AccountingListInnerResponse.AccountingListResult</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/FreshBooksClient.html#taxes()">taxes()</a></span> - Method in class net.amcintosh.freshbooks.<a href="net/amcintosh/freshbooks/FreshBooksClient.html" title="class in net.amcintosh.freshbooks">FreshBooksClient</a></dt>
+<dd>
+<div class="block">FreshBooks taxes resource with calls to get, list, create, update, delete.</div>
+</dd>
+<dt><a href="net/amcintosh/freshbooks/resources/Taxes.html" title="class in net.amcintosh.freshbooks.resources"><span class="typeNameLink">Taxes</span></a> - Class in <a href="net/amcintosh/freshbooks/resources/package-summary.html">net.amcintosh.freshbooks.resources</a></dt>
+<dd>
+<div class="block">FreshBooks taxes resource with calls to get, list, create, update, delete</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Taxes.html#%3Cinit%3E(net.amcintosh.freshbooks.FreshBooksClient)">Taxes(FreshBooksClient)</a></span> - Constructor for class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Taxes.html" title="class in net.amcintosh.freshbooks.resources">Taxes</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="net/amcintosh/freshbooks/models/TaxList.html" title="class in net.amcintosh.freshbooks.models"><span class="typeNameLink">TaxList</span></a> - Class in <a href="net/amcintosh/freshbooks/models/package-summary.html">net.amcintosh.freshbooks.models</a></dt>
+<dd>
+<div class="block">Results of taxes list call containing list of taxes and pagination data.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/TaxList.html#%3Cinit%3E(net.amcintosh.freshbooks.models.api.AccountingListResponse.AccountingListInnerResponse.AccountingListResult)">TaxList(AccountingListResponse.AccountingListInnerResponse.AccountingListResult)</a></span> - Constructor for class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/TaxList.html" title="class in net.amcintosh.freshbooks.models">TaxList</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.ProjectBillingMethod.html#TEAM_MEMBER_RATE">TEAM_MEMBER_RATE</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.ProjectBillingMethod.html" title="enum in net.amcintosh.freshbooks.models">Project.ProjectBillingMethod</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/api/ProjectResponse.ProjectError.html#title">title</a></span> - Variable in class net.amcintosh.freshbooks.models.api.<a href="net/amcintosh/freshbooks/models/api/ProjectResponse.ProjectError.html" title="class in net.amcintosh.freshbooks.models.api">ProjectResponse.ProjectError</a></dt>
 <dd>&nbsp;</dd>
@@ -1098,7 +2012,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a>
 <h2 class="title">U</h2>
 <dl>
-<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/ProjectBilledStatus.html#unbilled">unbilled</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/ProjectBilledStatus.html" title="enum in net.amcintosh.freshbooks.models">ProjectBilledStatus</a></dt>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.ProjectBilledStatus.html#UNBILLED">UNBILLED</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.ProjectBilledStatus.html" title="enum in net.amcintosh.freshbooks.models">Project.ProjectBilledStatus</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceDepositStatus.html#UNPAID">UNPAID</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceDepositStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceDepositStatus</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoicePaymentStatus.html#UNPAID">UNPAID</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoicePaymentStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoicePaymentStatus</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Projects.html#update(long,long,java.util.Map)">update(long, long, Map&lt;String, Object&gt;)</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Projects.html" title="class in net.amcintosh.freshbooks.resources">Projects</a></dt>
 <dd>
@@ -1112,12 +2030,30 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Update the client with the corresponding id.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Invoices.html#update(java.lang.String,long,java.util.Map)">update(String, long, Map&lt;String, Object&gt;)</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Invoices.html" title="class in net.amcintosh.freshbooks.resources">Invoices</a></dt>
+<dd>
+<div class="block">Update the invoice with the corresponding id.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Taxes.html#update(java.lang.String,long,java.util.Map)">update(String, long, Map&lt;String, Object&gt;)</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Taxes.html" title="class in net.amcintosh.freshbooks.resources">Taxes</a></dt>
+<dd>
+<div class="block">Update the tax with the corresponding id.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Clients.html#update(java.lang.String,long,net.amcintosh.freshbooks.models.Client)">update(String, long, Client)</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Clients.html" title="class in net.amcintosh.freshbooks.resources">Clients</a></dt>
 <dd>
 <div class="block">Update the client with the corresponding id.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Invoices.html#update(java.lang.String,long,net.amcintosh.freshbooks.models.Invoice)">update(String, long, Invoice)</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Invoices.html" title="class in net.amcintosh.freshbooks.resources">Invoices</a></dt>
+<dd>
+<div class="block">Update the invoice with the corresponding id.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Taxes.html#update(java.lang.String,long,net.amcintosh.freshbooks.models.Tax)">update(String, long, Tax)</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Taxes.html" title="class in net.amcintosh.freshbooks.resources">Taxes</a></dt>
+<dd>
+<div class="block">Update the tax with the corresponding id.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/Util.html#UTC_ZONE">UTC_ZONE</a></span> - Static variable in class net.amcintosh.freshbooks.<a href="net/amcintosh/freshbooks/Util.html" title="class in net.amcintosh.freshbooks">Util</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">UTC timezone.</div>
+</dd>
 <dt><a href="net/amcintosh/freshbooks/Util.html" title="class in net.amcintosh.freshbooks"><span class="typeNameLink">Util</span></a> - Class in <a href="net/amcintosh/freshbooks/package-summary.html">net.amcintosh.freshbooks</a></dt>
 <dd>
 <div class="block">Utility functions.</div>
@@ -1134,19 +2070,59 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/api/AccountingError.html#value">value</a></span> - Variable in class net.amcintosh.freshbooks.models.api.<a href="net/amcintosh/freshbooks/models/api/AccountingError.html" title="class in net.amcintosh.freshbooks.models.api">AccountingError</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceStatus.html#valueOf(int)">valueOf(int)</a></span> - Static method in enum net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceStatus</a></dt>
+<dd>
+<div class="block">Returns the enum constant of this type with the specified name.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/LineItem.LineItemType.html#valueOf(int)">valueOf(int)</a></span> - Static method in enum net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/LineItem.LineItemType.html" title="enum in net.amcintosh.freshbooks.models">LineItem.LineItemType</a></dt>
+<dd>
+<div class="block">Returns the enum constant of this type with the specified name.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/VisState.html#valueOf(int)">valueOf(int)</a></span> - Static method in enum net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/VisState.html" title="enum in net.amcintosh.freshbooks.models">VisState</a></dt>
 <dd>
 <div class="block">Returns the enum constant of this type with the specified name.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/ProjectBilledStatus.html#valueOf(java.lang.String)">valueOf(String)</a></span> - Static method in enum net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/ProjectBilledStatus.html" title="enum in net.amcintosh.freshbooks.models">ProjectBilledStatus</a></dt>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceAutoBillStatus.html#valueOf(java.lang.String)">valueOf(String)</a></span> - Static method in enum net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceAutoBillStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceAutoBillStatus</a></dt>
 <dd>
 <div class="block">Returns the enum constant of this type with the specified name.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/ProjectBillingMethod.html#valueOf(java.lang.String)">valueOf(String)</a></span> - Static method in enum net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/ProjectBillingMethod.html" title="enum in net.amcintosh.freshbooks.models">ProjectBillingMethod</a></dt>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceDepositStatus.html#valueOf(java.lang.String)">valueOf(String)</a></span> - Static method in enum net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceDepositStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceDepositStatus</a></dt>
 <dd>
 <div class="block">Returns the enum constant of this type with the specified name.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/ProjectType.html#valueOf(java.lang.String)">valueOf(String)</a></span> - Static method in enum net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/ProjectType.html" title="enum in net.amcintosh.freshbooks.models">ProjectType</a></dt>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceDisplayStatus.html#valueOf(java.lang.String)">valueOf(String)</a></span> - Static method in enum net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceDisplayStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceDisplayStatus</a></dt>
+<dd>
+<div class="block">Returns the enum constant of this type with the specified name.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceOrderStatus.html#valueOf(java.lang.String)">valueOf(String)</a></span> - Static method in enum net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceOrderStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceOrderStatus</a></dt>
+<dd>
+<div class="block">Returns the enum constant of this type with the specified name.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoicePaymentStatus.html#valueOf(java.lang.String)">valueOf(String)</a></span> - Static method in enum net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoicePaymentStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoicePaymentStatus</a></dt>
+<dd>
+<div class="block">Returns the enum constant of this type with the specified name.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceStatus.html#valueOf(java.lang.String)">valueOf(String)</a></span> - Static method in enum net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceStatus</a></dt>
+<dd>
+<div class="block">Returns the enum constant of this type with the specified name.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceV3Status.html#valueOf(java.lang.String)">valueOf(String)</a></span> - Static method in enum net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceV3Status.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceV3Status</a></dt>
+<dd>
+<div class="block">Returns the enum constant of this type with the specified name.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/LineItem.LineItemType.html#valueOf(java.lang.String)">valueOf(String)</a></span> - Static method in enum net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/LineItem.LineItemType.html" title="enum in net.amcintosh.freshbooks.models">LineItem.LineItemType</a></dt>
+<dd>
+<div class="block">Returns the enum constant of this type with the specified name.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.ProjectBilledStatus.html#valueOf(java.lang.String)">valueOf(String)</a></span> - Static method in enum net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.ProjectBilledStatus.html" title="enum in net.amcintosh.freshbooks.models">Project.ProjectBilledStatus</a></dt>
+<dd>
+<div class="block">Returns the enum constant of this type with the specified name.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.ProjectBillingMethod.html#valueOf(java.lang.String)">valueOf(String)</a></span> - Static method in enum net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.ProjectBillingMethod.html" title="enum in net.amcintosh.freshbooks.models">Project.ProjectBillingMethod</a></dt>
+<dd>
+<div class="block">Returns the enum constant of this type with the specified name.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.ProjectType.html#valueOf(java.lang.String)">valueOf(String)</a></span> - Static method in enum net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.ProjectType.html" title="enum in net.amcintosh.freshbooks.models">Project.ProjectType</a></dt>
 <dd>
 <div class="block">Returns the enum constant of this type with the specified name.</div>
 </dd>
@@ -1158,17 +2134,57 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Returns the enum constant of this type with the specified name.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/ProjectBilledStatus.html#values()">values()</a></span> - Static method in enum net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/ProjectBilledStatus.html" title="enum in net.amcintosh.freshbooks.models">ProjectBilledStatus</a></dt>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceAutoBillStatus.html#values()">values()</a></span> - Static method in enum net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceAutoBillStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceAutoBillStatus</a></dt>
 <dd>
 <div class="block">Returns an array containing the constants of this enum type, in
 the order they are declared.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/ProjectBillingMethod.html#values()">values()</a></span> - Static method in enum net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/ProjectBillingMethod.html" title="enum in net.amcintosh.freshbooks.models">ProjectBillingMethod</a></dt>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceDepositStatus.html#values()">values()</a></span> - Static method in enum net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceDepositStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceDepositStatus</a></dt>
 <dd>
 <div class="block">Returns an array containing the constants of this enum type, in
 the order they are declared.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/ProjectType.html#values()">values()</a></span> - Static method in enum net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/ProjectType.html" title="enum in net.amcintosh.freshbooks.models">ProjectType</a></dt>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceDisplayStatus.html#values()">values()</a></span> - Static method in enum net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceDisplayStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceDisplayStatus</a></dt>
+<dd>
+<div class="block">Returns an array containing the constants of this enum type, in
+the order they are declared.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceOrderStatus.html#values()">values()</a></span> - Static method in enum net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceOrderStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceOrderStatus</a></dt>
+<dd>
+<div class="block">Returns an array containing the constants of this enum type, in
+the order they are declared.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoicePaymentStatus.html#values()">values()</a></span> - Static method in enum net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoicePaymentStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoicePaymentStatus</a></dt>
+<dd>
+<div class="block">Returns an array containing the constants of this enum type, in
+the order they are declared.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceStatus.html#values()">values()</a></span> - Static method in enum net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceStatus</a></dt>
+<dd>
+<div class="block">Returns an array containing the constants of this enum type, in
+the order they are declared.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceV3Status.html#values()">values()</a></span> - Static method in enum net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceV3Status.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceV3Status</a></dt>
+<dd>
+<div class="block">Returns an array containing the constants of this enum type, in
+the order they are declared.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/LineItem.LineItemType.html#values()">values()</a></span> - Static method in enum net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/LineItem.LineItemType.html" title="enum in net.amcintosh.freshbooks.models">LineItem.LineItemType</a></dt>
+<dd>
+<div class="block">Returns an array containing the constants of this enum type, in
+the order they are declared.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.ProjectBilledStatus.html#values()">values()</a></span> - Static method in enum net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.ProjectBilledStatus.html" title="enum in net.amcintosh.freshbooks.models">Project.ProjectBilledStatus</a></dt>
+<dd>
+<div class="block">Returns an array containing the constants of this enum type, in
+the order they are declared.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.ProjectBillingMethod.html#values()">values()</a></span> - Static method in enum net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.ProjectBillingMethod.html" title="enum in net.amcintosh.freshbooks.models">Project.ProjectBillingMethod</a></dt>
+<dd>
+<div class="block">Returns an array containing the constants of this enum type, in
+the order they are declared.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.ProjectType.html#values()">values()</a></span> - Static method in enum net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.ProjectType.html" title="enum in net.amcintosh.freshbooks.models">Project.ProjectType</a></dt>
 <dd>
 <div class="block">Returns an array containing the constants of this enum type, in
 the order they are declared.</div>
@@ -1183,6 +2199,12 @@ the order they are declared.</div>
 <div class="block">Returns an array containing the constants of this enum type, in
 the order they are declared.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceDisplayStatus.html#VIEWED">VIEWED</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceDisplayStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceDisplayStatus</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceStatus.html#VIEWED">VIEWED</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceStatus.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceStatus</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceV3Status.html#VIEWED">VIEWED</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceV3Status.html" title="enum in net.amcintosh.freshbooks.models">Invoice.InvoiceV3Status</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="net/amcintosh/freshbooks/models/VisState.html" title="enum in net.amcintosh.freshbooks.models"><span class="typeNameLink">VisState</span></a> - Enum in <a href="net/amcintosh/freshbooks/models/package-summary.html">net.amcintosh.freshbooks.models</a></dt>
 <dd>
 <div class="block">Visibility values for a resource.</div>
