@@ -1,4 +1,4 @@
-# This workflows will re-generate the python docs when there are changes on master
+# This workflows will re-generate the javadocs when there are changes on master
 
 name: Generate Documentation
 
