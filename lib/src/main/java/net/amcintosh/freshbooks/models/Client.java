@@ -3,6 +3,7 @@ package net.amcintosh.freshbooks.models;
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.util.Key;
 import net.amcintosh.freshbooks.Util;
+import net.amcintosh.freshbooks.models.api.ConvertibleContent;
 
 import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
@@ -54,7 +55,7 @@ public class Client extends GenericJson implements ConvertibleContent {
     @Key("vis_state") int visState;
 
     /**
-     * Get unique to this business id for client
+     * Get the unique identifier of this client within this business.
      *
      * @return Client Id
      */

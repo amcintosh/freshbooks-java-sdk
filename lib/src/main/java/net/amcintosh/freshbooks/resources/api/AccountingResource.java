@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Handles resources under the `/accounting` endpoints.
+ * Handles resources under the <code>/accounting</code> endpoints.
  */
 public abstract class AccountingResource extends Resource {
 

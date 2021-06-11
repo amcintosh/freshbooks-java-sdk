@@ -4,6 +4,7 @@ import com.google.api.client.json.GenericJson;
 import com.google.api.client.util.Key;
 import com.google.api.client.util.Value;
 import net.amcintosh.freshbooks.Util;
+import net.amcintosh.freshbooks.models.api.ConvertibleContent;
 
 import java.time.ZonedDateTime;
 import java.util.HashMap;

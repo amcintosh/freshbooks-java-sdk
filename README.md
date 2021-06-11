@@ -125,12 +125,14 @@ as if a `get` call.
 Create:
 
 ```java
+// Create from object
 Client clientToCreateOne = new Client();
 clientToCreateOne.setEmail("john.doe@abcorp.com");
 
 Client createdClientOne = freshBooksClient.clients().create(accountId, clientToCreateOne);
 long createdClientOneId = createdClientOne.getId();
 
+// Update from data map
 HashMap<String, Object> clientToCreateTwo = new HashMap();
 clientToCreateTwo.put("email", "john.doe@abcorp.com");
 
@@ -144,10 +146,12 @@ Update:
 Client existingClient = freshBooksClient.clients().get(accountId, clientUserId);
 assertEquals("john.doe@abcorp.com", existingClient.getEmail());
 
+// Update from object
 existingClient.setEmail("new.email@abcorp.ca");
 existingClient = freshBooksClient.clients().update(accountId, clientUserId, existingClient);
 assertEquals("new.email@abcorp.ca", existingClient.getEmail());
 
+// Update from data map
 HashMap<String, Object> updateData = new HashMap();
 updateData.put("email", "newer.email@abcorp.ca");
 existingClient = freshBooksClient.clients().update(accountId, clientUserId, updateData);
@@ -163,6 +167,23 @@ assertEquals(VisState.DELETED, client.getVisState());
 ```
 
 #### Error Handling
+
+Calls made to the FreshBooks API with a non-2xx response result in a `FreshBooksException`.
+This contains the error message, HTTP response code, FreshBooks-specific error number if one exists, 
+and in the case of invalid values, the offending field, value, and a validation message.
+
+Example:
+
+```java
+try {
+    clientResponse = freshBooksClient.clients().get(accountId, 12345); //652471);
+} catch (FreshBooksException e) {
+    assertEquals("Client not found.", e.getMessage());
+    assertEquals("NOT FOUND", e.statusMessage);
+    assertEquals(404, e.statusCode);
+    assertEquals(1012, e.errorNo);
+    assertEquals("ValidationError in client. userid='12345'.", e.getValidationError());
+```
 
 #### Pagination, Filters, and Includes
 

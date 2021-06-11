@@ -10,6 +10,7 @@ import com.google.api.client.json.gson.GsonFactory;
 import net.amcintosh.freshbooks.resources.Clients;
 import net.amcintosh.freshbooks.resources.Invoices;
 import net.amcintosh.freshbooks.resources.Projects;
+import net.amcintosh.freshbooks.resources.Taxes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -61,13 +62,14 @@ public class FreshBooksClient {
     /**
      * Create a new API client instance from the FreshBooks client builder.
      *
-     * Requires a `clientId`.
+     * Requires a <code>clientId</code>.
      *
-     * Specifying a `clientSecret` and `redirectUri` will allow you to follow the authentication flow to get an
-     * `accessToken`.
+     * Specifying a <code>clientSecret</code> and <code>redirectUri</code> will allow
+     * you to follow the authentication flow to get an <code>accessToken</code>.
      *
-     * Alternatively, you can provide an `accessToken` directly, in which case then you don't need to specify a
-     * `clientSecret` (though the token cannot be refreshed in this case).
+     * Alternatively, you can provide an <code>accessToken</code> directly, in which
+     * case then you don't need to specify a <code>clientSecret</code>
+     * (though the token cannot be refreshed in this case).
      *
      * @param builder Instance of FreshBooksClientBuilder
      */
@@ -128,9 +130,9 @@ public class FreshBooksClient {
     }
 
     /**
-     *
+     * Make a request to FreshBooks.
      * @param requestMethod GET, POST, PUT, DELETE
-     * @param resourceUrl Relative URL (eg. <pre>/accounting/account/{accountId}/users/clients</pre>)
+     * @param resourceUrl Relative URL (eg. <code>/accounting/account/{accountId}/users/clients</code>)
      * @return HttpRequest object
      * @throws IOException
      */
@@ -139,9 +141,10 @@ public class FreshBooksClient {
     }
 
     /**
+     * Make a request to FreshBooks with a data payload.
      *
      * @param requestMethod GET, POST, PUT, DELETE
-     * @param resourceUrl Relative URL (eg. <pre>/accounting/account/{accountId}/users/clients</pre>)
+     * @param resourceUrl Relative URL (eg. <code>/accounting/account/{accountId}/users/clients</code>)
      * @param data
      * @return HttpRequest object
      * @throws IOException
@@ -202,6 +205,16 @@ public class FreshBooksClient {
     }
 
     /**
+     * FreshBooks taxes resource with calls to get, list, create, update, delete.
+     *
+     * @return Taxes resource initialized with this FreshBooksClient
+     */
+    public Taxes taxes() {
+        return new Taxes(this);
+    }
+
+
+    /**
      * Builder for FreshBooksClient.
      */
     public static class FreshBooksClientBuilder {
@@ -227,8 +240,8 @@ public class FreshBooksClient {
         private int writeTimeout = -1;
 
         /**
-         * Builder for FreshBooksClient. Requires a <pre>clientId</pre>, which will then allow you
-         * to provide an <pre>accessToken</pre> by appending the call to <pre>withAccessToken()</pre>.
+         * Builder for FreshBooksClient. Requires a <code>clientId</code>, which will then allow you
+         * to provide an <code>accessToken</code> by appending the call to <code>withAccessToken()</code>.
          *
          * @param clientId Your FreshBooks application client Id
          */
@@ -237,9 +250,9 @@ public class FreshBooksClient {
         }
 
         /**
-         * Builder for FreshBooksClient. Requires a <pre>clientId</pre>, <pre>clientSecret</pre>, and
-         * <pre>redirectUri</pre> which will allow you to follow the authentication flow to get an
-         * <pre>accessToken</pre>.
+         * Builder for FreshBooksClient. Requires a <code>clientId</code>, <code>clientSecret</code>, and
+         * <code>redirectUri</code> which will allow you to follow the authentication flow to get an
+         * <code>accessToken</code>.
          *
          * @param clientId Your FreshBooks application client Id
          * @param clientSecret Your FreshBooks application client secret

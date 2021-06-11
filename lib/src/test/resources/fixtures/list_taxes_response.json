@@ -1,0 +1,33 @@
+{
+    "response": {
+        "result": {
+            "page": 1,
+            "pages": 1,
+            "per_page": 15,
+            "taxes": [
+                {
+                    "accounting_systemid": "ACM123",
+                    "amount": "13",
+                    "compound": false,
+                    "id": 7840,
+                    "name": "HST",
+                    "number": "RT 1234",
+                    "taxid": 7840,
+                    "updated": "2020-06-16 10:04:37"
+                },
+                {
+                    "accounting_systemid": "ACM123",
+                    "amount": "5",
+                    "compound": false,
+                    "id": 7841,
+                    "name": "GST",
+                    "number": "RT 1235",
+                    "taxid": 7841,
+                    "updated": "2020-06-17 15:13:34"
+                }
+
+            ],
+            "total": 2
+        }
+    }
+}

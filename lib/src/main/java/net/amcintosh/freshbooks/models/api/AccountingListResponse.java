@@ -3,6 +3,7 @@ package net.amcintosh.freshbooks.models.api;
 import com.google.api.client.util.Key;
 import net.amcintosh.freshbooks.models.Client;
 import net.amcintosh.freshbooks.models.Invoice;
+import net.amcintosh.freshbooks.models.Tax;
 
 import java.util.ArrayList;
 
@@ -25,6 +26,8 @@ public class AccountingListResponse {
             @Key public ArrayList<Client> clients;
 
             @Key public ArrayList<Invoice> invoices;
+
+            @Key public ArrayList<Tax> taxes;
         }
 
     }

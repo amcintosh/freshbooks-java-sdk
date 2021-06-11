@@ -2,6 +2,7 @@ package net.amcintosh.freshbooks.models;
 
 import com.google.api.client.util.Key;
 import net.amcintosh.freshbooks.Util;
+import net.amcintosh.freshbooks.models.api.ConvertibleContent;
 
 import java.math.BigDecimal;
 import java.util.HashMap;

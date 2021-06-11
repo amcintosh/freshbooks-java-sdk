@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Builder for including relationships, sub-resources, or additional data in the response.
  *
- * Can be passed to a `.get()` call, or to a `.list()` call.
+ * Can be passed to a <code>.get()</code> call, or to a <code>.list()</code> call.
  *
  * <pre>{@code
  *     FreshBooksClient freshBooksClient = new FreshBooksClient.FreshBooksClientBuilder("some_client_id")

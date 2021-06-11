@@ -1,7 +1,7 @@
 package net.amcintosh.freshbooks;
 
 import com.google.common.collect.ImmutableList;
-import net.amcintosh.freshbooks.models.ConvertibleContent;
+import net.amcintosh.freshbooks.models.api.ConvertibleContent;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -14,7 +14,14 @@ import java.util.Map;
  * Utility functions. Mostly around dates and timezones.
  */
 public class Util {
+
+    /**
+     * UTC timezone.
+     */
     public static final ZoneId UTC_ZONE = ZoneId.of("UTC");
+    /**
+     * Local timezone used by the FreshBooks accounting service.
+     */
     public static final ZoneId ACCOUNTING_LOCAL_ZONE = ZoneId.of("US/Eastern");
 
     /**
@@ -64,6 +71,11 @@ public class Util {
 
     /**
      * Add a key/value to the provided Map only if the value is not null.
+     * <br>
+     * If the value is a List, then iterates over the list.
+     * <br>
+     * If the value is an object implementing <code>ConvertibleContent</code> then
+     * it returns a Map of that object by calling <code>getContent()</code>.
      *
      * @param data The Map to add to
      * @param key The key to add

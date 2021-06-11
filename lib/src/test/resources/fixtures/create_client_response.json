@@ -2,7 +2,7 @@
     "response": {
         "result": {
             "client": {
-                "accounting_systemid": "6VApk",
+                "accounting_systemid": "ACM123",
                 "allow_email_include_pdf": false,
                 "allow_late_fees": true,
                 "allow_late_notifications": true,

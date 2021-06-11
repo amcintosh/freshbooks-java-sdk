@@ -5,6 +5,7 @@ import com.google.api.client.util.Key;
 import com.google.api.client.util.NullValue;
 import com.google.api.client.util.Value;
 import net.amcintosh.freshbooks.Util;
+import net.amcintosh.freshbooks.models.api.ConvertibleContent;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -84,7 +85,7 @@ public class Invoice extends GenericJson implements ConvertibleContent {
     @Key InvoicePresentation presentation;
 
     /**
-     * Get unique to this business id for invoice.
+     * Get the unique identifier of this invoice within this business.
      *
      * @return The id of the invoice
      */
@@ -95,7 +96,7 @@ public class Invoice extends GenericJson implements ConvertibleContent {
     /**
      * Get unique to this business id for invoice.
      *
-     * Note: This is the same as `getId`.
+     * Note: This is the same as <code>getId</code>.
      *
      * @return The id of the invoice
      */
@@ -114,7 +115,7 @@ public class Invoice extends GenericJson implements ConvertibleContent {
 
     /**
      * Get unique identifier of the account the invoice exists on.
-     * The same as `getAccountingSystemId()`.
+     * The same as <code>getAccountingSystemId()</code>.
      *
      * @return Accounting System Id
      */
@@ -246,8 +247,8 @@ public class Invoice extends GenericJson implements ConvertibleContent {
     /**
      * Get the id of the client the invoice is for.
      * <br><br>
-     * <i>Note:</i> The API request/response uses `customerid` rather than `clientid`,
-     * so this method is identical to `getCustomerId()`.
+     * <i>Note:</i> The API request/response uses <code>customerid</code> rather than
+     * <code>clientid</code>, so this method is identical to <code>getCustomerId()</code>.
      *
      * @return Id of client
      */
@@ -258,8 +259,8 @@ public class Invoice extends GenericJson implements ConvertibleContent {
     /**
      * Set the id of the client the invoice is for.
      * <br><br>
-     * <i>Note:</i> The API request/response uses `customerid` rather than `clientid`,
-     * so this method is identical to `setCustomerId()`.
+     * <i>Note:</i> The API request/response uses <code>customerid</code> rather than
+     * <code>clientid</code>, so this method is identical to <code>setCustomerId()</code>.
      *
      * @param clientId Id of client
      */
@@ -331,8 +332,8 @@ public class Invoice extends GenericJson implements ConvertibleContent {
     /**
      * Get the id of the client the invoice is for.
      * <br><br>
-     * <i>Note:</i> The API request/response uses `customerid` rather than `clientid`,
-     * so this method is identical to `getClientId()`.
+     * <i>Note:</i> The API request/response uses <code>customerid</code> rather than
+     * <code>clientid</code>, so this method is identical to <code>getClientId()</code>.
      *
      * @return Id of client
      */
@@ -343,8 +344,8 @@ public class Invoice extends GenericJson implements ConvertibleContent {
     /**
      * Set the id of the client the invoice is for.
      * <br><br>
-     * <i>Note:</i> The API request/response uses `customerid` rather than `clientid`,
-     * so this method is identical to `setClientId()`.
+     * <i>Note:</i> The API request/response uses <code>customerid</code> rather than
+     * <code>clientid</code>, so this method is identical to <code>setClientId()</code>.
      *
      * @param customerId Id of client
      */
@@ -394,7 +395,7 @@ public class Invoice extends GenericJson implements ConvertibleContent {
 
     /**
      * Amount required as deposit if required. Can be set directly or calculated
-     * by the invoice `depositPercentage`.
+     * by the invoice <code>depositPercentage</code>.
      *
      * @param depositAmount Money object of required deposit
      */
@@ -413,7 +414,7 @@ public class Invoice extends GenericJson implements ConvertibleContent {
 
     /**
      * Percent of the invoice's value required as a deposit.
-     * If set, invoice will have a `depositAmount` calculated.
+     * If set, invoice will have a <code>depositAmount</code> calculated.
      *
      * @param depositPercentage BigDecimal of percentage
      */
@@ -497,8 +498,8 @@ public class Invoice extends GenericJson implements ConvertibleContent {
     }
 
     /**
-     * Date invoice is marked as due by calculated from `due_offset_days`.
-     * If `due_offset_days` is not set, it will default to the date of issue.
+     * Date invoice is marked as due by calculated from <code>due_offset_days</code>.
+     * If <code>due_offset_days</code> is not set, it will default to the date of issue.
      *
      * The API returns this in YYYY-MM-DD format.
      *
@@ -846,7 +847,7 @@ public class Invoice extends GenericJson implements ConvertibleContent {
      * <br/>
      * By default, if no presentation specified in a new invoice request payload,
      * it will be assigned a default presentation. To override this default behaviour,
-     * set `useDefaultPresentation` to false.
+     * set <code>useDefaultPresentation</code> to false.
      * <br/><br/>
      * <i>Note:</i> The presentation details are only returned with a invoice call
      * using a "presentation" include.
@@ -872,7 +873,7 @@ public class Invoice extends GenericJson implements ConvertibleContent {
      * <br/>
      * By default, if no presentation specified in a new invoice request payload,
      * it will be assigned a default presentation. To override this default behaviour,
-     * set `useDefaultPresentation` to false.
+     * set <code>useDefaultPresentation</code> to false.
      * <br/><br/>
      * <i>Note:</i> The presentation details are only returned with a invoice call
      * using a "presentation" include.

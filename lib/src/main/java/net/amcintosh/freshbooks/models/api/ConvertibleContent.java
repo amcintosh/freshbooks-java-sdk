@@ -1,4 +1,4 @@
-package net.amcintosh.freshbooks.models;
+package net.amcintosh.freshbooks.models.api;
 
 import java.util.Map;
 

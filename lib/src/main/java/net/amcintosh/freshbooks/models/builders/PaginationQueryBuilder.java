@@ -5,9 +5,9 @@ import net.amcintosh.freshbooks.resources.api.ResourceType;
 /**
  * Builder for making paginated list queries.
  *
- * Has two attributes, `page` and `perPage`. When a `PaginationQueryBuilder` is passed
- * to a `.list()` call, the call will fetch only the `perPage` number of results and will
- * fetch the results offset by `page`.
+ * Has two attributes, <code>page</code> and <code>perPage</code>. When a <code>PaginationQueryBuilder</code> is passed
+ * to a <code>.list()</code> call, the call will fetch only the <code>perPage</code> number of results and will
+ * fetch the results offset by <code>page</code>.
  *
  * <pre>{@code
  *     FreshBooksClient freshBooksClient = new FreshBooksClient.FreshBooksClientBuilder("some_client_id")
