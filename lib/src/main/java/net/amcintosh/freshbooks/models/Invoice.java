@@ -161,7 +161,7 @@ public class Invoice extends GenericJson implements ConvertibleContent {
 
     /**
      * Whether this invoice has a credit card saved.
-     * <br/><br/>
+     * <br><br>
      * <i>Note:</i> This is only writeable on creation.
      *
      * @param autoBill
@@ -181,7 +181,7 @@ public class Invoice extends GenericJson implements ConvertibleContent {
 
     /**
      * One of retry, failed, or success.
-     * <br/><br/>
+     * <br><br>
      * <i>Note:</i> This is only writeable on creation.
      *
      * @param autoBillStatus
@@ -384,7 +384,7 @@ public class Invoice extends GenericJson implements ConvertibleContent {
 
     /**
      * Description of deposits applied to invoice.
-     * <br/><br/>
+     * <br><br>
      * <i>Note:</i> This is only writeable on creation.
      *
      * @param depositStatus
@@ -488,7 +488,7 @@ public class Invoice extends GenericJson implements ConvertibleContent {
     /**
      * Description of status. Used primarily for the FreshBooks UI.
      *
-     * <br/><br/>
+     * <br><br>
      * <i>Note:</i> This is only writeable on creation.
      *
      * @param displayStatus
@@ -520,7 +520,7 @@ public class Invoice extends GenericJson implements ConvertibleContent {
 
     /**
      * Number of days from creation that invoice is due.
-     * <br/>
+     * <br>
      * If not set, the due date will default to the date of issue.
      *
      * @param dueOffsetDays
@@ -646,7 +646,7 @@ public class Invoice extends GenericJson implements ConvertibleContent {
 
     /**
      * Describes status of last attempted payment.
-     * <br/><br/>
+     * <br><br>
      * <i>Note:</i> This is only writeable on creation.
      *
      * @param lastOrderStatus
@@ -675,9 +675,9 @@ public class Invoice extends GenericJson implements ConvertibleContent {
 
     /**
      * Lines of the invoice.
-     * <br/><br/>
+     * <br><br>
      * <i>Note:</i> These are only returned with a invoice call using a "lines" include.
-     * <br/>
+     * <br>
      * Eg.
      * <pre>{@code
      *     IncludesQueryBuilder inc = new IncludesQueryBuilder().include("lines");
@@ -762,7 +762,7 @@ public class Invoice extends GenericJson implements ConvertibleContent {
 
     /**
      * User id of creator of invoice. Typically 1 for the business admin.
-     * <br/><br/>
+     * <br><br>
      * <i>Note:</i> This is only writeable on creation.
      *
      * @param ownerId User id
@@ -791,7 +791,7 @@ public class Invoice extends GenericJson implements ConvertibleContent {
 
     /**
      * Id of object this invoice was generated from, 0 if none
-     * <br/><br/>
+     * <br><br>
      * <i>Note:</i> This is only writeable on creation.
      *
      * @param parent Id of the parent resource
@@ -803,7 +803,7 @@ public class Invoice extends GenericJson implements ConvertibleContent {
     /**
      * Description of payment status.
      * One of 'unpaid', 'partial', 'paid', and 'auto-paid'.
-     * <br/>See the v3_status table on this page for descriptions of each.
+     * <br>See the v3_status table on this page for descriptions of each.
      *
      * @return
      */
@@ -814,8 +814,8 @@ public class Invoice extends GenericJson implements ConvertibleContent {
     /**
      * Description of payment status.
      * One of 'unpaid', 'partial', 'paid', and 'auto-paid'.
-     * <br/>See the v3_status table on this page for descriptions of each.
-     * <br/><br/>
+     * <br>See the v3_status table on this page for descriptions of each.
+     * <br><br>
      * <i>Note:</i> This is only writeable on creation.
      *
      * @param paymentStatus
@@ -844,14 +844,14 @@ public class Invoice extends GenericJson implements ConvertibleContent {
 
     /**
      * Define invoice logo and styles.
-     * <br/>
+     * <br>
      * By default, if no presentation specified in a new invoice request payload,
      * it will be assigned a default presentation. To override this default behaviour,
      * set <code>useDefaultPresentation</code> to false.
-     * <br/><br/>
+     * <br><br>
      * <i>Note:</i> The presentation details are only returned with a invoice call
      * using a "presentation" include.
-     * <br/>
+     * <br>
      * <pre>{@code
      *     IncludesQueryBuilder inc = new IncludesQueryBuilder().include("presentation");
      *
@@ -870,14 +870,14 @@ public class Invoice extends GenericJson implements ConvertibleContent {
 
     /**
      * Define invoice logo and styles.
-     * <br/>
+     * <br>
      * By default, if no presentation specified in a new invoice request payload,
      * it will be assigned a default presentation. To override this default behaviour,
      * set <code>useDefaultPresentation</code> to false.
-     * <br/><br/>
+     * <br><br>
      * <i>Note:</i> The presentation details are only returned with a invoice call
      * using a "presentation" include.
-     * <br/>
+     * <br>
      * <pre>{@code
      *     IncludesQueryBuilder inc = new IncludesQueryBuilder().include("presentation");
      *
@@ -923,7 +923,7 @@ public class Invoice extends GenericJson implements ConvertibleContent {
 
     /**
      * User id of user who sent the invoice. Typically 1 for the business admin.
-     * <br/><br/>
+     * <br><br>
      * <i>Note:</i> This is only writeable on creation.
      *
      * @param sentId User id
@@ -1037,7 +1037,7 @@ public class Invoice extends GenericJson implements ConvertibleContent {
     /**
      * By default, if no presentation specified in new invoice request payload,
      * it will be assigned a default presentation.
-     * <br/>
+     * <br>
      * To override this default behaviour, set useDefaultPresentation to false.
      *
      * @return
@@ -1049,7 +1049,7 @@ public class Invoice extends GenericJson implements ConvertibleContent {
     /**
      * By default, if no presentation specified in new invoice request payload,
      * it will be assigned a default presentation.
-     * <br/>
+     * <br>
      * To override this default behaviour, set useDefaultPresentation to false.
      *
      * @param useDefaultPresentation
@@ -1069,7 +1069,7 @@ public class Invoice extends GenericJson implements ConvertibleContent {
 
     /**
      * v3 status fields give a descriptive name to states which can be used in filters
-     * <br/><br/>
+     * <br><br>
      * <i>Note:</i> This is only writeable on creation.
      *
      * @param v3Status
