@@ -49,6 +49,7 @@ public class PaginationQueryBuilder implements QueryBuilder {
     }
 
     /**
+     * Set the page number to query.
      *
      * @param page Page of results to return
      * @return The PaginationQueryBuilder instance.
@@ -59,6 +60,7 @@ public class PaginationQueryBuilder implements QueryBuilder {
     }
 
     /**
+     * Set the number of results per page.
      *
      * @param perPage Number of results to return
      * @return The PaginationQueryBuilder instance.
