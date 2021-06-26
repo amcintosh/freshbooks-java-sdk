@@ -13,6 +13,7 @@ public class FreshBooksException extends Exception {
 
     public FreshBooksException(String message, String statusMessage, int statusCode, Throwable cause) {
         super(message, cause);
+        this.statusMessage = statusMessage;
         this.statusCode = statusCode;
     }
 

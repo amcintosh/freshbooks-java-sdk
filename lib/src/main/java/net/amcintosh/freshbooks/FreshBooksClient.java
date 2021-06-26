@@ -7,10 +7,9 @@ import com.google.api.client.http.json.JsonHttpContent;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.json.gson.GsonFactory;
-import net.amcintosh.freshbooks.resources.Clients;
-import net.amcintosh.freshbooks.resources.Invoices;
-import net.amcintosh.freshbooks.resources.Projects;
-import net.amcintosh.freshbooks.resources.Taxes;
+import net.amcintosh.freshbooks.models.Identity;
+import net.amcintosh.freshbooks.resources.*;
+import net.amcintosh.freshbooks.resources.api.AuthResource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -175,6 +174,10 @@ public class FreshBooksClient {
                 .setWriteTimeout(this.writeTimeout)
                 .setThrowExceptionOnExecuteError(false);
         return request;
+    }
+
+    public Identity currentUser() throws FreshBooksException {
+        return new CurrentUser(this).get();
     }
 
     /**

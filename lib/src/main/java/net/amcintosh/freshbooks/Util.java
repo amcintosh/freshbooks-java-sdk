@@ -70,6 +70,16 @@ public class Util {
     }
 
     /**
+     * Get a datetime zoned to UTC from an ISO date string. Eg. "2020-09-13T03:10:13Z"
+     *
+     * @param dateString A project-like date-string. eg. 2020-09-13T03:10:13Z
+     * @return UTC-zoned datetime
+     */
+    public static ZonedDateTime getZonedDateTimeFromISO(String dateString) {
+        return ZonedDateTime.parse(dateString).withZoneSameInstant(ZoneId.of("UTC"));
+    }
+
+    /**
      * Add a key/value to the provided Map only if the value is not null.
      * <br>
      * If the value is a List, then iterates over the list.

@@ -7,5 +7,6 @@ package net.amcintosh.freshbooks.resources.api;
  */
 public enum ResourceType {
     ACCOUNTING_LIKE,
+    AUTH,
     PROJECT_LIKE
 }
