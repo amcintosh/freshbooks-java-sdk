@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9};
+var data = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -238,6 +238,13 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>static java.time.ZonedDateTime</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getZonedDateTimeFromISO(java.lang.String)">getZonedDateTimeFromISO</a></span>&#8203;(java.lang.String&nbsp;dateString)</code></th>
+<td class="colLast">
+<div class="block">Get a datetime zoned to UTC from an ISO date string.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>static java.time.ZonedDateTime</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getZonedDateTimeFromProjectNaiveUTC(java.lang.String)">getZonedDateTimeFromProjectNaiveUTC</a></span>&#8203;(java.lang.String&nbsp;dateString)</code></th>
 <td class="colLast">
 <div class="block">Get a datetime zoned to UTC from an project-like endpoint date string.</div>
@@ -378,6 +385,22 @@ extends java.lang.Object</pre>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>dateString</code> - A project-like date-string. eg. 2020-09-13T03:10:13</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>UTC-zoned datetime</dd>
+</dl>
+</li>
+</ul>
+<a id="getZonedDateTimeFromISO(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getZonedDateTimeFromISO</h4>
+<pre class="methodSignature">public static&nbsp;java.time.ZonedDateTime&nbsp;getZonedDateTimeFromISO&#8203;(java.lang.String&nbsp;dateString)</pre>
+<div class="block">Get a datetime zoned to UTC from an ISO date string. Eg. "2020-09-13T03:10:13Z"</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>dateString</code> - A project-like date-string. eg. 2020-09-13T03:10:13Z</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>UTC-zoned datetime</dd>
 </dl>
