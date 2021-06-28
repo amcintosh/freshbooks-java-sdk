@@ -196,7 +196,7 @@ public class ClientsTest {
         String jsonResponse = TestUtil.loadTestJson("fixtures/get_client_response.json");
         jsonResponse = jsonResponse.replace("\"vis_state\": 0", "\"vis_state\": 1");
 
-        ImmutableMap<String, Object> data = ImmutableMap.of("vis_state", VisState.DELETED);
+        ImmutableMap<String, Object> data = ImmutableMap.of("vis_state", VisState.DELETED.getValue());
 
         FreshBooksClient mockedFreshBooksClient = mock(FreshBooksClient.class);
         HttpRequest mockRequest = TestUtil.buildMockHttpRequest(200, jsonResponse);

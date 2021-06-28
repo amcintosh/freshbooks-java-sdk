@@ -199,6 +199,15 @@ public class FreshBooksClient {
     }
 
     /**
+     * FreshBooks items resource with calls to get, list, create, update, delete.
+     *
+     * @return Items resource initialized with this FreshBooksClient
+     */
+    public Items items() {
+        return new Items(this);
+    }
+
+    /**
      * FreshBooks projects resource with calls to get, list, create, update, delete.
      *
      * @return Projects resource initialized with this FreshBooksClient

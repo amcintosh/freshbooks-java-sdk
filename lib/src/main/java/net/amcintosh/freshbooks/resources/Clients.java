@@ -164,11 +164,8 @@ public class Clients extends AccountingResource {
      * @throws FreshBooksException If the call is not successful
      */
     public Client delete(String accountId, long clientId) throws FreshBooksException {
-        String url = this.getUrl(accountId, clientId);
-        ImmutableMap<String, Object> data = ImmutableMap.of("vis_state", VisState.DELETED);
-        ImmutableMap<String, Object> content = ImmutableMap.of("client", data);
-        AccountingResponse result = this.handleRequest(HttpMethods.PUT, url, content);
-        return result.response.result.client;
+        ImmutableMap<String, Object> data = ImmutableMap.of("vis_state", VisState.DELETED.getValue());
+        return this.update(accountId, clientId, data);
     }
 
 }

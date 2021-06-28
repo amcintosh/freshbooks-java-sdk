@@ -1,0 +1,24 @@
+{
+    "response": {
+        "result": {
+            "item": {
+                "accounting_systemid": "ACM123",
+                "description": "It's Cheap",
+                "id": 4331,
+                "inventory": null,
+                "itemid": 4331,
+                "name": "A Cheap Item",
+                "qty": "100",
+                "sku": "SQ1234",
+                "tax1": 7840,
+                "tax2": 0,
+                "unit_cost": {
+                    "amount": "1.00",
+                    "code": "CAD"
+                },
+                "updated": "2021-06-13 10:45:20",
+                "vis_state": 0
+            }
+        }
+    }
+}
