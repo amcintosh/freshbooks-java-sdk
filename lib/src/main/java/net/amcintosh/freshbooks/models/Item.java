@@ -5,11 +5,9 @@ import com.google.api.client.util.Key;
 import net.amcintosh.freshbooks.Util;
 import net.amcintosh.freshbooks.models.api.ConvertibleContent;
 
-import java.math.BigDecimal;
 import java.time.ZonedDateTime;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Optional;
 
 /**
  * Items are stored from invoice lines to make invoicing easier in the future.

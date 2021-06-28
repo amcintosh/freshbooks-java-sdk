@@ -2,12 +2,13 @@ package net.amcintosh.freshbooks.resources;
 
 import com.google.api.client.http.HttpMethods;
 import com.google.api.client.http.HttpRequest;
-import com.google.api.client.util.Key;
 import com.google.common.collect.ImmutableMap;
 import net.amcintosh.freshbooks.FreshBooksClient;
 import net.amcintosh.freshbooks.FreshBooksException;
 import net.amcintosh.freshbooks.TestUtil;
-import net.amcintosh.freshbooks.models.*;
+import net.amcintosh.freshbooks.models.Item;
+import net.amcintosh.freshbooks.models.ItemList;
+import net.amcintosh.freshbooks.models.VisState;
 import org.junit.Test;
 
 import java.io.IOException;
