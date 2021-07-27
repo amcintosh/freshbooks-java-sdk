@@ -6,7 +6,7 @@ The FreshBooks Java SDK allows you to more easily utilize the [FreshBooks API](h
 
 ## Usage
 
-TODO: See for module documentation.
+See [https://amcintosh.github.io/freshbooks-java-sdk/](https://amcintosh.github.io/freshbooks-java-sdk/) for Javadocs.
 
 ### Configuring the API freshBooksClient
 
@@ -46,28 +46,28 @@ around them. See the [FreshBooks API - Authentication](https://www.freshbooks.co
 First, instantiate your FreshBooksClient with `clientId`, `clientSecret`, and `redirectUri` as above.
 
 To get an access token, the user must first authorize your application. This can be done by sending
-the user to the FreshBooks authorization page. The authorization URL can be obtained by calling 
+the user to the FreshBooks authorization page. The authorization URL can be obtained by calling
 `freshBooksClient.getAuthRequestUri()`. Once the user has clicked accept there, they will be
 redirected to your `redirectUri` with an access grant code.
 
-When the user has been redirected to your `redirectUri` and you have obtained the access grant code from the URL 
+When the user has been redirected to your `redirectUri` and you have obtained the access grant code from the URL
 parameters, you can exchange that code for a valid access token.
 
 ```java
 AuthorizationToken token = freshBooksClient.getAccessToken(accessGrantCode);
 ```
 
-This call stores the Authorization token in the FreshBooksClient for use, and returns the results to you 
+This call stores the Authorization token in the FreshBooksClient for use, and returns the results to you
 for later usage. Eg.
 
 ```java
 FreshBooksClient freshBooksClient = new FreshBooksClient.FreshBooksClientBuilder(
         "808c90fa4f722ddd984ab8d88afc13427d3f6aad0898ec929cb2cb982835d5c7")
-    .withAuthorizationToken(token);          
+    .withAuthorizationToken(token);
 ```
 
-The `AuthorizationToken` contains all of the relevant details from the token response including the `accessToken`, 
-`refreshToken`, `createdAt`, `expiresIn`, and the `scopes` the token is authorized for. 
+The `AuthorizationToken` contains all of the relevant details from the token response including the `accessToken`,
+`refreshToken`, `createdAt`, `expiresIn`, and the `scopes` the token is authorized for.
 
 ```java
 assertEquals("my_access_token", token.getAccessToken());
@@ -87,8 +87,8 @@ assertEquals("my_new_access_token", refreshedToken.getAccessToken());
 
 ### Current User
 
-FreshBooks users are uniquely identified by their email across our entire product. One user may act on several 
-Businesses in different ways, and our Identity model is how we keep track of it. Each unique user has an Identity, 
+FreshBooks users are uniquely identified by their email across our entire product. One user may act on several
+Businesses in different ways, and our Identity model is how we keep track of it. Each unique user has an Identity,
 and each Identity has Business Memberships which define the permissions they have.
 
 See [FreshBooks API - Business, Roles, and Identity](https://www.freshbooks.com/api/me_endpoint) and
@@ -232,7 +232,7 @@ assertEquals(VisState.DELETED, client.getVisState());
 #### Error Handling
 
 Calls made to the FreshBooks API with a non-2xx response result in a `FreshBooksException`.
-This contains the error message, HTTP response code, FreshBooks-specific error number if one exists, 
+This contains the error message, HTTP response code, FreshBooks-specific error number if one exists,
 and in the case of invalid values, the offending field, value, and a validation message.
 
 Example:
