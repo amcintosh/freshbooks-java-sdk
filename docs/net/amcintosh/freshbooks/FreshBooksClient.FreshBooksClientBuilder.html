@@ -204,23 +204,23 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="FreshBooksClient.FreshBooksClientBuilder.html" title="class in net.amcintosh.freshbooks">FreshBooksClient.FreshBooksClientBuilder</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#withAuthorizationToken(net.amcintosh.freshbooks.models.AuthorizationToken)">withAuthorizationToken</a></span>&#8203;(<a href="models/AuthorizationToken.html" title="class in net.amcintosh.freshbooks.models">AuthorizationToken</a>&nbsp;authorizationToken)</code></th>
+<td class="colLast">
+<div class="block">Initialize the client with a refresh token.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code><a href="FreshBooksClient.FreshBooksClientBuilder.html" title="class in net.amcintosh.freshbooks">FreshBooksClient.FreshBooksClientBuilder</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#withConnectTimeout(int)">withConnectTimeout</a></span>&#8203;(int&nbsp;timeout)</code></th>
 <td class="colLast">
 <div class="block">Set the timeout in milliseconds to establish a connection (0 for infinite).</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="FreshBooksClient.FreshBooksClientBuilder.html" title="class in net.amcintosh.freshbooks">FreshBooksClient.FreshBooksClientBuilder</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#withReadTimeout(int)">withReadTimeout</a></span>&#8203;(int&nbsp;timeout)</code></th>
 <td class="colLast">
 <div class="block">Set the timeout in milliseconds to read data from a connection (0 for infinite).</div>
-</td>
-</tr>
-<tr id="i4" class="altColor">
-<td class="colFirst"><code><a href="FreshBooksClient.FreshBooksClientBuilder.html" title="class in net.amcintosh.freshbooks">FreshBooksClient.FreshBooksClientBuilder</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#withRefreshToken(java.lang.String)">withRefreshToken</a></span>&#8203;(java.lang.String&nbsp;refreshToken)</code></th>
-<td class="colLast">
-<div class="block">Initialize the client with a refresh token.</div>
 </td>
 </tr>
 <tr id="i5" class="rowColor">
@@ -322,17 +322,17 @@ extends java.lang.Object</pre>
 </dl>
 </li>
 </ul>
-<a id="withRefreshToken(java.lang.String)">
+<a id="withAuthorizationToken(net.amcintosh.freshbooks.models.AuthorizationToken)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>withRefreshToken</h4>
-<pre class="methodSignature">public&nbsp;<a href="FreshBooksClient.FreshBooksClientBuilder.html" title="class in net.amcintosh.freshbooks">FreshBooksClient.FreshBooksClientBuilder</a>&nbsp;withRefreshToken&#8203;(java.lang.String&nbsp;refreshToken)</pre>
+<h4>withAuthorizationToken</h4>
+<pre class="methodSignature">public&nbsp;<a href="FreshBooksClient.FreshBooksClientBuilder.html" title="class in net.amcintosh.freshbooks">FreshBooksClient.FreshBooksClientBuilder</a>&nbsp;withAuthorizationToken&#8203;(<a href="models/AuthorizationToken.html" title="class in net.amcintosh.freshbooks.models">AuthorizationToken</a>&nbsp;authorizationToken)</pre>
 <div class="block">Initialize the client with a refresh token.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>refreshToken</code> - A existing valid OAuth2 refresh token</dd>
+<dd><code>authorizationToken</code> - An AuthorizationToken with existing valid OAuth2 tokens</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The builder instance</dd>
 </dl>

@@ -152,6 +152,28 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/api/AuthMeResponse.html#%3Cinit%3E()">AuthMeResponse()</a></span> - Constructor for class net.amcintosh.freshbooks.models.api.<a href="net/amcintosh/freshbooks/models/api/AuthMeResponse.html" title="class in net.amcintosh.freshbooks.models.api">AuthMeResponse</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="net/amcintosh/freshbooks/resources/Authorization.html" title="class in net.amcintosh.freshbooks.resources"><span class="typeNameLink">Authorization</span></a> - Class in <a href="net/amcintosh/freshbooks/resources/package-summary.html">net.amcintosh.freshbooks.resources</a></dt>
+<dd>
+<div class="block">Resource for authorization calls for bearer and refresh tokens.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Authorization.html#%3Cinit%3E(net.amcintosh.freshbooks.FreshBooksClient)">Authorization(FreshBooksClient)</a></span> - Constructor for class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Authorization.html" title="class in net.amcintosh.freshbooks.resources">Authorization</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="net/amcintosh/freshbooks/models/AuthorizationToken.html" title="class in net.amcintosh.freshbooks.models"><span class="typeNameLink">AuthorizationToken</span></a> - Class in <a href="net/amcintosh/freshbooks/models/package-summary.html">net.amcintosh.freshbooks.models</a></dt>
+<dd>
+<div class="block">Authorization data including the OAuth bearer token, expiry, and refresh token.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/AuthorizationToken.html#%3Cinit%3E()">AuthorizationToken()</a></span> - Constructor for class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/AuthorizationToken.html" title="class in net.amcintosh.freshbooks.models">AuthorizationToken</a></dt>
+<dd>
+<div class="block">Create empty authorization data.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/AuthorizationToken.html#%3Cinit%3E(java.lang.String)">AuthorizationToken(String)</a></span> - Constructor for class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/AuthorizationToken.html" title="class in net.amcintosh.freshbooks.models">AuthorizationToken</a></dt>
+<dd>
+<div class="block">Create authorization data from a pre-existing, valid, bearer token.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/AuthorizationToken.html#%3Cinit%3E(java.lang.String,java.lang.String)">AuthorizationToken(String, String)</a></span> - Constructor for class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/AuthorizationToken.html" title="class in net.amcintosh.freshbooks.models">AuthorizationToken</a></dt>
+<dd>
+<div class="block">Create authorization data from pre-existing, valid, bearer and refresh tokens.</div>
+</dd>
 <dt><a href="net/amcintosh/freshbooks/resources/api/AuthResource.html" title="class in net.amcintosh.freshbooks.resources.api"><span class="typeNameLink">AuthResource</span></a> - Class in <a href="net/amcintosh/freshbooks/resources/api/package-summary.html">net.amcintosh.freshbooks.resources.api</a></dt>
 <dd>
 <div class="block">Handles resources under the <code>/auth</code> endpoints.</div>
@@ -479,6 +501,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Get a single tax with the corresponding id.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/AuthorizationToken.html#getAccessToken()">getAccessToken()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/AuthorizationToken.html" title="class in net.amcintosh.freshbooks.models">AuthorizationToken</a></dt>
+<dd>
+<div class="block">Get the authorized bearer token from the OAuth2 token response.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/FreshBooksClient.html#getAccessToken(java.lang.String)">getAccessToken(String)</a></span> - Method in class net.amcintosh.freshbooks.<a href="net/amcintosh/freshbooks/FreshBooksClient.html" title="class in net.amcintosh.freshbooks">FreshBooksClient</a></dt>
+<dd>
+<div class="block">Makes a call to the FreshBooks token URL to get an access_token.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Business.html#getAccountId()">getAccountId()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Business.html" title="class in net.amcintosh.freshbooks.models">Business</a></dt>
 <dd>
 <div class="block">Unique identifier of the accounting system the business is
@@ -539,6 +569,18 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Tax.html#getAmount()">getAmount()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Tax.html" title="class in net.amcintosh.freshbooks.models">Tax</a></dt>
 <dd>
 <div class="block">Decimal representing percentage value of tax.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/FreshBooksClient.html#getAuthRequestUri()">getAuthRequestUri()</a></span> - Method in class net.amcintosh.freshbooks.<a href="net/amcintosh/freshbooks/FreshBooksClient.html" title="class in net.amcintosh.freshbooks">FreshBooksClient</a></dt>
+<dd>
+<div class="block">Returns the url that a client needs to request an oauth grant from the server.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Authorization.html#getAuthRequestUri(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.util.List)">getAuthRequestUri(String, String, String, String, List&lt;String&gt;)</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Authorization.html" title="class in net.amcintosh.freshbooks.resources">Authorization</a></dt>
+<dd>
+<div class="block">Returns the url that a client needs to request an oauth grant from the server.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/FreshBooksClient.html#getAuthRequestUri(java.util.List)">getAuthRequestUri(List&lt;String&gt;)</a></span> - Method in class net.amcintosh.freshbooks.<a href="net/amcintosh/freshbooks/FreshBooksClient.html" title="class in net.amcintosh.freshbooks">FreshBooksClient</a></dt>
+<dd>
+<div class="block">Returns the url that a client needs to request an oauth grant from the server.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getAutoBillStatus()">getAutoBillStatus()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
 <dd>
@@ -669,6 +711,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Country for address on invoice.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/AuthorizationToken.html#getCreatedAt()">getCreatedAt()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/AuthorizationToken.html" title="class in net.amcintosh.freshbooks.models">AuthorizationToken</a></dt>
+<dd>
+<div class="block">Time the bearer token was created.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Identity.html#getCreatedAt()">getCreatedAt()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Identity.html" title="class in net.amcintosh.freshbooks.models">Identity</a></dt>
 <dd>
 <div class="block">Date the identity was created.</div>
@@ -782,6 +828,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#getExpenseMarkup()">getExpenseMarkup()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/AuthorizationToken.html#getExpiresAt()">getExpiresAt()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/AuthorizationToken.html" title="class in net.amcintosh.freshbooks.models">AuthorizationToken</a></dt>
+<dd>
+<div class="block">Time the bearer token expires at.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/AuthorizationToken.html#getExpiresIn()">getExpiresIn()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/AuthorizationToken.html" title="class in net.amcintosh.freshbooks.models">AuthorizationToken</a></dt>
+<dd>
+<div class="block">Number of seconds since creation that the token will expire at.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Client.html#getFax()">getFax()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Client.html" title="class in net.amcintosh.freshbooks.models">Client</a></dt>
 <dd>
 <div class="block">Client's fax number.</div>
@@ -1079,6 +1133,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#getRate()">getRate()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/AuthorizationToken.html#getRefreshToken()">getRefreshToken()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/AuthorizationToken.html" title="class in net.amcintosh.freshbooks.models">AuthorizationToken</a></dt>
+<dd>
+<div class="block">Get the authorized refresh token from the OAuth2 token response.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/api/AccountingResource.html#getResourceType()">getResourceType()</a></span> - Method in class net.amcintosh.freshbooks.resources.api.<a href="net/amcintosh/freshbooks/resources/api/AccountingResource.html" title="class in net.amcintosh.freshbooks.resources.api">AccountingResource</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/api/AuthResource.html#getResourceType()">getResourceType()</a></span> - Method in class net.amcintosh.freshbooks.resources.api.<a href="net/amcintosh/freshbooks/resources/api/AuthResource.html" title="class in net.amcintosh.freshbooks.resources.api">AuthResource</a></dt>
@@ -1097,6 +1155,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#getSample()">getSample()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/AuthorizationToken.html#getScopes()">getScopes()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/AuthorizationToken.html" title="class in net.amcintosh.freshbooks.models">AuthorizationToken</a></dt>
+<dd>
+<div class="block">Get the scopes that the token is authorized for.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getSentId()">getSentId()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
 <dd>
 <div class="block">User id of user who sent the invoice.</div>
@@ -1205,6 +1267,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.PendingInvitation.html#getToEmail()">getToEmail()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.PendingInvitation.html" title="class in net.amcintosh.freshbooks.models">Project.PendingInvitation</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Authorization.html#getToken(java.util.Map)">getToken(Map&lt;String, Object&gt;)</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Authorization.html" title="class in net.amcintosh.freshbooks.resources">Authorization</a></dt>
+<dd>
+<div class="block">Get the currently authorized identity from the FreshBooks /me endpoint.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Pages.html#getTotal()">getTotal()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Pages.html" title="class in net.amcintosh.freshbooks.models">Pages</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/LineItem.html#getType()">getType()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/LineItem.html" title="class in net.amcintosh.freshbooks.models">LineItem</a></dt>
@@ -1346,6 +1412,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/api/ProjectResource.html#handleRequest(java.lang.String,java.lang.String)">handleRequest(String, String)</a></span> - Method in class net.amcintosh.freshbooks.resources.api.<a href="net/amcintosh/freshbooks/resources/api/ProjectResource.html" title="class in net.amcintosh.freshbooks.resources.api">ProjectResource</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/api/AccountingResource.html#handleRequest(java.lang.String,java.lang.String,java.util.Map)">handleRequest(String, String, Map&lt;String, Object&gt;)</a></span> - Method in class net.amcintosh.freshbooks.resources.api.<a href="net/amcintosh/freshbooks/resources/api/AccountingResource.html" title="class in net.amcintosh.freshbooks.resources.api">AccountingResource</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/api/AuthResource.html#handleRequest(java.lang.String,java.lang.String,java.util.Map)">handleRequest(String, String, Map&lt;String, Object&gt;)</a></span> - Method in class net.amcintosh.freshbooks.resources.api.<a href="net/amcintosh/freshbooks/resources/api/AuthResource.html" title="class in net.amcintosh.freshbooks.resources.api">AuthResource</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/api/ProjectResource.html#handleRequest(java.lang.String,java.lang.String,java.util.Map)">handleRequest(String, String, Map&lt;String, Object&gt;)</a></span> - Method in class net.amcintosh.freshbooks.resources.api.<a href="net/amcintosh/freshbooks/resources/api/ProjectResource.html" title="class in net.amcintosh.freshbooks.resources.api">ProjectResource</a></dt>
 <dd>&nbsp;</dd>
@@ -1781,6 +1849,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dl>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/LineItem.LineItemType.html#REBILLING_EXPENSE">REBILLING_EXPENSE</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/LineItem.LineItemType.html" title="enum in net.amcintosh.freshbooks.models">LineItem.LineItemType</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/FreshBooksClient.html#refreshAccessToken()">refreshAccessToken()</a></span> - Method in class net.amcintosh.freshbooks.<a href="net/amcintosh/freshbooks/FreshBooksClient.html" title="class in net.amcintosh.freshbooks">FreshBooksClient</a></dt>
+<dd>
+<div class="block">Makes a call to the FreshBooks token URL to refresh an access_token.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/FreshBooksClient.html#request(java.lang.String,java.lang.String)">request(String, String)</a></span> - Method in class net.amcintosh.freshbooks.<a href="net/amcintosh/freshbooks/FreshBooksClient.html" title="class in net.amcintosh.freshbooks">FreshBooksClient</a></dt>
 <dd>
 <div class="block">Make a request to FreshBooks.</div>
@@ -1835,6 +1907,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.ProjectBillingMethod.html#SERVICE_RATE">SERVICE_RATE</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.ProjectBillingMethod.html" title="enum in net.amcintosh.freshbooks.models">Project.ProjectBillingMethod</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/AuthorizationToken.html#setAccessToken(java.lang.String)">setAccessToken(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/AuthorizationToken.html" title="class in net.amcintosh.freshbooks.models">AuthorizationToken</a></dt>
+<dd>
+<div class="block">Set the bearer token for use in the client.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#setActive(boolean)">setActive(boolean)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#setAddress(java.lang.String)">setAddress(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
@@ -2147,6 +2223,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#setRate(java.math.BigDecimal)">setRate(BigDecimal)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/AuthorizationToken.html#setRefreshToken(java.lang.String)">setRefreshToken(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/AuthorizationToken.html" title="class in net.amcintosh.freshbooks.models">AuthorizationToken</a></dt>
+<dd>
+<div class="block">Set the refresh token for use in the client.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#setRetainerId(long)">setRetainerId(long)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#setSample(java.lang.Boolean)">setSample(Boolean)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
@@ -2592,6 +2672,10 @@ the order they are declared.</div>
 <dd>
 <div class="block">Initialize the client with an access token.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/FreshBooksClient.FreshBooksClientBuilder.html#withAuthorizationToken(net.amcintosh.freshbooks.models.AuthorizationToken)">withAuthorizationToken(AuthorizationToken)</a></span> - Method in class net.amcintosh.freshbooks.<a href="net/amcintosh/freshbooks/FreshBooksClient.FreshBooksClientBuilder.html" title="class in net.amcintosh.freshbooks">FreshBooksClient.FreshBooksClientBuilder</a></dt>
+<dd>
+<div class="block">Initialize the client with a refresh token.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/FreshBooksClient.FreshBooksClientBuilder.html#withConnectTimeout(int)">withConnectTimeout(int)</a></span> - Method in class net.amcintosh.freshbooks.<a href="net/amcintosh/freshbooks/FreshBooksClient.FreshBooksClientBuilder.html" title="class in net.amcintosh.freshbooks">FreshBooksClient.FreshBooksClientBuilder</a></dt>
 <dd>
 <div class="block">Set the timeout in milliseconds to establish a connection (0 for infinite).</div>
@@ -2599,10 +2683,6 @@ the order they are declared.</div>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/FreshBooksClient.FreshBooksClientBuilder.html#withReadTimeout(int)">withReadTimeout(int)</a></span> - Method in class net.amcintosh.freshbooks.<a href="net/amcintosh/freshbooks/FreshBooksClient.FreshBooksClientBuilder.html" title="class in net.amcintosh.freshbooks">FreshBooksClient.FreshBooksClientBuilder</a></dt>
 <dd>
 <div class="block">Set the timeout in milliseconds to read data from a connection (0 for infinite).</div>
-</dd>
-<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/FreshBooksClient.FreshBooksClientBuilder.html#withRefreshToken(java.lang.String)">withRefreshToken(String)</a></span> - Method in class net.amcintosh.freshbooks.<a href="net/amcintosh/freshbooks/FreshBooksClient.FreshBooksClientBuilder.html" title="class in net.amcintosh.freshbooks">FreshBooksClient.FreshBooksClientBuilder</a></dt>
-<dd>
-<div class="block">Initialize the client with a refresh token.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/FreshBooksClient.FreshBooksClientBuilder.html#withUserAgent(java.lang.String)">withUserAgent(String)</a></span> - Method in class net.amcintosh.freshbooks.<a href="net/amcintosh/freshbooks/FreshBooksClient.FreshBooksClientBuilder.html" title="class in net.amcintosh.freshbooks">FreshBooksClient.FreshBooksClientBuilder</a></dt>
 <dd>
