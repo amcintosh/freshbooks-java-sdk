@@ -7,6 +7,7 @@ import net.amcintosh.freshbooks.FreshBooksException;
 import net.amcintosh.freshbooks.models.api.AuthErrorResponse;
 
 import java.io.IOException;
+import java.util.Map;
 
 /**
  * Handles resources under the <code>/auth</code> endpoints.
@@ -30,12 +31,16 @@ public class AuthResource extends Resource {
     }
 
     protected HttpResponse handleRequest(String method, String url) throws FreshBooksException {
+        return this.handleRequest(method, url, null);
+    }
+
+    protected HttpResponse handleRequest(String method, String url, Map<String, Object> content) throws FreshBooksException {
         HttpResponse response;
         int statusCode = 0;
         String statusMessage = null;
 
         try {
-            HttpRequest request = this.freshBooksClient.request(method, url);
+            HttpRequest request = this.freshBooksClient.request(method, url, content);
             response = request.execute();
             statusCode = response.getStatusCode();
             statusMessage = response.getStatusMessage();

@@ -13,7 +13,7 @@ TODO: See for module documentation.
 You can create an instance of the API client in one of two ways:
 
 - By providing your application's OAuth2 `clientId` and `clientSecret` and following through the auth flow, which
-  when complete will return an access token
+  when complete will return an access token.
 - Or if you already have a valid access token, you can instantiate the client with that token, however token refresh
   flows will not function without the application id and secret.
 
@@ -33,14 +33,77 @@ Or
 import net.amcintosh.freshbooks.FreshBooksClient;
 
 FreshBooksClient freshBooksClient = new FreshBooksClient.FreshBooksClientBuilder(
-    "your application id")
+        "your application id")
     .withToken("a valid token")
     .build();
 ```
 
 #### Authoization flow
 
+_This is a brief summary of the OAuth2 authorization flow and the methods in the FreshBooks API Client
+around them. See the [FreshBooks API - Authentication](https://www.freshbooks.com/api/authentication) documentation._
+
+First, instantiate your FreshBooksClient with `clientId`, `clientSecret`, and `redirectUri` as above.
+
+To get an access token, the user must first authorize your application. This can be done by sending
+the user to the FreshBooks authorization page. The authorization URL can be obtained by calling 
+`freshBooksClient.getAuthRequestUri()`. Once the user has clicked accept there, they will be
+redirected to your `redirectUri` with an access grant code.
+
+When the user has been redirected to your `redirectUri` and you have obtained the access grant code from the URL 
+parameters, you can exchange that code for a valid access token.
+
+```java
+AuthorizationToken token = freshBooksClient.getAccessToken(accessGrantCode);
+```
+
+This call stores the Authorization token in the FreshBooksClient for use, and returns the results to you 
+for later usage. Eg.
+
+```java
+FreshBooksClient freshBooksClient = new FreshBooksClient.FreshBooksClientBuilder(
+        "808c90fa4f722ddd984ab8d88afc13427d3f6aad0898ec929cb2cb982835d5c7")
+    .withAuthorizationToken(token);          
+```
+
+The `AuthorizationToken` contains all of the relevant details from the token response including the `accessToken`, 
+`refreshToken`, `createdAt`, `expiresIn`, and the `scopes` the token is authorized for. 
+
+```java
+assertEquals("my_access_token", token.getAccessToken());
+assertEquals("my_refresh_token", token.getRefreshToken());
+assertEquals(ZonedDateTime.of(2021, 7, 26, 16, 57, 6, 0, ZoneId.of("UTC")), token.getCreatedAt());
+assertEquals(100, token.getExpiresIn());
+assertEquals(ZonedDateTime.of(2021, 7, 26, 16, 58, 46, 0, ZoneId.of("UTC")), token.getExpiresAt());
+assertEquals(ImmutableList.of("some:scope", "some:other:scope"), token.getScopes());
+```
+
+When the token expires, it can be refreshed with the `refreshToken` value in the `FreshBooksClient`:
+
+```java
+AuthorizationToken refreshedToken = freshBooksClient.refreshAccessToken();
+assertEquals("my_new_access_token", refreshedToken.getAccessToken());
+```
+
 ### Current User
+
+FreshBooks users are uniquely identified by their email across our entire product. One user may act on several 
+Businesses in different ways, and our Identity model is how we keep track of it. Each unique user has an Identity, 
+and each Identity has Business Memberships which define the permissions they have.
+
+See [FreshBooks API - Business, Roles, and Identity](https://www.freshbooks.com/api/me_endpoint) and
+[FreshBooks API - The Identity Model](https://www.freshbooks.com/api/identity_model).
+
+The current user can be accessed by:
+
+```java
+Identity currentUser = freshBooksClient.currentUser();
+
+String userEmail = currentUser.getEmail();
+
+List<BusinessMembership> businesses = currentUser.getBusinessMemberships();
+BusinessRole businessRole = businesses.get(0).getRole();
+```
 
 ### Making API Calls
 
@@ -233,6 +296,8 @@ assertEquals("PaginationQueryBuilder{page=3, perPage=5}", paginator.toString());
 
 ##### Filters
 
+TODO
+
 ##### Includes
 
 To include additional relationships, sub-resources, or data in a list or get response, a `IncludesQueryBuilder`
@@ -266,6 +331,3 @@ assertEquals("USD", clients.get(0).getOutstandingBalance().getCode());
 ## Development
 
 ### Testing
-
-
-### Documentations

@@ -1,26 +1,26 @@
 package net.amcintosh.freshbooks;
 
-
 import com.google.api.client.http.*;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.http.json.JsonHttpContent;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.json.gson.GsonFactory;
+import com.google.common.collect.ImmutableMap;
+import net.amcintosh.freshbooks.models.AuthorizationToken;
 import net.amcintosh.freshbooks.models.Identity;
 import net.amcintosh.freshbooks.resources.*;
-import net.amcintosh.freshbooks.resources.api.AuthResource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.annotation.Nullable;
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.time.Instant;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Properties;
+
 
 /**
  * FreshBooks API client.
@@ -32,11 +32,9 @@ import java.util.Properties;
  * }</pre>
  */
 public class FreshBooksClient {
-    private static final Logger log = LoggerFactory.getLogger(FreshBooksClient.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(FreshBooksClient.class);
     private static final JsonFactory JSON_FACTORY = new GsonFactory();
 
-    private static final String API_TOKEN_URL = "auth/oauth/token";
-    private static final String AUTH_URL = "/service/auth/oauth/authorize";
     private final static String VERSION_PROPERTIES = "version.properties";
 
     private final String clientId;
@@ -47,9 +45,7 @@ public class FreshBooksClient {
     private final String authorizationUrl;
     private final String tokenUrl;
 
-    private String accessToken;
-    private String refreshToken;
-    private Instant accessTokenExpiresAt; //ofEpochSecond(long)
+    private AuthorizationToken authorizationToken;
 
     private final String userAgent;
     private static Optional<String> version = Optional.empty();
@@ -80,8 +76,8 @@ public class FreshBooksClient {
         this.clientId = builder.clientId;
         this.clientSecret = builder.clientSecret;
         this.redirectUri = builder.redirectUri;
-        this.accessToken = builder.accessToken;
-        this.refreshToken = builder.refreshToken;
+        this.authorizationToken = builder.authorizationToken;
+
         this.userAgent = Optional.ofNullable(builder.userAgent).orElseGet(this::defaultUserAgent);
         this.connectTimeout = builder.connectTimeout;
         this.readTimeout = builder.readTimeout;
@@ -113,7 +109,7 @@ public class FreshBooksClient {
                 try {
                     inputStream.close();
                 } catch (IOException e) {
-                    log.warn("Unable to close version input stream");
+                    LOGGER.warn("Unable to close version input stream");
                 }
             }
         }
@@ -123,9 +119,100 @@ public class FreshBooksClient {
 
     @Override
     public String toString() {
-        return "Client{" +
-                "clientId='" + clientId + '\'' +
-                '}';
+        return "Client{"
+                + "clientId='" + clientId + '\''
+                + '}';
+    }
+
+    /**
+     * Returns the url that a client needs to request an oauth grant from the server.
+     * <br><br>
+     * To get an oauth access token, send your user to this URL. The user will be prompted to
+     * log in to FreshBooks, after which they will be redirected to the `redirectUri` set on
+     * the client with the access grant as a parameter. That grant can then be used to fetch an
+     * access token by calling `getAccessToken`.
+     * <br><br>
+     * If scopes are not specified, then the access token will be given the default scopes your
+     * application is registered for.
+     * <br><br>
+     * <i>Note:</i> The `redirectUri` must be one of the URLs your application is registered for.
+     *
+     * @see <a href="https://www.freshbooks.com/api/authentication">FreshBooks API - Authentication</a>
+     *
+     * @return The URL for the authorization request
+     */
+    public String getAuthRequestUri() {
+        return new Authorization(this).getAuthRequestUri(
+            authorizationUrl, clientId, clientSecret, redirectUri, null
+        );
+    }
+
+    /**
+     * Returns the url that a client needs to request an oauth grant from the server.
+     * <br><br>
+     * To get an oauth access token, send your user to this URL. The user will be prompted to
+     * log in to FreshBooks, after which they will be redirected to the `redirectUri` set on
+     * the client with the access grant as a parameter. That grant can then be used to fetch an
+     * access token by calling `getAccessToken`.
+     * <br><br>
+     * If scopes are not specified, then the access token will be given the default scopes your
+     * application is registered for.
+     * <br><br>
+     * <i>Note:</i> The `redirectUri` must be one of the URLs your application is registered for.
+     *
+     * @see <a href="https://www.freshbooks.com/api/authentication">FreshBooks API - Authentication</a>
+     *
+     * @param scopes  List of scopes if your want an access token with only a subset of your registered scopes.
+     * @return The URL for the authorization request
+     */
+    public String getAuthRequestUri(List<String> scopes) {
+        return new Authorization(this).getAuthRequestUri(authorizationUrl, clientId, clientSecret, redirectUri, scopes);
+    }
+
+    /**
+     * Makes a call to the FreshBooks token URL to get an access_token.
+     * <br><br>
+     * This requires the access_grant code obtained after the user is redirected by the authorization
+     * step. See {@link #getAuthRequestUri()}.
+     * <br><br>
+     * This call sets the authorization token details on the FreshBooksClient instance and then returns
+     * those values in an {@link AuthorizationToken AuthorizationToken}.
+     *
+     * @param code access_grant code from the authorization redirect
+     * @return
+     */
+    public AuthorizationToken getAccessToken(String code) throws FreshBooksException {
+        ImmutableMap<String, Object> payload = ImmutableMap.of(
+                "client_id", this.clientId,
+                "client_secret", this.clientSecret,
+                "grant_type", "authorization_code",
+                "redirect_uri", this.redirectUri,
+                "code", code
+        );
+        authorizationToken = new Authorization(this).getToken(payload);
+        return authorizationToken;
+    }
+
+    /**
+     * Makes a call to the FreshBooks token URL to refresh an access_token.
+     * <br><br>
+     * This requires the AuthorizationToken on the client to have a valid refreshToken
+     * <br><br>
+     * This call sets the authorization token details on the FreshBooksClient instance and then returns
+     * those values in an {@link AuthorizationToken AuthorizationToken}.
+     *
+     * @return
+     */
+    public AuthorizationToken refreshAccessToken() throws FreshBooksException {
+        ImmutableMap<String, Object> payload = ImmutableMap.of(
+                "client_id", this.clientId,
+                "client_secret", this.clientSecret,
+                "grant_type", "refresh_token",
+                "redirect_uri", this.redirectUri,
+                "refresh_token", this.authorizationToken.getRefreshToken()
+        );
+        authorizationToken = new Authorization(this).getToken(payload);
+        return authorizationToken;
     }
 
     /**
@@ -148,10 +235,11 @@ public class FreshBooksClient {
      * @return HttpRequest object
      * @throws IOException
      */
-    public HttpRequest request(String requestMethod, String resourceUrl, @Nullable Map<String, Object> data) throws IOException {
+    public HttpRequest request(String requestMethod, String resourceUrl, @Nullable Map<String, Object> data)
+            throws IOException {
         GenericUrl requestUrl = new GenericUrl(this.baseUrl + resourceUrl);
         HttpHeaders requestHeaders = new HttpHeaders()
-                .setAuthorization("Bearer " + this.accessToken)
+                .setAuthorization("Bearer " + this.authorizationToken.getAccessToken())
                 .setUserAgent(this.userAgent);
 
         HttpRequestFactory requestFactory = new NetHttpTransport().createRequestFactory(
@@ -240,11 +328,10 @@ public class FreshBooksClient {
         private String tokenUrl;
 
         private final String clientId;
-        private String clientSecret;
-        private String redirectUri;
+        private String clientSecret = "";
+        private String redirectUri = "";
 
-        private String accessToken;
-        private String refreshToken;
+        private AuthorizationToken authorizationToken = new AuthorizationToken();
 
         private String userAgent;
         private int connectTimeout = -1;
@@ -283,18 +370,18 @@ public class FreshBooksClient {
          * @return The builder instance
          */
         public FreshBooksClientBuilder withAccessToken(String accessToken) {
-            this.accessToken = accessToken;
+            this.authorizationToken = new AuthorizationToken(accessToken);
             return this;
         }
 
         /**
          * Initialize the client with a refresh token.
          *
-         * @param refreshToken A existing valid OAuth2 refresh token
+         * @param authorizationToken An AuthorizationToken with existing valid OAuth2 tokens
          * @return The builder instance
          */
-        public FreshBooksClientBuilder withRefreshToken(String refreshToken) {
-            this.refreshToken = refreshToken;
+        public FreshBooksClientBuilder withAuthorizationToken(AuthorizationToken authorizationToken) {
+            this.authorizationToken = authorizationToken;
             return this;
         }
 
@@ -366,13 +453,13 @@ public class FreshBooksClient {
             this.authorizationUrl = this.getEnvDefault("FRESHBOOKS_AUTH_URL", AUTH_BASE_URL);
             this.tokenUrl = this.getEnvDefault("FRESHBOOKS_AUTH_URL", AUTH_BASE_URL);
             if (this.connectTimeout < 0) {
-                this.connectTimeout = this.DEFAULT_TIMEOUT;
+                this.connectTimeout = DEFAULT_TIMEOUT;
             }
             if (this.readTimeout < 0) {
-                this.readTimeout = this.DEFAULT_TIMEOUT;
+                this.readTimeout = DEFAULT_TIMEOUT;
             }
             if (this.writeTimeout < 0) {
-                this.writeTimeout = this.DEFAULT_WRITE_TIMEOUT;
+                this.writeTimeout = DEFAULT_WRITE_TIMEOUT;
             }
             return new FreshBooksClient(this);
         }

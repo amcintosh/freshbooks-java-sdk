@@ -24,7 +24,7 @@ public class CurrentUserTest {
         FreshBooksClient mockedFreshBooksClient = mock(FreshBooksClient.class);
         HttpRequest mockRequest = TestUtil.buildMockHttpRequest(200, jsonResponse);
         when(mockedFreshBooksClient.request(HttpMethods.GET,
-                "/auth/api/v1/users/me")).thenReturn(mockRequest);
+                "/auth/api/v1/users/me", null)).thenReturn(mockRequest);
 
         CurrentUser currentUser = new CurrentUser(mockedFreshBooksClient);
         Identity identity = currentUser.get();

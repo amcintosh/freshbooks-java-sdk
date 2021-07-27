@@ -25,8 +25,7 @@ public class Identity extends GenericJson {
     @Key("confirmed_at") String confirmedAt;
     @Key("created_at") String createdAt;
     //@Key List<> groups
-    @Key("business_memberships")
-    List<BusinessMembership> businessMemberships;
+    @Key("business_memberships") List<BusinessMembership> businessMemberships;
 
     /**
      * The identity's unique id.
