@@ -1,8 +1,24 @@
 # FreshBooks Java SDK
 
-The FreshBooks Java SDK allows you to more easily utilize the [FreshBooks API](https://www.freshbooks.com/api).
+A FreshBooks Java SDK to allow you to more easily utilize the [FreshBooks API](https://www.freshbooks.com/api).
 
 ## Installation
+
+Using Maven:
+
+```xml
+<dependency>
+  <groupId>com.auth0</groupId>
+  <artifactId>auth0</artifactId>
+  <version>1.33.0</version>
+</dependency>
+```
+
+or Gradle:
+
+```groovy
+implementation 'com.auth0:auth0:1.33.0'
+```
 
 ## Usage
 
