@@ -12,7 +12,7 @@ plugins {
     id 'jacoco'
 }
 
-version = '0.1'
+version = '0.0.2'
 
 repositories {
     // Use JCenter for resolving dependencies.
@@ -70,8 +70,15 @@ jacocoTestCoverageVerification {
     violationRules {
         rule {
             limit {
-                minimum = 0.75
+                minimum = 0.85
             }
         }
     }
 }
+
+ext {
+    PUBLISH_GROUP_ID = 'net.amcintosh'
+    PUBLISH_VERSION = project.version
+    PUBLISH_ARTIFACT_ID = 'freshbooks-sdk'
+}
+apply from: "${rootProject.projectDir}/scripts/publish-module.gradle"

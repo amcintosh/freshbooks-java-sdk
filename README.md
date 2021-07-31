@@ -1,8 +1,24 @@
 # FreshBooks Java SDK
 
-The FreshBooks Java SDK allows you to more easily utilize the [FreshBooks API](https://www.freshbooks.com/api).
+A FreshBooks Java SDK to allow you to more easily utilize the [FreshBooks API](https://www.freshbooks.com/api).
 
 ## Installation
+
+Using Maven:
+
+```xml
+<dependency>
+  <groupId>net.amcintosh</groupId>
+  <artifactId>freshbooks-sdk</artifactId>
+  <version>0.0.2</version>
+</dependency>
+```
+
+or Gradle:
+
+```groovy
+implementation 'net.amcintosh:freshbooks-sdk:0.0.2'
+```
 
 ## Usage
 
