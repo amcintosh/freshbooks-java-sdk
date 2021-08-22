@@ -8,6 +8,7 @@
 
 plugins {
     // Apply the java-library plugin for API and implementation separation.
+    id 'checkstyle'
     id 'java-library'
     id 'jacoco'
 }

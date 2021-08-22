@@ -343,7 +343,3 @@ assertEquals("USD", clients.get(0).getOutstandingBalance().getCode());
 ```
 
 ##### Sorting
-
-## Development
-
-### Testing
