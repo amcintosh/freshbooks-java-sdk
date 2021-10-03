@@ -1,0 +1,124 @@
+{
+    "response": {
+        "result": {
+            "expenses": [
+                {
+                    "account_name": "",
+                    "accountid": null,
+                    "accounting_systemid": "ACM123",
+                    "amount": {
+                        "amount": "54.00",
+                        "code": "CAD"
+                    },
+                    "attachment": {
+                        "attachmentid": 7788,
+                        "id": 7788,
+                        "jwt": "someAwesomeJWT",
+                        "media_type": "image/jpeg"
+                    },
+                    "background_jobid": null,
+                    "bank_name": "ABC Bank",
+                    "bill_matches": [],
+                    "billable": false,
+                    "categoryid": 654654,
+                    "clientid": 0,
+                    "compounded_tax": false,
+                    "converse_projectid": null,
+                    "date": "2021-07-19",
+                    "expenseid": 23457,
+                    "ext_accountid": null,
+                    "ext_invoiceid": 0,
+                    "ext_systemid": 0,
+                    "from_bulk_import": false,
+                    "has_receipt": false,
+                    "id": 23457,
+                    "include_receipt": false,
+                    "invoiceid": null,
+                    "is_cogs": false,
+                    "isduplicate": false,
+                    "markup_percent": "0",
+                    "modern_projectid": null,
+                    "notes": "For lunch",
+                    "potential_bill_payment": false,
+                    "profileid": 6541,
+                    "projectid": 0,
+                    "staffid": 1,
+                    "status": 0,
+                    "taxAmount1": {
+                        "amount": "6.21",
+                        "code": "CAD"
+                    },
+                    "taxAmount2": null,
+                    "taxName1": "HST1",
+                    "taxName2": null,
+                    "taxPercent1": null,
+                    "taxPercent2": null,
+                    "transactionid": null,
+                    "updated": "2021-07-19 04:42:03",
+                    "vendor": "Serano Bakery",
+                    "vis_state": 0
+                },
+                {
+                    "account_name": "",
+                    "accountid": null,
+                    "accounting_systemid": "ACM123",
+                    "amount": {
+                        "amount": "54.00",
+                        "code": "CAD"
+                    },
+                    "attachment": {
+                        "attachmentid": 7788,
+                        "id": 7788,
+                        "jwt": "someAwesomeJWT",
+                        "media_type": "image/jpeg"
+                    },
+                    "background_jobid": null,
+                    "bank_name": "ABC Bank",
+                    "bill_matches": [],
+                    "billable": false,
+                    "categoryid": 654654,
+                    "clientid": 0,
+                    "compounded_tax": false,
+                    "converse_projectid": null,
+                    "date": "2021-07-19",
+                    "expenseid": 23456,
+                    "ext_accountid": null,
+                    "ext_invoiceid": 0,
+                    "ext_systemid": 0,
+                    "from_bulk_import": false,
+                    "has_receipt": false,
+                    "id": 23456,
+                    "include_receipt": false,
+                    "invoiceid": null,
+                    "is_cogs": false,
+                    "isduplicate": false,
+                    "markup_percent": "0",
+                    "modern_projectid": null,
+                    "notes": "For lunch",
+                    "potential_bill_payment": false,
+                    "profileid": 6541,
+                    "projectid": 0,
+                    "staffid": 1,
+                    "status": 0,
+                    "taxAmount1": {
+                        "amount": "6.21",
+                        "code": "CAD"
+                    },
+                    "taxAmount2": null,
+                    "taxName1": "HST1",
+                    "taxName2": null,
+                    "taxPercent1": null,
+                    "taxPercent2": null,
+                    "transactionid": null,
+                    "updated": "2021-07-19 04:42:03",
+                    "vendor": "Serano Bakery",
+                    "vis_state": 0
+                }
+            ],
+            "page": 1,
+            "pages": 1,
+            "per_page": 15,
+            "total": 2
+        }
+    }
+}

@@ -37,7 +37,10 @@ public class Money implements ConvertibleContent {
      * @return Eg. BigDecimal("9.99")
      */
     public BigDecimal getAmount() {
-        return new BigDecimal(amount);
+        if (this.amount != null) {
+            return new BigDecimal(amount);
+        }
+        return null;
     }
 
     /**
