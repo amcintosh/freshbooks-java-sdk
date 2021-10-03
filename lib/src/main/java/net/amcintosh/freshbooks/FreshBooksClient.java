@@ -278,6 +278,15 @@ public class FreshBooksClient {
     }
 
     /**
+     * FreshBooks expenses resource with calls to get, list, create, update, delete.
+     *
+     * @return Expenses resource initialized with this FreshBooksClient
+     */
+    public Expenses expenses() {
+        return new Expenses(this);
+    }
+
+    /**
      * FreshBooks invoices resource with calls to get, list, create, update, delete.
      *
      * @return Invoices resource initialized with this FreshBooksClient
