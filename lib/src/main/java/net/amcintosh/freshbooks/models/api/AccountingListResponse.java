@@ -29,6 +29,8 @@ public class AccountingListResponse {
 
             @Key public ArrayList<Item> items;
 
+            @Key public ArrayList<Payment> payments;
+
             @Key public ArrayList<Tax> taxes;
         }
 

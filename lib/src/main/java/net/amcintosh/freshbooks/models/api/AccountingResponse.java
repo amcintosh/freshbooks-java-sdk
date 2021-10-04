@@ -27,6 +27,8 @@ public class AccountingResponse {
 
         @Key public Item item;
 
+        @Key public Payment payment;
+
         @Key public Tax tax;
     }
 }

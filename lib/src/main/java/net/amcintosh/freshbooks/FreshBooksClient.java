@@ -305,6 +305,15 @@ public class FreshBooksClient {
     }
 
     /**
+     * FreshBooks payments resource with calls to get, list, create, update, delete.
+     *
+     * @return Payments resource initialized with this FreshBooksClient
+     */
+    public Payments payments() {
+        return new Payments(this);
+    }
+
+    /**
      * FreshBooks projects resource with calls to get, list, create, update, delete.
      *
      * @return Projects resource initialized with this FreshBooksClient
