@@ -1,0 +1,57 @@
+{
+  "response": {
+    "result": {
+      "total": 3,
+      "per_page": 15,
+      "tasks": [
+        {
+          "updated": "2017-07-24 09:39:21",
+          "description": "Piloting the project based on the expectations of the executive",
+          "vis_state": 0,
+          "rate": {
+            "amount": "100.00",
+            "code": "CAD"
+          },
+          "taskid": 159361,
+          "billable": true,
+          "tname": "Piloting",
+          "tdesc": "Piloting the project based on the expectations of the executive",
+          "id": 159361,
+          "name": "Piloting"
+        },
+        {
+          "updated": "2017-07-24 09:39:21",
+          "description": "Piloting the project based on the expectations of the executive",
+          "vis_state": 0,
+          "rate": {
+            "amount": "100.00",
+            "code": "CAD"
+          },
+          "taskid": 159362,
+          "billable": true,
+          "tname": "Piloting",
+          "tdesc": "Piloting the project based on the expectations of the executive",
+          "id": 159362,
+          "name": "Piloting"
+        },
+        {
+          "updated": "2017-07-24 09:39:21",
+          "description": "Piloting the project based on the expectations of the executive",
+          "vis_state": 0,
+          "rate": {
+            "amount": "100.00",
+            "code": "CAD"
+          },
+          "taskid": 159363,
+          "billable": true,
+          "tname": "Piloting",
+          "tdesc": "Piloting the project based on the expectations of the executive",
+          "id": 159363,
+          "name": "Piloting"
+        }
+      ],
+      "page": 1,
+      "pages": 1
+    }
+  }
+}

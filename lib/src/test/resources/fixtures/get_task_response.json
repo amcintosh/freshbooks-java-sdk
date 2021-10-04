@@ -1,0 +1,21 @@
+{
+  "response": {
+    "result": {
+      "task": {
+        "updated": "2017-07-24 09:39:21",
+        "description": "Piloting the project based on the expectations of the executive",
+        "vis_state": 0,
+        "rate": {
+          "amount": "100.00",
+          "code": "CAD"
+        },
+        "taskid": 159361,
+        "billable": true,
+        "tname": "Piloting",
+        "tdesc": "Piloting the project based on the expectations of the executive",
+        "id": 159361,
+        "name": "Piloting"
+      }
+    }
+  }
+}
