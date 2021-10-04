@@ -1,0 +1,30 @@
+{
+    "response": {
+        "result": {
+            "payment": {
+                "accounting_systemid": "ACM123",
+                "amount": {
+                    "amount": "41.94",
+                    "code": "CAD"
+                },
+                "bulk_paymentid": null,
+                "clientid": 12345,
+                "creditid": null,
+                "date": "2021-04-16",
+                "from_credit": false,
+                "gateway": null,
+                "id": 235435,
+                "invoiceid": 987654,
+                "logid": 235435,
+                "note": "Some note",
+                "orderid": null,
+                "overpaymentid": null,
+                "send_client_notification": null,
+                "transactionid": null,
+                "type": "Check",
+                "updated": "2021-04-17 05:29:31",
+                "vis_state": 0
+            }
+        }
+    }
+}
