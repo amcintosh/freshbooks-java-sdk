@@ -30,5 +30,7 @@ public class AccountingResponse {
         @Key public Payment payment;
 
         @Key public Tax tax;
+
+        @Key public Task task;
     }
 }
