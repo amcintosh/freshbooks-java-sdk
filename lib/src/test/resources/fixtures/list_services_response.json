@@ -1,0 +1,24 @@
+{
+  "services" : [
+    {
+      "business_id": 25,
+      "id": 4054453,
+      "name": "Document Review",
+      "billable": true,
+      "vis_state": 0
+    },
+    {
+      "business_id": 25,
+      "id": 4054451,
+      "name": "Administration",
+      "billable": false,
+      "vis_state": 0
+    }
+  ],
+  "meta": {
+    "total": 2,
+    "per_page": 50,
+    "page": 1,
+    "pages": 1
+  }
+}
