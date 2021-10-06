@@ -196,4 +196,22 @@ public class OtherIncomesTest {
         assertEquals(otherIncomeId, otherIncome.getIncomeId());
         assertEquals(otherIncomeNote, otherIncome.getNote());
     }
+
+    @Test
+    public void deleteOtherIncome() throws FreshBooksException, IOException {
+        long otherIncomeId = 1234;
+
+        String jsonResponse = "{\n\"response\": {}\n}";
+
+        FreshBooksClient mockedFreshBooksClient = mock(FreshBooksClient.class);
+        HttpRequest mockRequest = TestUtil.buildMockHttpRequest(200, jsonResponse);
+        when(mockedFreshBooksClient.request(
+                HttpMethods.DELETE,
+                "/accounting/account/ABC123/other_incomes/other_incomes/1234",
+                null)
+        ).thenReturn(mockRequest);
+
+        OtherIncomes otherIncomes = new OtherIncomes(mockedFreshBooksClient);
+        otherIncomes.delete("ABC123", otherIncomeId);
+    }
 }
