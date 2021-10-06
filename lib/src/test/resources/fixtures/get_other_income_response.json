@@ -1,0 +1,33 @@
+{
+  "response": {
+    "result": {
+      "other_income": {
+        "amount": {
+          "amount": "25.00",
+          "code": "USD"
+        },
+        "category_name": "online_sales",
+        "created_at": "2020-09-25 10:53:22",
+        "date": "2020-09-25",
+        "incomeid": 1234,
+        "note": "Cool beans!",
+        "payment_type": "PayPal",
+        "source": "Etsy",
+        "sourceid": null,
+        "taxes": [
+          {
+            "amount": "3",
+            "name": "HST"
+          },
+          {
+            "amount": "10",
+            "name": "Empire Tax"
+          }
+        ],
+        "updated_at": "2020-09-25 10:53:22",
+        "userid": null,
+        "vis_state": 0
+      }
+    }
+  }
+}

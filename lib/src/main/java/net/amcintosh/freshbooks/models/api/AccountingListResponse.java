@@ -34,6 +34,8 @@ public class AccountingListResponse {
             @Key public ArrayList<Tax> taxes;
 
             @Key public ArrayList<Task> tasks;
+
+            @Key("other_income") public ArrayList<OtherIncome> otherIncomes;
         }
 
     }

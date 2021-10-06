@@ -32,5 +32,7 @@ public class AccountingResponse {
         @Key public Tax tax;
 
         @Key public Task task;
+
+        @Key("other_income") public OtherIncome otherIncome;
     }
 }
