@@ -2,6 +2,11 @@ package net.amcintosh.freshbooks.models;
 
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.util.Key;
+import net.amcintosh.freshbooks.Util;
+import net.amcintosh.freshbooks.models.api.ConvertibleContent;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Services represent things that a business offers to clients. Services are added to projects
@@ -12,7 +17,7 @@ import com.google.api.client.util.Key;
  *
  * @see <a href="https://www.freshbooks.com/api/services">FreshBooks API - Services</a>
  */
-public class Service extends GenericJson {
+public class Service extends GenericJson implements ConvertibleContent {
     @Key Long id;
     @Key("business_id") Long businessId;
     @Key String name;
@@ -67,5 +72,14 @@ public class Service extends GenericJson {
      */
     public void setVisState(VisState visState) {
         this.visState = visState.getValue();
+    }
+
+    @Override
+    public Map<String, Object> getContent() {
+        Map<String, Object> content = new HashMap<>();
+        Util.convertContent(content, "name", name);
+        Util.convertContent(content, "billable", billable);
+
+        return content;
     }
 }
