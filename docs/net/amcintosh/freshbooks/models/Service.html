@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -146,11 +146,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd><code>java.lang.Cloneable</code>, <code>java.util.Map&lt;java.lang.String,&#8203;java.lang.Object&gt;</code></dd>
+<dd><code>java.lang.Cloneable</code>, <code>java.util.Map&lt;java.lang.String,&#8203;java.lang.Object&gt;</code>, <code><a href="api/ConvertibleContent.html" title="interface in net.amcintosh.freshbooks.models.api">ConvertibleContent</a></code></dd>
 </dl>
 <hr>
 <pre>public class <span class="typeNameLabel">Service</span>
-extends com.google.api.client.json.GenericJson</pre>
+extends com.google.api.client.json.GenericJson
+implements <a href="api/ConvertibleContent.html" title="interface in net.amcintosh.freshbooks.models.api">ConvertibleContent</a></pre>
 <div class="block">Services represent things that a business offers to clients. Services are added to projects
  to to allow tracking of time entries by type of work. Services keep track of details such
  as hourly rate.
@@ -238,16 +239,24 @@ extends com.google.api.client.json.GenericJson</pre>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
+<td class="colFirst"><code>java.util.Map&lt;java.lang.String,&#8203;java.lang.Object&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getContent()">getContent</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Return the objects values as a Map suitable to sending to FreshBooks
+ in a POST or PUT request.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getId()">getId</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getName()">getName</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="VisState.html" title="enum in net.amcintosh.freshbooks.models">VisState</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getVisState()">getVisState</a></span>()</code></th>
 <td class="colLast">
@@ -255,27 +264,27 @@ extends com.google.api.client.json.GenericJson</pre>
  <br><br></div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isBillable()">isBillable</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setBillable(boolean)">setBillable</a></span>&#8203;(boolean&nbsp;billable)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setId(java.lang.Long)">setId</a></span>&#8203;(java.lang.Long&nbsp;id)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setName(java.lang.String)">setName</a></span>&#8203;(java.lang.String&nbsp;name)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setVisState(net.amcintosh.freshbooks.models.VisState)">setVisState</a></span>&#8203;(<a href="VisState.html" title="enum in net.amcintosh.freshbooks.models">VisState</a>&nbsp;visState)</code></th>
 <td class="colLast">
@@ -436,7 +445,7 @@ extends com.google.api.client.json.GenericJson</pre>
 <a id="setVisState(net.amcintosh.freshbooks.models.VisState)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>setVisState</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;setVisState&#8203;(<a href="VisState.html" title="enum in net.amcintosh.freshbooks.models">VisState</a>&nbsp;visState)</pre>
@@ -447,6 +456,23 @@ extends com.google.api.client.json.GenericJson</pre>
 <dd><code>visState</code> - VisState value</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Active and Deleted Objects</a></dd>
+</dl>
+</li>
+</ul>
+<a id="getContent()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getContent</h4>
+<pre class="methodSignature">public&nbsp;java.util.Map&lt;java.lang.String,&#8203;java.lang.Object&gt;&nbsp;getContent()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="api/ConvertibleContent.html#getContent()">ConvertibleContent</a></code></span></div>
+<div class="block">Return the objects values as a Map suitable to sending to FreshBooks
+ in a POST or PUT request.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="api/ConvertibleContent.html#getContent()">getContent</a></code>&nbsp;in interface&nbsp;<code><a href="api/ConvertibleContent.html" title="interface in net.amcintosh.freshbooks.models.api">ConvertibleContent</a></code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
 </dl>
 </li>
 </ul>
