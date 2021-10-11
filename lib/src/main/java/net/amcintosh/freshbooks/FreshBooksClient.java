@@ -305,6 +305,15 @@ public class FreshBooksClient {
     }
 
     /**
+     * FreshBooks other income resource with calls to get, list, create, update, delete.
+     *
+     * @return OtherIncomes resource initialized with this FreshBooksClient
+     */
+    public OtherIncomes otherIncomes() {
+        return new OtherIncomes(this);
+    }
+
+    /**
      * FreshBooks payments resource with calls to get, list, create, update, delete.
      *
      * @return Payments resource initialized with this FreshBooksClient
@@ -320,6 +329,24 @@ public class FreshBooksClient {
      */
     public Projects projects() {
         return new Projects(this);
+    }
+
+    /**
+     * FreshBooks services resource with calls to get, list, create, update, delete.
+     *
+     * @return Services resource initialized with this FreshBooksClient
+     */
+    public Services services() {
+        return new Services(this);
+    }
+
+    /**
+     * FreshBooks tasks resource with calls to get, list, create, update, delete.
+     *
+     * @return Tasks resource initialized with this FreshBooksClient
+     */
+    public Tasks tasks() {
+        return new Tasks(this);
     }
 
     /**
