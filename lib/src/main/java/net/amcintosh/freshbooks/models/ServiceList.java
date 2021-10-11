@@ -1,7 +1,7 @@
 package net.amcintosh.freshbooks.models;
 
 import com.google.api.client.util.Key;
-import net.amcintosh.freshbooks.models.api.ServiceListResponse;
+import net.amcintosh.freshbooks.models.api.ProjectListResponse;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ public class ServiceList extends ListResult {
     @Key
     private final List<Service> services;
 
-    public ServiceList(ServiceListResponse result) {
+    public ServiceList(ProjectListResponse result) {
         services = result.services;
         this.pages = new Pages(result.meta.page, result.meta.pages, result.meta.perPage, result.meta.total);
     }

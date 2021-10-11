@@ -6,10 +6,11 @@ import net.amcintosh.freshbooks.FreshBooksClient;
 import net.amcintosh.freshbooks.FreshBooksException;
 import net.amcintosh.freshbooks.models.Service;
 import net.amcintosh.freshbooks.models.ServiceList;
-import net.amcintosh.freshbooks.models.api.ServiceResponse;
+import net.amcintosh.freshbooks.models.api.ProjectListResponse;
+import net.amcintosh.freshbooks.models.api.ProjectResponse;
 import net.amcintosh.freshbooks.models.builders.IncludesQueryBuilder;
 import net.amcintosh.freshbooks.models.builders.QueryBuilder;
-import net.amcintosh.freshbooks.resources.api.ServiceResource;
+import net.amcintosh.freshbooks.resources.api.CommentResource;
 
 import java.util.List;
 import java.util.Map;
@@ -17,10 +18,20 @@ import java.util.Map;
 /**
  * FreshBooks services resource with calls to get, list, create, update, delete
  */
-public class Services extends ServiceResource {
+public class Services extends CommentResource {
 
     public Services(FreshBooksClient freshBooksClient) {
         super(freshBooksClient);
+    }
+
+    @Override
+    protected String getPathForSingle() {
+        return "service";
+    }
+
+    @Override
+    protected String getPathForList() {
+        return "services";
     }
 
     /**
@@ -43,7 +54,10 @@ public class Services extends ServiceResource {
      * @throws FreshBooksException If the call is not successful
      */
     public ServiceList list(long businessId, List<QueryBuilder> builders) throws FreshBooksException {
-        return new ServiceList(handleListRequest(getListUrl(businessId, builders)));
+        String url = this.getUrl(businessId, true, builders);
+        ProjectListResponse result = this.handleListRequest(url);
+        return new ServiceList(result);
+
     }
 
     /**
@@ -71,7 +85,7 @@ public class Services extends ServiceResource {
      */
     public Service get(long businessId, long serviceId, IncludesQueryBuilder builder) throws FreshBooksException {
         String url = this.getUrl(businessId, serviceId, builder);
-        ServiceResponse result = this.handleRequest(HttpMethods.GET, url);
+        ProjectResponse result = this.handleRequest(HttpMethods.GET, url);
         return result.service;
     }
 
@@ -102,9 +116,9 @@ public class Services extends ServiceResource {
      * @throws FreshBooksException If the call is not successful
      */
     public Service create(long businessId, Map<String, Object> data) throws FreshBooksException {
-        String url = this.getUrl(businessId);
+        String url = this.getUrl(businessId, false);
         ImmutableMap<String, Object> content = ImmutableMap.of("service", data);
-        ServiceResponse result = this.handleRequest(HttpMethods.POST, url, content);
+        ProjectResponse result = this.handleRequest(HttpMethods.POST, url, content);
         return result.service;
     }
 
