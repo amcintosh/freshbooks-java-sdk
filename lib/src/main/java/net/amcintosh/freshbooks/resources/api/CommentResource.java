@@ -9,6 +9,8 @@ import java.util.List;
 
 /**
  * Handles resources under the `/comments` which are project-like endpoints.
+ *
+ * Thus, these are handled identically to `/projects` endpoints.
  */
 public abstract class CommentResource extends ProjectResource {
 
