@@ -289,6 +289,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/api/CommentResource.html#%3Cinit%3E(net.amcintosh.freshbooks.FreshBooksClient)">CommentResource(FreshBooksClient)</a></span> - Constructor for class net.amcintosh.freshbooks.resources.api.<a href="net/amcintosh/freshbooks/resources/api/CommentResource.html" title="class in net.amcintosh.freshbooks.resources.api">CommentResource</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="net/amcintosh/freshbooks/resources/api/CommentSubResource.html" title="class in net.amcintosh.freshbooks.resources.api"><span class="typeNameLink">CommentSubResource</span></a> - Class in <a href="net/amcintosh/freshbooks/resources/api/package-summary.html">net.amcintosh.freshbooks.resources.api</a></dt>
+<dd>
+<div class="block">Handles sub-resources under the `/comments` endpoints.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/api/CommentSubResource.html#%3Cinit%3E(net.amcintosh.freshbooks.FreshBooksClient)">CommentSubResource(FreshBooksClient)</a></span> - Constructor for class net.amcintosh.freshbooks.resources.api.<a href="net/amcintosh/freshbooks/resources/api/CommentSubResource.html" title="class in net.amcintosh.freshbooks.resources.api">CommentSubResource</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/Util.html#convertContent(java.util.Map,java.lang.String,java.lang.Object)">convertContent(Map&lt;String, Object&gt;, String, Object)</a></span> - Static method in class net.amcintosh.freshbooks.<a href="net/amcintosh/freshbooks/Util.html" title="class in net.amcintosh.freshbooks">Util</a></dt>
 <dd>
 <div class="block">Add a key/value to the provided Map only if the value is not null.</div>
@@ -298,6 +304,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><a href="net/amcintosh/freshbooks/models/api/ConvertibleContent.html" title="interface in net.amcintosh.freshbooks.models.api"><span class="typeNameLink">ConvertibleContent</span></a> - Interface in <a href="net/amcintosh/freshbooks/models/api/package-summary.html">net.amcintosh.freshbooks.models.api</a></dt>
 <dd>
 <div class="block">Interface for models that can be converted into Maps.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/ServiceRates.html#create(long,long,java.util.Map)">create(long, long, Map&lt;String, Object&gt;)</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/ServiceRates.html" title="class in net.amcintosh.freshbooks.resources">ServiceRates</a></dt>
+<dd>
+<div class="block">Create a new service rate from the provided data.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/ServiceRates.html#create(long,long,net.amcintosh.freshbooks.models.ServiceRate)">create(long, long, ServiceRate)</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/ServiceRates.html" title="class in net.amcintosh.freshbooks.resources">ServiceRates</a></dt>
+<dd>
+<div class="block">Create a new service rate from the provided ServiceRate model.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Projects.html#create(long,java.util.Map)">create(long, Map&lt;String, Object&gt;)</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Projects.html" title="class in net.amcintosh.freshbooks.resources">Projects</a></dt>
 <dd>
@@ -585,6 +599,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Get a single project with the corresponding id.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/ServiceRates.html#get(long,long)">get(long, long)</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/ServiceRates.html" title="class in net.amcintosh.freshbooks.resources">ServiceRates</a></dt>
+<dd>
+<div class="block">Get a single service rate from the service with the corresponding id.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Services.html#get(long,long)">get(long, long)</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Services.html" title="class in net.amcintosh.freshbooks.resources">Services</a></dt>
 <dd>
 <div class="block">Get a single service with the corresponding id.</div>
@@ -825,7 +843,13 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">The business details.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Service.html#getBusinessId()">getBusinessId()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Service.html" title="class in net.amcintosh.freshbooks.models">Service</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">The unique id for business.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/ServiceRate.html#getBusinessId()">getBusinessId()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/ServiceRate.html" title="class in net.amcintosh.freshbooks.models">ServiceRate</a></dt>
+<dd>
+<div class="block">The unique id for business.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Identity.html#getBusinessMemberships()">getBusinessMemberships()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Identity.html" title="class in net.amcintosh.freshbooks.models">Identity</a></dt>
 <dd>
 <div class="block">List of businesses this identity is a part of and their role in each.</div>
@@ -924,6 +948,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#getContent()">getContent()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Service.html#getContent()">getContent()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Service.html" title="class in net.amcintosh.freshbooks.models">Service</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/ServiceRate.html#getContent()">getContent()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/ServiceRate.html" title="class in net.amcintosh.freshbooks.models">ServiceRate</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Task.html#getContent()">getContent()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Task.html" title="class in net.amcintosh.freshbooks.models">Task</a></dt>
 <dd>&nbsp;</dd>
@@ -1190,7 +1216,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.ProjectGroupMember.html#getId()">getId()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.ProjectGroupMember.html" title="class in net.amcintosh.freshbooks.models">Project.ProjectGroupMember</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Service.html#getId()">getId()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Service.html" title="class in net.amcintosh.freshbooks.models">Service</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">The unique id of the service.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Task.html#getId()">getId()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Task.html" title="class in net.amcintosh.freshbooks.models">Task</a></dt>
 <dd>
 <div class="block">Get the unique identifier of this task within this business.</div>
@@ -1324,7 +1352,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Name for the line item.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Service.html#getName()">getName()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Service.html" title="class in net.amcintosh.freshbooks.models">Service</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">The descriptive name of service.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Task.html#getName()">getName()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Task.html" title="class in net.amcintosh.freshbooks.models">Task</a></dt>
 <dd>
 <div class="block">Descriptive name of task.</div>
@@ -1421,11 +1451,19 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Projects.html#getPathForList()">getPathForList()</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Projects.html" title="class in net.amcintosh.freshbooks.resources">Projects</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/ServiceRates.html#getPathForList()">getPathForList()</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/ServiceRates.html" title="class in net.amcintosh.freshbooks.resources">ServiceRates</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Services.html#getPathForList()">getPathForList()</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Services.html" title="class in net.amcintosh.freshbooks.resources">Services</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/api/CommentSubResource.html#getPathForParent()">getPathForParent()</a></span> - Method in class net.amcintosh.freshbooks.resources.api.<a href="net/amcintosh/freshbooks/resources/api/CommentSubResource.html" title="class in net.amcintosh.freshbooks.resources.api">CommentSubResource</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/ServiceRates.html#getPathForParent()">getPathForParent()</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/ServiceRates.html" title="class in net.amcintosh.freshbooks.resources">ServiceRates</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/api/ProjectResource.html#getPathForSingle()">getPathForSingle()</a></span> - Method in class net.amcintosh.freshbooks.resources.api.<a href="net/amcintosh/freshbooks/resources/api/ProjectResource.html" title="class in net.amcintosh.freshbooks.resources.api">ProjectResource</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Projects.html#getPathForSingle()">getPathForSingle()</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Projects.html" title="class in net.amcintosh.freshbooks.resources">Projects</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/ServiceRates.html#getPathForSingle()">getPathForSingle()</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/ServiceRates.html" title="class in net.amcintosh.freshbooks.resources">ServiceRates</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Services.html#getPathForSingle()">getPathForSingle()</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Services.html" title="class in net.amcintosh.freshbooks.resources">Services</a></dt>
 <dd>&nbsp;</dd>
@@ -1503,6 +1541,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#getRate()">getRate()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/ServiceRate.html#getRate()">getRate()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/ServiceRate.html" title="class in net.amcintosh.freshbooks.models">ServiceRate</a></dt>
+<dd>
+<div class="block">The rate for the associated service.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Task.html#getRate()">getRate()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Task.html" title="class in net.amcintosh.freshbooks.models">Task</a></dt>
 <dd>
 <div class="block">The hourly amount rate charged for task.</div>
@@ -1516,6 +1558,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/api/AuthResource.html#getResourceType()">getResourceType()</a></span> - Method in class net.amcintosh.freshbooks.resources.api.<a href="net/amcintosh/freshbooks/resources/api/AuthResource.html" title="class in net.amcintosh.freshbooks.resources.api">AuthResource</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/api/CommentResource.html#getResourceType()">getResourceType()</a></span> - Method in class net.amcintosh.freshbooks.resources.api.<a href="net/amcintosh/freshbooks/resources/api/CommentResource.html" title="class in net.amcintosh.freshbooks.resources.api">CommentResource</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/api/CommentSubResource.html#getResourceType()">getResourceType()</a></span> - Method in class net.amcintosh.freshbooks.resources.api.<a href="net/amcintosh/freshbooks/resources/api/CommentSubResource.html" title="class in net.amcintosh.freshbooks.resources.api">CommentSubResource</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/api/ProjectResource.html#getResourceType()">getResourceType()</a></span> - Method in class net.amcintosh.freshbooks.resources.api.<a href="net/amcintosh/freshbooks/resources/api/ProjectResource.html" title="class in net.amcintosh.freshbooks.resources.api">ProjectResource</a></dt>
 <dd>&nbsp;</dd>
@@ -1538,6 +1582,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.html#getSentId()">getSentId()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
 <dd>
 <div class="block">User id of user who sent the invoice.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/ServiceRate.html#getServiceId()">getServiceId()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/ServiceRate.html" title="class in net.amcintosh.freshbooks.models">ServiceRate</a></dt>
+<dd>
+<div class="block">The unique id of the service this rate applies to.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/ServiceRateList.html#getServiceRates()">getServiceRates()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/ServiceRateList.html" title="class in net.amcintosh.freshbooks.models">ServiceRateList</a></dt>
+<dd>
+<div class="block">Array of service rates returned by the `list` call.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#getServices()">getServices()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
@@ -1775,6 +1827,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Get the time of last modification to the project.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/api/CommentSubResource.html#getUrl(long)">getUrl(long)</a></span> - Method in class net.amcintosh.freshbooks.resources.api.<a href="net/amcintosh/freshbooks/resources/api/CommentSubResource.html" title="class in net.amcintosh.freshbooks.resources.api">CommentSubResource</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/api/CommentResource.html#getUrl(long,boolean)">getUrl(long, boolean)</a></span> - Method in class net.amcintosh.freshbooks.resources.api.<a href="net/amcintosh/freshbooks/resources/api/CommentResource.html" title="class in net.amcintosh.freshbooks.resources.api">CommentResource</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/api/ProjectResource.html#getUrl(long,boolean)">getUrl(long, boolean)</a></span> - Method in class net.amcintosh.freshbooks.resources.api.<a href="net/amcintosh/freshbooks/resources/api/ProjectResource.html" title="class in net.amcintosh.freshbooks.resources.api">ProjectResource</a></dt>
@@ -1785,11 +1839,17 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/api/CommentResource.html#getUrl(long,long)">getUrl(long, long)</a></span> - Method in class net.amcintosh.freshbooks.resources.api.<a href="net/amcintosh/freshbooks/resources/api/CommentResource.html" title="class in net.amcintosh.freshbooks.resources.api">CommentResource</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/api/CommentSubResource.html#getUrl(long,long)">getUrl(long, long)</a></span> - Method in class net.amcintosh.freshbooks.resources.api.<a href="net/amcintosh/freshbooks/resources/api/CommentSubResource.html" title="class in net.amcintosh.freshbooks.resources.api">CommentSubResource</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/api/ProjectResource.html#getUrl(long,long)">getUrl(long, long)</a></span> - Method in class net.amcintosh.freshbooks.resources.api.<a href="net/amcintosh/freshbooks/resources/api/ProjectResource.html" title="class in net.amcintosh.freshbooks.resources.api">ProjectResource</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/api/CommentResource.html#getUrl(long,long,net.amcintosh.freshbooks.models.builders.IncludesQueryBuilder)">getUrl(long, long, IncludesQueryBuilder)</a></span> - Method in class net.amcintosh.freshbooks.resources.api.<a href="net/amcintosh/freshbooks/resources/api/CommentResource.html" title="class in net.amcintosh.freshbooks.resources.api">CommentResource</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/api/CommentSubResource.html#getUrl(long,long,net.amcintosh.freshbooks.models.builders.IncludesQueryBuilder)">getUrl(long, long, IncludesQueryBuilder)</a></span> - Method in class net.amcintosh.freshbooks.resources.api.<a href="net/amcintosh/freshbooks/resources/api/CommentSubResource.html" title="class in net.amcintosh.freshbooks.resources.api">CommentSubResource</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/api/ProjectResource.html#getUrl(long,long,net.amcintosh.freshbooks.models.builders.IncludesQueryBuilder)">getUrl(long, long, IncludesQueryBuilder)</a></span> - Method in class net.amcintosh.freshbooks.resources.api.<a href="net/amcintosh/freshbooks/resources/api/ProjectResource.html" title="class in net.amcintosh.freshbooks.resources.api">ProjectResource</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/api/CommentSubResource.html#getUrl(long,java.util.List)">getUrl(long, List&lt;QueryBuilder&gt;)</a></span> - Method in class net.amcintosh.freshbooks.resources.api.<a href="net/amcintosh/freshbooks/resources/api/CommentSubResource.html" title="class in net.amcintosh.freshbooks.resources.api">CommentSubResource</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/api/AccountingResource.html#getUrl(java.lang.String)">getUrl(String)</a></span> - Method in class net.amcintosh.freshbooks.resources.api.<a href="net/amcintosh/freshbooks/resources/api/AccountingResource.html" title="class in net.amcintosh.freshbooks.resources.api">AccountingResource</a></dt>
 <dd>&nbsp;</dd>
@@ -2029,7 +2089,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Can the expense be billed to a Client or Project.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Service.html#isBillable()">isBillable()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Service.html" title="class in net.amcintosh.freshbooks.models">Service</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Whether the service is billable to clients or not.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Task.html#isBillable()">isBillable()</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Task.html" title="class in net.amcintosh.freshbooks.models">Task</a></dt>
 <dd>
 <div class="block">Whether this task billable.</div>
@@ -2130,6 +2192,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Projects.html#list(long)">list(long)</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Projects.html" title="class in net.amcintosh.freshbooks.resources">Projects</a></dt>
 <dd>
 <div class="block">Get a list of projects.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/ServiceRates.html#list(long)">list(long)</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/ServiceRates.html" title="class in net.amcintosh.freshbooks.resources">ServiceRates</a></dt>
+<dd>
+<div class="block">Get a list of service rates for this business.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Services.html#list(long)">list(long)</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Services.html" title="class in net.amcintosh.freshbooks.resources">Services</a></dt>
 <dd>
@@ -2594,6 +2660,33 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/ServiceList.html#%3Cinit%3E(net.amcintosh.freshbooks.models.api.ProjectListResponse)">ServiceList(ProjectListResponse)</a></span> - Constructor for class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/ServiceList.html" title="class in net.amcintosh.freshbooks.models">ServiceList</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/api/ProjectResponse.html#serviceRate">serviceRate</a></span> - Variable in class net.amcintosh.freshbooks.models.api.<a href="net/amcintosh/freshbooks/models/api/ProjectResponse.html" title="class in net.amcintosh.freshbooks.models.api">ProjectResponse</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="net/amcintosh/freshbooks/models/ServiceRate.html" title="class in net.amcintosh.freshbooks.models"><span class="typeNameLink">ServiceRate</span></a> - Class in <a href="net/amcintosh/freshbooks/models/package-summary.html">net.amcintosh.freshbooks.models</a></dt>
+<dd>
+<div class="block">ServiceRates are hourly rates that can be applied to services to allow billing
+ of time entries tracked against that service.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/ServiceRate.html#%3Cinit%3E()">ServiceRate()</a></span> - Constructor for class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/ServiceRate.html" title="class in net.amcintosh.freshbooks.models">ServiceRate</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="net/amcintosh/freshbooks/models/ServiceRateList.html" title="class in net.amcintosh.freshbooks.models"><span class="typeNameLink">ServiceRateList</span></a> - Class in <a href="net/amcintosh/freshbooks/models/package-summary.html">net.amcintosh.freshbooks.models</a></dt>
+<dd>
+<div class="block">Results of service rates list call containing list of service rates.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/ServiceRateList.html#%3Cinit%3E(net.amcintosh.freshbooks.models.api.ProjectListResponse)">ServiceRateList(ProjectListResponse)</a></span> - Constructor for class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/ServiceRateList.html" title="class in net.amcintosh.freshbooks.models">ServiceRateList</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/api/ProjectListResponse.html#serviceRates">serviceRates</a></span> - Variable in class net.amcintosh.freshbooks.models.api.<a href="net/amcintosh/freshbooks/models/api/ProjectListResponse.html" title="class in net.amcintosh.freshbooks.models.api">ProjectListResponse</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/FreshBooksClient.html#serviceRates()">serviceRates()</a></span> - Method in class net.amcintosh.freshbooks.<a href="net/amcintosh/freshbooks/FreshBooksClient.html" title="class in net.amcintosh.freshbooks">FreshBooksClient</a></dt>
+<dd>
+<div class="block">FreshBooks service rates resource with calls to get, list, create, update.</div>
+</dd>
+<dt><a href="net/amcintosh/freshbooks/resources/ServiceRates.html" title="class in net.amcintosh.freshbooks.resources"><span class="typeNameLink">ServiceRates</span></a> - Class in <a href="net/amcintosh/freshbooks/resources/package-summary.html">net.amcintosh.freshbooks.resources</a></dt>
+<dd>
+<div class="block">FreshBooks service rates sub-resource with calls to get, list, create, update</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/ServiceRates.html#%3Cinit%3E(net.amcintosh.freshbooks.FreshBooksClient)">ServiceRates(FreshBooksClient)</a></span> - Constructor for class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/ServiceRates.html" title="class in net.amcintosh.freshbooks.resources">ServiceRates</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/api/ProjectListResponse.html#services">services</a></span> - Variable in class net.amcintosh.freshbooks.models.api.<a href="net/amcintosh/freshbooks/models/api/ProjectListResponse.html" title="class in net.amcintosh.freshbooks.models.api">ProjectListResponse</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/FreshBooksClient.html#services()">services()</a></span> - Method in class net.amcintosh.freshbooks.<a href="net/amcintosh/freshbooks/FreshBooksClient.html" title="class in net.amcintosh.freshbooks">FreshBooksClient</a></dt>
@@ -2665,7 +2758,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Can the expense be billed to a Client or Project.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Service.html#setBillable(boolean)">setBillable(boolean)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Service.html" title="class in net.amcintosh.freshbooks.models">Service</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Whether the service is billable to clients or not.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Task.html#setBillable(boolean)">setBillable(boolean)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Task.html" title="class in net.amcintosh.freshbooks.models">Task</a></dt>
 <dd>
 <div class="block">Whether this task billable.</div>
@@ -2901,8 +2996,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#setId(long)">setId(long)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Service.html#setId(java.lang.Long)">setId(Long)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Service.html" title="class in net.amcintosh.freshbooks.models">Service</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html#setImageLogoSrc(java.lang.String)">setImageLogoSrc(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html" title="class in net.amcintosh.freshbooks.models">Invoice.InvoicePresentation</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Expense.html#setIncludeReceipt(boolean)">setIncludeReceipt(boolean)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Expense.html" title="class in net.amcintosh.freshbooks.models">Expense</a></dt>
@@ -2979,7 +3072,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Name for the line item.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Service.html#setName(java.lang.String)">setName(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Service.html" title="class in net.amcintosh.freshbooks.models">Service</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">The descriptive name of service.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Task.html#setName(java.lang.String)">setName(String)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Task.html" title="class in net.amcintosh.freshbooks.models">Task</a></dt>
 <dd>
 <div class="block">Descriptive name of task.</div>
@@ -3073,6 +3168,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Project.html#setRate(java.math.BigDecimal)">setRate(BigDecimal)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/ServiceRate.html#setRate(java.math.BigDecimal)">setRate(BigDecimal)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/ServiceRate.html" title="class in net.amcintosh.freshbooks.models">ServiceRate</a></dt>
+<dd>
+<div class="block">The rate for the associated service.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Task.html#setRate(net.amcintosh.freshbooks.models.Money)">setRate(Money)</a></span> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Task.html" title="class in net.amcintosh.freshbooks.models">Task</a></dt>
 <dd>
 <div class="block">The hourly amount rate charged for task.</div>
@@ -3422,6 +3521,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Update the project with the corresponding id.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/ServiceRates.html#update(long,long,java.util.Map)">update(long, long, Map&lt;String, Object&gt;)</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/ServiceRates.html" title="class in net.amcintosh.freshbooks.resources">ServiceRates</a></dt>
+<dd>
+<div class="block">Update the service rate with the corresponding id.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Services.html#update(long,long,java.util.Map)">update(long, long, Map&lt;String, Object&gt;)</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Services.html" title="class in net.amcintosh.freshbooks.resources">Services</a></dt>
 <dd>
 <div class="block">Update the service with the corresponding id.</div>
@@ -3433,6 +3536,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Services.html#update(long,long,net.amcintosh.freshbooks.models.Service)">update(long, long, Service)</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Services.html" title="class in net.amcintosh.freshbooks.resources">Services</a></dt>
 <dd>
 <div class="block">Update the service with the corresponding id.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/ServiceRates.html#update(long,long,net.amcintosh.freshbooks.models.ServiceRate)">update(long, long, ServiceRate)</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/ServiceRates.html" title="class in net.amcintosh.freshbooks.resources">ServiceRates</a></dt>
+<dd>
+<div class="block">Update the service rate with the corresponding id.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/resources/Clients.html#update(java.lang.String,long,java.util.Map)">update(String, long, Map&lt;String, Object&gt;)</a></span> - Method in class net.amcintosh.freshbooks.resources.<a href="net/amcintosh/freshbooks/resources/Clients.html" title="class in net.amcintosh.freshbooks.resources">Clients</a></dt>
 <dd>
