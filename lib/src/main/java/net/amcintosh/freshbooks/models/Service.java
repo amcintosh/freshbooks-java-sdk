@@ -11,7 +11,7 @@ import java.util.Map;
 /**
  * Services represent things that a business offers to clients. Services are added to projects
  * to to allow tracking of time entries by type of work. Services keep track of details such
- * as hourly rate.
+ * as hourly rate. See {@link ServiceRate} for adding a rate to a service.
  * <br>
  * Services automatically get converted to tasks for inclusion on invoices.
  *
@@ -24,30 +24,56 @@ public class Service extends GenericJson implements ConvertibleContent {
     @Key boolean billable;
     @Key("vis_state") int visState;
 
+    /**
+     * The unique id of the service.
+     *
+     * @return
+     */
     public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
+    /**
+     * The unique id for business.
+     *
+     * @return
+     */
     public long getBusinessId() {
         return businessId;
     }
 
+    /**
+     * The descriptive name of service.
+     *
+     * @return
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * The descriptive name of service.
+     *
+     * @param name
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     * Whether the service is billable to clients or not.
+     *
+     * @return
+     */
     public boolean isBillable() {
         return billable;
     }
 
+    /**
+     * Whether the service is billable to clients or not.
+     *
+     * @param billable
+     */
     public void setBillable(boolean billable) {
         this.billable = billable;
     }

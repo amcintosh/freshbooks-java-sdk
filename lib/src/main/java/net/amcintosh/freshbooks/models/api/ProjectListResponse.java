@@ -3,6 +3,7 @@ package net.amcintosh.freshbooks.models.api;
 import com.google.api.client.util.Key;
 import net.amcintosh.freshbooks.models.Project;
 import net.amcintosh.freshbooks.models.Service;
+import net.amcintosh.freshbooks.models.ServiceRate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +15,9 @@ public class ProjectListResponse {
 
     @Key
     public List<Service> services;
+
+    @Key("service_rates")
+    public List<ServiceRate> serviceRates;
 
     @Key
     public ProjectMeta meta;

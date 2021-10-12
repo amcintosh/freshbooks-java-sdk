@@ -341,6 +341,15 @@ public class FreshBooksClient {
     }
 
     /**
+     * FreshBooks service rates resource with calls to get, list, create, update.
+     *
+     * @return ServiceRates resource initialized with this FreshBooksClient
+     */
+    public ServiceRates serviceRates() {
+        return new ServiceRates(this);
+    }
+
+    /**
      * FreshBooks tasks resource with calls to get, list, create, update, delete.
      *
      * @return Tasks resource initialized with this FreshBooksClient

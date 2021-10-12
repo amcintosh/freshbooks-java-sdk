@@ -63,7 +63,7 @@ public class Services extends CommentResource {
     /**
      * Get a single service with the corresponding id.
      *
-     * @param businessId The alpha-numeric business id
+     * @param businessId Id of the business
      * @param serviceId Id of the resource to return
      *
      * @return The Service
@@ -76,7 +76,7 @@ public class Services extends CommentResource {
     /**
      * Get a single service with the corresponding id.
      *
-     * @param businessId The alpha-numeric business id
+     * @param businessId Id of the business
      * @param serviceId Id of the resource to return
      * @param builder IncludesQueryBuilder object for including additional data, sub-resources, etc.
      *
@@ -95,7 +95,7 @@ public class Services extends CommentResource {
      *
      * This calls `service.getContent()` to get a hash map of data.
      *
-     * @param businessId The numeric business id
+     * @param businessId Id of the business
      * @param data Service model with create data
      *
      * @return The created Service
@@ -109,7 +109,7 @@ public class Services extends CommentResource {
      * Create a new service from the provided data.
      * Makes a POST call against the service resource endpoint.
      *
-     * @param businessId The numeric business id
+     * @param businessId Id of the business
      * @param data Map of create data
      *
      * @return The created Service
