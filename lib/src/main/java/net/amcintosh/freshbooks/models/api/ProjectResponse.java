@@ -3,11 +3,13 @@ package net.amcintosh.freshbooks.models.api;
 import com.google.api.client.util.Key;
 import net.amcintosh.freshbooks.models.Project;
 import net.amcintosh.freshbooks.models.Service;
+import net.amcintosh.freshbooks.models.ServiceRate;
 
 public class ProjectResponse {
 
     @Key public Project project;
     @Key public Service service;
+    @Key("service_rate") public ServiceRate serviceRate;
 
     @Key public int errno;
     @Key public ProjectError error;
