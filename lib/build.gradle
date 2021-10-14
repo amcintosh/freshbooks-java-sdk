@@ -26,18 +26,18 @@ jacoco {
 
 dependencies {
     // Use JUnit test framework.
-    testImplementation 'junit:junit:4.13'
-    testImplementation 'org.mockito:mockito-core:3.7.0'
+    testImplementation 'junit:junit:4.+'
+    testImplementation 'org.mockito:mockito-core:3.+'
 
     // This dependency is exported to consumers, that is to say found on their compile classpath.
     api 'org.apache.commons:commons-math3:3.6.1'
-    api 'com.google.http-client:google-http-client:1.38.0'
+    api 'com.google.http-client:google-http-client:1.40.1'
 
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
-    implementation 'com.google.guava:guava:29.0-jre'
-    implementation 'org.slf4j:slf4j-api:1.7.30'
-    implementation 'com.google.http-client:google-http-client:1.38.0'
-    implementation 'com.google.http-client:google-http-client-gson:1.38.0'
+    implementation 'com.google.guava:guava:31.0.1-jre'
+    implementation 'org.slf4j:slf4j-api:1.7.32'
+    implementation 'com.google.http-client:google-http-client:1.40.1'
+    implementation 'com.google.http-client:google-http-client-gson:1.40.1'
 
 }
 
