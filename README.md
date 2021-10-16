@@ -1,5 +1,8 @@
 # FreshBooks Java SDK
 
+![Maven Central](https://img.shields.io/maven-central/v/net.amcintosh/freshbooks-sdk)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/amcintosh/freshbooks-java-sdk/Run%20Tests)](https://github.com/amcintosh/freshbooks-java-sdk/actions?query=workflow%3A%22Run+Tests%22)
+
 A FreshBooks Java SDK to allow you to more easily utilize the [FreshBooks API](https://www.freshbooks.com/api).
 
 ## Installation
