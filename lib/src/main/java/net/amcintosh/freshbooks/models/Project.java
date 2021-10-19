@@ -139,7 +139,7 @@ public class Project extends GenericJson implements ConvertibleContent {
     }
 
     public void setDueDate(LocalDate dueDate) {
-        this.dueDate = dueDate.toString();
+        this.dueDate = dueDate.format(Util.getStandardDateFormatter());
     }
 
     public int getExpenseMarkup() {

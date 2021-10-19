@@ -25,7 +25,16 @@ public class Util {
     public static final ZoneId ACCOUNTING_LOCAL_ZONE = ZoneId.of("US/Eastern");
 
     /**
-     * Get a DateTimeFormmatter configured for accounting endpoint format ("yyyy-MM-dd HH:mm:ss").
+     * Get a DateTimeFormatter configured for date fields ("yyyy-MM-dd").
+     *
+     * @return The formatter for dates. Eg. 2021-01-08
+     */
+    public static DateTimeFormatter getStandardDateFormatter() {
+        return DateTimeFormatter.ofPattern("yyyy-MM-dd");
+    }
+
+    /**
+     * Get a DateTimeFormatter configured for accounting endpoint format ("yyyy-MM-dd HH:mm:ss").
      *
      * @return The formatter for accounting endpoints. Eg. 2021-01-08 20:39:52
      */

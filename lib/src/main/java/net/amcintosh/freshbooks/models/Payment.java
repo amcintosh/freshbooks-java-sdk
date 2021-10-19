@@ -143,7 +143,7 @@ public class Payment extends GenericJson implements ConvertibleContent {
      * @param date
      */
     public void setDate(LocalDate date) {
-        this.date = date.toString();
+        this.date = date.format(Util.getStandardDateFormatter());
     }
 
     /**

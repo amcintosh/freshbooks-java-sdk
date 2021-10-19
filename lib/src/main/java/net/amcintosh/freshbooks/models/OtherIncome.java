@@ -7,7 +7,6 @@ import net.amcintosh.freshbooks.models.api.ConvertibleContent;
 
 import java.time.LocalDate;
 import java.time.ZonedDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -57,7 +56,7 @@ public class OtherIncome extends GenericJson implements ConvertibleContent {
      * @param date of income transaction
      */
     public void setDate(LocalDate date) {
-        this.date = date.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        this.date = date.format(Util.getStandardDateFormatter());
     }
 
     /**

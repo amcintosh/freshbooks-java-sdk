@@ -287,7 +287,7 @@ public class Invoice extends GenericJson implements ConvertibleContent {
      * @param createDate
      */
     public void setCreateDate(LocalDate createDate) {
-        this.createDate = createDate.toString();
+        this.createDate = createDate.format(Util.getStandardDateFormatter());
     }
 
     /**
@@ -587,7 +587,7 @@ public class Invoice extends GenericJson implements ConvertibleContent {
      * @param generationDate The date
      */
     public void setGenerationDate(LocalDate generationDate) {
-        this.generationDate = generationDate.toString();
+        this.generationDate = generationDate.format(Util.getStandardDateFormatter());
     }
 
     /**
