@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -206,7 +206,8 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code><a href="FreshBooksClient.FreshBooksClientBuilder.html" title="class in net.amcintosh.freshbooks">FreshBooksClient.FreshBooksClientBuilder</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#withAuthorizationToken(net.amcintosh.freshbooks.models.AuthorizationToken)">withAuthorizationToken</a></span>&#8203;(<a href="models/AuthorizationToken.html" title="class in net.amcintosh.freshbooks.models">AuthorizationToken</a>&nbsp;authorizationToken)</code></th>
 <td class="colLast">
-<div class="block">Initialize the client with a refresh token.</div>
+<div class="block">Initialize the client with a authorization token object containing
+ an valid access token, refresh token, and expiration details.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
@@ -218,19 +219,26 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="FreshBooksClient.FreshBooksClientBuilder.html" title="class in net.amcintosh.freshbooks">FreshBooksClient.FreshBooksClientBuilder</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#withoutRetries()">withoutRetries</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Disables automatic retries on a 429 or 5xx response code.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code><a href="FreshBooksClient.FreshBooksClientBuilder.html" title="class in net.amcintosh.freshbooks">FreshBooksClient.FreshBooksClientBuilder</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#withReadTimeout(int)">withReadTimeout</a></span>&#8203;(int&nbsp;timeout)</code></th>
 <td class="colLast">
 <div class="block">Set the timeout in milliseconds to read data from a connection (0 for infinite).</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code><a href="FreshBooksClient.FreshBooksClientBuilder.html" title="class in net.amcintosh.freshbooks">FreshBooksClient.FreshBooksClientBuilder</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#withUserAgent(java.lang.String)">withUserAgent</a></span>&#8203;(java.lang.String&nbsp;userAgent)</code></th>
 <td class="colLast">
 <div class="block">Override the default user-agent header.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="FreshBooksClient.FreshBooksClientBuilder.html" title="class in net.amcintosh.freshbooks">FreshBooksClient.FreshBooksClientBuilder</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#withWriteTimeout(int)">withWriteTimeout</a></span>&#8203;(int&nbsp;timeout)</code></th>
 <td class="colLast">
@@ -329,7 +337,8 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>withAuthorizationToken</h4>
 <pre class="methodSignature">public&nbsp;<a href="FreshBooksClient.FreshBooksClientBuilder.html" title="class in net.amcintosh.freshbooks">FreshBooksClient.FreshBooksClientBuilder</a>&nbsp;withAuthorizationToken&#8203;(<a href="models/AuthorizationToken.html" title="class in net.amcintosh.freshbooks.models">AuthorizationToken</a>&nbsp;authorizationToken)</pre>
-<div class="block">Initialize the client with a refresh token.</div>
+<div class="block">Initialize the client with a authorization token object containing
+ an valid access token, refresh token, and expiration details.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>authorizationToken</code> - An AuthorizationToken with existing valid OAuth2 tokens</dd>
@@ -385,6 +394,20 @@ extends java.lang.Object</pre>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>timeout</code> - Read timeout in milliseconds</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The builder instance</dd>
+</dl>
+</li>
+</ul>
+<a id="withoutRetries()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>withoutRetries</h4>
+<pre class="methodSignature">public&nbsp;<a href="FreshBooksClient.FreshBooksClientBuilder.html" title="class in net.amcintosh.freshbooks">FreshBooksClient.FreshBooksClientBuilder</a>&nbsp;withoutRetries()</pre>
+<div class="block">Disables automatic retries on a 429 or 5xx response code.</div>
+<dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The builder instance</dd>
 </dl>

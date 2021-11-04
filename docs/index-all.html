@@ -402,7 +402,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/models/Payment.PaymentType.html#CREDIT_CARD">CREDIT_CARD</a></span> - net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Payment.PaymentType.html" title="enum in net.amcintosh.freshbooks.models">Payment.PaymentType</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/FreshBooksClient.html#currentUser()">currentUser()</a></span> - Method in class net.amcintosh.freshbooks.<a href="net/amcintosh/freshbooks/FreshBooksClient.html" title="class in net.amcintosh.freshbooks">FreshBooksClient</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">The identity details of the currently authenticated user.</div>
+</dd>
 <dt><a href="net/amcintosh/freshbooks/resources/CurrentUser.html" title="class in net.amcintosh.freshbooks.resources"><span class="typeNameLink">CurrentUser</span></a> - Class in <a href="net/amcintosh/freshbooks/resources/package-summary.html">net.amcintosh.freshbooks.resources</a></dt>
 <dd>
 <div class="block">Resource for the currently authorized user.</div>
@@ -3824,11 +3826,16 @@ the order they are declared.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/FreshBooksClient.FreshBooksClientBuilder.html#withAuthorizationToken(net.amcintosh.freshbooks.models.AuthorizationToken)">withAuthorizationToken(AuthorizationToken)</a></span> - Method in class net.amcintosh.freshbooks.<a href="net/amcintosh/freshbooks/FreshBooksClient.FreshBooksClientBuilder.html" title="class in net.amcintosh.freshbooks">FreshBooksClient.FreshBooksClientBuilder</a></dt>
 <dd>
-<div class="block">Initialize the client with a refresh token.</div>
+<div class="block">Initialize the client with a authorization token object containing
+ an valid access token, refresh token, and expiration details.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/FreshBooksClient.FreshBooksClientBuilder.html#withConnectTimeout(int)">withConnectTimeout(int)</a></span> - Method in class net.amcintosh.freshbooks.<a href="net/amcintosh/freshbooks/FreshBooksClient.FreshBooksClientBuilder.html" title="class in net.amcintosh.freshbooks">FreshBooksClient.FreshBooksClientBuilder</a></dt>
 <dd>
 <div class="block">Set the timeout in milliseconds to establish a connection (0 for infinite).</div>
+</dd>
+<dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/FreshBooksClient.FreshBooksClientBuilder.html#withoutRetries()">withoutRetries()</a></span> - Method in class net.amcintosh.freshbooks.<a href="net/amcintosh/freshbooks/FreshBooksClient.FreshBooksClientBuilder.html" title="class in net.amcintosh.freshbooks">FreshBooksClient.FreshBooksClientBuilder</a></dt>
+<dd>
+<div class="block">Disables automatic retries on a 429 or 5xx response code.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="net/amcintosh/freshbooks/FreshBooksClient.FreshBooksClientBuilder.html#withReadTimeout(int)">withReadTimeout(int)</a></span> - Method in class net.amcintosh.freshbooks.<a href="net/amcintosh/freshbooks/FreshBooksClient.FreshBooksClientBuilder.html" title="class in net.amcintosh.freshbooks">FreshBooksClient.FreshBooksClientBuilder</a></dt>
 <dd>
