@@ -6,6 +6,7 @@ import com.google.api.client.http.json.JsonHttpContent;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.json.gson.GsonFactory;
+import com.google.api.client.util.ExponentialBackOff;
 import com.google.common.collect.ImmutableMap;
 import net.amcintosh.freshbooks.models.AuthorizationToken;
 import net.amcintosh.freshbooks.models.Identity;
@@ -53,6 +54,7 @@ public class FreshBooksClient {
     private final int connectTimeout;
     private final int readTimeout;
     private final int writeTimeout;
+    private final boolean shouldRetry;
 
     /**
      * Create a new API client instance from the FreshBooks client builder.
@@ -82,6 +84,7 @@ public class FreshBooksClient {
         this.connectTimeout = builder.connectTimeout;
         this.readTimeout = builder.readTimeout;
         this.writeTimeout = builder.writeTimeout;
+        this.shouldRetry = builder.shouldRetry;
     }
 
     private String defaultUserAgent() {
@@ -261,9 +264,42 @@ public class FreshBooksClient {
                 .setReadTimeout(this.readTimeout)
                 .setWriteTimeout(this.writeTimeout)
                 .setThrowExceptionOnExecuteError(false);
+        if (this.shouldRetry) {
+            request.setUnsuccessfulResponseHandler(this.createUnsuccessfulResponseHandler());
+        }
+
         return request;
     }
 
+    /**
+     * Creates a UnsuccessfulResponseHandler to enable retries.
+     * Handler will retry on any 5xx error or a 429 error and will use an
+     * exponential backoff.
+     *
+     * @return Configured HttpUnsuccessfulResponseHandler
+     */
+    private HttpUnsuccessfulResponseHandler createUnsuccessfulResponseHandler() {
+        HttpBackOffUnsuccessfulResponseHandler handler = new HttpBackOffUnsuccessfulResponseHandler(
+                new ExponentialBackOff()
+        );
+        HttpBackOffUnsuccessfulResponseHandler.BackOffRequired ON_SERVER_ERROR_OR_RATE_LIMIT =
+                new HttpBackOffUnsuccessfulResponseHandler.BackOffRequired() {
+                    public boolean isRequired(HttpResponse response) {
+                        int code = response.getStatusCode();
+                        return (code == 429) || (code / 100 == 5);
+                    }
+                };
+        handler.setBackOffRequired(ON_SERVER_ERROR_OR_RATE_LIMIT);
+        return handler;
+    }
+
+    /**
+     * The identity details of the currently authenticated user.
+     *
+     * @see <a href="https://www.freshbooks.com/api/me_endpoint">FreshBooks API - Business, Roles, and Identity</a>
+     *
+     * @throws FreshBooksException
+     */
     public Identity currentUser() throws FreshBooksException {
         return new CurrentUser(this).get();
     }
@@ -391,6 +427,7 @@ public class FreshBooksClient {
         private int connectTimeout = -1;
         private int readTimeout = -1;
         private int writeTimeout = -1;
+        private boolean shouldRetry = true;
 
         /**
          * Builder for FreshBooksClient. Requires a <code>clientId</code>, which will then allow you
@@ -429,7 +466,8 @@ public class FreshBooksClient {
         }
 
         /**
-         * Initialize the client with a refresh token.
+         * Initialize the client with a authorization token object containing
+         * an valid access token, refresh token, and expiration details.
          *
          * @param authorizationToken An AuthorizationToken with existing valid OAuth2 tokens
          * @return The builder instance
@@ -473,6 +511,16 @@ public class FreshBooksClient {
          */
         public FreshBooksClientBuilder withReadTimeout(int timeout) {
             this.readTimeout = timeout;
+            return this;
+        }
+
+        /**
+         * Disables automatic retries on a 429 or 5xx response code.
+         *
+         * @return The builder instance
+         */
+        public FreshBooksClientBuilder withoutRetries() {
+            this.shouldRetry = false;
             return this;
         }
 

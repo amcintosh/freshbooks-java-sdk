@@ -15,8 +15,7 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.Map;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -57,6 +56,26 @@ public class FreshBooksClientTest {
 
         String expected_agent = String.format("FreshBooks java sdk/%s client_id some_client_id", version);
         assertEquals(expected_agent, request.getHeaders().getUserAgent());
+    }
+
+    @Test
+    public void FreshBooksClientBuilder_WithRetry() throws IOException {
+        FreshBooksClient freshBooksClient = new FreshBooksClient.FreshBooksClientBuilder("some_client_id").build();
+
+        HttpRequest request = freshBooksClient.request(HttpMethods.GET, "http://some_url.amcintosh.net");
+
+        assertNotNull(request.getUnsuccessfulResponseHandler());
+    }
+
+    @Test
+    public void FreshBooksClientBuilder_WithoutRetry() throws IOException {
+        FreshBooksClient freshBooksClient = new FreshBooksClient.FreshBooksClientBuilder("some_client_id")
+                .withoutRetries()
+                .build();
+
+        HttpRequest request = freshBooksClient.request(HttpMethods.GET, "http://some_url.amcintosh.net");
+
+        assertNull(request.getUnsuccessfulResponseHandler());
     }
 
     @Test

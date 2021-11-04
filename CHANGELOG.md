@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Add automatic retries on 429 and 5xx errors with exponential backoff
+
 ## 0.2.0
 
 - Added Payments and Other Income resources
