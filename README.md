@@ -13,14 +13,14 @@ Using Maven:
 <dependency>
   <groupId>net.amcintosh</groupId>
   <artifactId>freshbooks-sdk</artifactId>
-  <version>0.2.0</version>
+  <version>0.3.0</version>
 </dependency>
 ```
 
 or Gradle:
 
 ```groovy
-implementation 'net.amcintosh:freshbooks-sdk:0.2.0'
+implementation 'net.amcintosh:freshbooks-sdk:0.3.0'
 ```
 
 ## Usage

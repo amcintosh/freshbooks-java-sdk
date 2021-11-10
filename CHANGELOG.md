@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.3.0
+
 - Add automatic retries on 429 and 5xx errors with exponential backoff
 
 ## 0.2.0
