@@ -374,6 +374,16 @@ public class Invoice extends GenericJson implements ConvertibleContent {
     }
 
     /**
+     * Amount required as deposit if required. Can be set directly or calculated
+     * by the invoice <code>depositPercentage</code>.
+     *
+     * @param depositAmount Money object of required deposit
+     */
+    public void setDepositAmount(Money depositAmount) {
+        this.depositAmount = depositAmount;
+    }
+
+    /**
      * Description of deposits applied to invoice.
      *
      * @return
@@ -391,16 +401,6 @@ public class Invoice extends GenericJson implements ConvertibleContent {
      */
     public void setDepositStatus(InvoiceDepositStatus depositStatus) {
         this.depositStatus = depositStatus;
-    }
-
-    /**
-     * Amount required as deposit if required. Can be set directly or calculated
-     * by the invoice <code>depositPercentage</code>.
-     *
-     * @param depositAmount Money object of required deposit
-     */
-    public void setDepositAmount(Money depositAmount) {
-        this.depositAmount = depositAmount;
     }
 
     /**

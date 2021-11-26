@@ -53,7 +53,7 @@ import net.amcintosh.freshbooks.FreshBooksClient;
 
 FreshBooksClient freshBooksClient = new FreshBooksClient.FreshBooksClientBuilder(
         "your application id")
-    .withToken("a valid token")
+    .withAccessToken("a valid token")
     .build();
 ```
 
