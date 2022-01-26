@@ -11,6 +11,11 @@ import java.time.ZonedDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Expenses are used to track expenditures your business incurs.
+ *
+ * @see <a href="https://www.freshbooks.com/api/expenses">FreshBooks API - Expenses</a>
+ */
 public class Expense extends GenericJson implements ConvertibleContent {
 
     @Key("account_name") String accountName;
@@ -719,6 +724,7 @@ public class Expense extends GenericJson implements ConvertibleContent {
         Util.convertContent(content, "billable", this.billable);
         Util.convertContent(content, "categoryid", this.categoryId);
         Util.convertContent(content, "clientid", this.clientId);
+        Util.convertContent(content, "date", this.date);
         Util.convertContent(content, "ext_accountid", this.extAccountId);
         Util.convertContent(content, "ext_invoiceid", this.extInvoiceId);
         Util.convertContent(content, "ext_systemid", this.extSystemId);
@@ -730,6 +736,7 @@ public class Expense extends GenericJson implements ConvertibleContent {
         Util.convertContent(content, "markup_percent", this.markupPercent);
         Util.convertContent(content, "modern_projectid", this.modernProjectId);
         Util.convertContent(content, "notes", this.notes);
+        Util.convertContent(content, "potential_bill_payment", this.potentialBillPayment);
         Util.convertContent(content, "projectid", this.projectId);
         Util.convertContent(content, "staffid", this.staffId);
         Util.convertContent(content, "status", this.status);
