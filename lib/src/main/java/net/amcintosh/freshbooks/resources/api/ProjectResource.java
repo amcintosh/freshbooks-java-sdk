@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Handles resources under the `/project` and project-like endpoints.
+ * Handles resources under the '<code>/project</code>' and project-like endpoints.
  */
 public abstract class ProjectResource extends Resource {
 

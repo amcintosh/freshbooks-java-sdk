@@ -315,7 +315,49 @@ assertEquals("PaginationQueryBuilder{page=3, perPage=5}", paginator.toString());
 
 ##### Filters
 
-TODO
+To filter which results are return by `list` method calls, construct a `FilterQueryBuilder` and pass that
+in the list of builders to the `list` method.
+
+```java
+import net.amcintosh.freshbooks.models.builders.FilterQueryBuilder;
+
+FilterQueryBuilder filters = new FilterQueryBuilder();
+filters.addEquals("userid", 123);
+ArrayList<QueryBuilder> builders = new ArrayList();
+builders.add(filters);
+
+ClientList clientListResponse = freshBooksClient.clients().list(accountId, builders);
+
+assertEquals(123, clientListResponse.getClients.get(0).getId());
+```
+
+Filters can be built with the various methods for FreshBooks' `equals`, `in`, `like`, `between`, `boolean`,
+and `datetime` filters. The methods can be chained together.
+
+```java
+FilterQueryBuilder filters = new FilterQueryBuilder();
+
+filters.addLike("email_like", "@freshbooks.com");
+// Yields '&search[email_like]=@freshbooks.com'
+
+filters.addInList("clientids", Arrays.asList(123, 456));
+// Yields '&search[clientids][]=123&search[clientids][]=456'
+
+filters.addBoolean("active", false).addBoolean("allow_late_fees", true);
+// Yields '$search[active]=false&$search[allow_late_fees]=true'
+
+filters.addBetween("amount", 1, 10);
+// Yields '&search[amount_min]=1&search[amount_max]=10'
+
+filters.addBetween("start_date", "2020-11-21");
+// Yields '&search[start_date]=2020-11-21'
+
+filters.addDateTime("updated_since", ZonedDateTime.now());
+// Yields '&updated_since=2022-01-19T13:14:07'
+
+filters.addDateTime("updated_since", LocalDate.now());
+// Yields '&updated_since=2022-01-19'
+```
 
 ##### Includes
 

@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Add search filter queries builder for list calls
+
 ## 0.3.0
 
 - Add automatic retries on 429 and 5xx errors with exponential backoff
