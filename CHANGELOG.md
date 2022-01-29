@@ -2,7 +2,10 @@
 
 ## Unreleased
 
+## 0.4.0
+
 - Add search filter queries builder for list calls
+- Upgrade dependencies 
 
 ## 0.3.0
 

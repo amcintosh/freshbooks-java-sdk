@@ -13,7 +13,7 @@ plugins {
     id 'jacoco'
 }
 
-version = '0.3.0'
+version = '0.4.0'
 
 repositories {
     // Use JCenter for resolving dependencies.
@@ -35,9 +35,9 @@ dependencies {
 
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation 'com.google.guava:guava:31.0.1-jre'
-    implementation 'org.slf4j:slf4j-api:1.7.32'
-    implementation 'com.google.http-client:google-http-client:1.40.1'
-    implementation 'com.google.http-client:google-http-client-gson:1.40.1'
+    implementation 'org.slf4j:slf4j-api:1.7.35'
+    implementation 'com.google.http-client:google-http-client:1.41.2'
+    implementation 'com.google.http-client:google-http-client-gson:1.41.2'
 
 }
 
