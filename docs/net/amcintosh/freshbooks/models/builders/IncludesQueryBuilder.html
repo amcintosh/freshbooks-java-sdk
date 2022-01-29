@@ -96,7 +96,7 @@ implements <a href="QueryBuilder.html" title="interface in net.amcintosh.freshbo
      inc.includes("last_activity").includes("late_reminders");
      assertEquals("&amp;includes[]=last_activity&amp;includes[]=late_reminders", inc.build(ResourceType.ACCOUNTING_LIKE));
 
-     ClientList clientResponse = clients.get(accountId, clientId, inc);
+     Client clientResponse = clients.get(accountId, clientId, inc);
 
      ArrayList&lt;QueryBuilder&gt; builders = new ArrayList&lt;QueryBuilder&gt;();
      builders.add(inc);
@@ -201,7 +201,7 @@ implements <a href="QueryBuilder.html" title="interface in net.amcintosh.freshbo
 <h3>build</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">build</span><wbr><span class="parameters">(<a href="../../resources/api/ResourceType.html" title="enum class in net.amcintosh.freshbooks.resources.api">ResourceType</a>&nbsp;resourceType)</span></div>
 <div class="block">Build the query string parameters for the list or get call. As different FreshBooks resources
- use different structure for includes paramters, a resource type is required.</div>
+ use different structure for includes parameters, a resource type is required.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="QueryBuilder.html#build(net.amcintosh.freshbooks.resources.api.ResourceType)">build</a></code>&nbsp;in interface&nbsp;<code><a href="QueryBuilder.html" title="interface in net.amcintosh.freshbooks.models.builders">QueryBuilder</a></code></dd>
