@@ -20,7 +20,7 @@ import java.util.List;
  *     inc.includes("last_activity").includes("late_reminders");
  *     assertEquals("&includes[]=last_activity&includes[]=late_reminders", inc.build(ResourceType.ACCOUNTING_LIKE));
  *
- *     ClientList clientResponse = clients.get(accountId, clientId, inc);
+ *     Client clientResponse = clients.get(accountId, clientId, inc);
  *
  *     ArrayList<QueryBuilder> builders = new ArrayList<QueryBuilder>();
  *     builders.add(inc);
@@ -51,7 +51,7 @@ public class IncludesQueryBuilder implements QueryBuilder {
 
     /**
      * Build the query string parameters for the list or get call. As different FreshBooks resources
-     * use different structure for includes paramters, a resource type is required.
+     * use different structure for includes parameters, a resource type is required.
      *
      * @param resourceType The resource type.
      * @return The composed query string parameters.

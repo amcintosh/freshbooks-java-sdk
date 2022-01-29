@@ -85,8 +85,8 @@ public class Expenses extends AccountingResource {
     /**
      * Create a new expense from the provided Expense model.
      * Makes a POST call against the expense resource endpoint.
-     *
-     * This calls `expense.getContent()` to get a hash map of data.
+     * <br><br>
+     * This calls <code>expense.getContent()</code> to get a hash map of data.
      *
      * @param accountId The alpha-numeric account id
      * @param data Expense model with create data

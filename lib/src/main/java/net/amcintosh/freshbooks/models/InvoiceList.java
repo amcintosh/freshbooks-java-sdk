@@ -18,7 +18,7 @@ public class InvoiceList extends ListResult {
     }
 
     /**
-     * Array of invoices returned by the `list` call.
+     * Array of invoices returned by the <code>list</code> call.
      *
      * @return Arraylist of Invoice objects
      */
