@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Remove deprecated, duplicated fields form Tasks resource model
+- Change Items, Invoice LineItems quantities to Decimal type
+
 ## 0.4.0
 
 - Add search filter queries builder for list calls

@@ -115,7 +115,7 @@ public class InvoicesTest {
         assertEquals("Melmac melamine resin molded dinnerware", invoice.getLines().get(0).getDescription());
         assertEquals(0, invoice.getLines().get(0).getExpenseId());
         assertEquals("Bowls", invoice.getLines().get(0).getName());
-        assertEquals(4, invoice.getLines().get(0).getQuantity());
+        assertEquals(new BigDecimal(4), invoice.getLines().get(0).getQuantity());
         assertEquals("13", invoice.getLines().get(0).getTaxAmount1());
         assertEquals("0", invoice.getLines().get(0).getTaxAmount2());
         assertEquals("HST1", invoice.getLines().get(0).getTaxName1());
@@ -181,7 +181,7 @@ public class InvoicesTest {
         LineItem line = new LineItem();
         line.setName("Bowls");
         line.setUnitCost(new Money(new BigDecimal("20.00"), "CAD"));
-        line.setQuantity(4);
+        line.setQuantity(new BigDecimal(4));
 
         Invoice data = new Invoice();
         data.setCustomerId(clientId);

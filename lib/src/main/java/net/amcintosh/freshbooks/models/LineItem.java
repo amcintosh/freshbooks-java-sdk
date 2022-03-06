@@ -6,6 +6,7 @@ import com.google.api.client.util.Value;
 import net.amcintosh.freshbooks.Util;
 import net.amcintosh.freshbooks.models.api.ConvertibleContent;
 
+import java.math.BigDecimal;
 import java.time.ZonedDateTime;
 import java.util.HashMap;
 import java.util.Map;
@@ -25,7 +26,7 @@ public class LineItem extends GenericJson implements ConvertibleContent {
     @Key String description;
     @Key("expenseid") Long expenseId;
     @Key String name;
-    @Key("qty") int quantity;
+    @Key("qty") String quantity;
     @Key String taxAmount1;
     @Key String taxAmount2;
     @Key String taxName1;
@@ -120,12 +121,16 @@ public class LineItem extends GenericJson implements ConvertibleContent {
     }
 
     /**
-     * Quantity of the line unit, multiplied against unit_cost to get amount.
+     * Decimal quantity of the line unit, multiplied against unit_cost to get amount.
      *
      * @return
      */
-    public int getQuantity() {
-        return quantity;
+    public BigDecimal getQuantity() {
+        if (this.quantity != null) {
+            return new BigDecimal(quantity);
+        }
+        return null;
+
     }
 
     /**
@@ -134,7 +139,25 @@ public class LineItem extends GenericJson implements ConvertibleContent {
      * @param quantity
      */
     public void setQuantity(int quantity) {
+        this.quantity = String.valueOf(quantity);
+    }
+
+    /**
+     * Quantity of the line unit, multiplied against unit_cost to get amount.
+     *
+     * @param quantity
+     */
+    public void setQuantity(String quantity) {
         this.quantity = quantity;
+    }
+
+    /**
+     * Decimal quantity of the line unit, multiplied against unit_cost to get amount.
+     *
+     * @param quantity
+     */
+    public void setQuantity(BigDecimal quantity) {
+        this.quantity = quantity.toString();
     }
 
     /**

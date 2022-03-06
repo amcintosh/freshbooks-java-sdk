@@ -38,8 +38,6 @@ public class TasksTest {
         assertEquals("Piloting", task.getName());
         assertEquals("Piloting the project based on the expectations of the executive", task.getDescription());
         assertEquals(taskId, task.getTaskId());
-        assertEquals("Piloting", task.getTaskName());
-        assertEquals("Piloting the project based on the expectations of the executive", task.getTaskDescription());
         assertEquals(new BigDecimal("100.00"), task.getRate().getAmount());
         assertEquals("CAD", task.getRate().getCode());
         assertTrue(task.isBillable());

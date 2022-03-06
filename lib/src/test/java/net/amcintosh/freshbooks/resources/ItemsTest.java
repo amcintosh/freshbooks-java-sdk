@@ -41,7 +41,7 @@ public class ItemsTest {
         assertEquals("It's Cheap", item.getDescription());
         assertEquals("", item.getInventory());
         assertEquals("A Cheap Item", item.getName());
-        assertEquals("100", item.getQuantity());
+        assertEquals(new BigDecimal("100"), item.getQuantity());
         assertEquals("SQ1234", item.getSku());
         assertEquals(7840, item.getTax1());
         assertEquals(0, item.getTax2());

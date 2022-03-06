@@ -204,12 +204,17 @@ API calls to create and update can either be called with a `Map` of the resource
 or a model Class with the data populated. A successful call will return a model Class
 as if a `get` call.
 
+_Note_: When using the `Map` of data, you need to specify the field as it exists in the 
+FreshBooks API. There are API fields that are translated to more intuitive names in the 
+data models. For example `fname` = `firstName`, or `bus_phone` = `businessPhone`.
+
 Create:
 
 ```java
 // Create from object
 Client clientToCreateOne = new Client();
 clientToCreateOne.setEmail("john.doe@abcorp.com");
+clientToCreateOne.setFirstName("John");
 
 Client createdClientOne = freshBooksClient.clients().create(accountId, clientToCreateOne);
 long createdClientOneId = createdClientOne.getId();
@@ -217,6 +222,7 @@ long createdClientOneId = createdClientOne.getId();
 // Update from data map
 HashMap<String, Object> clientToCreateTwo = new HashMap();
 clientToCreateTwo.put("email", "john.doe@abcorp.com");
+clientToCreateTwo.put("fname", "John");
 
 Client createdClientTwo = freshBooksClient.clients().create(accountId, clientToCreateTwo);
 long createdClientTwoId = createdClientTwo.getId();

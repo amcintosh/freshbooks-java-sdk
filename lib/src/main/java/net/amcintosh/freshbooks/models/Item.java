@@ -5,6 +5,7 @@ import com.google.api.client.util.Key;
 import net.amcintosh.freshbooks.Util;
 import net.amcintosh.freshbooks.models.api.ConvertibleContent;
 
+import java.math.BigDecimal;
 import java.time.ZonedDateTime;
 import java.util.HashMap;
 import java.util.Map;
@@ -12,7 +13,7 @@ import java.util.Map;
 /**
  * Items are stored from invoice lines to make invoicing easier in the future.
  *
- * @see <a href="https://www.freshbooks.com/api/items">FreshBooks API - Items</a>
+ * @see <a href="https://www.freshbooks.com/api/">FreshBooks API - Items</a>
  */
 public class Item extends GenericJson implements ConvertibleContent {
 
@@ -112,16 +113,37 @@ public class Item extends GenericJson implements ConvertibleContent {
     }
 
     /**
-     * Decimal-string quantity to multiply unit cost by.
+     * Decimal quantity to multiply unit cost by.
      *
      * @return
      */
-    public String getQuantity() {
-        return quantity;
+    public BigDecimal getQuantity() {
+        if (this.quantity != null) {
+            return new BigDecimal(quantity);
+        }
+        return null;
     }
 
     /**
-     * Decimal-string quantity to multiply unit cost by.
+     * Decimal quantity to multiply unit cost by.
+     *
+     * @param quantity
+     */
+    public void setQuantity(BigDecimal quantity) {
+        this.quantity = quantity.toString();
+    }
+
+    /**
+     * Quantity to multiply unit cost by.
+     *
+     * @param quantity
+     */
+    public void setQuantity(int quantity) {
+        this.quantity = String.valueOf(quantity);
+    }
+
+    /**
+     * Quantity to multiply unit cost by.
      *
      * @param quantity
      */

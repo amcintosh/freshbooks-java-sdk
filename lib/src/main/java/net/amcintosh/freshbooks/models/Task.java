@@ -21,8 +21,6 @@ public class Task extends GenericJson implements ConvertibleContent {
     @Key String name;
     @Key String description;
     @Key("taskid") Long taskId;
-    @Key("tname") String taskName;
-    @Key("tdesc") String taskDescription;
     @Key Money rate;
     @Key Boolean billable;
     @Key String updated;
@@ -80,42 +78,6 @@ public class Task extends GenericJson implements ConvertibleContent {
      */
     public long getTaskId() {
         return taskId;
-    }
-
-    /**
-     * Duplicate of descriptive name of task.
-     *
-     * @return name
-     */
-    public String getTaskName() {
-        return taskName;
-    }
-
-    /**
-     * Duplicate of descriptive name of task.
-     *
-     * @param taskName e.g.: Piloting
-     */
-    public void setTaskName(String taskName) {
-        this.taskName = taskName;
-    }
-
-    /**
-     * Duplicate if descriptive text for task.
-     *
-     * @return taskDescription
-     */
-    public String getTaskDescription() {
-        return taskDescription;
-    }
-
-    /**
-     * Duplicate of descriptive text for task.
-     *
-     * @param taskDescription e.g.: Piloting based on expectations of the executive
-     */
-    public void setTaskDescription(String taskDescription) {
-        this.taskDescription = taskDescription;
     }
 
     /**
@@ -191,8 +153,6 @@ public class Task extends GenericJson implements ConvertibleContent {
         Map<String, Object> content = new HashMap<>();
         Util.convertContent(content, "name", name);
         Util.convertContent(content, "description", description);
-        Util.convertContent(content, "tname", taskName);
-        Util.convertContent(content, "tdesc", taskDescription);
         Util.convertContent(content, "billable", billable);
         Util.convertContent(content, "rate", rate);
 
