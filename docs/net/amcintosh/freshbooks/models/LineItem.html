@@ -179,10 +179,10 @@ implements <a href="api/ConvertibleContent.html" title="interface in net.amcinto
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Name for the line item.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/math/BigDecimal.html" title="class or interface in java.math" class="external-link">BigDecimal</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getQuantity()" class="member-name-link">getQuantity</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Quantity of the line unit, multiplied against unit_cost to get amount.</div>
+<div class="block">Decimal quantity of the line unit, multiplied against unit_cost to get amount.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTaxAmount1()" class="member-name-link">getTaxAmount1</a>()</code></div>
@@ -254,6 +254,16 @@ implements <a href="api/ConvertibleContent.html" title="interface in net.amcinto
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setQuantity(int)" class="member-name-link">setQuantity</a><wbr>(int&nbsp;quantity)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Quantity of the line unit, multiplied against unit_cost to get amount.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setQuantity(java.lang.String)" class="member-name-link">setQuantity</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;quantity)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Quantity of the line unit, multiplied against unit_cost to get amount.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setQuantity(java.math.BigDecimal)" class="member-name-link">setQuantity</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/math/BigDecimal.html" title="class or interface in java.math" class="external-link">BigDecimal</a>&nbsp;quantity)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Decimal quantity of the line unit, multiplied against unit_cost to get amount.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTaxAmount1(java.lang.String)" class="member-name-link">setTaxAmount1</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;taxAmount1)</code></div>
@@ -437,8 +447,8 @@ implements <a href="api/ConvertibleContent.html" title="interface in net.amcinto
 <li>
 <section class="detail" id="getQuantity()">
 <h3>getQuantity</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getQuantity</span>()</div>
-<div class="block">Quantity of the line unit, multiplied against unit_cost to get amount.</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/math/BigDecimal.html" title="class or interface in java.math" class="external-link">BigDecimal</a></span>&nbsp;<span class="element-name">getQuantity</span>()</div>
+<div class="block">Decimal quantity of the line unit, multiplied against unit_cost to get amount.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 </dl>
@@ -449,6 +459,28 @@ implements <a href="api/ConvertibleContent.html" title="interface in net.amcinto
 <h3>setQuantity</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setQuantity</span><wbr><span class="parameters">(int&nbsp;quantity)</span></div>
 <div class="block">Quantity of the line unit, multiplied against unit_cost to get amount.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>quantity</code> - </dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setQuantity(java.lang.String)">
+<h3>setQuantity</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setQuantity</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;quantity)</span></div>
+<div class="block">Quantity of the line unit, multiplied against unit_cost to get amount.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>quantity</code> - </dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setQuantity(java.math.BigDecimal)">
+<h3>setQuantity</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setQuantity</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/math/BigDecimal.html" title="class or interface in java.math" class="external-link">BigDecimal</a>&nbsp;quantity)</span></div>
+<div class="block">Decimal quantity of the line unit, multiplied against unit_cost to get amount.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>quantity</code> - </dd>

@@ -166,20 +166,10 @@ implements <a href="api/ConvertibleContent.html" title="interface in net.amcinto
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">The hourly amount rate charged for task.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTaskDescription()" class="member-name-link">getTaskDescription</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTaskId()" class="member-name-link">getTaskId</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Duplicate if descriptive text for task.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTaskId()" class="member-name-link">getTaskId</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Duplicate of id.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTaskName()" class="member-name-link">getTaskName</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Duplicate of descriptive name of task.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/ZonedDateTime.html" title="class or interface in java.time" class="external-link">ZonedDateTime</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUpdated()" class="member-name-link">getUpdated</a>()</code></div>
@@ -215,16 +205,6 @@ implements <a href="api/ConvertibleContent.html" title="interface in net.amcinto
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setRate(net.amcintosh.freshbooks.models.Money)" class="member-name-link">setRate</a><wbr>(<a href="Money.html" title="class in net.amcintosh.freshbooks.models">Money</a>&nbsp;rate)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">The hourly amount rate charged for task.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTaskDescription(java.lang.String)" class="member-name-link">setTaskDescription</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;taskDescription)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Duplicate of descriptive text for task.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTaskName(java.lang.String)" class="member-name-link">setTaskName</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;taskName)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Duplicate of descriptive name of task.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setVisState(net.amcintosh.freshbooks.models.VisState)" class="member-name-link">setVisState</a><wbr>(<a href="VisState.html" title="enum class in net.amcintosh.freshbooks.models">VisState</a>&nbsp;visState)</code></div>
@@ -337,50 +317,6 @@ implements <a href="api/ConvertibleContent.html" title="interface in net.amcinto
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>id</dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="getTaskName()">
-<h3>getTaskName</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getTaskName</span>()</div>
-<div class="block">Duplicate of descriptive name of task.</div>
-<dl class="notes">
-<dt>Returns:</dt>
-<dd>name</dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="setTaskName(java.lang.String)">
-<h3>setTaskName</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setTaskName</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;taskName)</span></div>
-<div class="block">Duplicate of descriptive name of task.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>taskName</code> - e.g.: Piloting</dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="getTaskDescription()">
-<h3>getTaskDescription</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getTaskDescription</span>()</div>
-<div class="block">Duplicate if descriptive text for task.</div>
-<dl class="notes">
-<dt>Returns:</dt>
-<dd>taskDescription</dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="setTaskDescription(java.lang.String)">
-<h3>setTaskDescription</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setTaskDescription</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;taskDescription)</span></div>
-<div class="block">Duplicate of descriptive text for task.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>taskDescription</code> - e.g.: Piloting based on expectations of the executive</dd>
 </dl>
 </section>
 </li>
