@@ -16,8 +16,8 @@ plugins {
 version = '0.4.0'
 
 repositories {
-    // Use JCenter for resolving dependencies.
-    jcenter()
+    // Use mavenCentral for resolving dependencies.
+    mavenCentral()
 }
 
 jacoco {
