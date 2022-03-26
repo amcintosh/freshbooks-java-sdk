@@ -41,6 +41,8 @@ public class TasksTest {
         assertEquals(new BigDecimal("100.00"), task.getRate().getAmount());
         assertEquals("CAD", task.getRate().getCode());
         assertTrue(task.isBillable());
+        assertEquals(2, task.getTax1());
+        assertEquals(0, task.getTax2());
         assertEquals(ZonedDateTime.of(2017, 7, 24, 13,
                         39, 21, 0, ZoneId.of("UTC")),
                 task.getUpdated());

@@ -14,7 +14,9 @@
         "tname": "Piloting",
         "tdesc": "Piloting the project based on the expectations of the executive",
         "id": 159361,
-        "name": "Piloting"
+        "name": "Piloting",
+        "tax1": 2,
+        "tax2": 0
       }
     }
   }
