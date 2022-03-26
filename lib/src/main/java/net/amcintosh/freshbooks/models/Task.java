@@ -23,6 +23,8 @@ public class Task extends GenericJson implements ConvertibleContent {
     @Key("taskid") Long taskId;
     @Key Money rate;
     @Key Boolean billable;
+    @Key Long tax1;
+    @Key Long tax2;
     @Key String updated;
     @Key("vis_state") int visState;
 
@@ -105,6 +107,42 @@ public class Task extends GenericJson implements ConvertibleContent {
      */
     public boolean isBillable() {
         return billable;
+    }
+
+    /**
+     * Id of the first tax to apply to this task.
+     *
+     * @return
+     */
+    public long getTax1() {
+        return tax1;
+    }
+
+    /**
+     * Id of the first tax to apply to this task.
+     *
+     * @param tax1
+     */
+    public void setTax1(long tax1) {
+        this.tax1 = tax1;
+    }
+
+    /**
+     * Id of the second tax to apply to this task.
+     *
+     * @return
+     */
+    public long getTax2() {
+        return tax2;
+    }
+
+    /**
+     * Id of the second tax to apply to this task.
+     *
+     * @param tax2
+     */
+    public void setTax2(long tax2) {
+        this.tax2 = tax2;
     }
 
     /**
