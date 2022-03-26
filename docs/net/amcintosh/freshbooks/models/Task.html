@@ -171,6 +171,16 @@ implements <a href="api/ConvertibleContent.html" title="interface in net.amcinto
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Duplicate of id.</div>
 </div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTax1()" class="member-name-link">getTax1</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Id of the first tax to apply to this task.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTax2()" class="member-name-link">getTax2</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Id of the second tax to apply to this task.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/ZonedDateTime.html" title="class or interface in java.time" class="external-link">ZonedDateTime</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUpdated()" class="member-name-link">getUpdated</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -205,6 +215,16 @@ implements <a href="api/ConvertibleContent.html" title="interface in net.amcinto
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setRate(net.amcintosh.freshbooks.models.Money)" class="member-name-link">setRate</a><wbr>(<a href="Money.html" title="class in net.amcintosh.freshbooks.models">Money</a>&nbsp;rate)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">The hourly amount rate charged for task.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTax1(long)" class="member-name-link">setTax1</a><wbr>(long&nbsp;tax1)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Id of the first tax to apply to this task.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTax2(long)" class="member-name-link">setTax2</a><wbr>(long&nbsp;tax2)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Id of the second tax to apply to this task.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setVisState(net.amcintosh.freshbooks.models.VisState)" class="member-name-link">setVisState</a><wbr>(<a href="VisState.html" title="enum class in net.amcintosh.freshbooks.models">VisState</a>&nbsp;visState)</code></div>
@@ -350,6 +370,48 @@ implements <a href="api/ConvertibleContent.html" title="interface in net.amcinto
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>boolean if task is billable.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getTax1()">
+<h3>getTax1</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">getTax1</span>()</div>
+<div class="block">Id of the first tax to apply to this task.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setTax1(long)">
+<h3>setTax1</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setTax1</span><wbr><span class="parameters">(long&nbsp;tax1)</span></div>
+<div class="block">Id of the first tax to apply to this task.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>tax1</code> - </dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getTax2()">
+<h3>getTax2</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">getTax2</span>()</div>
+<div class="block">Id of the second tax to apply to this task.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setTax2(long)">
+<h3>setTax2</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setTax2</span><wbr><span class="parameters">(long&nbsp;tax2)</span></div>
+<div class="block">Id of the second tax to apply to this task.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>tax2</code> - </dd>
 </dl>
 </section>
 </li>
