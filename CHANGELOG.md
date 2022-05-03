@@ -4,6 +4,7 @@
 
 - Remove deprecated, duplicated fields form Tasks resource model
 - Change Items, Invoice LineItems quantities to Decimal type
+- Added invoice banner image field and better documentation to invoice presentation
 - Added tax fields to Tasks
 
 ## 0.4.0

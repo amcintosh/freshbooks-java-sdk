@@ -132,7 +132,8 @@ public class InvoicesTest {
 
         // Presentation
         assertEquals("dd/mm/yyyy", invoice.getPresentation().getDateFormat());
-        assertEquals("", invoice.getPresentation().getImageLogoSrc());
+        assertEquals("/uploads/images/banner_jwt", invoice.getPresentation().getImageBannerSrc());
+        assertEquals("/uploads/images/logo_jwt", invoice.getPresentation().getImageLogoSrc());
         assertEquals("modern", invoice.getPresentation().getThemeFontName());
         assertEquals("simple", invoice.getPresentation().getThemeLayout());
         assertEquals("#663399", invoice.getPresentation().getThemePrimaryColor());
