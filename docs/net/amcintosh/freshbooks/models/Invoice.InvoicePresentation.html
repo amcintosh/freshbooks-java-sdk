@@ -91,7 +91,15 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public static class </span><span class="element-name type-name-label">Invoice.InvoicePresentation</span>
 <span class="extends-implements">extends com.google.api.client.json.GenericJson</span></div>
-<div class="block">To define invoice logo and styles.</div>
+<div class="block">Invoice Presentations are used to style an invoice including font, colors, and logos.
+
+ By default, when a new invoice is created, it automatically uses the presentation style
+ of the most recently created invoice (including logos, colors, and fonts). If you wish
+ to change the style of an invoice via the API, or if the user has not styled their
+ invoices (such as in a brand new account), then you can pass a <code>presentation</code>
+ object as part of the invoice call. Subsequent invoices will use this style until an
+ invoice is created with a new style. If you do not wish for an invoice to use any styles,
+ you can include <code>use_default_presentation: false</code> in the invoice call.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -139,34 +147,64 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDateFormat()" class="member-name-link">getDateFormat</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Override business date format for this invoice.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getImageLogoSrc()" class="member-name-link">getImageLogoSrc</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getImageBannerSrc()" class="member-name-link">getImageBannerSrc</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">The invoice banner image for "modern" invoices.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getThemeFontName()" class="member-name-link">getThemeFontName</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getImageLogoSrc()" class="member-name-link">getImageLogoSrc</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">The invoice logo image.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getThemeLayout()" class="member-name-link">getThemeLayout</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getThemeFontName()" class="member-name-link">getThemeFontName</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Which invoice font is in use.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getThemePrimaryColor()" class="member-name-link">getThemePrimaryColor</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getThemeLayout()" class="member-name-link">getThemeLayout</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Which invoice template is in use.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getThemePrimaryColor()" class="member-name-link">getThemePrimaryColor</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Primary highlight colour for the invoice.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setDateFormat(java.lang.String)" class="member-name-link">setDateFormat</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;dateFormat)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Override business date format for this invoice.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setDateFormat(java.lang.String)" class="member-name-link">setDateFormat</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;dateFormat)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setImageBannerSrc(java.lang.String)" class="member-name-link">setImageBannerSrc</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;imageBannerSrc)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">The invoice banner image for "modern" invoices.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setImageLogoSrc(java.lang.String)" class="member-name-link">setImageLogoSrc</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;imageLogoSrc)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">The invoice logo image.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setThemeFontName(java.lang.String)" class="member-name-link">setThemeFontName</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;themeFontName)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Which invoice font to use.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setThemeLayout(java.lang.String)" class="member-name-link">setThemeLayout</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;themeLayout)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Which invoice template to use.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setThemePrimaryColor(java.lang.String)" class="member-name-link">setThemePrimaryColor</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;themePrimaryColor)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Primary highlight colour for the invoice.</div>
+</div>
 </div>
 </div>
 </div>
@@ -214,60 +252,132 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="getDateFormat()">
 <h3>getDateFormat</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getDateFormat</span>()</div>
+<div class="block">Override business date format for this invoice.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>string format of: “mm/dd/yyyy”, “dd/mm/yyyy”, or “yyyy-mm-dd”</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="setDateFormat(java.lang.String)">
 <h3>setDateFormat</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setDateFormat</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;dateFormat)</span></div>
+<div class="block">Override business date format for this invoice.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>dateFormat</code> - string format of: “mm/dd/yyyy”, “dd/mm/yyyy”, or “yyyy-mm-dd”</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getImageBannerSrc()">
+<h3>getImageBannerSrc</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getImageBannerSrc</span>()</div>
+<div class="block">The invoice banner image for "modern" invoices.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>“/uploads/images/JWT_TOKEN_FROM_IMAGE_UPLOAD”</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setImageBannerSrc(java.lang.String)">
+<h3>setImageBannerSrc</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setImageBannerSrc</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;imageBannerSrc)</span></div>
+<div class="block">The invoice banner image for "modern" invoices.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>imageBannerSrc</code> - “/uploads/images/JWT_TOKEN_FROM_IMAGE_UPLOAD”</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getImageLogoSrc()">
 <h3>getImageLogoSrc</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getImageLogoSrc</span>()</div>
+<div class="block">The invoice logo image.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>“/uploads/images/JWT_TOKEN_FROM_IMAGE_UPLOAD”</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="setImageLogoSrc(java.lang.String)">
 <h3>setImageLogoSrc</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setImageLogoSrc</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;imageLogoSrc)</span></div>
+<div class="block">The invoice logo image.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>imageLogoSrc</code> - “/uploads/images/JWT_TOKEN_FROM_IMAGE_UPLOAD”</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getThemeFontName()">
 <h3>getThemeFontName</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getThemeFontName</span>()</div>
+<div class="block">Which invoice font is in use.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>“modern” or “classic”</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="setThemeFontName(java.lang.String)">
 <h3>setThemeFontName</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setThemeFontName</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;themeFontName)</span></div>
+<div class="block">Which invoice font to use.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>themeFontName</code> - “modern” or “classic”</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getThemeLayout()">
 <h3>getThemeLayout</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getThemeLayout</span>()</div>
+<div class="block">Which invoice template is in use.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>“simple, “modern”, or “classic”</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="setThemeLayout(java.lang.String)">
 <h3>setThemeLayout</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setThemeLayout</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;themeLayout)</span></div>
+<div class="block">Which invoice template to use.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>themeLayout</code> - “simple, “modern”, or “classic”</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getThemePrimaryColor()">
 <h3>getThemePrimaryColor</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getThemePrimaryColor</span>()</div>
+<div class="block">Primary highlight colour for the invoice.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>eg. “#345beb”</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="setThemePrimaryColor(java.lang.String)">
 <h3>setThemePrimaryColor</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setThemePrimaryColor</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;themePrimaryColor)</span></div>
+<div class="block">Primary highlight colour for the invoice.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>themePrimaryColor</code> - eg. “#345beb”</dd>
+</dl>
 </section>
 </li>
 <li>

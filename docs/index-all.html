@@ -1016,7 +1016,9 @@ loadScripts(document, 'script');</script>
 <div class="block">Date format used by the business in FreshBooks.</div>
 </dd>
 <dt><a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html#getDateFormat()" class="member-name-link">getDateFormat()</a> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html" title="class in net.amcintosh.freshbooks.models">Invoice.InvoicePresentation</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Override business date format for this invoice.</div>
+</dd>
 <dt><a href="net/amcintosh/freshbooks/models/Invoice.html#getDatePaid()" class="member-name-link">getDatePaid()</a> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
 <dd>
 <div class="block">Date invoice was fully paid.</div>
@@ -1231,8 +1233,14 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">UUID of the identity.</div>
 </dd>
+<dt><a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html#getImageBannerSrc()" class="member-name-link">getImageBannerSrc()</a> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html" title="class in net.amcintosh.freshbooks.models">Invoice.InvoicePresentation</a></dt>
+<dd>
+<div class="block">The invoice banner image for "modern" invoices.</div>
+</dd>
 <dt><a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html#getImageLogoSrc()" class="member-name-link">getImageLogoSrc()</a> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html" title="class in net.amcintosh.freshbooks.models">Invoice.InvoicePresentation</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">The invoice logo image.</div>
+</dd>
 <dt><a href="net/amcintosh/freshbooks/models/OtherIncome.html#getIncomeId()" class="member-name-link">getIncomeId()</a> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/OtherIncome.html" title="class in net.amcintosh.freshbooks.models">OtherIncome</a></dt>
 <dd>
 <div class="block">Get the unique identifier of this income within this business.</div>
@@ -1750,11 +1758,17 @@ loadScripts(document, 'script');</script>
 <div class="block">Terms listed on invoice.</div>
 </dd>
 <dt><a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html#getThemeFontName()" class="member-name-link">getThemeFontName()</a> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html" title="class in net.amcintosh.freshbooks.models">Invoice.InvoicePresentation</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Which invoice font is in use.</div>
+</dd>
 <dt><a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html#getThemeLayout()" class="member-name-link">getThemeLayout()</a> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html" title="class in net.amcintosh.freshbooks.models">Invoice.InvoicePresentation</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Which invoice template is in use.</div>
+</dd>
 <dt><a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html#getThemePrimaryColor()" class="member-name-link">getThemePrimaryColor()</a> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html" title="class in net.amcintosh.freshbooks.models">Invoice.InvoicePresentation</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Primary highlight colour for the invoice.</div>
+</dd>
 <dt><a href="net/amcintosh/freshbooks/models/Project.html#getTitle()" class="member-name-link">getTitle()</a> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/amcintosh/freshbooks/models/Project.PendingInvitation.html#getToEmail()" class="member-name-link">getToEmail()</a> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.PendingInvitation.html" title="class in net.amcintosh.freshbooks.models">Project.PendingInvitation</a></dt>
@@ -2040,7 +2054,7 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html" class="type-name-link" title="class in net.amcintosh.freshbooks.models">Invoice.InvoicePresentation</a> - Class in <a href="net/amcintosh/freshbooks/models/package-summary.html">net.amcintosh.freshbooks.models</a></dt>
 <dd>
-<div class="block">To define invoice logo and styles.</div>
+<div class="block">Invoice Presentations are used to style an invoice including font, colors, and logos.</div>
 </dd>
 <dt><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceStatus.html" class="type-name-link" title="enum class in net.amcintosh.freshbooks.models">Invoice.InvoiceStatus</a> - Enum Class in <a href="net/amcintosh/freshbooks/models/package-summary.html">net.amcintosh.freshbooks.models</a></dt>
 <dd>
@@ -2852,7 +2866,9 @@ loadScripts(document, 'script');</script>
 <div class="block">Date the payment was made.</div>
 </dd>
 <dt><a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html#setDateFormat(java.lang.String)" class="member-name-link">setDateFormat(String)</a> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html" title="class in net.amcintosh.freshbooks.models">Invoice.InvoicePresentation</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Override business date format for this invoice.</div>
+</dd>
 <dt><a href="net/amcintosh/freshbooks/models/Invoice.html#setDepositAmount(net.amcintosh.freshbooks.models.Money)" class="member-name-link">setDepositAmount(Money)</a> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.html" title="class in net.amcintosh.freshbooks.models">Invoice</a></dt>
 <dd>
 <div class="block">Amount required as deposit if required.</div>
@@ -2961,8 +2977,14 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="net/amcintosh/freshbooks/models/Project.html#setId(long)" class="member-name-link">setId(long)</a> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html#setImageBannerSrc(java.lang.String)" class="member-name-link">setImageBannerSrc(String)</a> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html" title="class in net.amcintosh.freshbooks.models">Invoice.InvoicePresentation</a></dt>
+<dd>
+<div class="block">The invoice banner image for "modern" invoices.</div>
+</dd>
 <dt><a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html#setImageLogoSrc(java.lang.String)" class="member-name-link">setImageLogoSrc(String)</a> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html" title="class in net.amcintosh.freshbooks.models">Invoice.InvoicePresentation</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">The invoice logo image.</div>
+</dd>
 <dt><a href="net/amcintosh/freshbooks/models/Expense.html#setIncludeReceipt(boolean)" class="member-name-link">setIncludeReceipt(boolean)</a> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Expense.html" title="class in net.amcintosh.freshbooks.models">Expense</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/amcintosh/freshbooks/models/Project.html#setInternal(boolean)" class="member-name-link">setInternal(boolean)</a> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
@@ -3306,11 +3328,17 @@ loadScripts(document, 'script');</script>
 <div class="block">Terms listed on invoice.</div>
 </dd>
 <dt><a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html#setThemeFontName(java.lang.String)" class="member-name-link">setThemeFontName(String)</a> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html" title="class in net.amcintosh.freshbooks.models">Invoice.InvoicePresentation</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Which invoice font to use.</div>
+</dd>
 <dt><a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html#setThemeLayout(java.lang.String)" class="member-name-link">setThemeLayout(String)</a> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html" title="class in net.amcintosh.freshbooks.models">Invoice.InvoicePresentation</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Which invoice template to use.</div>
+</dd>
 <dt><a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html#setThemePrimaryColor(java.lang.String)" class="member-name-link">setThemePrimaryColor(String)</a> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoicePresentation.html" title="class in net.amcintosh.freshbooks.models">Invoice.InvoicePresentation</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Primary highlight colour for the invoice.</div>
+</dd>
 <dt><a href="net/amcintosh/freshbooks/models/Project.html#setTitle(java.lang.String)" class="member-name-link">setTitle(String)</a> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Project.html" title="class in net.amcintosh.freshbooks.models">Project</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/amcintosh/freshbooks/models/Expense.html#setTransactionId(long)" class="member-name-link">setTransactionId(long)</a> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Expense.html" title="class in net.amcintosh.freshbooks.models">Expense</a></dt>
