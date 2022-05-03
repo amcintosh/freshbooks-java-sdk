@@ -1189,51 +1189,128 @@ public class Invoice extends GenericJson implements ConvertibleContent {
 
 
     /**
-     * To define invoice logo and styles.
+     * Invoice Presentations are used to style an invoice including font, colors, and logos.
+     *
+     * By default, when a new invoice is created, it automatically uses the presentation style
+     * of the most recently created invoice (including logos, colors, and fonts). If you wish
+     * to change the style of an invoice via the API, or if the user has not styled their
+     * invoices (such as in a brand new account), then you can pass a <code>presentation</code>
+     * object as part of the invoice call. Subsequent invoices will use this style until an
+     * invoice is created with a new style. If you do not wish for an invoice to use any styles,
+     * you can include <code>use_default_presentation: false</code> in the invoice call.
      */
     public static class InvoicePresentation extends GenericJson {
         @Key("date_format") String dateFormat;
+        @Key("image_banner_src") String imageBannerSrc;
         @Key("image_logo_src") String imageLogoSrc;
         @Key("theme_font_name") String themeFontName;
         @Key("theme_layout") String themeLayout;
         @Key("theme_primary_color") String themePrimaryColor;
 
+        /**
+         * Override business date format for this invoice.
+         *
+         * @return string format of: “mm/dd/yyyy”, “dd/mm/yyyy”, or “yyyy-mm-dd”
+         */
         public String getDateFormat() {
             return dateFormat;
         }
 
+        /**
+         * Override business date format for this invoice.
+         *
+         * @param dateFormat string format of: “mm/dd/yyyy”, “dd/mm/yyyy”, or “yyyy-mm-dd”
+         */
         public void setDateFormat(String dateFormat) {
             this.dateFormat = dateFormat;
         }
 
+        /**
+         * The invoice banner image for "modern" invoices.
+         *
+         * @return “/uploads/images/JWT_TOKEN_FROM_IMAGE_UPLOAD”
+         */
+        public String getImageBannerSrc() {
+            return imageBannerSrc;
+        }
+
+        /**
+         * The invoice banner image for "modern" invoices.
+         *
+         * @param imageBannerSrc “/uploads/images/JWT_TOKEN_FROM_IMAGE_UPLOAD”
+         */
+        public void setImageBannerSrc(String imageBannerSrc) {
+            this.imageBannerSrc = imageBannerSrc;
+        }
+
+        /**
+         * The invoice logo image.
+         *
+         * @return “/uploads/images/JWT_TOKEN_FROM_IMAGE_UPLOAD”
+         */
         public String getImageLogoSrc() {
             return imageLogoSrc;
         }
 
+        /**
+         * The invoice logo image.
+         *
+         * @param imageLogoSrc “/uploads/images/JWT_TOKEN_FROM_IMAGE_UPLOAD”
+         */
         public void setImageLogoSrc(String imageLogoSrc) {
             this.imageLogoSrc = imageLogoSrc;
         }
 
+        /**
+         * Which invoice font is in use.
+         *
+         * @return “modern” or “classic”
+         */
         public String getThemeFontName() {
             return themeFontName;
         }
 
+        /**
+         * Which invoice font to use.
+         *
+         * @param themeFontName “modern” or “classic”
+         */
         public void setThemeFontName(String themeFontName) {
             this.themeFontName = themeFontName;
         }
 
+        /**
+         * Which invoice template is in use.
+         *
+         * @return “simple, “modern”, or “classic”
+         */
         public String getThemeLayout() {
             return themeLayout;
         }
 
+        /**
+         * Which invoice template to use.
+         *
+         * @param themeLayout “simple, “modern”, or “classic”
+         */
         public void setThemeLayout(String themeLayout) {
             this.themeLayout = themeLayout;
         }
 
+        /**
+         * Primary highlight colour for the invoice.
+         *
+         * @return eg. “#345beb”
+         */
         public String getThemePrimaryColor() {
             return themePrimaryColor;
         }
 
+        /**
+         * Primary highlight colour for the invoice.
+         *
+         * @param themePrimaryColor eg. “#345beb”
+         */
         public void setThemePrimaryColor(String themePrimaryColor) {
             this.themePrimaryColor = themePrimaryColor;
         }
@@ -1241,13 +1318,13 @@ public class Invoice extends GenericJson implements ConvertibleContent {
         public Map<String, Object> getContent() {
             Map<String, Object> content = new HashMap<>();
             Util.convertContent(content, "date_format", this.dateFormat);
+            Util.convertContent(content, "image_banner_src", this.imageLogoSrc);
             Util.convertContent(content, "image_logo_src", this.imageLogoSrc);
             Util.convertContent(content, "theme_font_name", this.themeFontName);
             Util.convertContent(content, "theme_layout", this.themeLayout);
             Util.convertContent(content, "theme_primary_color", this.themePrimaryColor);
             return content;
         }
-
     }
 
     public enum InvoiceAutoBillStatus {
