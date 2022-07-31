@@ -273,7 +273,7 @@ try {
     assertEquals("ValidationError in client. userid='12345'.", e.getValidationError());
 ```
 
-#### Pagination, Filters, and Includes
+#### Pagination, Filters, Includes, and Sorting
 
 `list` calls can take a List of QueryBuilder objects that can be used to paginate, filter, and include
 optional data in the response. See [FreshBooks API - Parameters](https://www.freshbooks.com/api/parameters) documentation.
@@ -374,7 +374,7 @@ can be constructed.
 import net.amcintosh.freshbooks.models.builders.IncludesQueryBuilder;
 
 IncludesQueryBuilder includes = new IncludesQueryBuilder().include("outstanding_balance");
-assertEquals("IncludesQueryBuilder{includes=[outstanding_balance]}", query.toString());
+assertEquals("IncludesQueryBuilder{includes=[outstanding_balance]}", includes.toString());
 ```
 
 Which can then be passed into `get` or `list` calls:
@@ -394,3 +394,35 @@ assertEquals("USD", clients.get(0).getOutstandingBalance().getCode());
 ```
 
 ##### Sorting
+
+To sort the results of a list call by supported fields (see the documentation for that resource) a
+`SortQueryBuilder` can be used.
+
+```java
+import net.amcintosh.freshbooks.models.builders.SortQueryBuilder;
+
+SortQueryBuilder sort = new SortQueryBuilder().ascending("invoice_date");
+// Yields '&sort=invoice_date_asc'
+
+assertEquals("SortQueryBuilder{sort=invoice_date;ascending}", sort.toString());
+```
+
+to sort by the invoice date in ascending order, or:
+
+```java
+SortQueryBuilder sort = new SortQueryBuilder().descending("invoice_date");
+// Yields '&sort=invoice_date_desc'
+
+assertEquals("SortQueryBuilder{sort=invoice_date;descending}", sort.toString());
+```
+
+for descending order.
+
+Which can then be passed into `list` calls:
+
+```java
+ArrayList<QueryBuilder> builders = new ArrayList();
+builders.add(sort);
+
+InvoiceList invoiceListResponse = freshBooksClient.invoices().list(accountId, builders);
+```

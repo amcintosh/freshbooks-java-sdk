@@ -143,11 +143,11 @@ public class Project extends GenericJson implements ConvertibleContent {
     }
 
     public int getExpenseMarkup() {
-        return new Integer(expenseMarkup).intValue();
+        return Integer.valueOf(expenseMarkup).intValue();
     }
 
     public void setExpenseMarkup(int expenseMarkup) {
-        this.expenseMarkup = new Integer(expenseMarkup).toString();
+        this.expenseMarkup = Integer.valueOf(expenseMarkup).toString();
     }
 
     public BigDecimal getFixedPrice() {
