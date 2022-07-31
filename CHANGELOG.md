@@ -6,6 +6,7 @@
 - Change Items, Invoice LineItems quantities to Decimal type
 - Added invoice banner image field and better documentation to invoice presentation
 - Added tax fields to Tasks
+- Add sort builder for List() calls
 
 ## 0.4.0
 

@@ -2,6 +2,9 @@ package net.amcintosh.freshbooks.models.builders;
 
 import net.amcintosh.freshbooks.resources.api.ResourceType;
 
+/**
+ * Interface for building URL parameters.
+ */
 public interface QueryBuilder {
 
     /**
