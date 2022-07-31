@@ -146,6 +146,10 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="net/amcintosh/freshbooks/models/VisState.html#ARCHIVED" class="member-name-link">ARCHIVED</a> - Enum constant in enum class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/VisState.html" title="enum class in net.amcintosh.freshbooks.models">VisState</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="net/amcintosh/freshbooks/models/builders/SortQueryBuilder.html#ascending(java.lang.String)" class="member-name-link">ascending(String)</a> - Method in class net.amcintosh.freshbooks.models.builders.<a href="net/amcintosh/freshbooks/models/builders/SortQueryBuilder.html" title="class in net.amcintosh.freshbooks.models.builders">SortQueryBuilder</a></dt>
+<dd>
+<div class="block">Add a sort by the field in ascending order.</div>
+</dd>
 <dt><a href="net/amcintosh/freshbooks/resources/api/ResourceType.html#AUTH" class="member-name-link">AUTH</a> - Enum constant in enum class net.amcintosh.freshbooks.resources.api.<a href="net/amcintosh/freshbooks/resources/api/ResourceType.html" title="enum class in net.amcintosh.freshbooks.resources.api">ResourceType</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/amcintosh/freshbooks/models/api/AuthErrorResponse.html" class="type-name-link" title="class in net.amcintosh.freshbooks.models.api">AuthErrorResponse</a> - Class in <a href="net/amcintosh/freshbooks/models/api/package-summary.html">net.amcintosh.freshbooks.models.api</a></dt>
@@ -217,6 +221,10 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Build a http query string from the paramters of this builder that conforms to the
  style of the <code>ResourceType</code>.</div>
+</dd>
+<dt><a href="net/amcintosh/freshbooks/models/builders/SortQueryBuilder.html#build(net.amcintosh.freshbooks.resources.api.ResourceType)" class="member-name-link">build(ResourceType)</a> - Method in class net.amcintosh.freshbooks.models.builders.<a href="net/amcintosh/freshbooks/models/builders/SortQueryBuilder.html" title="class in net.amcintosh.freshbooks.models.builders">SortQueryBuilder</a></dt>
+<dd>
+<div class="block">Build the query string parameters for the list call.</div>
 </dd>
 <dt><a href="net/amcintosh/freshbooks/resources/api/Resource.html#buildQueryString(java.util.List)" class="member-name-link">buildQueryString(List&lt;QueryBuilder&gt;)</a> - Method in class net.amcintosh.freshbooks.resources.api.<a href="net/amcintosh/freshbooks/resources/api/Resource.html" title="class in net.amcintosh.freshbooks.resources.api">Resource</a></dt>
 <dd>
@@ -462,6 +470,10 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="net/amcintosh/freshbooks/models/Invoice.InvoiceV3Status.html#DEPOSIT_PARTIAL" class="member-name-link">DEPOSIT_PARTIAL</a> - Enum constant in enum class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Invoice.InvoiceV3Status.html" title="enum class in net.amcintosh.freshbooks.models">Invoice.InvoiceV3Status</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="net/amcintosh/freshbooks/models/builders/SortQueryBuilder.html#descending(java.lang.String)" class="member-name-link">descending(String)</a> - Method in class net.amcintosh.freshbooks.models.builders.<a href="net/amcintosh/freshbooks/models/builders/SortQueryBuilder.html" title="class in net.amcintosh.freshbooks.models.builders">SortQueryBuilder</a></dt>
+<dd>
+<div class="block">Add a sort by the field in descending order.</div>
+</dd>
 <dt><a href="net/amcintosh/freshbooks/models/Payment.PaymentType.html#DINERS" class="member-name-link">DINERS</a> - Enum constant in enum class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Payment.PaymentType.html" title="enum class in net.amcintosh.freshbooks.models">Payment.PaymentType</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/amcintosh/freshbooks/models/Payment.PaymentType.html#DISCOVER" class="member-name-link">DISCOVER</a> - Enum constant in enum class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Payment.PaymentType.html" title="enum class in net.amcintosh.freshbooks.models">Payment.PaymentType</a></dt>
@@ -2566,7 +2578,9 @@ loadScripts(document, 'script');</script>
 <h2 class="title" id="I:Q">Q</h2>
 <dl class="index">
 <dt><a href="net/amcintosh/freshbooks/models/builders/QueryBuilder.html" class="type-name-link" title="interface in net.amcintosh.freshbooks.models.builders">QueryBuilder</a> - Interface in <a href="net/amcintosh/freshbooks/models/builders/package-summary.html">net.amcintosh.freshbooks.models.builders</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Interface for building URL parameters.</div>
+</dd>
 </dl>
 <h2 class="title" id="I:R">R</h2>
 <dl class="index">
@@ -3424,6 +3438,12 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Set the visibility state of the item.</div>
 </dd>
+<dt><a href="net/amcintosh/freshbooks/models/builders/SortQueryBuilder.html" class="type-name-link" title="class in net.amcintosh.freshbooks.models.builders">SortQueryBuilder</a> - Class in <a href="net/amcintosh/freshbooks/models/builders/package-summary.html">net.amcintosh.freshbooks.models.builders</a></dt>
+<dd>
+<div class="block">Builder for sorting <code>.list()</code> call responses by sortable fields.</div>
+</dd>
+<dt><a href="net/amcintosh/freshbooks/models/builders/SortQueryBuilder.html#%3Cinit%3E()" class="member-name-link">SortQueryBuilder()</a> - Constructor for class net.amcintosh.freshbooks.models.builders.<a href="net/amcintosh/freshbooks/models/builders/SortQueryBuilder.html" title="class in net.amcintosh.freshbooks.models.builders">SortQueryBuilder</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="net/amcintosh/freshbooks/FreshBooksException.html#statusCode" class="member-name-link">statusCode</a> - Variable in exception net.amcintosh.freshbooks.<a href="net/amcintosh/freshbooks/FreshBooksException.html" title="class in net.amcintosh.freshbooks">FreshBooksException</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/amcintosh/freshbooks/FreshBooksException.html#statusMessage" class="member-name-link">statusMessage</a> - Variable in exception net.amcintosh.freshbooks.<a href="net/amcintosh/freshbooks/FreshBooksException.html" title="class in net.amcintosh.freshbooks">FreshBooksException</a></dt>
@@ -3504,6 +3524,8 @@ loadScripts(document, 'script');</script>
 <dt><a href="net/amcintosh/freshbooks/models/builders/IncludesQueryBuilder.html#toString()" class="member-name-link">toString()</a> - Method in class net.amcintosh.freshbooks.models.builders.<a href="net/amcintosh/freshbooks/models/builders/IncludesQueryBuilder.html" title="class in net.amcintosh.freshbooks.models.builders">IncludesQueryBuilder</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/amcintosh/freshbooks/models/builders/PaginationQueryBuilder.html#toString()" class="member-name-link">toString()</a> - Method in class net.amcintosh.freshbooks.models.builders.<a href="net/amcintosh/freshbooks/models/builders/PaginationQueryBuilder.html" title="class in net.amcintosh.freshbooks.models.builders">PaginationQueryBuilder</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="net/amcintosh/freshbooks/models/builders/SortQueryBuilder.html#toString()" class="member-name-link">toString()</a> - Method in class net.amcintosh.freshbooks.models.builders.<a href="net/amcintosh/freshbooks/models/builders/SortQueryBuilder.html" title="class in net.amcintosh.freshbooks.models.builders">SortQueryBuilder</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="net/amcintosh/freshbooks/models/Pages.html#toString()" class="member-name-link">toString()</a> - Method in class net.amcintosh.freshbooks.models.<a href="net/amcintosh/freshbooks/models/Pages.html" title="class in net.amcintosh.freshbooks.models">Pages</a></dt>
 <dd>&nbsp;</dd>
