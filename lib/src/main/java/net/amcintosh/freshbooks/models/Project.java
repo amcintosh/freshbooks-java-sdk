@@ -401,8 +401,6 @@ public class Project extends GenericJson implements ConvertibleContent {
     public Map<String, Object> getContent() {
         Map<String, Object> content = new HashMap<>();
         Util.convertContent(content, "active", this.active);
-        Util.convertContent(content, "billed_amount", this.billedAmount);
-        Util.convertContent(content, "billed_status", this.billedStatus);
         Util.convertContent(content, "billing_method", this.billingMethod);
         Util.convertContent(content, "budget", this.budget);
         Util.convertContent(content, "client_id", this.clientId);
@@ -536,7 +534,7 @@ public class Project extends GenericJson implements ConvertibleContent {
     }
 
     /**
-     * Types of projects
+     * Billing types for projects
      */
     public enum ProjectType {
         @Value("fixed_price") FIXED_PRICE,
