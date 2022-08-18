@@ -50,9 +50,10 @@ public class ProjectsTest {
         );
         assertEquals("Something descriptive", project.getDescription());
         assertEquals(LocalDate.of(2021, 1, 2), project.getDueDate());
-        assertEquals(0, project.getExpenseMarkup());
+        assertEquals("0", project.getExpenseMarkup());
         assertEquals(new BigDecimal("10.00"), project.getFixedPrice());
         assertEquals(764645, project.getGroup().getId());
+        assertEquals(0, project.getGroup().getPendingInvitations().size());
         Project.ProjectGroupMember member = project.getGroup().getMembers().get(0);
         assertEquals(4652287, member.getId());
         assertEquals(65001, member.getIdentityId());
@@ -64,12 +65,10 @@ public class ProjectsTest {
         assertEquals(true, member.getActive());
         assertEquals(true, project.getInternal());
         assertEquals(0, project.getLoggedDuration());
-        assertEquals(null, project.getPendingInvitations());
         assertEquals(43, project.getProjectManagerId());
         assertEquals(Project.ProjectType.HOURLY_RATE, project.getProjectType());
         assertEquals(new BigDecimal("5.00"), project.getRate());
         assertEquals(0, project.getRetainerId());
-        assertEquals(false, project.getSample());
         Service firstService = project.getServices().get(0);
         assertEquals(154, firstService.getId());
         assertEquals(439000, firstService.getBusinessId());

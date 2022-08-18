@@ -38,52 +38,79 @@ public class Project extends GenericJson implements ConvertibleContent {
     @Key ProjectGroup group;
     @Key Boolean internal;
     @Key("logged_duration") Integer loggedDuration;
-    @Key("pending_invitations") List<PendingInvitation> pendingInvitations;
     @Key("project_manager_id") Long projectManagerId;
     @Key("project_type") ProjectType projectType;
     @Key String rate;
     @Key("retainer_id") Long retainerId;
-    @Key Boolean sample;
     @Key List<Service> services;
     @Key String title;
     @Key("updated_at") String updatedAt;
 
+    /**
+     * Get the unique identifier of this project within this business.
+     *
+     * @return Project id
+     */
     public long getId() {
         return id;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
+    /**
+     * Whether the project is active or not.
+     *
+     * @return True if active
+     */
     public boolean getActive() {
         return active;
     }
 
+    /**
+     * Set whether the project is active or not.
+     *
+     * @param active active
+     */
     public void setActive(boolean active) {
         this.active = active;
     }
 
+    /**
+     * The amount that has been invoiced for this project.
+     *
+     * @return The decimal currency amount
+     */
     public BigDecimal getBilledAmount() {
         return new BigDecimal(billedAmount);
     }
 
-    public void setBilledAmount(BigDecimal billedAmount) {
-        this.billedAmount = billedAmount.toString();
-    }
-
+    /**
+     * If the project has been billed or not.
+     *
+     * @return Unbilled, Partial, or Billed status
+     */
     public ProjectBilledStatus getBilledStatus() {
         return billedStatus;
     }
 
-    public void setBilledStatus(ProjectBilledStatus billedStatus) {
-        this.billedStatus = billedStatus;
-    }
-
+    /**
+     * Get the method by which the project is billed.
+     * <br><br>
+     * Eg. By business hourly rate, team member's rate, different rates
+     * by service provided, or a rate for the project.
+     *
+     * @return Billing method
+     */
     public ProjectBillingMethod getBillingMethod() {
         return billingMethod;
     }
 
+    /**
+     * Set the method by which the project is billed.
+     * <br><br>
+     * Eg. By business hourly rate, team member's rate, different rates
+     * by service provided, or a rate for the project.
+     *
+     * @param billingMethod Billing method
+     */
     public void setBillingMethod(ProjectBillingMethod billingMethod) {
         this.billingMethod = billingMethod;
     }
@@ -106,77 +133,168 @@ public class Project extends GenericJson implements ConvertibleContent {
         this.budget = budget;
     }
 
+    /**
+     * Get the id of the client this project is for.
+     *
+     * @return The client id in the business.
+     */
     public long getClientId() {
         return clientId;
     }
 
+    /**
+     * Set the id of the client the project is for.
+     *
+     * @param clientId The client id in the business.
+     */
     public void setClientId(long clientId) {
         this.clientId = clientId;
     }
 
+    /**
+     * If the project has been completed and is archived.
+     * <br><br>
+     * Archived projects do not return in list results by default.
+     *
+     * @return True if project is completed and archived
+     */
     public boolean getComplete() {
         return complete;
     }
 
+    /**
+     * Marks the project as completed and archived.
+     * <br><br>
+     * Archived projects do not return in list results by default.
+     *
+     * @param complete
+     */
     public void setComplete(boolean complete) {
         this.complete = complete;
     }
 
+    /**
+     * Get the creation time of the project.
+     * <br><br>
+     * <i>Note:</i> The API returns this data in UTC.
+     *
+     * @return Create time in UTC
+     */
     public ZonedDateTime getCreatedAt() {
         return Util.getZonedDateTimeFromProjectNaiveUTC(createdAt);
     }
 
+    /**
+     * Get the description of project.
+     *
+     * @return
+     */
     public String getDescription() {
         return description;
     }
 
+    /**
+     * Set the description of project.
+     *
+     * @param description
+     */
     public void setDescription(String description) {
         this.description = description;
     }
 
+    /**
+     * Date of projected completion.
+     *
+     * @return
+     */
     public LocalDate getDueDate() {
         return LocalDate.parse(dueDate);
     }
 
+    /**
+     * Date of projected completion.
+     *
+     * @param dueDate
+     */
     public void setDueDate(LocalDate dueDate) {
         this.dueDate = dueDate.format(Util.getStandardDateFormatter());
     }
 
-    public int getExpenseMarkup() {
-        return Integer.valueOf(expenseMarkup).intValue();
+    /**
+     * String percentage markup to be applied to expenses fo this project.
+     *
+     * @return
+     */
+    public String getExpenseMarkup() {
+        return expenseMarkup;
     }
 
-    public void setExpenseMarkup(int expenseMarkup) {
-        this.expenseMarkup = Integer.valueOf(expenseMarkup).toString();
+    /**
+     * String percentage markup to be applied to expenses fo this project.
+     *
+     * @param expenseMarkup
+     */
+    public void setExpenseMarkup(String expenseMarkup) {
+        this.expenseMarkup = expenseMarkup;
     }
 
+    /**
+     * For projects that are of project type "fixed_price" this is the price for the project.
+     *
+     * @return Decimal price for the project.
+     */
     public BigDecimal getFixedPrice() {
         return new BigDecimal(fixedPrice);
     }
 
+    /**
+     * For projects that are of project type "fixed_price" this is the price for the project.
+     *
+     * @param fixedPrice Decimal price for the project.
+     */
     public void setFixedPrice(BigDecimal fixedPrice) {
         this.fixedPrice = fixedPrice.toString();
     }
 
+    /**
+     * The project group contains the identity details of all the members of the project
+     * and any pending invitations to the project.
+     *
+     * @return
+     */
     public ProjectGroup getGroup() {
         return group;
     }
 
+    /**
+     * Clarifies that the project is internal to the business and has no client
+     * (client is the company).
+     *
+     * @return
+     */
     public boolean getInternal() {
         return internal;
     }
 
+    /**
+     * Sets that the project is internal to the business and has no client
+     * (client is the company).
+     *
+     * @param internal
+     */
     public void setInternal(boolean internal) {
         this.internal = internal;
     }
 
+    /**
+     * The time logged against the project in seconds.
+     *
+     * @return
+     */
     public int getLoggedDuration() {
         return loggedDuration;
     }
 
-    public List<PendingInvitation> getPendingInvitations() {
-        return pendingInvitations;
-    }
 
     public long getProjectManagerId() {
         return projectManagerId;
@@ -186,18 +304,42 @@ public class Project extends GenericJson implements ConvertibleContent {
         this.projectManagerId = projectManagerId;
     }
 
+    /**
+     * The project type. Either a fixed price or hourly rate.
+     *
+     * The type of hourly rate used is found in <code>getBillingMethod()</code>.
+     *
+     * @return
+     */
     public ProjectType getProjectType() {
         return projectType;
     }
 
+    /**
+     * The project type. Either a fixed price or hourly rate.
+     *
+     * The type of hourly rate used is set with <code>getBillingMethod()</code>.
+     *
+     * @param projectType
+     */
     public void setProjectType(ProjectType projectType) {
         this.projectType = projectType;
     }
 
+    /**
+     * The hourly rate for project_rate hourly projects.
+     *
+     * @return
+     */
     public BigDecimal getRate() {
         return new BigDecimal(rate);
     }
 
+    /**
+     * The hourly rate for project_rate hourly projects.
+     *
+     * @param rate
+     */
     public void setRate(BigDecimal rate) {
         this.rate = rate.toString();
     }
@@ -210,26 +352,39 @@ public class Project extends GenericJson implements ConvertibleContent {
         this.retainerId = retainerId;
     }
 
-    public Boolean getSample() {
-        return sample;
-    }
-
-    public void setSample(Boolean sample) {
-        this.sample = sample;
-    }
-
+    /**
+     * The services that work in this project can be logged against and will appear on
+     * invoices when the project is billed for.
+     *
+     * @return
+     */
     public List<Service> getServices() {
         return services;
     }
 
+    /**
+     * The services that work in this project can be logged against and will appear on
+     * invoices when the project is billed for.
+     *
+     * @param services
+     */
     public void setServices(List<Service> services) {
         this.services = services;
     }
 
+    /**
+     * The project title
+     * @return
+     */
     public String getTitle() {
         return title;
     }
 
+    /**
+     * The project title
+     *
+     * @param title
+     */
     public void setTitle(String title) {
         this.title = title;
     }
@@ -268,14 +423,29 @@ public class Project extends GenericJson implements ConvertibleContent {
     public static class ProjectGroup {
         @Key Long id;
         @Key List<ProjectGroupMember> members;
+        @Key("pending_invitations") List<PendingInvitation> pendingInvitations;
 
         public long getId() {
             return id;
         }
 
+        /**
+         * The members of this project.
+         *
+         * @return
+         */
         public List<ProjectGroupMember> getMembers() {
             return members;
         }
+        /**
+         * The pending invites to employees and contractors within the project.
+         *
+         * @return
+         */
+        public List<PendingInvitation> getPendingInvitations() {
+            return pendingInvitations;
+        }
+
     }
 
     public static class ProjectGroupMember {

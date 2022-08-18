@@ -340,6 +340,9 @@ assertEquals(123, clientListResponse.getClients.get(0).getId());
 Filters can be built with the various methods for FreshBooks' `equals`, `in`, `like`, `between`, `boolean`,
 and `datetime` filters. The methods can be chained together.
 
+Please see [FreshBooks API - Active and Deleted Objects](https://www.freshbooks.com/api/active_deleted)
+for details on filtering active, archived, and deleted resources.
+
 ```java
 FilterQueryBuilder filters = new FilterQueryBuilder();
 
@@ -349,10 +352,13 @@ filters.addLike("email_like", "@freshbooks.com");
 filters.addInList("clientids", Arrays.asList(123, 456));
 // Yields '&search[clientids][]=123&search[clientids][]=456'
 
-filters.addBoolean("active", false).addBoolean("allow_late_fees", true);
-// Yields '$search[active]=false&$search[allow_late_fees]=true'
+filters.addBoolean("allow_late_fees", true);
+// Yields '&search[allow_late_fees]=true'
 
 filters.addBetween("amount", 1, 10);
+// Yields '&search[amount_min]=1&search[amount_max]=10'
+
+filters.addBetween("amount_min", 1).addBetween("amount_max", 10);
 // Yields '&search[amount_min]=1&search[amount_max]=10'
 
 filters.addBetween("start_date", "2020-11-21");
