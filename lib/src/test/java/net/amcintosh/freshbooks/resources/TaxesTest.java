@@ -8,7 +8,7 @@ import net.amcintosh.freshbooks.FreshBooksException;
 import net.amcintosh.freshbooks.TestUtil;
 import net.amcintosh.freshbooks.models.Tax;
 import net.amcintosh.freshbooks.models.TaxList;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -16,7 +16,7 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.Map;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 

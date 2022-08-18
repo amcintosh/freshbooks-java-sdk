@@ -2,14 +2,13 @@ package net.amcintosh.freshbooks.resources;
 
 import com.google.api.client.http.HttpMethods;
 import com.google.api.client.http.HttpRequest;
-import com.google.api.client.util.Key;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import net.amcintosh.freshbooks.FreshBooksClient;
 import net.amcintosh.freshbooks.FreshBooksException;
 import net.amcintosh.freshbooks.TestUtil;
 import net.amcintosh.freshbooks.models.*;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -18,7 +17,7 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.Map;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 

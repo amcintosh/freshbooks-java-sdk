@@ -2,14 +2,14 @@ package net.amcintosh.freshbooks.models.builders;
 
 import com.google.common.collect.ImmutableList;
 import net.amcintosh.freshbooks.resources.api.ResourceType;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.Arrays;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class FilterQueryBuilderTest {
 

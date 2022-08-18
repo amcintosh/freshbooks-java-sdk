@@ -12,13 +12,13 @@ import net.amcintosh.freshbooks.models.builders.IncludesQueryBuilder;
 import net.amcintosh.freshbooks.models.builders.PaginationQueryBuilder;
 import net.amcintosh.freshbooks.models.builders.QueryBuilder;
 import net.amcintosh.freshbooks.resources.Clients;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 

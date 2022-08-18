@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Upgrade dependencies (including JUnit4->5)
+
 ## 0.5.0
 
 - Remove deprecated, duplicated fields form Tasks resource model
