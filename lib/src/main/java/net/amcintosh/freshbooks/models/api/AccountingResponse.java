@@ -2,6 +2,7 @@ package net.amcintosh.freshbooks.models.api;
 
 import com.google.api.client.util.Key;
 import net.amcintosh.freshbooks.models.*;
+import net.amcintosh.freshbooks.models.reports.*;
 
 import java.util.ArrayList;
 
@@ -34,5 +35,9 @@ public class AccountingResponse {
         @Key public Task task;
 
         @Key("other_income") public OtherIncome otherIncome;
+
+        // Reports
+
+        @Key("profitloss") public ProfitAndLoss profitAndLoss;
     }
 }

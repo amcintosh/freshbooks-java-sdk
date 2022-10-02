@@ -1,0 +1,316 @@
+{
+    "response": {
+        "result": {
+            "profitloss": {
+                "cash_based": false,
+                "company_name": "American Cyanamid",
+                "currency_code": "CAD",
+                "dates": [
+                    {
+                        "end_date": "2022-03-31",
+                        "start_date": "2022-01-01"
+                    },
+                    {
+                        "end_date": "2022-06-30",
+                        "start_date": "2022-04-01"
+                    },
+                    {
+                        "end_date": "2022-09-30",
+                        "start_date": "2022-07-01"
+                    },
+                    {
+                        "end_date": "2022-12-31",
+                        "start_date": "2022-10-01"
+                    }
+                ],
+                "download_token": "some_token",
+                "end_date": "2022-12-31",
+                "expenses": [
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "children": [],
+                                        "data": [
+                                            {
+                                                "amount": "3.98",
+                                                "code": "CAD"
+                                            },
+                                            {
+                                                "amount": "0.00",
+                                                "code": "CAD"
+                                            },
+                                            {
+                                                "amount": "0.00",
+                                                "code": "CAD"
+                                            },
+                                            {
+                                                "amount": "0.00",
+                                                "code": "CAD"
+                                            }
+                                        ],
+                                        "description": "Expenses",
+                                        "entry_type": "debit",
+                                        "total": {
+                                            "amount": "3.98",
+                                            "code": "CAD"
+                                        }
+                                    }
+                                ],
+                                "data": [
+                                    {
+                                        "amount": "3.98",
+                                        "code": "CAD"
+                                    },
+                                    {
+                                        "amount": "0.00",
+                                        "code": "CAD"
+                                    },
+                                    {
+                                        "amount": "0.00",
+                                        "code": "CAD"
+                                    },
+                                    {
+                                        "amount": "0.00",
+                                        "code": "CAD"
+                                    }
+                                ],
+                                "description": "Bank Fees",
+                                "entry_type": "debit",
+                                "total": {
+                                    "amount": "3.98",
+                                    "code": "CAD"
+                                }
+                            }
+                        ],
+                        "data": [
+                            {
+                                "amount": "3.98",
+                                "code": "CAD"
+                            },
+                            {
+                                "amount": "0.00",
+                                "code": "CAD"
+                            },
+                            {
+                                "amount": "0.00",
+                                "code": "CAD"
+                            },
+                            {
+                                "amount": "0.00",
+                                "code": "CAD"
+                            }
+                        ],
+                        "description": "Other Expenses",
+                        "entry_type": "debit",
+                        "total": {
+                            "amount": "3.98",
+                            "code": "CAD"
+                        }
+                    }
+                ],
+                "gross_margin": {
+                    "children": [],
+                    "data": [
+                        {
+                            "amount": "100.00",
+                            "code": "%"
+                        },
+                        {
+                            "amount": "0.00",
+                            "code": "%"
+                        },
+                        {
+                            "amount": "0.00",
+                            "code": "%"
+                        },
+                        {
+                            "amount": "0.00",
+                            "code": "%"
+                        }
+                    ],
+                    "description": "Gross Margin",
+                    "entry_type": "none",
+                    "total": {
+                        "amount": "100.00",
+                        "code": "%"
+                    }
+                },
+                "income": [
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "data": [
+                                    {
+                                        "amount": "12.00",
+                                        "code": "CAD"
+                                    },
+                                    {
+                                        "amount": "0.00",
+                                        "code": "CAD"
+                                    },
+                                    {
+                                        "amount": "0.00",
+                                        "code": "CAD"
+                                    },
+                                    {
+                                        "amount": "0.00",
+                                        "code": "CAD"
+                                    }
+                                ],
+                                "description": "Invoice",
+                                "entry_type": "credit",
+                                "total": {
+                                    "amount": "12.00",
+                                    "code": "CAD"
+                                }
+                            }
+                        ],
+                        "data": [
+                            {
+                                "amount": "12.00",
+                                "code": "CAD"
+                            },
+                            {
+                                "amount": "0.00",
+                                "code": "CAD"
+                            },
+                            {
+                                "amount": "0.00",
+                                "code": "CAD"
+                            },
+                            {
+                                "amount": "0.00",
+                                "code": "CAD"
+                            }
+                        ],
+                        "description": "Sales",
+                        "entry_type": "credit",
+                        "total": {
+                            "amount": "12.00",
+                            "code": "CAD"
+                        }
+                    },
+                    {
+                        "children": [],
+                        "data": [
+                            {
+                                "amount": "0.00",
+                                "code": "CAD"
+                            },
+                            {
+                                "amount": "0.00",
+                                "code": "CAD"
+                            },
+                            {
+                                "amount": "0.00",
+                                "code": "CAD"
+                            },
+                            {
+                                "amount": "0.00",
+                                "code": "CAD"
+                            }
+                        ],
+                        "description": "Cost of Goods Sold",
+                        "entry_type": "credit",
+                        "total": {
+                            "amount": "0.00",
+                            "code": "CAD"
+                        }
+                    }
+                ],
+                "labels": [
+                    "2022-01-01",
+                    "2022-04-01",
+                    "2022-07-01",
+                    "2022-10-01"
+                ],
+                "net_profit": {
+                    "children": [],
+                    "data": [
+                        {
+                            "amount": "8.02",
+                            "code": "CAD"
+                        },
+                        {
+                            "amount": "0.00",
+                            "code": "CAD"
+                        },
+                        {
+                            "amount": "0.00",
+                            "code": "CAD"
+                        },
+                        {
+                            "amount": "0.00",
+                            "code": "CAD"
+                        }
+                    ],
+                    "description": "Net Profit (CAD)",
+                    "entry_type": "credit",
+                    "total": {
+                        "amount": "8.02",
+                        "code": "CAD"
+                    }
+                },
+                "resolution": "3m",
+                "start_date": "2022-01-01",
+                "total_expenses": {
+                    "children": [],
+                    "data": [
+                        {
+                            "amount": "3.98",
+                            "code": "CAD"
+                        },
+                        {
+                            "amount": "0.00",
+                            "code": "CAD"
+                        },
+                        {
+                            "amount": "0.00",
+                            "code": "CAD"
+                        },
+                        {
+                            "amount": "0.00",
+                            "code": "CAD"
+                        }
+                    ],
+                    "description": "Total Expenses",
+                    "entry_type": "debit",
+                    "total": {
+                        "amount": "3.98",
+                        "code": "CAD"
+                    }
+                },
+                "total_income": {
+                    "children": [],
+                    "data": [
+                        {
+                            "amount": "12.00",
+                            "code": "CAD"
+                        },
+                        {
+                            "amount": "0.00",
+                            "code": "CAD"
+                        },
+                        {
+                            "amount": "0.00",
+                            "code": "CAD"
+                        },
+                        {
+                            "amount": "0.00",
+                            "code": "CAD"
+                        }
+                    ],
+                    "description": "Gross Profit",
+                    "entry_type": "credit",
+                    "total": {
+                        "amount": "12.00",
+                        "code": "CAD"
+                    }
+                }
+            }
+        }
+    }
+}
