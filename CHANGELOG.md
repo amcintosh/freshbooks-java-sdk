@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Added Profit & Loss accounting report
 - Upgrade dependencies (including JUnit4->5)
 
 ## 0.5.0

@@ -368,6 +368,17 @@ public class FreshBooksClient {
     }
 
     /**
+     * FreshBooks reports resource with calls the various reports available.
+     * <br><br>
+     * Eg. <code>freshbooksClient.reports.profitAndLoss(accountId)</code>
+     *
+     * @return Reports resource initialized with this FreshBooksClient
+     */
+    public AccountingReports reports() {
+        return new AccountingReports(this);
+    }
+
+    /**
      * FreshBooks services resource with calls to get, list, create, update, delete.
      *
      * @return Services resource initialized with this FreshBooksClient
