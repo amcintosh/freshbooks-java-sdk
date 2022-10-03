@@ -306,7 +306,7 @@ public class Project extends GenericJson implements ConvertibleContent {
 
     /**
      * The project type. Either a fixed price or hourly rate.
-     *
+     * <br><br>
      * The type of hourly rate used is found in <code>getBillingMethod()</code>.
      *
      * @return
@@ -317,7 +317,7 @@ public class Project extends GenericJson implements ConvertibleContent {
 
     /**
      * The project type. Either a fixed price or hourly rate.
-     *
+     * <br><br>
      * The type of hourly rate used is set with <code>getBillingMethod()</code>.
      *
      * @param projectType
@@ -360,16 +360,6 @@ public class Project extends GenericJson implements ConvertibleContent {
      */
     public List<Service> getServices() {
         return services;
-    }
-
-    /**
-     * The services that work in this project can be logged against and will appear on
-     * invoices when the project is billed for.
-     *
-     * @param services
-     */
-    public void setServices(List<Service> services) {
-        this.services = services;
     }
 
     /**
