@@ -3,6 +3,7 @@
 ## Unreleased
 
 - Added Profit & Loss accounting report
+- Made taxNumber1, taxNumber2 from invoice LineItem readonly due to FreshBooks API change
 - Upgrade dependencies (including JUnit4->5)
 
 ## 0.5.0

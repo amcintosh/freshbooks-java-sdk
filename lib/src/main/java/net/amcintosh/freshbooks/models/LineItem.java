@@ -242,30 +242,12 @@ public class LineItem extends GenericJson implements ConvertibleContent {
     }
 
     /**
-     * First tax number on the line item.
-     *
-     * @param taxNumber1
-     */
-    public void setTaxNumber1(String taxNumber1) {
-        this.taxNumber1 = taxNumber1;
-    }
-
-    /**
      * Second tax number on the line item.
      *
      * @return
      */
     public String getTaxNumber2() {
         return taxNumber2;
-    }
-
-    /**
-     * Second tax number on the line item.
-     *
-     * @param taxNumber2
-     */
-    public void setTaxNumber2(String taxNumber2) {
-        this.taxNumber2 = taxNumber2;
     }
 
     /**
@@ -326,8 +308,6 @@ public class LineItem extends GenericJson implements ConvertibleContent {
         Util.convertContent(content, "taxAmount2", this.taxAmount2);
         Util.convertContent(content, "taxName1", this.taxName1);
         Util.convertContent(content, "taxName2", this.taxName2);
-        Util.convertContent(content, "taxNumber1", this.taxNumber1);
-        Util.convertContent(content, "taxNumber2", this.taxNumber2);
         Util.convertContent(content, "type", this.type);
         Util.convertContent(content, "unit_cost", this.unitCost);
         return content;
