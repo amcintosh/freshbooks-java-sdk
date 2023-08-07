@@ -9,6 +9,10 @@ public class AccountingListResponse {
 
     @Key public AccountingListInnerResponse response;
 
+    @Key public int code;
+    @Key public String message;
+    @Key public ArrayList<AccountingErrorDetails> details;
+
     public static class AccountingListInnerResponse {
 
         @Key public AccountingListResult result;
@@ -37,6 +41,5 @@ public class AccountingListResponse {
 
             @Key("other_income") public ArrayList<OtherIncome> otherIncomes;
         }
-
     }
 }

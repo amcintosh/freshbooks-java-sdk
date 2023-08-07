@@ -32,3 +32,6 @@ local.properties
 # Editor config
 .vscode/
 .idea/
+.settings/
+lib/bin/
+

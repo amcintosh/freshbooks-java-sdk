@@ -1,0 +1,17 @@
+{
+    "code": 16,
+    "message": "Request failed with status_code: 401",
+    "details": [
+        {
+            "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+            "reason": "1003",
+            "domain": "accounting.api.freshbooks.com",
+            "metadata": {
+                "object": "",
+                "message": "The server could not verify that you are authorized to access the URL requested.",
+                "value": "",
+                "field": ""
+            }
+        }
+    ]
+}

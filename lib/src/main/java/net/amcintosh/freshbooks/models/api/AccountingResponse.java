@@ -10,6 +10,10 @@ public class AccountingResponse {
 
     @Key public AccountingInnerResponse response;
 
+    @Key public int code;
+    @Key public String message;
+    @Key public ArrayList<AccountingErrorDetails> details;
+
     public static class AccountingInnerResponse {
 
         @Key public AccountingResult result;
