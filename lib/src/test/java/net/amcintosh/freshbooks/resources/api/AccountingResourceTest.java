@@ -43,8 +43,8 @@ public class AccountingResourceTest {
     }
 
     @Test
-    public void getResource_notFound() throws IOException {
-        String jsonResponse = TestUtil.loadTestJson("fixtures/get_client_response__not_found.json");
+    public void getResource_notFoundOld() throws IOException {
+        String jsonResponse = TestUtil.loadTestJson("fixtures/get_client_response__not_found_old.json");
         FreshBooksClient mockedFreshBooksClient = mock(FreshBooksClient.class);
         HttpRequest mockRequest = TestUtil.buildMockHttpRequest(404, jsonResponse);
         when(mockedFreshBooksClient.request(HttpMethods.GET,
@@ -62,6 +62,52 @@ public class AccountingResourceTest {
             assertEquals("userid", e.field);
             assertEquals("client", e.object);
             assertEquals("12345", e.value);
+        }
+    }
+
+    @Test
+    public void getResource_notFoundNew() throws IOException {
+        String jsonResponse = TestUtil.loadTestJson("fixtures/get_client_response__not_found_new.json");
+        FreshBooksClient mockedFreshBooksClient = mock(FreshBooksClient.class);
+        HttpRequest mockRequest = TestUtil.buildMockHttpRequest(404, jsonResponse);
+        when(mockedFreshBooksClient.request(HttpMethods.GET,
+                "/accounting/account/ABC123/users/clients/12345", null)).thenReturn(mockRequest);
+
+        long clientId = 12345;
+        Clients clients = new Clients(mockedFreshBooksClient);
+
+        try {
+            clients.get("ABC123", clientId);
+        } catch (FreshBooksException e) {
+            assertEquals(404, e.statusCode);
+            assertEquals("Client not found.", e.getMessage());
+            assertEquals(1012, e.errorNo);
+            assertEquals("userid", e.field);
+            assertEquals("client", e.object);
+            assertEquals("12345", e.value);
+        }
+    }
+
+    @Test
+    public void getResource_noAuth() throws IOException {
+        String jsonResponse = TestUtil.loadTestJson("fixtures/get_client_response__no_auth.json");
+        FreshBooksClient mockedFreshBooksClient = mock(FreshBooksClient.class);
+        HttpRequest mockRequest = TestUtil.buildMockHttpRequest(401, jsonResponse);
+        when(mockedFreshBooksClient.request(HttpMethods.GET,
+                "/accounting/account/ABC123/users/clients/12345", null)).thenReturn(mockRequest);
+
+        long clientId = 12345;
+        Clients clients = new Clients(mockedFreshBooksClient);
+
+        try {
+            clients.get("ABC123", clientId);
+        } catch (FreshBooksException e) {
+            assertEquals(401, e.statusCode);
+            assertEquals("The server could not verify that you are authorized to access the URL requested.", e.getMessage());
+            assertEquals(1003, e.errorNo);
+            assertEquals("", e.field);
+            assertEquals("", e.object);
+            assertEquals("", e.value);
         }
     }
 

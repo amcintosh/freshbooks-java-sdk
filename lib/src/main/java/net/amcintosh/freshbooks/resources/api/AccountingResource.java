@@ -7,6 +7,7 @@ import com.google.common.collect.ImmutableList;
 import net.amcintosh.freshbooks.FreshBooksClient;
 import net.amcintosh.freshbooks.FreshBooksException;
 import net.amcintosh.freshbooks.models.api.AccountingError;
+import net.amcintosh.freshbooks.models.api.AccountingErrorDetails;
 import net.amcintosh.freshbooks.models.api.AccountingListResponse;
 import net.amcintosh.freshbooks.models.api.AccountingResponse;
 import net.amcintosh.freshbooks.models.builders.IncludesQueryBuilder;
@@ -64,6 +65,14 @@ public abstract class AccountingResource extends Resource {
         return this.handleRequest(method, url, null);
     }
 
+    private boolean isNewAccountingError(AccountingResponse responseModel) {
+        return responseModel != null && responseModel.message != null;
+    }
+
+    private boolean isOldAccountingError(AccountingResponse responseModel) {
+        return responseModel != null && responseModel.response != null && responseModel.response.errors != null;
+    }
+
     protected AccountingResponse handleRequest(String method, String url, Map<String, Object> content) throws FreshBooksException {
         HttpResponse response;
         AccountingResponse model = null;
@@ -83,10 +92,20 @@ public abstract class AccountingResource extends Resource {
             throw new FreshBooksException("Returned an unexpected response", statusMessage, statusCode, e);
         }
 
-        if (!response.isSuccessStatusCode() && model != null && model.response != null && model.response.errors != null) {
+        if (!response.isSuccessStatusCode() && this.isOldAccountingError(model)) {
             AccountingError error = model.response.errors.get(0);
             throw new FreshBooksException(error.message, statusMessage, statusCode,
                     error.errno, error.field, error.object, error.value);
+        }
+        if (!response.isSuccessStatusCode() && this.isNewAccountingError(model)) {
+            if (model.details.size() > 0) {
+                AccountingErrorDetails error = model.details.get(0);
+                if (error.type.equals("type.googleapis.com/google.rpc.ErrorInfo") && error.metadata != null) {
+                    throw new FreshBooksException(error.metadata.message, statusMessage, statusCode,
+                            error.getReason(), error.metadata.field, error.metadata.object, error.metadata.value);
+                }
+            }
+            throw new FreshBooksException(model.message, statusMessage, statusCode);
         }
 
         if (response.isSuccessStatusCode() && method.equals(HttpMethods.DELETE)  && model != null && model.response != null ) {

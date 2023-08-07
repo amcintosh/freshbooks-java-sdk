@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Handle new API version accounting errors
+
 ## 0.6.0
 
 - Added Profit & Loss accounting report
