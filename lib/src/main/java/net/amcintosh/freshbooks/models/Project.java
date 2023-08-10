@@ -57,6 +57,8 @@ public class Project extends GenericJson implements ConvertibleContent {
 
     /**
      * Whether the project is active or not.
+     * <br><br>
+     * <i>Note: A resource that is not active is essentially a "soft" delete.</i>
      *
      * @return True if active
      */
@@ -66,6 +68,8 @@ public class Project extends GenericJson implements ConvertibleContent {
 
     /**
      * Set whether the project is active or not.
+     * <br><br>
+     * <i>Note: A resource that is not active is essentially a "soft" delete.</i>
      *
      * @param active active
      */

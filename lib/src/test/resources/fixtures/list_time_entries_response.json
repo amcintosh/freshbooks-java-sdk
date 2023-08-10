@@ -1,0 +1,135 @@
+{
+    "meta": {
+        "total": 2,
+        "per_page": 30,
+        "page": 1,
+        "pages": 1,
+        "total_logged": 17040,
+        "total_unbilled": 17040,
+        "total_logged_per_team_member": [
+            {
+                "identity_id": 65432,
+                "total_logged": 17040,
+                "total_logged_per_client": [
+                    {
+                        "client_id": null,
+                        "total_logged": 7200,
+                        "total_logged_per_project": [
+                            {
+                                "project_id": null,
+                                "total_logged": 7200
+                            }
+                        ]
+                    },
+                    {
+                        "client_id": 56789,
+                        "total_logged": 9840,
+                        "total_logged_per_project": [
+                            {
+                                "project_id": 654321,
+                                "total_logged": 9840
+                            }
+                        ]
+                    }
+                ],
+                "total_logged_per_day": [
+                    {
+                        "date": "2023-08-08",
+                        "total_logged": 9840,
+                        "total_logged_per_client": [
+                            {
+                                "client_id": 56789,
+                                "total_logged": 9840
+                            }
+                        ]
+                    },
+                    {
+                        "date": "2023-02-16",
+                        "total_logged": 7200,
+                        "total_logged_per_client": [
+                            {
+                                "client_id": null,
+                                "total_logged": 7200
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "total_logged_per_client": [
+            {
+                "client_id": null,
+                "total_logged": 7200,
+                "total_logged_per_team_member": [
+                    {
+                        "identity_id": 65432,
+                        "total_logged": 7200
+                    }
+                ]
+            },
+            {
+                "client_id": 56789,
+                "total_logged": 9840,
+                "total_logged_per_team_member": [
+                    {
+                        "identity_id": 65432,
+                        "total_logged": 9840
+                    }
+                ]
+            }
+        ]
+    },
+    "time_entries": [
+        {
+            "id": 123456,
+            "identity_id": 65432,
+            "is_logged": true,
+            "local_started_at": "2023-08-08T14:56:50",
+            "local_timezone": "America/Toronto",
+            "started_at": "2023-08-08T19:56:50Z",
+            "created_at": "2023-08-08T19:56:50Z",
+            "client_id": 56789,
+            "project_id": 654321,
+            "pending_client": null,
+            "pending_project": null,
+            "pending_task": null,
+            "task_id": 159361,
+            "service_id": 4054453,
+            "note": "Slow day",
+            "active": true,
+            "billable": true,
+            "billed": false,
+            "internal": false,
+            "retainer_id": null,
+            "duration": 9840,
+            "timer": {
+                "id": 152300,
+                "is_running": false
+            }
+        },
+        {
+            "id": 123457,
+            "identity_id": 65432,
+            "is_logged": true,
+            "local_started_at": "2023-02-16T16:00:00",
+            "local_timezone": "America/Toronto",
+            "started_at": "2023-02-16T20:00:00Z",
+            "created_at": "2023-05-18T15:36:29Z",
+            "client_id": null,
+            "project_id": null,
+            "pending_client": null,
+            "pending_project": null,
+            "pending_task": null,
+            "task_id": null,
+            "service_id": null,
+            "note": "Stuff",
+            "active": true,
+            "billable": true,
+            "billed": false,
+            "internal": false,
+            "retainer_id": null,
+            "duration": 7200,
+            "timer": null
+        }
+    ]
+}
