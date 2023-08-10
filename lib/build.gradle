@@ -13,7 +13,7 @@ plugins {
     id 'jacoco'
 }
 
-version = '0.6.0'
+version = '0.7.0'
 
 repositories {
     // Use mavenCentral for resolving dependencies.

@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.7.0
+
 - Handle new API version accounting errors
 - Added Time Entry resource
 
