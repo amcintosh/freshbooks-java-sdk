@@ -3,6 +3,7 @@
 ## Unreleased
 
 - Handle new API version accounting errors
+- Added Time Entry resource
 
 ## 0.6.0
 

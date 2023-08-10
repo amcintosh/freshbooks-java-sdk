@@ -85,7 +85,7 @@ public class Util {
      * @return UTC-zoned datetime
      */
     public static ZonedDateTime getZonedDateTimeFromISO(String dateString) {
-        return ZonedDateTime.parse(dateString).withZoneSameInstant(ZoneId.of("UTC"));
+        return ZonedDateTime.parse(dateString).withZoneSameInstant(UTC_ZONE);
     }
 
     /**

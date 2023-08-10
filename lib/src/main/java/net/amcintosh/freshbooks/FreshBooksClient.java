@@ -414,6 +414,14 @@ public class FreshBooksClient {
         return new Taxes(this);
     }
 
+    /**
+     * FreshBooks time entries resource with calls to get, list, create, update, delete.
+     *
+     * @return TimeEntries resource initialized with this FreshBooksClient
+     */
+    public TimeEntries timeEntries() {
+        return new TimeEntries(this);
+    }
 
     /**
      * Builder for FreshBooksClient.

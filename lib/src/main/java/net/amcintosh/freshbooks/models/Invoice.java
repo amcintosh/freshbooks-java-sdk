@@ -96,7 +96,7 @@ public class Invoice extends GenericJson implements ConvertibleContent {
     /**
      * Get unique to this business id for invoice.
      *
-     * Note: This is the same as <code>getId</code>.
+     * <i>Note:</i> This is the same as <code>getId</code>.
      *
      * @return The id of the invoice
      */
